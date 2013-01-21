@@ -1,39 +1,439 @@
-ï»¿<%@ Page Title="ä¸»é¡µ" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApp._Default" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="WebApp._default" %>
 
-<asp:Content runat="server" ID="FeaturedContent" ContentPlaceHolderID="FeaturedContent">
-    <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1><%: Title %>.</h1>
-                <h2>ä¿®æ”¹æ­¤æ¨¡æ¿ä»¥å¿«é€Ÿå¼€å§‹åˆ›å»º ASP.NET åº”ç”¨ç¨‹åºã€‚</h2>
-            </hgroup>
-            <p>
-                è‹¥è¦äº†è§£æœ‰å…³ ASP.NET çš„è¯¦ç»†ä¿¡æ¯ï¼Œè¯·è®¿é—® <a href="http://asp.net" title="ASP.NET Website">http://asp.net</a>ã€‚
-                è¯¥é¡µæä¾› <mark>è§†é¢‘ã€æ•™ç¨‹å’Œç¤ºä¾‹</mark> ä»¥å¸®åŠ©ä½ å……åˆ†åˆ©ç”¨ ASP.NETã€‚
-                å¦‚æžœä½ å¯¹ ASP.NET æœ‰ä»»ä½•ç–‘é—®ï¼Œè¯·è®¿é—®
-                <a href="http://forums.asp.net/18.aspx" title="ASP.NET Forum">æˆ‘ä»¬çš„è®ºå›</a>ã€‚
-            </p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>Çàµº±±Õ¾ÈË²ÅÊÐ³¡Íø-¹ÙÍøÊ×Ò³</title>
+    <link href="css/zong.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="top">
+                <div class="topright">Ð£ÆóÓ¢²Å©¦ÈË²ÅÊÐ³¡©¦ÍøÂçÕÐÆ¸©¦½»Á÷Ô°µØ<br />
+                ÈËÊÂ´úÀí©¦ÀÍÎñÅÉÇ²©¦ÕÐÉÌ¼ÓÃË©¦ÁªÏµÎÒÃÇ</div>
+                <div class="logo"><img src="image/logo.png" alt="Çàµº±±Õ¾ÈË²ÅÊÐ³¡Íø" /></div>
+            </div>
+
+            <div class="top1">
+            <div class="top1left">
+                <table width="223" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <img src="image/img1.png" width="109" height="32" /></td>
+                        <td>
+                            <img src="image/img2.png" width="116" height="32" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div style="border: 1px solid #d4d4d4; padding-left: 10px;">
+                                <table width="213" height="133px;" border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td><span style="color: #FF0000; font-size: 13px; font-weight: bold;">ÇëÊ×ÏÈÑ¡Ôñ</span>
+                                            <input type="radio" name="field£ßname" checked value="'value"><span style="color: #FF0000; font-size: 13px; font-weight: bold;">µ¥Î»</span>
+                                            <input type="radio" name="field£ßname" checked value="'value"><span style="color: #FF0000; font-size: 13px; font-weight: bold;">¸öÈË</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ÕËºÅ£º
+                      <input type="text" name="username" size="20"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ÃÜÂë£º
+                      <input type="password" name="password" size="20" maxlength="8"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>*¸öÈË×¢²á *ÆóÒµ×¢²á *ÕÒ»ØÃÜÂë</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="top1right"><img src="image/img5.png" /></div>
+                <div class="top1middle">
+                    <table width="505" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td style="background: url(image/img3.png) repeat-x;" height="32px"><span id="span">ÕÐ Æ¸ »á</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border: 1px solid #d4d4d4;">
+                                    <table width="507" height="133" border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td width="133" rowspan="5">
+                                                <div class="img4">
+                                                    <img src="image/img4.png" width="130" height="113" /></div>
+                                            </td>
+                                            <td width="335" height="15">¡¤ 1ÔÂ10ÈÕ½ºÖÝÊÐÈË²ÅÊÐ³¡×ÛºÏÀàÕÐÆ¸»á</td>
+                                        </tr>
+                                        <tr>
+                                            <td height="15">¡¤ 1ÔÂ10ÈÕÆû³µ±±Õ¾ÈË²ÅÊÐ³¡ÖÆÔìÐÐÒµ×¨³¡ÕÐÆ¸»á</td>
+                                        </tr>
+                                        <tr>
+                                            <td height="15">¡¤ 1ÔÂ12ÈÕ½ºÖÝÊÐÈË²ÅÊÐ³¡×ÛºÏÀàÕÐÆ¸»á</td>
+                                        </tr>
+                                        <tr>
+                                            <td height="15">¡¤ 1ÔÂ15ÈÕ½ºÖÝÊÐÈË²ÅÊÐ³¡×ÛºÏÀàÕÐÆ¸»á</td>
+                                        </tr>
+                                        <tr>
+                                            <td height="15">¡¤ 1ÔÂ15ÈÕÇàµºÆû³µ±±Õ¾ÖÐ»ù²ã¸ÚÎ»×¨³¡ÕÐÆ¸»á</td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="top2">
+                <div class="top2left">
+                    <table width="223" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <img src="image/img6.png" width="225" height="32" /></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="border: 1px solid #d4d4d4; padding-left: 13px; color: #093c7e;">
+                                <table width="210" height="195px;" border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <img src="image/img7.png" width="11" height="12" />ÏÖ³¡ÕÐÆ¸»á<img src="image/img21.png" /></td>
+                                        <td>
+                                            <img src="image/img7.png" width="11" height="12" />ÍøÂçÕÐÆ¸</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="image/img7.png" width="11" height="12" />ÈËÊÂ´úÀí<img src="image/img21.png" width="20" height="11" /></td>
+                                        <td>
+                                            <img src="image/img7.png" width="11" height="12" />¹ã¸æÕÐÌùÀ¸</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="image/img7.png" width="11" height="12" />¼òÕÂÕÐÆ¸</td>
+                                        <td>
+                                            <img src="image/img7.png" width="11" height="12" />´úÀíÕÐÆ¸</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="image/img7.png" width="11" height="12" />ÀÍÎñÅÉÇ²</td>
+                                        <td>
+                                            <img src="image/img7.png" width="11" height="12" />Ð£Æó´îÇÅ</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="image/img7.png" width="11" height="12" />ÈËÁ¦×ÊÔ´Ð­»á</td>
+                                        <td>
+                                            <img src="image/img7.png" width="11" height="12" />Ô±¹¤ÏàÇ×»á</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="image/img7.png" width="11" height="12" />HR¾Û»á</td>
+                                        <td>
+                                            <img src="image/img7.png" width="11" height="12" />ÁÔ Í·</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+                <div class="top2right">
+            <div class="top2righttop">
+                <table width="757" height="70" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <form id="form2" name="form1" method="post" action="">
+                                &nbsp;&nbsp;<select name="select2" size="1" style="width: 140px;"><option value="1" selected>ÇëÑ¡Ôñ¸ÚÎ»</option>
+                                    <option value="2">»úÐµµç×Ó</option>
+                                    <option value="3">ÆÕ¹¤</option>
+                                    <option value="4">¼¼¹¤</option>
+                                    <option value="5">ÃÀÈÝ±£½¡</option>
+                                </select>
+                            </form>
+                        </td>
+                        <td>
+                            <form id="form3" name="form1" method="post" action="">
+                                <select name="select2" size="1" style="width: 140px;">
+                                    <option value="1" selected>ÐÔ±ðÒªÇó</option>
+                                    <option value="2">»úÐµµç×Ó</option>
+                                    <option value="3">ÆÕ¹¤</option>
+                                    <option value="4">¼¼¹¤</option>
+                                    <option value="5">ÃÀÈÝ±£½¡</option>
+                                </select>
+                            </form>
+                        </td>
+                        <td>
+                            <form id="form4" name="form1" method="post" action="">
+                                <select name="select2" size="1" style="width: 200px;">
+                                    <option value="1" selected>ÇëÑ¡Ôñ¹¤×÷µØÇø</option>
+                                    <option value="2">»úÐµµç×Ó</option>
+                                    <option value="3">ÆÕ¹¤</option>
+                                    <option value="4">¼¼¹¤</option>
+                                    <option value="5">ÃÀÈÝ±£½¡</option>
+                                </select>
+                            </form>
+                        </td>
+                        <td rowspan="2">
+                            <img src="image/img13.png" />;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <form id="form5" name="form1" method="post" action="">
+                                &nbsp;&nbsp;<select name="select" size="1" style="width: 140px;">
+                                    <option value="1" selected>ÇëÑ¡ÔñÐÐÒµ</option>
+                                    <option value="2">»úÐµµç×Ó</option>
+                                    <option value="3">ÆÕ¹¤</option>
+                                    <option value="4">¼¼¹¤</option>
+                                    <option value="5">ÃÀÈÝ±£½¡</option>
+                                </select>
+                            </form>
+                        </td>
+                        <td>
+                            <form id="form6" name="form1" method="post" action="">
+                                <select name="select2" size="1" style="width: 140px;">
+                                    <option value="1" selected>Ê³ËÞÒªÇó</option>
+                                    <option value="2">»úÐµµç×Ó</option>
+                                    <option value="3">ÆÕ¹¤</option>
+                                    <option value="4">¼¼¹¤</option>
+                                    <option value="5">ÃÀÈÝ±£½¡</option>
+                                </select>
+                            </form>
+                        </td>
+                        <td>
+                            <form id="form7" name="form1" method="post" action="">
+                                <select name="select2" size="1" style="width: 200px;">
+                                    <option value="1" selected>ÇëÑ¡Ôñ¸ÚÎ»</option>
+                                    <option value="2">»úÐµµç×Ó</option>
+                                    <option value="3">ÆÕ¹¤</option>
+                                    <option value="4">¼¼¹¤</option>
+                                    <option value="5">ÃÀÈÝ±£½¡</option>
+                                </select>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="top2rightbottom">
+              <table width="757" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td background="image/img3.png" repeat-x; height="30px;" width="757px;"><span id="span1">¸Ú Î» Àà ±ð</span></td>
+                </tr>
+                <tr>
+                  <td><div style="border:1px solid #FF8000;">
+                    <table width="757px" height="100px;" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td height="15"><span id="span2" >&nbsp;&nbsp;·Ç¹ÜÀí£º</span>ÆÕ¹¤  ¼¼Êõ  Æ·¹Ü  ²Ö¿â  ±£°²  ±£½à  Ë¾»ú  ¾Æµê  ÓéÀÖ  ÁãÊÛ  ²ÆÎñ  ÈËÊÂ  ÎÄÔ±  ÏúÊÛ  ¿Í·þ  ÐÐÕþ  ²É¹º  Éè¼Æ  ÃÀÈÝ <br /></td>
+                          </tr>
+                        <tr>
+                          <td height="15">  &nbsp;&nbsp;¶Ì¹¤ ¼ÆËã»ú  ½¨Öþ·¿²ú  Æû³µ  Ò½ÁÆ  ½ÌÓý  Å©ÄÁ  ½ðÈÚ  ¼ÒÕþ  ·­Òë  ·¨ÂÉ  ÆäËü</td>
+                          </tr>
+                        <tr>
+                          <td height="15"><span id="span3">&nbsp;&nbsp;¹ÜÀíÀà£º</span>Éú²ú¹ÜÀí  ÎïÁ÷¹ÜÀí  Æ·ÖÊ¹ÜÀí   ÏúÊÛ¹ÜÀí   ²ÆÎñ¹ÜÀí  ²É¹º¹ÜÀí  ¾Æµê¹ÜÀí ÁãÊÛ¹ÜÀí ¼¼Êõ¹ÜÀí ÐÐÕþ¹ÜÀí ¾­Óª</td>
+                          </tr>
+                      </table>
+                  </div></td>
+                </tr>
+              </table>
+            </div>
         </div>
-    </section>
-</asp:Content>
-<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h3>ä¸‹é¢æ˜¯æˆ‘ä»¬çš„å»ºè®®:</h3>
-    <ol class="round">
-        <li class="one">
-            <h5>å¼€å§‹ä½¿ç”¨</h5>
-            é€šè¿‡ ASP.NET Web Formsï¼Œå¯ä»¥ä½¿ç”¨ä¸€ç§ç†Ÿæ‚‰çš„ã€æ”¯æŒæ‹–æ”¾æ“ä½œçš„äº‹ä»¶é©±åŠ¨æ¨¡åž‹ç”ŸæˆåŠ¨æ€ç½‘ç«™ã€‚
-            ä¸€ä¸ªè®¾è®¡å›¾é¢åŠ ä¸Šæ•°ç™¾ä¸ªæŽ§ä»¶å’Œç»„ä»¶ï¼Œä½¿ä½ èƒ½å¤Ÿå¿«é€Ÿç”Ÿæˆå¤æ‚ä¸”åŠŸèƒ½å¼ºå¤§çš„ã€å¸¦æœ‰æ•°æ®è®¿é—®åŠŸèƒ½çš„ UI é©±åŠ¨ç«™ç‚¹ã€‚
-            <a href="http://go.microsoft.com/fwlink/?LinkId=245146">äº†è§£è¯¦ç»†ä¿¡æ¯...</a>
-        </li>
-        <li class="two">
-            <h5>æ·»åŠ  NuGet ç¨‹åºåŒ…å¹¶å¿«é€Ÿå¼€å§‹ç¼–ç </h5>
-            é€šè¿‡ NuGetï¼Œå¯ä»¥è½»æ¾åœ°å®‰è£…å’Œæ›´æ–°å…è´¹çš„åº“å’Œå·¥å…·ã€‚
-            <a href="http://go.microsoft.com/fwlink/?LinkId=245147">äº†è§£è¯¦ç»†ä¿¡æ¯...</a>
-        </li>
-        <li class="three">
-            <h5>æŸ¥æ‰¾ Web å®¿ä¸»</h5>
-            ä½ å¯ä»¥è½»æ¾æ‰¾åˆ°æ‰€æä¾›çš„åŠŸèƒ½å’Œä»·æ ¼éƒ½é€‚åˆä½ åº”ç”¨ç¨‹åºçš„ Web å®¿ä¸»å…¬å¸ã€‚
-            <a href="http://go.microsoft.com/fwlink/?LinkId=245143">äº†è§£è¯¦ç»†ä¿¡æ¯...</a>
-        </li>
-    </ol>
-</asp:Content>
+            </div>
+            <div class="top3">
+                <div class="top3left">
+                    <table width="223" border="0" cellspacing="0" cellpadding="0" >
+                  <tr>
+                    <td><div class="top3image"><img src="image/img9.png" /></div></td>
+                    </tr>
+                  <tr>
+                    <td><div class="top3image"><img src="image/img14.png" /></div></td>
+                  </tr>
+                    <tr>
+                    <td><div class="top3image"><img src="image/img15.png" /></div></td>
+                    </tr>
+	                  <tr>
+                    <td><div class="top3image"><img src="image/img16.png" /></div></td>
+                    </tr>
+	                  <tr>
+                    <td><div class="top3image"><img src="image/img17.png" /></div></td>
+                    </tr>
+	                  <tr>
+                    <td><div class="top3image"><img src="image/img18.png" /></div></td>
+                    </tr>
+		                  <tr>
+                    <td><div class="top3image"><img src="image/img19.png" /></div></td>
+                    </tr>
+		                  <tr>
+                    <td><div class="top3image"><img src="image/img20.png" /></div></td>
+                    </tr>
+                </table>
+                </div>
+                <div class="top3right">
+                    <div class="top3righttop">
+                      <table width="752" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td background="image/img3.png" repeat-x; height="32px;" width="752px;"><span id="span4">ÐÐ Òµ Àà ±ð</span></td>
+                        </tr>
+                        <tr>
+                          <td><div style="border:1px solid #FF8000;">
+                            <table width="757px" height="100px;" cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <td height="15"><span id="span5">&nbsp;&nbsp;ÖÆÔìÐÐÒµ£º</span>»úÐµ  Ä£¾ß  ·þ×°·ÄÖ¯  Ê³Æ·  ¼Òµç/µç×Ó  ¹¤ÒÕÆ·  »¯¹¤  Ó¡Ë¢  ¼Ò¾ß/Ä¾Òµ  Éè±¸/ÒÇ±í  Ïð½º/ËÜÁÏ  ½¨²Ä  ÖÆÒ©    ÆäËü</td>
+                                  </tr>
+                                <tr>
+                                  <td height="15"><span id="span6">&nbsp;&nbsp;µÚÈý²úÒµ£º</span>¾Æµê/²ÍÒû  ÎïÁ÷/²Ö´¢  ÃÀÈÝ/±£½¡  ÁãÊÛ/Åú·¢  Ã³Ò×  ·¿µØ²ú/½¨Öþ/×°ÐÞ  ÎïÒµ  Æû³µ    ½ðÈÚ  ¹ã¸æ/»áÕ¹  ½ÌÓý  Ò½ÁÆ</td>
+                                  </tr>
+                                <tr>
+                                  <td height="15"><span id="span7">&nbsp;&nbsp;µÚÒ»²úÒµ£º</span>Å©ÁÖÄÁÓæ</td>
+                                  </tr>
+                              </table>
+                          </div></td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="top3rightmiddle">
+                      <table width="752" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td background="image/img3.png" repeat-x; height="32px;" width="752px;"><span id="span8">½ô ¼± ÕÐ Æ¸</span></td>
+                        </tr>
+                        <tr>
+                          <td><div style="border:1px solid #d4d4d4;">
+                            <table width="757px" height="320" cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <td width="232"><span id="span9">&nbsp;&nbsp;Çàµº¾üÕþÈËÎÄ´óÑ§</span></td>
+                                  <td width="107">ÊÐÄÏ</td>
+                                  <td width="231">³ö¹úÀÍÎñ£¨ÈÕ±¾»¤Ê¿£©|´óÑ§±¾¿Æ</td>
+                                  <td width="185">0532-89087588</td>
+                                </tr>
+                                <tr>
+                                  <td><span id="span10">&nbsp;&nbsp;ÇàµºÔ£°²»úÐµ»¯Ê©¹¤ÓÐÏÞ¹«Ë¾</span>                                                                         </td>
+                                  <td>áÀÉ½</td>
+                                  <td>ÏúÊÛ|ÏúÊÛ|ÏúÊÛ|ÊÛºóÎ¬</td>
+                                  <td>0532-89087588</td>
+                                </tr>
+                                <tr>
+                                  <td><span id="span11">&nbsp;&nbsp;ÇàµºÓÑÌ©Í¿ÁÏ¹¤³ÌÓÐÏÞ¹«Ë¾</span>                                     </td>
+                                  <td>¼´Ä«</td>
+                                  <td>ÒµÎñ¾­Àí|ÏîÄ¿¾­Àí|¸±×Ü </td>
+                                  <td>0532-89087588</td>
+                                </tr>
+			                                  <tr>
+                                  <td><span id="span12">&nbsp;&nbsp;Çàµº¾üÕþÈËÎÄ´óÑ§</span>                                                                           </td>
+                                  <td>ÊÐÄÏ</td>
+                                  <td>³ö¹úÀÍÎñ£¨ÈÕ±¾»¤Ê¿£©|´óÑ§±¾¿Æ</td>
+                                  <td>0532-89087588</td>
+	                                  </tr>
+			                                  <tr>
+                                  <td><span id="span13">&nbsp;&nbsp;ÇàµºÔ£°²»úÐµ»¯Ê©¹¤ÓÐÏÞ¹«Ë¾</span> </td>
+                                  <td>áÀÉ½</td>
+                                  <td>ÏúÊÛ|ÏúÊÛ|ÏúÊÛ|ÊÛºóÎ¬</td>
+                                  <td>0532-89087588</td>
+	                                  </tr>
+			                                  <tr>
+                                  <td><span id="span14">&nbsp;&nbsp;ÇàµºÓÑÌ©Í¿ÁÏ¹¤³ÌÓÐÏÞ¹«Ë¾</span></td>
+                                  <td>¼´Ä«</td>
+                                  <td>ÒµÎñ¾­Àí|ÏîÄ¿¾­Àí|¸±×Ü</td>
+                                  <td>0532-89087588</td>
+	                                  </tr>
+			                                  <tr>
+                                  <td colspan="4">                </td>
+                                  </tr>
+			                                  <tr>
+                                  <td><span id="span15">&nbsp;&nbsp;Çàµº¾üÕþÈËÎÄ´óÑ§</span></td>
+                                  <td>ÊÐÄÏ</td>
+                                  <td>³ö¹úÀÍÎñ£¨ÈÕ±¾»¤Ê¿£©|´óÑ§±¾¿Æ</td>
+                                  <td>0532-89087588</td>
+	                                  </tr>
+			                                  <tr>
+                                  <td><span id="span16">&nbsp;&nbsp;ÇàµºÔ£°²»úÐµ»¯Ê©¹¤ÓÐÏÞ¹«Ë¾</span></td>
+                                  <td>áÀÉ½</td>
+                                  <td>ÏúÊÛ|ÏúÊÛ|ÏúÊÛ|ÊÛºóÎ¬</td>
+                                  <td>0532-89087588</td>
+	                                  </tr>
+			                                  <tr>
+                                  <td><span id="span17">&nbsp;&nbsp;ÇàµºÓÑÌ©Í¿ÁÏ¹¤³ÌÓÐÏÞ¹«Ë¾</span></td>
+                                  <td>¼´Ä«</td>
+                                  <td>ÒµÎñ¾­Àí|ÏîÄ¿¾­Àí|¸±×Ü</td>
+                                  <td>0532-89087588</td>
+	                                  </tr>
+                              </table>
+                          </div></td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="top3rightbottom">
+                      <table width="752" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td background="image/img3.png" repeat-x; height="32px;" width="752px;"><span id="span18">²¿·Ö×î½ü²Î»áÆóÒµÐÅÏ¢&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ÏêÏ¸<<<<</span></td>
+                        </tr>
+                        <tr>
+                          <td><div style="border:1px solid #FF8000;">
+                            <table width="757px" height="179" cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <td height="64">&nbsp;&nbsp;<img src="image/img7.png" width="11" height="12" /><span id="span19">Çàµºº£µÂ°ü×°ÓÐÏÞ¹«Ë¾£º</span>Ó¡Ë¢²Ù×÷¹¤£¬ÄÐ£¬4ÈË£¬2000-4500ÔªÒÔÉÏ¡£¸´ºÏ²Ù×÷¹¤£¬ÄÐ£¬4ÈË£¬2000-4000ÔªÒÔÉÏ¡£ÖÆ´ü²Ù×÷¹¤£¬²»ÏÞ£¬10ÈË£¬2000-3500ÔªÒÔÉÏ¡£·ÖÇÐ²Ù×÷¹¤£¬ÄÐ£¬2ÈË£¬2000-3500ÔªÒÔÉÏ¡£Î¬ÐÞÇ¯¹¤£¬ÄÐ£¬2ÈË£¬2000-3500ÔªÒÔÉÏ¡£Î¬ÐÞµç¹¤£¬ÄÐ£¬2ÈË£¬2000-3500ÔªÒÔÉÏ¡£Æ½ÃæÉè¼Æ£¬²»ÏÞ£¬1ÈË£¬2000ÒÔÉÏ¡£Éú²úµ÷¶È£¬ÄÐ£¬1ÈË£¬2000ÒÔÉÏ¡£ÏúÊÛÈËÔ±£¬ÄÐ£¬2ÈË£¬2000ÒÔÉÏ¡£°ü³Ô×¡£¬ÎåÏÕÒ»½ðµç»°£º87066139¡£µØÖ·£ºÀî²×ÇøÎÄ²ýÂ·¡£</td>
+                                  </tr>
+                                <tr>
+                                  <td height="43"> &nbsp;&nbsp;<span id="span20"><img src="image/img7.png" width="11" height="12" />ÇàµºÐñî£¼Ò¾ßÖÆÔìÓÐÏÞ¹«Ë¾£º</span>º¸¹¤£¬5ÈË£¬2400-5000Ôª£¬ÓÐ¹«ÐÝ£¬°ü³Ô×¡¡£ÆÕ¹¤£¬20ÈË£¬1700-3500Ôª£¬ÓÐ¹«ÐÝ£¬°ü³Ô×¡¡£ÎÄÔ±£¬±¾¿Æ£¬3ÈË£¬¹¤×ÊÃæÒé¡£³öÄÉ£¬±¾¿Æ£¬1ÈË£¬¹¤×ÊÃæÒé¡£ÒµÎñÔ±£¬±¾¿Æ£¬6ÈË£¬µ×Ð½¼ÓÌá³É¡£µç»°£º13583236988¡£µØÖ·£º³ÇÑôÇ°Íúî¶¡£</td>
+                                  </tr>
+                                <tr>
+                                  <td height="62">&nbsp;&nbsp;<img src="image/img7.png" width="11" height="12" /><span id="span21">ÇàµºÁªÃûÎå½ðÖÆÆ·ÓÐÏÞ¹«Ë¾£º</span>Êý¿Ø²Ù×÷£¬ÖÐ×¨£¬ÄÐ£¬5ÈË£¬ÄÜÅäºÏ¼Ó°à£¬2000-4000Ôª¡£¼Ó¹¤ÖÐÐÄ²Ù×÷£¬ÖÐ×¨£¬ÄÐ£¬4ÈË£¬ÄÜÅäºÏ¼Ó°à£¬2000-4000Ôª¡£ÖÊ¼ìÔ±£¬ÖÐ×¨£¬ÄÐ£¬4ÈË£¬ÄÜÅäºÏ¼Ó°à£¬2000-3500Ôª¡£»úÐµÖÆÍ¼Ô±£¬ÖÐ×¨£¬ÄÐ£¬2ÈË£¬ÄÜÅäºÏ¼Ó°à£¬2000-3500Ôª¡£¿â¹Ü£¬ÖÐ×¨£¬ÄÐ£¬2ÈË£¬ÄÜÅäºÏ¼Ó°à£¬2000-3500Ôª¡£µçº¸¹¤£¬ÖÐ×¨£¬ÄÐ£¬2ÈË£¬ÄÜÅäºÏ¼Ó°à£¬2000-4000Ôª¡£ÆÕ¹¤£¬ÖÐ×¨£¬ÄÐ£¬3ÈË£¬ÄÜÅäºÏ¼Ó°à£¬2000-3500Ôª¡£°ì¹«ÊÒÄÚÇÚ£¬ÖÐ×¨£¬Å®£¬1ÈË£¬ÄÜÅäºÏ¼Ó°à£¬2000-3000Ôª¡£ÒÔÉÏÇ©ÕýÊ½ÀÍ¶¯ºÏÍ¬£¬Í¶ÎåÏÕ¡£µç»°£º0532-87652762¡£µØÖ·£ºÇàµºÊÐÀî²×ÇøÖØÇìÖÐÂ·197ºÅ¡£</td>
+                                  </tr>
+                              </table>
+                          </div></td>
+                        </tr>
+                      </table>
+                    </div>
+                </div>
+            </div>
+            <div class="link">
+                <table width="100%" height="134px;" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="32px"><img src="image/img10.png" width="32" height="134" /></td>
+          <td><table width="100%" height="134px;" border="0" cellspacing="0" cellpadding="0" style="text-align:center;">
+              <tr>
+                <td>&nbsp;&nbsp;ºÃÈË²Å              Â¥ÅÌÍø             ÉÐµÂ»ú¹¹          pcbÈË²ÅÍø         äàÑôÈË²ÅÍø        ÏåÑôÈË²ÅÍø       ºþÖÝÕÐÆ¸Íø        ÉÜÐËÈË²ÅÍø        Áù°²ÈË²ÅÍø         ¸ß¸ÛÈË²ÅÍø        ³èÎïÈË²ÅÍø</td>
+              </tr>
+              <tr>
+                <td>&nbsp;&nbsp;ÄÏ¾©ÈË²ÅÍø       Î÷³þÈË²ÅÍø      Éè¼ÆÈË²ÅÍø       ¹ã¸æÈË²ÅÍø        ¹Å¶¼ÈË²ÅÍø        ËæÖÝÈË²ÅÍø        Ôæ×¯ÐÅÏ¢¸Û        ÄÏ¾©ÈË²ÅÍø        À¥Ã÷Ò×ÏÍÍø        Ì«²ÖÈË²ÅÍø        °ÙÒµÈË²ÅÍø</td>
+              </tr>
+              <tr>
+                <td>&nbsp;&nbsp;Èð°²ÈË²ÅÍø       ººÖÐÈË²ÅÍø       ¸ÓÛ¶ÈË²ÅÍø      ÁºÉ½ÈË²ÅÍø        ÊýÂëÈË²ÅÍø        ÊÞÒ©ÈË²ÅÍø        ºâÑôÈË²ÅÍø        É½¶«ÈË²ÅÍø        °²Ë³ÈË²ÅÍø        ±±¾©ÈË²ÅÍø        ÕÄÖÝÈË²ÅÍø</td>
+              </tr>
+              <tr>
+                <td>&nbsp;&nbsp;¹ðÁÖÉú»îÍø        ¹þ¶û±õÕÐÆ¸Íø       ÇàµºÅ©Òµ´óÑ§     Õã½­ÅàÑµÔÚÏß     ÆóÒµ¹ÜÀíÅàÑµ     ÈËÁ¦×ÊÔ´ÅàÑµ      ÖÐ¹ú»úÐµÈË²ÅÍø    µÚÒ»½¨ÖþÈË²Å     ÍøÖÐ¹úÐÄÀíÕÐÆ¸Íø     ÖÐ¹úÆû³µÈË²ÅÍø</td>
+              </tr>
+              <tr>
+                <td>&nbsp;&nbsp;ºÃÈË²Å              Â¥ÅÌÍø             ÉÐµÂ»ú¹¹          pcbÈË²ÅÍø         äàÑôÈË²ÅÍø        ÏåÑôÈË²ÅÍø       ºþÖÝÕÐÆ¸Íø        ÉÜÐËÈË²ÅÍø        Áù°²ÈË²ÅÍø         ¸ß¸ÛÈË²ÅÍø        ³èÎïÈË²ÅÍø</td>
+              </tr>
+          </table></td>
+        </tr>
+      </table>
+            </div>
+            <div class="bottom">
+                <table width="100%" height="120px;"border="0" cellspacing="0" cellpadding="0" class="bottom">
+      <tr>
+        <td  background="image/img3.png" repeat-x; height="3px" width="100%;" ></td>
+      </tr>
+      <tr>
+        <td height="15px;">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>ÈË²ÅÍø¼ò½é©¦ÁªÏµÎÒÃÇ©¦¼ÓÃËÁ¬Ëø©¦¿Í·þÖÐÐÄ©¦ÍøÕ¾µØÍ¼©¦·¨ÂÉÉùÃ÷©¦ÓÑÇéÁ´½Ó©¦°²È«ÌáÊ¾</td>
+      </tr>
+      <tr>
+        <td>È«¹úºô½ÐÖÐÐÄ£º95105333£¨Ãâ³¤»°·Ñ£©µç×ÓÓÊÏä£ºsales@zhilaizhiwang.net</td>
+      </tr>
+      <tr>
+        <td>ÇóÖ° ÕÐÆ¸ ÈË²ÅÍø°æÈ¨ËùÓÐ 1999-2013</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -5,7 +5,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
     <title>青岛北站人才市场网-官网首页</title>
-    <link href="css/zong.css" rel="stylesheet" type="text/css" />
+    <link href="zong.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -391,23 +391,25 @@
                 <table width="100%" height="134px;" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td width="32px"><img src="image/img10.png" width="32" height="134" /></td>
-          <td><table width="100%" height="134px;" border="0" cellspacing="0" cellpadding="0" style="text-align:center;">
-              <tr>
-                <td>&nbsp;&nbsp;好人才              楼盘网             尚德机构          pcb人才网         溧阳人才网        襄阳人才网       湖州招聘网        绍兴人才网        六安人才网         高港人才网        宠物人才网</td>
-              </tr>
-              <tr>
-                <td>&nbsp;&nbsp;南京人才网       西楚人才网      设计人才网       广告人才网        古都人才网        随州人才网        枣庄信息港        南京人才网        昆明易贤网        太仓人才网        百业人才网</td>
-              </tr>
-              <tr>
-                <td>&nbsp;&nbsp;瑞安人才网       汉中人才网       赣鄱人才网      梁山人才网        数码人才网        兽药人才网        衡阳人才网        山东人才网        安顺人才网        北京人才网        漳州人才网</td>
-              </tr>
-              <tr>
-                <td>&nbsp;&nbsp;桂林生活网        哈尔滨招聘网       青岛农业大学     浙江培训在线     企业管理培训     人力资源培训      中国机械人才网    第一建筑人才     网中国心理招聘网     中国汽车人才网</td>
-              </tr>
-              <tr>
-                <td>&nbsp;&nbsp;好人才              楼盘网             尚德机构          pcb人才网         溧阳人才网        襄阳人才网       湖州招聘网        绍兴人才网        六安人才网         高港人才网        宠物人才网</td>
-              </tr>
-          </table></td>
+          <td>
+              <table width="100%" height="134px;" border="0" cellspacing="0" cellpadding="0" style="text-align:center;">
+                  <tr>
+                    <td>&nbsp;&nbsp;好人才              楼盘网             尚德机构          pcb人才网         溧阳人才网        襄阳人才网       湖州招聘网        绍兴人才网        六安人才网         高港人才网        宠物人才网</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;&nbsp;南京人才网       西楚人才网      设计人才网       广告人才网        古都人才网        随州人才网        枣庄信息港        南京人才网        昆明易贤网        太仓人才网        百业人才网</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;&nbsp;瑞安人才网       汉中人才网       赣鄱人才网      梁山人才网        数码人才网        兽药人才网        衡阳人才网        山东人才网        安顺人才网        北京人才网        漳州人才网</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;&nbsp;桂林生活网        哈尔滨招聘网       青岛农业大学     浙江培训在线     企业管理培训     人力资源培训      中国机械人才网    第一建筑人才     网中国心理招聘网     中国汽车人才网</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;&nbsp;好人才              楼盘网             尚德机构          pcb人才网         溧阳人才网        襄阳人才网       湖州招聘网        绍兴人才网        六安人才网         高港人才网        宠物人才网</td>
+                  </tr>
+                </table>
+          </td>
         </tr>
       </table>
             </div>

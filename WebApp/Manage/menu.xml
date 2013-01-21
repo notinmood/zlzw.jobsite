@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Tree>
+  <TreeNode Text="用户管理" SingleClickExpand="true">
+    <TreeNode Text="管理员管理" NavigateUrl="admin/AdminList.aspx" >
+    </TreeNode>
+  </TreeNode>
+  <TreeNode Text="招聘会管理" SingleClickExpand="true">
+    <TreeNode Text="招聘会管理" NavigateUrl="admin/GeneralActivityList.aspx" >
+    </TreeNode>
+  </TreeNode>
+  <TreeNode Text="企业管理" SingleClickExpand="true">
+    <TreeNode Text="企业信息管理" NavigateUrl="admin/GeneralEnterpriseList.aspx" >
+    </TreeNode>
+    <TreeNode Text="企业岗位发布管理" NavigateUrl="admin/JobEnterpriseJobPositionList.aspx" >
+    </TreeNode>
+    <TreeNode Text="企业招聘业务基本信息管理" NavigateUrl="admin/JobEnterpriseServiceList.aspx" >
+    </TreeNode>
+  </TreeNode>
+  <TreeNode Text="求职者管理" SingleClickExpand="true">
+    <TreeNode Text="简历管理" NavigateUrl="admin/JobPersonResumeList.aspx" >
+    </TreeNode>
+  </TreeNode>
+  <TreeNode Text="广告管理" SingleClickExpand="true">
+    <TreeNode Text="广告管理" NavigateUrl="admin/GeneralADList.aspx" >
+    </TreeNode>
+  </TreeNode>
+  <TreeNode Text="友情链接管理" SingleClickExpand="true">
+    <TreeNode Text="友情链接管理" NavigateUrl="admin/GeneralFriendlyLink.aspx" >
+    </TreeNode>
+  </TreeNode>
+</Tree>

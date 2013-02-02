@@ -1,6 +1,8 @@
+ï»¿@charset "utf-8";
+
 body {
     margin: 0 auto;
-    font-family: "ºÚÌå";
+    font-family: "é»‘ä½“";
     font-size: 13px;
     padding: 0px;
     width: 995px;
@@ -19,7 +21,7 @@ body {
 #navigation {
     float: right;
     margin: 10px 100px 10px 0px;
-    font-family: "Î¢ÈíÑÅºÚ";
+    font-family: "å¾®è½¯é›…é»‘";
     font-size: 14px;
     padding: 0px;
     width: 600px;
@@ -28,15 +30,15 @@ body {
 
     #navigation li {
         text-align: center;
-        float: left; /* Ë®Æ½²Ëµ¥ */
-        list-style-type: none; /* ²»ÏÔÊ¾ÏîÄ¿·ûºÅ */
+        float: left; /* æ°´å¹³èœå• */
+        list-style-type: none; /* ä¸æ˜¾ç¤ºé¡¹ç›®ç¬¦å· */
         margin: 0px;
         padding: 0px;
         width: 80px;
     }
 
         #navigation li a {
-            display: block; /* ¿éÏÔÊ¾ */
+            display: block; /* å—æ˜¾ç¤º */
             text-decoration: none;
             height: 29px;
             width: 74px;
@@ -47,7 +49,7 @@ body {
                 color: #000000;
             }
 
-            #navigation li a:hover { /* Êó±ê¾­¹ıÊ± */
+            #navigation li a:hover { /* é¼ æ ‡ç»è¿‡æ—¶ */
                 background: url(../image/img12.png);
                 padding: 0px 0px 0px 0px;
                 color: #ffffff;
@@ -58,8 +60,8 @@ body {
             width: 56px;
             height: 18px;
         }
-    /* ×ó²à¿Õ¼ä */
-    #navigation .current { /* µ±Ç°Ò³ÃæËùÔÚ */
+    /* å·¦ä¾§ç©ºé—´ */
+    #navigation .current { /* å½“å‰é¡µé¢æ‰€åœ¨ */
         background: url(../image/img12.png);
         color: #FFF;
         padding: 4px 0px 0px 0px;
@@ -67,10 +69,9 @@ body {
         font-weight: bold;
     }
 
-
 #span {
     margin-left: 15px;
-    font-family: "Î¢ÈíÑÅºÚ";
+    font-family: "å¾®è½¯é›…é»‘";
     font-size: 15px;
     color: #FFFFFF;
     font-weight: bolder;
@@ -78,8 +79,8 @@ body {
 
 #span1 {
     margin-left: 11px;
-    font-family: "ºÚÌå";
-    font-size: 13px;
+    font-family: "é»‘ä½“";
+    font-size: 12px;
     color: #0033FF;
     font-weight: bold;
 }
@@ -88,9 +89,8 @@ body {
     margin-bottom: 20px;
     float: right;
     width: 995px;
-    height: 229px;
-    font-family: "ºÚÌå";
-    font-size: 13px;
+    font-family: "é»‘ä½“";
+    font-size: 12px;
     padding: 0;
 }
 
@@ -111,15 +111,21 @@ body {
 
 .zhiwei {
     width: 995px;
-    height: 800px;
     text-align: left;
 }
-
-
 
 .bottom {
     text-align: center;
     width: 995px;
     height: 150px;
     margin: 20px 0px 0px 0px;
+}
+
+.textfield {
+    width: 400px;
+    height: 18px;
+    background-image: url(../images/12450456761.gif);
+    color: #ccc;
+    border: solid 1px #999;
+    padding: 3px 0px 0px 5px;
 }

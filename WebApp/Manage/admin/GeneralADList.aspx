@@ -34,6 +34,7 @@
                     <x:BoundField Width="100px" DataField="ADType" HeaderText="广告类型" TextAlign="Center" />
                     <x:BoundField Width="120px" DataField="CreateUserName" HeaderText="创建人" TextAlign="Center" />
                     <x:BoundField Width="120px" DataField="ADDesc" HeaderText="广告简介" TextAlign="Center" DataToolTipField="ADDesc"/>
+                    <x:BoundField Width="50PX" DataField="ADOrderNumber" HeaderText="排序" TextAlign="Center" />
                     <x:BoundField Width="120px" DataField="CreateDate" HeaderText="创建日期" TextAlign="Center" DataFormatString="{0:yyyy年MM月dd日}"/>
                     <x:BoundField Width="150px" DataField="UpdateDate" HeaderText="更新日期" TextAlign="Center" DataFormatString="{0:yyyy年MM月dd日}"/>
 

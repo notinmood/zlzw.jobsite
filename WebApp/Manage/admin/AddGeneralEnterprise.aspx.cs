@@ -142,6 +142,14 @@ namespace WebApp.Manage.admin
                 txbContactPerson.Text = generalEnterpriseModel.ContactPerson;//联系人
                 txbEnterpriseWWW.Text = generalEnterpriseModel.EnterpriseWWW;//企业网址
                 txbBusRoute.Text = generalEnterpriseModel.BusRoute;//乘车路线
+                if (generalEnterpriseModel.IsEmergencyRecruitment.ToString() == "0")
+                {
+                    ckbIsEmergencyRecruitment.Checked = false;
+                }
+                else
+                {
+                    ckbIsEmergencyRecruitment.Checked = true;
+                }
                 txbEnterpriseDescription.Text = generalEnterpriseModel.EnterpriseDescription;//企业简介
                 ViewState["fileBusinessLicense"] = generalEnterpriseModel.BusinessLicense;//营业执照存储地址
                 ViewState["CreateDate"] = generalEnterpriseModel.CreateDate.ToString();
@@ -176,6 +184,14 @@ namespace WebApp.Manage.admin
                 generalEnterpriseModel.BusRoute = txbBusRoute.Text;//乘车路线
                 generalEnterpriseModel.EnterpriseDescription = txbEnterpriseDescription.Text;//企业简介
                 generalEnterpriseModel.CanUsable = 1;
+                if (ckbIsEmergencyRecruitment.Checked)
+                {
+                    generalEnterpriseModel.IsEmergencyRecruitment = 1;
+                }
+                else
+                {
+                    generalEnterpriseModel.IsEmergencyRecruitment = 0;
+                }
                 generalEnterpriseModel.CreateDate = DateTime.Parse(ViewState["CreateDate"].ToString());
                 zlzw.BLL.GeneralEnterpriseBLL generalEnterpriseBLL = new zlzw.BLL.GeneralEnterpriseBLL();
                 generalEnterpriseModel.EnterpriseID = int.Parse(Get_ID(generalEnterpriseBLL, Request.QueryString["value"]));
@@ -211,6 +227,14 @@ namespace WebApp.Manage.admin
                 generalEnterpriseModel.EnterpriseDescription = txbEnterpriseDescription.Text;//企业简介
                 generalEnterpriseModel.CreateDate = DateTime.Now;//企业系统创建日期
                 generalEnterpriseModel.CanUsable = 1;//可用
+                if (ckbIsEmergencyRecruitment.Checked)
+                {
+                    generalEnterpriseModel.IsEmergencyRecruitment = 1;
+                }
+                else
+                {
+                    generalEnterpriseModel.IsEmergencyRecruitment = 0;
+                }
                 if (fileBusinessLicense.PostedFile.ContentLength > 0)
                 {
                     string fileName = DateTime.Now.Ticks.ToString() + "_" + fileBusinessLicense.FileName;

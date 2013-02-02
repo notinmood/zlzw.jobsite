@@ -15,6 +15,14 @@
     </TreeNode>
     <TreeNode Text="企业招聘业务基本信息管理" NavigateUrl="admin/JobEnterpriseServiceList.aspx" >
     </TreeNode>
+    <TreeNode Text="参会企业信息管理" NavigateUrl="admin/ParticipatingCompaniesList.aspx" >
+    </TreeNode>
+  </TreeNode>
+  <TreeNode Text="企业服务管理" SingleClickExpand="true">
+    <TreeNode Text="企业服务管理" NavigateUrl="admin/EnterpriseServiceTypeList.aspx" >
+    </TreeNode>
+    <TreeNode Text="企业服务内容管理" NavigateUrl="admin/EnterpriseServiceInfoList.aspx" >
+    </TreeNode>
   </TreeNode>
   <TreeNode Text="求职者管理" SingleClickExpand="true">
     <TreeNode Text="简历管理" NavigateUrl="admin/JobPersonResumeList.aspx" >
@@ -23,9 +31,25 @@
   <TreeNode Text="广告管理" SingleClickExpand="true">
     <TreeNode Text="广告管理" NavigateUrl="admin/GeneralADList.aspx" >
     </TreeNode>
+    <TreeNode Text="场馆广告管理" NavigateUrl="admin/ADImageList.aspx" >
+    </TreeNode>
   </TreeNode>
   <TreeNode Text="友情链接管理" SingleClickExpand="true">
     <TreeNode Text="友情链接管理" NavigateUrl="admin/GeneralFriendlyLink.aspx" >
+    </TreeNode>
+  </TreeNode>
+  <TreeNode Text="导航菜单管理" SingleClickExpand="true">
+    <TreeNode Text="菜单类型管理" NavigateUrl="admin/NavigateList.aspx" >
+    </TreeNode>
+    <TreeNode Text="添加菜单内容" NavigateUrl="admin/NavigateInfoList.aspx" >
+    </TreeNode>
+  </TreeNode>
+  <TreeNode Text="交流园地管理" SingleClickExpand="true">
+    <TreeNode Text="HR交流园地管理" NavigateUrl="admin/ExchangeCornerList.aspx" >
+    </TreeNode>
+  </TreeNode>
+  <TreeNode Text="招商加盟管理" SingleClickExpand="true">
+    <TreeNode Text="招商加盟管理" NavigateUrl="admin/MerchantsJoin.aspx" >
     </TreeNode>
   </TreeNode>
 </Tree>

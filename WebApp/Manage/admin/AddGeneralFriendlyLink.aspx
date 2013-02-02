@@ -41,9 +41,9 @@
                                <x:ListItem Text="图片链接" Value="1" />
                            </x:DropDownList>
                            <x:TextBox ID="txbLinkTargetUrl" runat="server" Label="跳转地址"></x:TextBox>
-                            <x:FileUpload ID="fileUploadImage" runat="server" Label="图片上传" EmptyText="友情链接图片上传"></x:FileUpload>
+                           <x:TextBox ID="txbOrderNumber" runat="server" Label="排序" Required="true" RequiredMessage="排序字段不能为空" RegexPattern="NUMBER" RegexMessage="排序字段格式输入"></x:TextBox>
+                           <x:FileUpload ID="fileUploadImage" runat="server" Label="图片上传" EmptyText="友情链接图片上传"></x:FileUpload>
                            <x:TextArea ID="txbLinkDesc" runat="server" Label="友情链接描述"></x:TextArea>
-
                         </Items>
                     </x:SimpleForm>
                 </Items>

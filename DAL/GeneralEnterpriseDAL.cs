@@ -43,6 +43,7 @@ namespace zlzw.DAL
 			int rowsAffected;
 			SqlParameter[] parameters = {
 					new SqlParameter("@EnterpriseID", SqlDbType.Int,4),
+					new SqlParameter("@UserGuid", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@EnterpriseGuid", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@CompanyName", SqlDbType.NVarChar,200),
 					new SqlParameter("@CompanyNameShort", SqlDbType.NVarChar,50),
@@ -103,71 +104,74 @@ namespace zlzw.DAL
 					new SqlParameter("@QuName", SqlDbType.NVarChar,50),
 					new SqlParameter("@QuCode", SqlDbType.NVarChar,50),
 					new SqlParameter("@BusRoute", SqlDbType.NVarChar,200),
+					new SqlParameter("@IsEmergencyRecruitment", SqlDbType.Int,4),
 					new SqlParameter("@PropertyNames", SqlDbType.NText),
 					new SqlParameter("@PropertyValues", SqlDbType.NText)};
 			parameters[0].Direction = ParameterDirection.Output;
-			parameters[1].Value = Guid.NewGuid();
-			parameters[2].Value = model.CompanyName;
-			parameters[3].Value = model.CompanyNameShort;
-			parameters[4].Value = model.BusinessType;
-			parameters[5].Value = model.TradingName;
-			parameters[6].Value = model.IndustryKey;
-			parameters[7].Value = model.IndustryType;
-			parameters[8].Value = model.EnterpriseCode;
-			parameters[9].Value = model.TaxCode;
-			parameters[10].Value = model.PrincipleAddress;
-			parameters[11].Value = model.PostCode;
-			parameters[12].Value = model.Telephone;
-			parameters[13].Value = model.TelephoneOther;
-			parameters[14].Value = model.Fax;
-			parameters[15].Value = model.Email;
-			parameters[16].Value = model.EstablishedYears;
-			parameters[17].Value = model.EstablishedTime;
-			parameters[18].Value = model.GrossIncome;
-			parameters[19].Value = model.Profit;
-			parameters[20].Value = Guid.NewGuid();
-			parameters[21].Value = model.ContactPerson;
-			parameters[22].Value = model.AreaCode;
-			parameters[23].Value = model.AreaOther;
-			parameters[24].Value = model.CanUsable;
-			parameters[25].Value = model.Longitude;
-			parameters[26].Value = model.Lantitude;
-			parameters[27].Value = model.BrokerKey;
-			parameters[28].Value = model.EnterpriseDescription;
-			parameters[29].Value = model.EnterpriseMemo;
-			parameters[30].Value = model.EnterpriseAddon;
-			parameters[31].Value = model.EnterpriseWWW;
-			parameters[32].Value = model.StaffScope;
-			parameters[33].Value = model.EnterpriseLevel;
-			parameters[34].Value = model.EnterpriseLevel1;
-			parameters[35].Value = model.EnterpriseLevel2;
-			parameters[36].Value = model.EnterpriseLevel3;
-			parameters[37].Value = model.EnterpriseLevel4;
-			parameters[38].Value = model.EnterpriseLevel5;
-			parameters[39].Value = model.EnterpriseLevel6;
-			parameters[40].Value = model.EnterpriseLevel7;
-			parameters[41].Value = model.EnterpriseRank;
-			parameters[42].Value = model.EnterpriseKind;
-			parameters[43].Value = model.ManageUserKey;
-			parameters[44].Value = model.ManageUserName;
-			parameters[45].Value = model.CreateUserKey;
-			parameters[46].Value = model.CreateUserName;
-			parameters[47].Value = model.CreateDate;
-			parameters[48].Value = model.LastUpdateUserKey;
-			parameters[49].Value = model.LastUpdateUserName;
-			parameters[50].Value = model.LastUpdateDate;
-			parameters[51].Value = model.IsProtectedByOwner;
-			parameters[52].Value = model.CooperateStatus;
-			parameters[53].Value = model.BusinessLicense;
-			parameters[54].Value = model.ShengName;
-			parameters[55].Value = model.ShengCode;
-			parameters[56].Value = model.ShiName;
-			parameters[57].Value = model.ShiCode;
-			parameters[58].Value = model.QuName;
-			parameters[59].Value = model.QuCode;
-			parameters[60].Value = model.BusRoute;
-			parameters[61].Value = model.PropertyNames;
-			parameters[62].Value = model.PropertyValues;
+			parameters[1].Value = model.UserGuid;
+			parameters[2].Value = Guid.NewGuid();
+			parameters[3].Value = model.CompanyName;
+			parameters[4].Value = model.CompanyNameShort;
+			parameters[5].Value = model.BusinessType;
+			parameters[6].Value = model.TradingName;
+			parameters[7].Value = model.IndustryKey;
+			parameters[8].Value = model.IndustryType;
+			parameters[9].Value = model.EnterpriseCode;
+			parameters[10].Value = model.TaxCode;
+			parameters[11].Value = model.PrincipleAddress;
+			parameters[12].Value = model.PostCode;
+			parameters[13].Value = model.Telephone;
+			parameters[14].Value = model.TelephoneOther;
+			parameters[15].Value = model.Fax;
+			parameters[16].Value = model.Email;
+			parameters[17].Value = model.EstablishedYears;
+			parameters[18].Value = model.EstablishedTime;
+			parameters[19].Value = model.GrossIncome;
+			parameters[20].Value = model.Profit;
+			parameters[21].Value = Guid.NewGuid();
+			parameters[22].Value = model.ContactPerson;
+			parameters[23].Value = model.AreaCode;
+			parameters[24].Value = model.AreaOther;
+			parameters[25].Value = model.CanUsable;
+			parameters[26].Value = model.Longitude;
+			parameters[27].Value = model.Lantitude;
+			parameters[28].Value = model.BrokerKey;
+			parameters[29].Value = model.EnterpriseDescription;
+			parameters[30].Value = model.EnterpriseMemo;
+			parameters[31].Value = model.EnterpriseAddon;
+			parameters[32].Value = model.EnterpriseWWW;
+			parameters[33].Value = model.StaffScope;
+			parameters[34].Value = model.EnterpriseLevel;
+			parameters[35].Value = model.EnterpriseLevel1;
+			parameters[36].Value = model.EnterpriseLevel2;
+			parameters[37].Value = model.EnterpriseLevel3;
+			parameters[38].Value = model.EnterpriseLevel4;
+			parameters[39].Value = model.EnterpriseLevel5;
+			parameters[40].Value = model.EnterpriseLevel6;
+			parameters[41].Value = model.EnterpriseLevel7;
+			parameters[42].Value = model.EnterpriseRank;
+			parameters[43].Value = model.EnterpriseKind;
+			parameters[44].Value = model.ManageUserKey;
+			parameters[45].Value = model.ManageUserName;
+			parameters[46].Value = model.CreateUserKey;
+			parameters[47].Value = model.CreateUserName;
+			parameters[48].Value = model.CreateDate;
+			parameters[49].Value = model.LastUpdateUserKey;
+			parameters[50].Value = model.LastUpdateUserName;
+			parameters[51].Value = model.LastUpdateDate;
+			parameters[52].Value = model.IsProtectedByOwner;
+			parameters[53].Value = model.CooperateStatus;
+			parameters[54].Value = model.BusinessLicense;
+			parameters[55].Value = model.ShengName;
+			parameters[56].Value = model.ShengCode;
+			parameters[57].Value = model.ShiName;
+			parameters[58].Value = model.ShiCode;
+			parameters[59].Value = model.QuName;
+			parameters[60].Value = model.QuCode;
+			parameters[61].Value = model.BusRoute;
+			parameters[62].Value = model.IsEmergencyRecruitment;
+			parameters[63].Value = model.PropertyNames;
+			parameters[64].Value = model.PropertyValues;
 
 			DbHelperSQL.RunProcedure("GeneralEnterprise_ADD",parameters,out rowsAffected);
 			return (int)parameters[0].Value;
@@ -181,6 +185,7 @@ namespace zlzw.DAL
 			int rowsAffected=0;
 			SqlParameter[] parameters = {
 					new SqlParameter("@EnterpriseID", SqlDbType.Int,4),
+					new SqlParameter("@UserGuid", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@EnterpriseGuid", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@CompanyName", SqlDbType.NVarChar,200),
 					new SqlParameter("@CompanyNameShort", SqlDbType.NVarChar,50),
@@ -241,71 +246,74 @@ namespace zlzw.DAL
 					new SqlParameter("@QuName", SqlDbType.NVarChar,50),
 					new SqlParameter("@QuCode", SqlDbType.NVarChar,50),
 					new SqlParameter("@BusRoute", SqlDbType.NVarChar,200),
+					new SqlParameter("@IsEmergencyRecruitment", SqlDbType.Int,4),
 					new SqlParameter("@PropertyNames", SqlDbType.NText),
 					new SqlParameter("@PropertyValues", SqlDbType.NText)};
 			parameters[0].Value = model.EnterpriseID;
-			parameters[1].Value = model.EnterpriseGuid;
-			parameters[2].Value = model.CompanyName;
-			parameters[3].Value = model.CompanyNameShort;
-			parameters[4].Value = model.BusinessType;
-			parameters[5].Value = model.TradingName;
-			parameters[6].Value = model.IndustryKey;
-			parameters[7].Value = model.IndustryType;
-			parameters[8].Value = model.EnterpriseCode;
-			parameters[9].Value = model.TaxCode;
-			parameters[10].Value = model.PrincipleAddress;
-			parameters[11].Value = model.PostCode;
-			parameters[12].Value = model.Telephone;
-			parameters[13].Value = model.TelephoneOther;
-			parameters[14].Value = model.Fax;
-			parameters[15].Value = model.Email;
-			parameters[16].Value = model.EstablishedYears;
-			parameters[17].Value = model.EstablishedTime;
-			parameters[18].Value = model.GrossIncome;
-			parameters[19].Value = model.Profit;
-			parameters[20].Value = model.AssociatedEnterpriseGuid;
-			parameters[21].Value = model.ContactPerson;
-			parameters[22].Value = model.AreaCode;
-			parameters[23].Value = model.AreaOther;
-			parameters[24].Value = model.CanUsable;
-			parameters[25].Value = model.Longitude;
-			parameters[26].Value = model.Lantitude;
-			parameters[27].Value = model.BrokerKey;
-			parameters[28].Value = model.EnterpriseDescription;
-			parameters[29].Value = model.EnterpriseMemo;
-			parameters[30].Value = model.EnterpriseAddon;
-			parameters[31].Value = model.EnterpriseWWW;
-			parameters[32].Value = model.StaffScope;
-			parameters[33].Value = model.EnterpriseLevel;
-			parameters[34].Value = model.EnterpriseLevel1;
-			parameters[35].Value = model.EnterpriseLevel2;
-			parameters[36].Value = model.EnterpriseLevel3;
-			parameters[37].Value = model.EnterpriseLevel4;
-			parameters[38].Value = model.EnterpriseLevel5;
-			parameters[39].Value = model.EnterpriseLevel6;
-			parameters[40].Value = model.EnterpriseLevel7;
-			parameters[41].Value = model.EnterpriseRank;
-			parameters[42].Value = model.EnterpriseKind;
-			parameters[43].Value = model.ManageUserKey;
-			parameters[44].Value = model.ManageUserName;
-			parameters[45].Value = model.CreateUserKey;
-			parameters[46].Value = model.CreateUserName;
-			parameters[47].Value = model.CreateDate;
-			parameters[48].Value = model.LastUpdateUserKey;
-			parameters[49].Value = model.LastUpdateUserName;
-			parameters[50].Value = model.LastUpdateDate;
-			parameters[51].Value = model.IsProtectedByOwner;
-			parameters[52].Value = model.CooperateStatus;
-			parameters[53].Value = model.BusinessLicense;
-			parameters[54].Value = model.ShengName;
-			parameters[55].Value = model.ShengCode;
-			parameters[56].Value = model.ShiName;
-			parameters[57].Value = model.ShiCode;
-			parameters[58].Value = model.QuName;
-			parameters[59].Value = model.QuCode;
-			parameters[60].Value = model.BusRoute;
-			parameters[61].Value = model.PropertyNames;
-			parameters[62].Value = model.PropertyValues;
+			parameters[1].Value = model.UserGuid;
+			parameters[2].Value = model.EnterpriseGuid;
+			parameters[3].Value = model.CompanyName;
+			parameters[4].Value = model.CompanyNameShort;
+			parameters[5].Value = model.BusinessType;
+			parameters[6].Value = model.TradingName;
+			parameters[7].Value = model.IndustryKey;
+			parameters[8].Value = model.IndustryType;
+			parameters[9].Value = model.EnterpriseCode;
+			parameters[10].Value = model.TaxCode;
+			parameters[11].Value = model.PrincipleAddress;
+			parameters[12].Value = model.PostCode;
+			parameters[13].Value = model.Telephone;
+			parameters[14].Value = model.TelephoneOther;
+			parameters[15].Value = model.Fax;
+			parameters[16].Value = model.Email;
+			parameters[17].Value = model.EstablishedYears;
+			parameters[18].Value = model.EstablishedTime;
+			parameters[19].Value = model.GrossIncome;
+			parameters[20].Value = model.Profit;
+			parameters[21].Value = model.AssociatedEnterpriseGuid;
+			parameters[22].Value = model.ContactPerson;
+			parameters[23].Value = model.AreaCode;
+			parameters[24].Value = model.AreaOther;
+			parameters[25].Value = model.CanUsable;
+			parameters[26].Value = model.Longitude;
+			parameters[27].Value = model.Lantitude;
+			parameters[28].Value = model.BrokerKey;
+			parameters[29].Value = model.EnterpriseDescription;
+			parameters[30].Value = model.EnterpriseMemo;
+			parameters[31].Value = model.EnterpriseAddon;
+			parameters[32].Value = model.EnterpriseWWW;
+			parameters[33].Value = model.StaffScope;
+			parameters[34].Value = model.EnterpriseLevel;
+			parameters[35].Value = model.EnterpriseLevel1;
+			parameters[36].Value = model.EnterpriseLevel2;
+			parameters[37].Value = model.EnterpriseLevel3;
+			parameters[38].Value = model.EnterpriseLevel4;
+			parameters[39].Value = model.EnterpriseLevel5;
+			parameters[40].Value = model.EnterpriseLevel6;
+			parameters[41].Value = model.EnterpriseLevel7;
+			parameters[42].Value = model.EnterpriseRank;
+			parameters[43].Value = model.EnterpriseKind;
+			parameters[44].Value = model.ManageUserKey;
+			parameters[45].Value = model.ManageUserName;
+			parameters[46].Value = model.CreateUserKey;
+			parameters[47].Value = model.CreateUserName;
+			parameters[48].Value = model.CreateDate;
+			parameters[49].Value = model.LastUpdateUserKey;
+			parameters[50].Value = model.LastUpdateUserName;
+			parameters[51].Value = model.LastUpdateDate;
+			parameters[52].Value = model.IsProtectedByOwner;
+			parameters[53].Value = model.CooperateStatus;
+			parameters[54].Value = model.BusinessLicense;
+			parameters[55].Value = model.ShengName;
+			parameters[56].Value = model.ShengCode;
+			parameters[57].Value = model.ShiName;
+			parameters[58].Value = model.ShiCode;
+			parameters[59].Value = model.QuName;
+			parameters[60].Value = model.QuCode;
+			parameters[61].Value = model.BusRoute;
+			parameters[62].Value = model.IsEmergencyRecruitment;
+			parameters[63].Value = model.PropertyNames;
+			parameters[64].Value = model.PropertyValues;
 
 			DbHelperSQL.RunProcedure("GeneralEnterprise_Update",parameters,out rowsAffected);
 			if (rowsAffected > 0)
@@ -392,6 +400,10 @@ namespace zlzw.DAL
 				if(row["EnterpriseID"]!=null && row["EnterpriseID"].ToString()!="")
 				{
 					model.EnterpriseID=int.Parse(row["EnterpriseID"].ToString());
+				}
+				if(row["UserGuid"]!=null && row["UserGuid"].ToString()!="")
+				{
+					model.UserGuid= new Guid(row["UserGuid"].ToString());
 				}
 				if(row["EnterpriseGuid"]!=null && row["EnterpriseGuid"].ToString()!="")
 				{
@@ -633,6 +645,10 @@ namespace zlzw.DAL
 				{
 					model.BusRoute=row["BusRoute"].ToString();
 				}
+				if(row["IsEmergencyRecruitment"]!=null && row["IsEmergencyRecruitment"].ToString()!="")
+				{
+					model.IsEmergencyRecruitment=int.Parse(row["IsEmergencyRecruitment"].ToString());
+				}
 				if(row["PropertyNames"]!=null)
 				{
 					model.PropertyNames=row["PropertyNames"].ToString();
@@ -651,7 +667,7 @@ namespace zlzw.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select EnterpriseID,EnterpriseGuid,CompanyName,CompanyNameShort,BusinessType,TradingName,IndustryKey,IndustryType,EnterpriseCode,TaxCode,PrincipleAddress,PostCode,Telephone,TelephoneOther,Fax,Email,EstablishedYears,EstablishedTime,GrossIncome,Profit,AssociatedEnterpriseGuid,ContactPerson,AreaCode,AreaOther,CanUsable,Longitude,Lantitude,BrokerKey,EnterpriseDescription,EnterpriseMemo,EnterpriseAddon,EnterpriseWWW,StaffScope,EnterpriseLevel,EnterpriseLevel1,EnterpriseLevel2,EnterpriseLevel3,EnterpriseLevel4,EnterpriseLevel5,EnterpriseLevel6,EnterpriseLevel7,EnterpriseRank,EnterpriseKind,ManageUserKey,ManageUserName,CreateUserKey,CreateUserName,CreateDate,LastUpdateUserKey,LastUpdateUserName,LastUpdateDate,IsProtectedByOwner,CooperateStatus,BusinessLicense,ShengName,ShengCode,ShiName,ShiCode,QuName,QuCode,BusRoute,PropertyNames,PropertyValues ");
+			strSql.Append("select EnterpriseID,UserGuid,EnterpriseGuid,CompanyName,CompanyNameShort,BusinessType,TradingName,IndustryKey,IndustryType,EnterpriseCode,TaxCode,PrincipleAddress,PostCode,Telephone,TelephoneOther,Fax,Email,EstablishedYears,EstablishedTime,GrossIncome,Profit,AssociatedEnterpriseGuid,ContactPerson,AreaCode,AreaOther,CanUsable,Longitude,Lantitude,BrokerKey,EnterpriseDescription,EnterpriseMemo,EnterpriseAddon,EnterpriseWWW,StaffScope,EnterpriseLevel,EnterpriseLevel1,EnterpriseLevel2,EnterpriseLevel3,EnterpriseLevel4,EnterpriseLevel5,EnterpriseLevel6,EnterpriseLevel7,EnterpriseRank,EnterpriseKind,ManageUserKey,ManageUserName,CreateUserKey,CreateUserName,CreateDate,LastUpdateUserKey,LastUpdateUserName,LastUpdateDate,IsProtectedByOwner,CooperateStatus,BusinessLicense,ShengName,ShengCode,ShiName,ShiCode,QuName,QuCode,BusRoute,IsEmergencyRecruitment,PropertyNames,PropertyValues ");
 			strSql.Append(" FROM GeneralEnterprise ");
 			if(strWhere.Trim()!="")
 			{
@@ -671,7 +687,7 @@ namespace zlzw.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" EnterpriseID,EnterpriseGuid,CompanyName,CompanyNameShort,BusinessType,TradingName,IndustryKey,IndustryType,EnterpriseCode,TaxCode,PrincipleAddress,PostCode,Telephone,TelephoneOther,Fax,Email,EstablishedYears,EstablishedTime,GrossIncome,Profit,AssociatedEnterpriseGuid,ContactPerson,AreaCode,AreaOther,CanUsable,Longitude,Lantitude,BrokerKey,EnterpriseDescription,EnterpriseMemo,EnterpriseAddon,EnterpriseWWW,StaffScope,EnterpriseLevel,EnterpriseLevel1,EnterpriseLevel2,EnterpriseLevel3,EnterpriseLevel4,EnterpriseLevel5,EnterpriseLevel6,EnterpriseLevel7,EnterpriseRank,EnterpriseKind,ManageUserKey,ManageUserName,CreateUserKey,CreateUserName,CreateDate,LastUpdateUserKey,LastUpdateUserName,LastUpdateDate,IsProtectedByOwner,CooperateStatus,BusinessLicense,ShengName,ShengCode,ShiName,ShiCode,QuName,QuCode,BusRoute,PropertyNames,PropertyValues ");
+			strSql.Append(" EnterpriseID,UserGuid,EnterpriseGuid,CompanyName,CompanyNameShort,BusinessType,TradingName,IndustryKey,IndustryType,EnterpriseCode,TaxCode,PrincipleAddress,PostCode,Telephone,TelephoneOther,Fax,Email,EstablishedYears,EstablishedTime,GrossIncome,Profit,AssociatedEnterpriseGuid,ContactPerson,AreaCode,AreaOther,CanUsable,Longitude,Lantitude,BrokerKey,EnterpriseDescription,EnterpriseMemo,EnterpriseAddon,EnterpriseWWW,StaffScope,EnterpriseLevel,EnterpriseLevel1,EnterpriseLevel2,EnterpriseLevel3,EnterpriseLevel4,EnterpriseLevel5,EnterpriseLevel6,EnterpriseLevel7,EnterpriseRank,EnterpriseKind,ManageUserKey,ManageUserName,CreateUserKey,CreateUserName,CreateDate,LastUpdateUserKey,LastUpdateUserName,LastUpdateDate,IsProtectedByOwner,CooperateStatus,BusinessLicense,ShengName,ShengCode,ShiName,ShiCode,QuName,QuCode,BusRoute,IsEmergencyRecruitment,PropertyNames,PropertyValues ");
 			strSql.Append(" FROM GeneralEnterprise ");
 			if(strWhere.Trim()!="")
 			{

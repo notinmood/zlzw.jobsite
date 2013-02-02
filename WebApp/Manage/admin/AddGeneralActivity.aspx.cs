@@ -69,7 +69,7 @@ namespace WebApp.Manage.admin
                 generalActivityModel.ActivityAddress = txbActivityAddress.Text;//招聘会举行地点
                 generalActivityModel.ActivityDesc = FCKeditor1.Value;//招聘会简介
                 generalActivityModel.PublishDate = DateTime.Parse(ViewState["PublishDate"].ToString());
-                generalActivityModel.ActivityGuid = new Guid(ViewState["AdminGUID"].ToString());
+                generalActivityModel.ActivityGuid = new Guid(ViewState["ActivityGuid"].ToString());
                 if (ckbIsDefaultShow.Checked)
                 {
                     generalActivityModel.SpecialType = 1;
@@ -78,6 +78,7 @@ namespace WebApp.Manage.admin
                 {
                     generalActivityModel.SpecialType = 0;
                 }
+                generalActivityModel.CanUsable = 1;
                 zlzw.BLL.GeneralActivityBLL generalActivityBLL = new zlzw.BLL.GeneralActivityBLL();
                 generalActivityModel.ActivityID = int.Parse(Get_ID(generalActivityBLL, Request.QueryString["value"]));
 
@@ -86,7 +87,6 @@ namespace WebApp.Manage.admin
             else
             {
                 //添加保存
-
                 zlzw.Model.GeneralActivityModel generalActivityModel = new zlzw.Model.GeneralActivityModel();
                 generalActivityModel.ActivityTitle = txbActivityTitle.Text;//招聘会标题
                 generalActivityModel.ActivityAddress = txbActivityAddress.Text;//招聘会举行地点

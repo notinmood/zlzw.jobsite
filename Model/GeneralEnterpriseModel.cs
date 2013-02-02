@@ -11,6 +11,7 @@ namespace zlzw.Model
         { }
         #region Model
         private int _enterpriseid;
+        private Guid _userguid;
         private Guid _enterpriseguid;
         private string _companyname;
         private string _companynameshort;
@@ -71,6 +72,7 @@ namespace zlzw.Model
         private string _quname;
         private string _qucode;
         private string _busroute;
+        private int? _isemergencyrecruitment;
         private string _propertynames;
         private string _propertyvalues;
         /// <summary>
@@ -80,6 +82,14 @@ namespace zlzw.Model
         {
             set { _enterpriseid = value; }
             get { return _enterpriseid; }
+        }
+        /// <summary>
+        /// CoreUser表的GUID
+        /// </summary>
+        public Guid UserGuid
+        {
+            set { _userguid = value; }
+            get { return _userguid; }
         }
         /// <summary>
         /// 
@@ -560,6 +570,14 @@ namespace zlzw.Model
         {
             set { _busroute = value; }
             get { return _busroute; }
+        }
+        /// <summary>
+        /// 是否允许紧急招聘 0不允许 1允许
+        /// </summary>
+        public int? IsEmergencyRecruitment
+        {
+            set { _isemergencyrecruitment = value; }
+            get { return _isemergencyrecruitment; }
         }
         /// <summary>
         /// 

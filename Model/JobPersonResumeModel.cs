@@ -40,6 +40,8 @@ namespace zlzw.Model
         private string _personalskills;
         private string _skillscertificate;
         private string _currentsalary;
+        private int? _userage;
+        private string _usersex;
         private string _propertynames;
         private string _propertyvalues;
         /// <summary>
@@ -281,6 +283,22 @@ namespace zlzw.Model
         {
             set { _currentsalary = value; }
             get { return _currentsalary; }
+        }
+        /// <summary>
+        /// 用户年龄 放到此表 便于查询
+        /// </summary>
+        public int? UserAge
+        {
+            set { _userage = value; }
+            get { return _userage; }
+        }
+        /// <summary>
+        /// 用户性别 放到此表 便于查询
+        /// </summary>
+        public string UserSex
+        {
+            set { _usersex = value; }
+            get { return _usersex; }
         }
         /// <summary>
         /// 

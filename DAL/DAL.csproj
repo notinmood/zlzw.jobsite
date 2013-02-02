@@ -42,7 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADImageListDAL.cs" />
     <Compile Include="CoreUserDAL.cs" />
+    <Compile Include="EnterpriseServiceInfoListDAL.cs" />
+    <Compile Include="EnterpriseServiceTypeListDAL.cs" />
+    <Compile Include="ExchangeCornerListDAL.cs" />
     <Compile Include="GeneralActivityDAL.cs" />
     <Compile Include="GeneralADDAL.cs" />
     <Compile Include="GeneralBasicSettingDAL.cs" />
@@ -54,6 +58,10 @@
     <Compile Include="JobEnterpriseServiceContractDAL.cs" />
     <Compile Include="JobEnterpriseServiceDAL.cs" />
     <Compile Include="JobPersonResumeDAL.cs" />
+    <Compile Include="MerchantsJoinListDAL.cs" />
+    <Compile Include="NavigateInfoListDAL.cs" />
+    <Compile Include="NavigateListDAL.cs" />
+    <Compile Include="ParticipatingCompaniesListDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

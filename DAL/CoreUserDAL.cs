@@ -100,7 +100,7 @@ namespace zlzw.DAL
 					new SqlParameter("@PropertyNames", SqlDbType.NText),
 					new SqlParameter("@PropertyValues", SqlDbType.NText)};
 			parameters[0].Direction = ParameterDirection.Output;
-			parameters[1].Value = Guid.NewGuid();
+            parameters[1].Value = model.UserGuid;
 			parameters[2].Value = model.UserName;
 			parameters[3].Value = model.UserCode;
 			parameters[4].Value = model.Password;

@@ -42,7 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADImageListBLL.cs" />
     <Compile Include="CoreUserBLL.cs" />
+    <Compile Include="EnterpriseServiceInfoListBLL.cs" />
+    <Compile Include="EnterpriseServiceTypeListBLL.cs" />
+    <Compile Include="ExchangeCornerListBLL.cs" />
     <Compile Include="GeneralActivityBLL.cs" />
     <Compile Include="GeneralADBLL.cs" />
     <Compile Include="GeneralBasicSettingBLL.cs" />
@@ -54,6 +58,10 @@
     <Compile Include="JobEnterpriseServiceBLL.cs" />
     <Compile Include="JobEnterpriseServiceContractBLL.cs" />
     <Compile Include="JobPersonResumeBLL.cs" />
+    <Compile Include="MerchantsJoinListBLL.cs" />
+    <Compile Include="NavigateInfoListBLL.cs" />
+    <Compile Include="NavigateListBLL.cs" />
+    <Compile Include="ParticipatingCompaniesListBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

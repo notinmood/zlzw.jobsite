@@ -52,6 +52,8 @@ namespace zlzw.Model
         private int? _canusable;
         private string _interviewtime;
         private string _interviewaddress;
+        private int? _hoperoomandboard;
+        private string _comprehensivepayroll;
         private string _propertynames;
         private string _propertyvalues;
         /// <summary>
@@ -389,6 +391,22 @@ namespace zlzw.Model
         {
             set { _interviewaddress = value; }
             get { return _interviewaddress; }
+        }
+        /// <summary>
+        /// 是否提供食宿
+        /// </summary>
+        public int? HopeRoomAndBoard
+        {
+            set { _hoperoomandboard = value; }
+            get { return _hoperoomandboard; }
+        }
+        /// <summary>
+        /// 综合薪资
+        /// </summary>
+        public string ComprehensivePayroll
+        {
+            set { _comprehensivepayroll = value; }
+            get { return _comprehensivepayroll; }
         }
         /// <summary>
         /// 

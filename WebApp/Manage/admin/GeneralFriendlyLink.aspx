@@ -33,6 +33,7 @@
                     <x:BoundField Width="70px" DataField="LinkTitle" HeaderText="链接名称" TextAlign="Center" />
                     <x:BoundField Width="100px" DataField="LinkType" HeaderText="链接类型" TextAlign="Center" />
                     <x:BoundField Width="120px" DataField="LinkTargetUrl" HeaderText="链接地址" TextAlign="Center" DataToolTipField="LinkTargetUrl" />
+                    <x:BoundField Width="50px" DataField="LinkOrderNumber" HeaderText="排序" TextAlign="Center" />
                     <x:BoundField Width="120px" DataField="LinkDesc" HeaderText="链接描述" TextAlign="Center" />
                     <x:BoundField Width="150px" DataField="PublishDate" HeaderText="创建日期" TextAlign="Center" DataFormatString="{0:yyyy年MM月dd日}"/>
                     <x:TemplateField HeaderText="编辑操作" TextAlign="Center">

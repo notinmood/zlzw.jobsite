@@ -34,6 +34,7 @@
                     <x:BoundField Width="120px" DataField="IndustryKey" HeaderText="所属行业" TextAlign="Center" />
                     <x:BoundField Width="120px" DataField="PrincipleAddress" HeaderText="公司地址" TextAlign="Center" />
                     <x:BoundField Width="120px" DataField="Telephone" HeaderText="联系电话" TextAlign="Center" />
+                    <x:CheckBoxField Width="120px" DataField="IsEmergencyRecruitment" HeaderText="紧急发布" TextAlign="Center"/>
                     <x:BoundField Width="150px" DataField="CreateDate" HeaderText="发布日期" TextAlign="Center" DataFormatString="{0:yyyy年MM月dd日}"/>
                     <x:TemplateField HeaderText="编辑操作" TextAlign="Center">
                         <ItemTemplate>

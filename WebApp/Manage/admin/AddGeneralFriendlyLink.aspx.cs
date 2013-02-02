@@ -53,6 +53,7 @@ namespace WebApp.Manage.admin
                 txbLinkTitle.Text = generalFriendlyLinkModel.LinkTitle;//友情链接标题
                 drpLinkType.SelectedValue = generalFriendlyLinkModel.LinkType.ToString();//友情链接类型
                 txbLinkTargetUrl.Text = generalFriendlyLinkModel.LinkTargetUrl;//友情链接跳转地址
+                txbOrderNumber.Text = generalFriendlyLinkModel.LinkOrderNumber.ToString();//排序
                 txbLinkDesc.Text = generalFriendlyLinkModel.LinkDesc;//友情链接描述
                 ViewState["LinkImagePath"] = generalFriendlyLinkModel.LinkImagePath;//上传图片路径
                 ViewState["PublishDate"] = generalFriendlyLinkModel.PublishDate.ToString();
@@ -75,6 +76,7 @@ namespace WebApp.Manage.admin
                 generalFriendlyLinkModel.LinkTitle = txbLinkTitle.Text;
                 generalFriendlyLinkModel.LinkType = int.Parse(drpLinkType.SelectedValue);
                 generalFriendlyLinkModel.LinkTargetUrl = txbLinkTargetUrl.Text;
+                generalFriendlyLinkModel.LinkOrderNumber = int.Parse(txbOrderNumber.Text);
                 generalFriendlyLinkModel.LinkDesc = txbLinkDesc.Text;
                 generalFriendlyLinkModel.PublishDate = DateTime.Parse(ViewState["PublishDate"].ToString());
                 generalFriendlyLinkModel.LinkGuid = new Guid(ViewState["LinkGuid"].ToString());
@@ -100,6 +102,7 @@ namespace WebApp.Manage.admin
                 generalFriendlyLinkModel.LinkTitle = txbLinkTitle.Text;
                 generalFriendlyLinkModel.LinkType = int.Parse(drpLinkType.SelectedValue);
                 generalFriendlyLinkModel.LinkTargetUrl = txbLinkTargetUrl.Text;
+                generalFriendlyLinkModel.LinkOrderNumber = int.Parse(txbOrderNumber.Text);
                 generalFriendlyLinkModel.LinkDesc = txbLinkDesc.Text;
                 generalFriendlyLinkModel.PublishDate = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
                 generalFriendlyLinkModel.CanUsable = 1;

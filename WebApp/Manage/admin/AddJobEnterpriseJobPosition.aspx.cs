@@ -315,7 +315,7 @@ namespace WebApp.Manage.admin
                 jobEnterpriseJobPositionModel.JobPositionEndDate = DateTime.Parse(txbJobPositionEndDate.Text);//结束日期
                 jobEnterpriseJobPositionModel.InterviewTime = txbInterviewTime.Text;//面试时间
                 jobEnterpriseJobPositionModel.InterviewAddress = txbInterviewAddress.Text;//面试地点
-                jobEnterpriseJobPositionModel.SpecialType = int.Parse(drpSpecialType.SelectedValue);//是否显示在首页
+                jobEnterpriseJobPositionModel.SpecialType = int.Parse(drpSpecialType.SelectedValue);//是否为紧急招聘
                 jobEnterpriseJobPositionModel.UpdateDate = DateTime.Now;//更新日期
                 jobEnterpriseJobPositionModel.CreateDate = DateTime.Now;//创建日期
                 jobEnterpriseJobPositionModel.CanUsable = 1;

@@ -41,8 +41,9 @@
                             <x:TextArea ID="txbADScript" runat="server" Label="广告代码" Hidden="true" EmptyText="广告脚本代码"></x:TextArea>
                             <x:TextBox ID="txbADTargetUrl" runat="server" Label="跳转地址" EmptyText="广告点击后的跳转地址"></x:TextBox>
                             <x:CheckBox ID="ckbADStatus" runat="server" Label="是否显示"></x:CheckBox>
+                            <x:TextBox ID="txbOrderNumber" runat="server" Label="排序" EmptyText="排序字段，只能为正整数" Required="true" RequiredMessage="排序字段不能为空" RegexPattern="NUMBER" RegexMessage="排序类型错误"></x:TextBox>
                             <x:TextArea ID="txbADDesc" runat="server" Label="广告简介" EmptyText="广告简介"></x:TextArea>
-                            <x:FileUpload ID="fileUploadImage" runat="server" Label="广告图片" Required="true" RequiredMessage="请上传一张广告图片"></x:FileUpload>
+                            <x:FileUpload ID="fileUploadImage" runat="server" Label="广告图片" EmptyText="图片尺寸为222*84px" Required="true" RequiredMessage="请上传一张广告图片"></x:FileUpload>
                         </Items>
                     </x:SimpleForm>
                 </Items>

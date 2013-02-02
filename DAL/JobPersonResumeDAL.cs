@@ -72,6 +72,8 @@ namespace zlzw.DAL
 					new SqlParameter("@PersonalSkills", SqlDbType.NVarChar,200),
 					new SqlParameter("@SkillsCertificate", SqlDbType.NVarChar,200),
 					new SqlParameter("@CurrentSalary", SqlDbType.NVarChar,50),
+					new SqlParameter("@UserAge", SqlDbType.Int,4),
+					new SqlParameter("@UserSex", SqlDbType.NVarChar,50),
 					new SqlParameter("@PropertyNames", SqlDbType.NVarChar,-1),
 					new SqlParameter("@PropertyValues", SqlDbType.NVarChar,-1)};
 			parameters[0].Direction = ParameterDirection.Output;
@@ -104,8 +106,10 @@ namespace zlzw.DAL
 			parameters[27].Value = model.PersonalSkills;
 			parameters[28].Value = model.SkillsCertificate;
 			parameters[29].Value = model.CurrentSalary;
-			parameters[30].Value = model.PropertyNames;
-			parameters[31].Value = model.PropertyValues;
+			parameters[30].Value = model.UserAge;
+			parameters[31].Value = model.UserSex;
+			parameters[32].Value = model.PropertyNames;
+			parameters[33].Value = model.PropertyValues;
 
 			DbHelperSQL.RunProcedure("JobPersonResume_ADD",parameters,out rowsAffected);
 			return (int)parameters[0].Value;
@@ -148,6 +152,8 @@ namespace zlzw.DAL
 					new SqlParameter("@PersonalSkills", SqlDbType.NVarChar,200),
 					new SqlParameter("@SkillsCertificate", SqlDbType.NVarChar,200),
 					new SqlParameter("@CurrentSalary", SqlDbType.NVarChar,50),
+					new SqlParameter("@UserAge", SqlDbType.Int,4),
+					new SqlParameter("@UserSex", SqlDbType.NVarChar,50),
 					new SqlParameter("@PropertyNames", SqlDbType.NVarChar,-1),
 					new SqlParameter("@PropertyValues", SqlDbType.NVarChar,-1)};
 			parameters[0].Value = model.ResumeID;
@@ -180,8 +186,10 @@ namespace zlzw.DAL
 			parameters[27].Value = model.PersonalSkills;
 			parameters[28].Value = model.SkillsCertificate;
 			parameters[29].Value = model.CurrentSalary;
-			parameters[30].Value = model.PropertyNames;
-			parameters[31].Value = model.PropertyValues;
+			parameters[30].Value = model.UserAge;
+			parameters[31].Value = model.UserSex;
+			parameters[32].Value = model.PropertyNames;
+			parameters[33].Value = model.PropertyValues;
 
 			DbHelperSQL.RunProcedure("JobPersonResume_Update",parameters,out rowsAffected);
 			if (rowsAffected > 0)
@@ -385,6 +393,14 @@ namespace zlzw.DAL
 				{
 					model.CurrentSalary=row["CurrentSalary"].ToString();
 				}
+				if(row["UserAge"]!=null && row["UserAge"].ToString()!="")
+				{
+					model.UserAge=int.Parse(row["UserAge"].ToString());
+				}
+				if(row["UserSex"]!=null)
+				{
+					model.UserSex=row["UserSex"].ToString();
+				}
 				if(row["PropertyNames"]!=null)
 				{
 					model.PropertyNames=row["PropertyNames"].ToString();
@@ -403,7 +419,7 @@ namespace zlzw.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select ResumeID,ResumeGuid,ResumeStatus,ResumeName,OwnerUserKey,OwnerUserName,WorkExperienceYears,CreateDate,UpdateDate,RefreshDate,CanUsable,SelfEvaluate,JobWorkType,JobWorkPlaceKeys,JobWorkPlaceNames,JobFeildTypes,JobFeildKinds,JobPositionTypes,JobPositionKinds,JobSalary,JobCurrentWorkStatus,ResumeType,ResumeKind,EducationExperience,WorkExperience,HopeJob,HopeRoomAndBoard,PersonalSkills,SkillsCertificate,CurrentSalary,PropertyNames,PropertyValues ");
+			strSql.Append("select ResumeID,ResumeGuid,ResumeStatus,ResumeName,OwnerUserKey,OwnerUserName,WorkExperienceYears,CreateDate,UpdateDate,RefreshDate,CanUsable,SelfEvaluate,JobWorkType,JobWorkPlaceKeys,JobWorkPlaceNames,JobFeildTypes,JobFeildKinds,JobPositionTypes,JobPositionKinds,JobSalary,JobCurrentWorkStatus,ResumeType,ResumeKind,EducationExperience,WorkExperience,HopeJob,HopeRoomAndBoard,PersonalSkills,SkillsCertificate,CurrentSalary,UserAge,UserSex,PropertyNames,PropertyValues ");
 			strSql.Append(" FROM JobPersonResume ");
 			if(strWhere.Trim()!="")
 			{
@@ -423,7 +439,7 @@ namespace zlzw.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" ResumeID,ResumeGuid,ResumeStatus,ResumeName,OwnerUserKey,OwnerUserName,WorkExperienceYears,CreateDate,UpdateDate,RefreshDate,CanUsable,SelfEvaluate,JobWorkType,JobWorkPlaceKeys,JobWorkPlaceNames,JobFeildTypes,JobFeildKinds,JobPositionTypes,JobPositionKinds,JobSalary,JobCurrentWorkStatus,ResumeType,ResumeKind,EducationExperience,WorkExperience,HopeJob,HopeRoomAndBoard,PersonalSkills,SkillsCertificate,CurrentSalary,PropertyNames,PropertyValues ");
+			strSql.Append(" ResumeID,ResumeGuid,ResumeStatus,ResumeName,OwnerUserKey,OwnerUserName,WorkExperienceYears,CreateDate,UpdateDate,RefreshDate,CanUsable,SelfEvaluate,JobWorkType,JobWorkPlaceKeys,JobWorkPlaceNames,JobFeildTypes,JobFeildKinds,JobPositionTypes,JobPositionKinds,JobSalary,JobCurrentWorkStatus,ResumeType,ResumeKind,EducationExperience,WorkExperience,HopeJob,HopeRoomAndBoard,PersonalSkills,SkillsCertificate,CurrentSalary,UserAge,UserSex,PropertyNames,PropertyValues ");
 			strSql.Append(" FROM JobPersonResume ");
 			if(strWhere.Trim()!="")
 			{

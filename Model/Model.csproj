@@ -39,7 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADImageListModel.cs" />
     <Compile Include="CoreUserModel.cs" />
+    <Compile Include="EnterpriseServiceInfoListModel.cs" />
+    <Compile Include="EnterpriseServiceTypeListModel.cs" />
+    <Compile Include="ExchangeCornerListModel.cs" />
     <Compile Include="GeneralActivityModel.cs" />
     <Compile Include="GeneralADModel.cs" />
     <Compile Include="GeneralBasicSettingModel.cs" />
@@ -51,6 +55,10 @@
     <Compile Include="JobEnterpriseServiceContractModel.cs" />
     <Compile Include="JobEnterpriseServiceModel.cs" />
     <Compile Include="JobPersonResumeModel.cs" />
+    <Compile Include="MerchantsJoinListModel.cs" />
+    <Compile Include="NavigateInfoListModel.cs" />
+    <Compile Include="NavigateListModel.cs" />
+    <Compile Include="ParticipatingCompaniesListModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

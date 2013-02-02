@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AspNetPager">
+      <HintPath>..\lib\AspNetPager.dll</HintPath>
+    </Reference>
     <Reference Include="FineUI">
       <HintPath>..\lib\FineUI.dll</HintPath>
     </Reference>
@@ -136,6 +139,8 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="ActivityInfo.aspx" />
+    <Content Include="ActivityList.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -191,7 +196,20 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="css\fakeFileInputs.css" />
+    <Content Include="css\sousuo.css" />
     <Content Include="default.aspx" />
+    <Content Include="EasyUI\Script\easyui-lang-zh_CN.js" />
+    <Content Include="EditEnterpriseInfo.aspx" />
+    <Content Include="EditPersonalInfo.aspx" />
+    <Content Include="EnterpriseRegister.aspx" />
+    <Content Include="EnterpriseService.aspx" />
+    <Content Include="EnterpriseServiceList.aspx" />
+    <Content Include="ExchangeCorner.aspx" />
+    <Content Include="ExchangeCornerList.aspx" />
+    <Content Include="image\12450456761.gif" />
+    <Content Include="image\beizhanditu.jpg" />
+    <Content Include="image\go.gif" />
     <Content Include="image\img1.png" />
     <Content Include="image\img10.png" />
     <Content Include="image\img11.png" />
@@ -214,7 +232,16 @@
     <Content Include="image\img8.png" />
     <Content Include="image\img9.png" />
     <Content Include="image\logo.png" />
+    <Content Include="image\SearchJIanLi.png" />
+    <Content Include="image\SearchWork.png" />
+    <Content Include="index.html" />
+    <Content Include="JobPosting.aspx" />
+    <Content Include="JobSearchList.aspx" />
+    <Content Include="Manage\admin\AddAdImage.aspx" />
     <Content Include="Manage\admin\AddAdmin.aspx" />
+    <Content Include="Manage\admin\AddEnterpriseServiceInfo.aspx" />
+    <Content Include="Manage\admin\AddEnterpriseServiceType.aspx" />
+    <Content Include="Manage\admin\AddExchangeCorner.aspx" />
     <Content Include="Manage\admin\AddGeneralActivity.aspx" />
     <Content Include="Manage\admin\AddGeneralAD.aspx" />
     <Content Include="Manage\admin\AddGeneralEnterprise.aspx" />
@@ -222,7 +249,15 @@
     <Content Include="Manage\admin\AddJobEnterpriseJobPosition.aspx" />
     <Content Include="Manage\admin\AddJobEnterpriseServiceList.aspx" />
     <Content Include="Manage\admin\AddJobPersonResume.aspx" />
+    <Content Include="Manage\admin\AddMerchantsJoin.aspx" />
+    <Content Include="Manage\admin\AddNavigate.aspx" />
+    <Content Include="Manage\admin\AddNavigateInfo.aspx" />
+    <Content Include="Manage\admin\AddParticipatingCompanies.aspx" />
+    <Content Include="Manage\admin\ADImageList.aspx" />
     <Content Include="Manage\admin\AdminList.aspx" />
+    <Content Include="Manage\admin\EnterpriseServiceInfoList.aspx" />
+    <Content Include="Manage\admin\EnterpriseServiceTypeList.aspx" />
+    <Content Include="Manage\admin\ExchangeCornerList.aspx" />
     <Content Include="Manage\admin\GeneralActivityList.aspx" />
     <Content Include="Manage\admin\GeneralADList.aspx" />
     <Content Include="Manage\admin\GeneralEnterpriseList.aspx" />
@@ -231,9 +266,264 @@
     <Content Include="Manage\admin\JobEnterpriseServiceContractList.aspx" />
     <Content Include="Manage\admin\JobEnterpriseServiceList.aspx" />
     <Content Include="Manage\admin\JobPersonResumeList.aspx" />
+    <Content Include="css\default.css" />
+    <Content Include="css\main.css" />
+    <Content Include="Manage\admin\MerchantsJoin.aspx" />
+    <Content Include="Manage\admin\NavigateInfoList.aspx" />
+    <Content Include="Manage\admin\NavigateList.aspx" />
+    <Content Include="Manage\admin\ParticipatingCompaniesList.aspx" />
     <Content Include="Manage\css\default.css" />
     <Content Include="Manage\css\main.css" />
     <Content Include="Manage\default.aspx" />
+    <Content Include="EasyUI\css\black\accordion.css" />
+    <Content Include="EasyUI\css\black\calendar.css" />
+    <Content Include="EasyUI\css\black\combo.css" />
+    <Content Include="EasyUI\css\black\combobox.css" />
+    <Content Include="EasyUI\css\black\datagrid.css" />
+    <Content Include="EasyUI\css\black\datebox.css" />
+    <Content Include="EasyUI\css\black\dialog.css" />
+    <Content Include="EasyUI\css\black\easyui.css" />
+    <Content Include="EasyUI\css\black\images\accordion_arrows.png" />
+    <Content Include="EasyUI\css\black\images\blank.gif" />
+    <Content Include="EasyUI\css\black\images\calendar_arrows.png" />
+    <Content Include="EasyUI\css\black\images\combo_arrow.png" />
+    <Content Include="EasyUI\css\black\images\datagrid_icons.png" />
+    <Content Include="EasyUI\css\black\images\datebox_arrow.png" />
+    <Content Include="EasyUI\css\black\images\layout_arrows.png" />
+    <Content Include="EasyUI\css\black\images\linkbutton_bg.png" />
+    <Content Include="EasyUI\css\black\images\loading.gif" />
+    <Content Include="EasyUI\css\black\images\menu_arrows.png" />
+    <Content Include="EasyUI\css\black\images\messager_icons.png" />
+    <Content Include="EasyUI\css\black\images\pagination_icons.png" />
+    <Content Include="EasyUI\css\black\images\panel_tools.png" />
+    <Content Include="EasyUI\css\black\images\searchbox_button.png" />
+    <Content Include="EasyUI\css\black\images\slider_handle.png" />
+    <Content Include="EasyUI\css\black\images\spinner_arrows.png" />
+    <Content Include="EasyUI\css\black\images\tabs_icons.png" />
+    <Content Include="EasyUI\css\black\images\tree_icons.png" />
+    <Content Include="EasyUI\css\black\images\validatebox_arrows.png" />
+    <Content Include="EasyUI\css\black\images\validatebox_warning.png" />
+    <Content Include="EasyUI\css\black\layout.css" />
+    <Content Include="EasyUI\css\black\linkbutton.css" />
+    <Content Include="EasyUI\css\black\menu.css" />
+    <Content Include="EasyUI\css\black\menubutton.css" />
+    <Content Include="EasyUI\css\black\messager.css" />
+    <Content Include="EasyUI\css\black\pagination.css" />
+    <Content Include="EasyUI\css\black\panel.css" />
+    <Content Include="EasyUI\css\black\progressbar.css" />
+    <Content Include="EasyUI\css\black\propertygrid.css" />
+    <Content Include="EasyUI\css\black\searchbox.css" />
+    <Content Include="EasyUI\css\black\slider.css" />
+    <Content Include="EasyUI\css\black\spinner.css" />
+    <Content Include="EasyUI\css\black\splitbutton.css" />
+    <Content Include="EasyUI\css\black\tabs.css" />
+    <Content Include="EasyUI\css\black\tree.css" />
+    <Content Include="EasyUI\css\black\validatebox.css" />
+    <Content Include="EasyUI\css\black\window.css" />
+    <Content Include="EasyUI\css\bootstrap\accordion.css" />
+    <Content Include="EasyUI\css\bootstrap\calendar.css" />
+    <Content Include="EasyUI\css\bootstrap\combo.css" />
+    <Content Include="EasyUI\css\bootstrap\combobox.css" />
+    <Content Include="EasyUI\css\bootstrap\datagrid.css" />
+    <Content Include="EasyUI\css\bootstrap\datebox.css" />
+    <Content Include="EasyUI\css\bootstrap\dialog.css" />
+    <Content Include="EasyUI\css\bootstrap\easyui.css" />
+    <Content Include="EasyUI\css\bootstrap\images\accordion_arrows.png" />
+    <Content Include="EasyUI\css\bootstrap\images\blank.gif" />
+    <Content Include="EasyUI\css\bootstrap\images\calendar_arrows.png" />
+    <Content Include="EasyUI\css\bootstrap\images\combo_arrow.png" />
+    <Content Include="EasyUI\css\bootstrap\images\datagrid_icons.png" />
+    <Content Include="EasyUI\css\bootstrap\images\datebox_arrow.png" />
+    <Content Include="EasyUI\css\bootstrap\images\layout_arrows.png" />
+    <Content Include="EasyUI\css\bootstrap\images\linkbutton_bg.png" />
+    <Content Include="EasyUI\css\bootstrap\images\loading.gif" />
+    <Content Include="EasyUI\css\bootstrap\images\menu_arrows.png" />
+    <Content Include="EasyUI\css\bootstrap\images\messager_icons.png" />
+    <Content Include="EasyUI\css\bootstrap\images\pagination_icons.png" />
+    <Content Include="EasyUI\css\bootstrap\images\panel_tools.png" />
+    <Content Include="EasyUI\css\bootstrap\images\searchbox_button.png" />
+    <Content Include="EasyUI\css\bootstrap\images\slider_handle.png" />
+    <Content Include="EasyUI\css\bootstrap\images\spinner_arrows.png" />
+    <Content Include="EasyUI\css\bootstrap\images\tabs_icons.png" />
+    <Content Include="EasyUI\css\bootstrap\images\tree_icons.png" />
+    <Content Include="EasyUI\css\bootstrap\images\validatebox_arrows.png" />
+    <Content Include="EasyUI\css\bootstrap\images\validatebox_warning.png" />
+    <Content Include="EasyUI\css\bootstrap\layout.css" />
+    <Content Include="EasyUI\css\bootstrap\linkbutton.css" />
+    <Content Include="EasyUI\css\bootstrap\menu.css" />
+    <Content Include="EasyUI\css\bootstrap\menubutton.css" />
+    <Content Include="EasyUI\css\bootstrap\messager.css" />
+    <Content Include="EasyUI\css\bootstrap\pagination.css" />
+    <Content Include="EasyUI\css\bootstrap\panel.css" />
+    <Content Include="EasyUI\css\bootstrap\progressbar.css" />
+    <Content Include="EasyUI\css\bootstrap\propertygrid.css" />
+    <Content Include="EasyUI\css\bootstrap\searchbox.css" />
+    <Content Include="EasyUI\css\bootstrap\slider.css" />
+    <Content Include="EasyUI\css\bootstrap\spinner.css" />
+    <Content Include="EasyUI\css\bootstrap\splitbutton.css" />
+    <Content Include="EasyUI\css\bootstrap\tabs.css" />
+    <Content Include="EasyUI\css\bootstrap\tree.css" />
+    <Content Include="EasyUI\css\bootstrap\validatebox.css" />
+    <Content Include="EasyUI\css\bootstrap\window.css" />
+    <Content Include="EasyUI\css\default\accordion.css" />
+    <Content Include="EasyUI\css\default\calendar.css" />
+    <Content Include="EasyUI\css\default\combo.css" />
+    <Content Include="EasyUI\css\default\combobox.css" />
+    <Content Include="EasyUI\css\default\datagrid.css" />
+    <Content Include="EasyUI\css\default\datebox.css" />
+    <Content Include="EasyUI\css\default\dialog.css" />
+    <Content Include="EasyUI\css\default\easyui.css" />
+    <Content Include="EasyUI\css\default\images\accordion_arrows.png" />
+    <Content Include="EasyUI\css\default\images\blank.gif" />
+    <Content Include="EasyUI\css\default\images\calendar_arrows.png" />
+    <Content Include="EasyUI\css\default\images\combo_arrow.png" />
+    <Content Include="EasyUI\css\default\images\datagrid_icons.png" />
+    <Content Include="EasyUI\css\default\images\datebox_arrow.png" />
+    <Content Include="EasyUI\css\default\images\layout_arrows.png" />
+    <Content Include="EasyUI\css\default\images\linkbutton_bg.png" />
+    <Content Include="EasyUI\css\default\images\loading.gif" />
+    <Content Include="EasyUI\css\default\images\menu_arrows.png" />
+    <Content Include="EasyUI\css\default\images\messager_icons.png" />
+    <Content Include="EasyUI\css\default\images\pagination_icons.png" />
+    <Content Include="EasyUI\css\default\images\panel_tools.png" />
+    <Content Include="EasyUI\css\default\images\searchbox_button.png" />
+    <Content Include="EasyUI\css\default\images\slider_handle.png" />
+    <Content Include="EasyUI\css\default\images\spinner_arrows.png" />
+    <Content Include="EasyUI\css\default\images\tabs_icons.png" />
+    <Content Include="EasyUI\css\default\images\tree_icons.png" />
+    <Content Include="EasyUI\css\default\images\validatebox_arrows.png" />
+    <Content Include="EasyUI\css\default\images\validatebox_warning.png" />
+    <Content Include="EasyUI\css\default\layout.css" />
+    <Content Include="EasyUI\css\default\linkbutton.css" />
+    <Content Include="EasyUI\css\default\menu.css" />
+    <Content Include="EasyUI\css\default\menubutton.css" />
+    <Content Include="EasyUI\css\default\messager.css" />
+    <Content Include="EasyUI\css\default\pagination.css" />
+    <Content Include="EasyUI\css\default\panel.css" />
+    <Content Include="EasyUI\css\default\progressbar.css" />
+    <Content Include="EasyUI\css\default\propertygrid.css" />
+    <Content Include="EasyUI\css\default\searchbox.css" />
+    <Content Include="EasyUI\css\default\slider.css" />
+    <Content Include="EasyUI\css\default\spinner.css" />
+    <Content Include="EasyUI\css\default\splitbutton.css" />
+    <Content Include="EasyUI\css\default\tabs.css" />
+    <Content Include="EasyUI\css\default\tree.css" />
+    <Content Include="EasyUI\css\default\validatebox.css" />
+    <Content Include="EasyUI\css\default\window.css" />
+    <Content Include="EasyUI\css\gray\accordion.css" />
+    <Content Include="EasyUI\css\gray\calendar.css" />
+    <Content Include="EasyUI\css\gray\combo.css" />
+    <Content Include="EasyUI\css\gray\combobox.css" />
+    <Content Include="EasyUI\css\gray\datagrid.css" />
+    <Content Include="EasyUI\css\gray\datebox.css" />
+    <Content Include="EasyUI\css\gray\dialog.css" />
+    <Content Include="EasyUI\css\gray\easyui.css" />
+    <Content Include="EasyUI\css\gray\images\accordion_arrows.png" />
+    <Content Include="EasyUI\css\gray\images\blank.gif" />
+    <Content Include="EasyUI\css\gray\images\calendar_arrows.png" />
+    <Content Include="EasyUI\css\gray\images\combo_arrow.png" />
+    <Content Include="EasyUI\css\gray\images\datagrid_icons.png" />
+    <Content Include="EasyUI\css\gray\images\datebox_arrow.png" />
+    <Content Include="EasyUI\css\gray\images\layout_arrows.png" />
+    <Content Include="EasyUI\css\gray\images\linkbutton_bg.png" />
+    <Content Include="EasyUI\css\gray\images\loading.gif" />
+    <Content Include="EasyUI\css\gray\images\menu_arrows.png" />
+    <Content Include="EasyUI\css\gray\images\messager_icons.png" />
+    <Content Include="EasyUI\css\gray\images\pagination_icons.png" />
+    <Content Include="EasyUI\css\gray\images\panel_tools.png" />
+    <Content Include="EasyUI\css\gray\images\searchbox_button.png" />
+    <Content Include="EasyUI\css\gray\images\slider_handle.png" />
+    <Content Include="EasyUI\css\gray\images\spinner_arrows.png" />
+    <Content Include="EasyUI\css\gray\images\tabs_icons.png" />
+    <Content Include="EasyUI\css\gray\images\tree_icons.png" />
+    <Content Include="EasyUI\css\gray\images\validatebox_arrows.png" />
+    <Content Include="EasyUI\css\gray\images\validatebox_warning.png" />
+    <Content Include="EasyUI\css\gray\layout.css" />
+    <Content Include="EasyUI\css\gray\linkbutton.css" />
+    <Content Include="EasyUI\css\gray\menu.css" />
+    <Content Include="EasyUI\css\gray\menubutton.css" />
+    <Content Include="EasyUI\css\gray\messager.css" />
+    <Content Include="EasyUI\css\gray\pagination.css" />
+    <Content Include="EasyUI\css\gray\panel.css" />
+    <Content Include="EasyUI\css\gray\progressbar.css" />
+    <Content Include="EasyUI\css\gray\propertygrid.css" />
+    <Content Include="EasyUI\css\gray\searchbox.css" />
+    <Content Include="EasyUI\css\gray\slider.css" />
+    <Content Include="EasyUI\css\gray\spinner.css" />
+    <Content Include="EasyUI\css\gray\splitbutton.css" />
+    <Content Include="EasyUI\css\gray\tabs.css" />
+    <Content Include="EasyUI\css\gray\tree.css" />
+    <Content Include="EasyUI\css\gray\validatebox.css" />
+    <Content Include="EasyUI\css\gray\window.css" />
+    <Content Include="EasyUI\css\icon.css" />
+    <Content Include="EasyUI\css\icons\back.png" />
+    <Content Include="EasyUI\css\icons\blank.gif" />
+    <Content Include="EasyUI\css\icons\cancel.png" />
+    <Content Include="EasyUI\css\icons\cut.png" />
+    <Content Include="EasyUI\css\icons\edit_add.png" />
+    <Content Include="EasyUI\css\icons\edit_remove.png" />
+    <Content Include="EasyUI\css\icons\filesave.png" />
+    <Content Include="EasyUI\css\icons\help.png" />
+    <Content Include="EasyUI\css\icons\mini_add.png" />
+    <Content Include="EasyUI\css\icons\mini_edit.png" />
+    <Content Include="EasyUI\css\icons\mini_refresh.png" />
+    <Content Include="EasyUI\css\icons\no.png" />
+    <Content Include="EasyUI\css\icons\ok.png" />
+    <Content Include="EasyUI\css\icons\pencil.png" />
+    <Content Include="EasyUI\css\icons\print.png" />
+    <Content Include="EasyUI\css\icons\redo.png" />
+    <Content Include="EasyUI\css\icons\reload.png" />
+    <Content Include="EasyUI\css\icons\search.png" />
+    <Content Include="EasyUI\css\icons\sum.png" />
+    <Content Include="EasyUI\css\icons\tip.png" />
+    <Content Include="EasyUI\css\icons\undo.png" />
+    <Content Include="EasyUI\css\metro\accordion.css" />
+    <Content Include="EasyUI\css\metro\calendar.css" />
+    <Content Include="EasyUI\css\metro\combo.css" />
+    <Content Include="EasyUI\css\metro\combobox.css" />
+    <Content Include="EasyUI\css\metro\datagrid.css" />
+    <Content Include="EasyUI\css\metro\datebox.css" />
+    <Content Include="EasyUI\css\metro\dialog.css" />
+    <Content Include="EasyUI\css\metro\easyui.css" />
+    <Content Include="EasyUI\css\metro\images\accordion_arrows.png" />
+    <Content Include="EasyUI\css\metro\images\blank.gif" />
+    <Content Include="EasyUI\css\metro\images\calendar_arrows.png" />
+    <Content Include="EasyUI\css\metro\images\combo_arrow.png" />
+    <Content Include="EasyUI\css\metro\images\datagrid_icons.png" />
+    <Content Include="EasyUI\css\metro\images\datebox_arrow.png" />
+    <Content Include="EasyUI\css\metro\images\layout_arrows.png" />
+    <Content Include="EasyUI\css\metro\images\linkbutton_bg.png" />
+    <Content Include="EasyUI\css\metro\images\loading.gif" />
+    <Content Include="EasyUI\css\metro\images\menu_arrows.png" />
+    <Content Include="EasyUI\css\metro\images\messager_icons.png" />
+    <Content Include="EasyUI\css\metro\images\pagination_icons.png" />
+    <Content Include="EasyUI\css\metro\images\panel_tools.png" />
+    <Content Include="EasyUI\css\metro\images\searchbox_button.png" />
+    <Content Include="EasyUI\css\metro\images\slider_handle.png" />
+    <Content Include="EasyUI\css\metro\images\spinner_arrows.png" />
+    <Content Include="EasyUI\css\metro\images\tabs_icons.png" />
+    <Content Include="EasyUI\css\metro\images\tree_icons.png" />
+    <Content Include="EasyUI\css\metro\images\validatebox_arrows.png" />
+    <Content Include="EasyUI\css\metro\images\validatebox_warning.png" />
+    <Content Include="EasyUI\css\metro\layout.css" />
+    <Content Include="EasyUI\css\metro\linkbutton.css" />
+    <Content Include="EasyUI\css\metro\menu.css" />
+    <Content Include="EasyUI\css\metro\menubutton.css" />
+    <Content Include="EasyUI\css\metro\messager.css" />
+    <Content Include="EasyUI\css\metro\pagination.css" />
+    <Content Include="EasyUI\css\metro\panel.css" />
+    <Content Include="EasyUI\css\metro\progressbar.css" />
+    <Content Include="EasyUI\css\metro\propertygrid.css" />
+    <Content Include="EasyUI\css\metro\searchbox.css" />
+    <Content Include="EasyUI\css\metro\slider.css" />
+    <Content Include="EasyUI\css\metro\spinner.css" />
+    <Content Include="EasyUI\css\metro\splitbutton.css" />
+    <Content Include="EasyUI\css\metro\tabs.css" />
+    <Content Include="EasyUI\css\metro\tree.css" />
+    <Content Include="EasyUI\css\metro\validatebox.css" />
+    <Content Include="EasyUI\css\metro\window.css" />
+    <Content Include="EasyUI\Script\jquery-1.8.0.min.js" />
+    <Content Include="EasyUI\Script\jquery.easyui.min.js" />
     <Content Include="Manage\favicon.ico" />
     <Content Include="Manage\fckeditor\editor\css\behaviors\disablehandles.htc" />
     <Content Include="Manage\fckeditor\editor\css\behaviors\showtableborders.htc" />
@@ -3321,6 +3611,8 @@
     <Content Include="Manage\theme\images\second\window\left-right.png" />
     <Content Include="Manage\theme\images\second\window\right-corners.png" />
     <Content Include="Manage\theme\images\second\window\top-bottom.png" />
+    <Content Include="MerchantsJoin.aspx" />
+    <Content Include="NaviagteInfo.aspx" />
     <Content Include="packages.config" />
     <Content Include="Manage\theme\images\default\form\clear-trigger.psd" />
     <Content Include="Manage\theme\images\default\form\date-trigger.psd" />
@@ -3340,8 +3632,63 @@
     <Content Include="Manage\fckeditor\editor\filemanager\browser\default\images\icons\Thumbs.db" />
     <Content Include="Manage\fckeditor\editor\filemanager\browser\default\images\Thumbs.db" />
     <Content Include="Manage\fckeditor\editor\images\Thumbs.db" />
+    <Content Include="PersonalRegistration.aspx" />
+    <Content Include="qdrcsc\home1.html" />
+    <Content Include="qdrcsc\image\img1.png" />
+    <Content Include="qdrcsc\image\img10.png" />
+    <Content Include="qdrcsc\image\img11.png" />
+    <Content Include="qdrcsc\image\img12.png" />
+    <Content Include="qdrcsc\image\img13.png" />
+    <Content Include="qdrcsc\image\img14.png" />
+    <Content Include="qdrcsc\image\img15.png" />
+    <Content Include="qdrcsc\image\img16.png" />
+    <Content Include="qdrcsc\image\img17.png" />
+    <Content Include="qdrcsc\image\img18.png" />
+    <Content Include="qdrcsc\image\img19.png" />
+    <Content Include="qdrcsc\image\img2.png" />
+    <Content Include="qdrcsc\image\img20.png" />
+    <Content Include="qdrcsc\image\img21.png" />
+    <Content Include="qdrcsc\image\img3.png" />
+    <Content Include="qdrcsc\image\img4.png" />
+    <Content Include="qdrcsc\image\img5.png" />
+    <Content Include="qdrcsc\image\img6.png" />
+    <Content Include="qdrcsc\image\img7.png" />
+    <Content Include="qdrcsc\image\img8.png" />
+    <Content Include="qdrcsc\image\img9.png" />
+    <Content Include="qdrcsc\image\logo.png" />
+    <Content Include="qdrcsc\sousuo.css" />
+    <Content Include="qdrcsc\sousuo.html" />
     <Content Include="css\zong.css" />
+    <Content Include="ResumeSearchList.aspx" />
+    <Content Include="Scripts\default.js" />
+    <Content Include="Scripts\EditEnterpriseRegisterInfo.js" />
+    <Content Include="Scripts\EnterpriseRegister.js" />
+    <Content Include="Scripts\JobPosting.js" />
+    <Content Include="Scripts\JobSearch.js" />
+    <Content Include="Scripts\jquery.innerfade.js" />
+    <Content Include="Scripts\jquery.watermark.min.js" />
+    <Content Include="Scripts\MSClass.js" />
+    <Content Include="Scripts\PersonalRegistration.js" />
+    <Content Include="Scripts\EditPersonalRegistrationInfo.js" />
+    <Content Include="Scripts\ResumeCenter.js" />
+    <Content Include="Scripts\ResumeSearchList.js" />
+    <Content Include="Scripts\ValidateRule.js" />
+    <Content Include="Scripts\WebForms\iframeTools.js" />
+    <Content Include="Scripts\WebForms\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-1.9.0.min.js" />
+    <Content Include="Scripts\WebForms\jquery.artDialog.js" />
+    <Content Include="Scripts\WebForms\jquery.watermark.min.js" />
+    <Content Include="Services\GetGeneralBasicSetting.asmx" />
+    <Content Include="Services\ManageADImage.asmx" />
+    <Content Include="Services\ValidateLogin.asmx" />
+    <Content Include="Services\ValidatorRegisterUser.asmx" />
     <Content Include="image\Thumbs.db" />
+    <Content Include="qdrcsc\image\Thumbs.db" />
+    <Content Include="EasyUI\css\bootstrap\images\Thumbs.db" />
+    <Content Include="EasyUI\css\black\images\Thumbs.db" />
+    <Content Include="EasyUI\css\default\images\Thumbs.db" />
+    <Content Include="EasyUI\css\gray\images\Thumbs.db" />
+    <Content Include="EasyUI\css\metro\images\Thumbs.db" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -3371,10 +3718,133 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Global.asax" />
+    <Content Include="skins\aero.css" />
+    <Content Include="skins\aero\aero_s.png" />
+    <Content Include="skins\aero\aero_s2.png" />
+    <Content Include="skins\aero\ie6\aui_close.hover.png" />
+    <Content Include="skins\aero\ie6\aui_close.png" />
+    <Content Include="skins\aero\ie6\aui_e.png" />
+    <Content Include="skins\aero\ie6\aui_n.png" />
+    <Content Include="skins\aero\ie6\aui_ne.png" />
+    <Content Include="skins\aero\ie6\aui_nw.png" />
+    <Content Include="skins\aero\ie6\aui_s.png" />
+    <Content Include="skins\aero\ie6\aui_se.png" />
+    <Content Include="skins\aero\ie6\aui_sw.png" />
+    <Content Include="skins\aero\ie6\aui_title_icon.png" />
+    <Content Include="skins\aero\ie6\aui_w.png" />
+    <Content Include="skins\black.css" />
+    <Content Include="skins\black\bg.png" />
+    <Content Include="skins\black\bg2.png" />
+    <Content Include="skins\black\bg_css3.png" />
+    <Content Include="skins\black\bg_css3_2.png" />
+    <Content Include="skins\black\ie6\close.hover.png" />
+    <Content Include="skins\black\ie6\close.png" />
+    <Content Include="skins\black\ie6\e.png" />
+    <Content Include="skins\black\ie6\n.png" />
+    <Content Include="skins\black\ie6\ne.png" />
+    <Content Include="skins\black\ie6\nw.png" />
+    <Content Include="skins\black\ie6\s.png" />
+    <Content Include="skins\black\ie6\se.png" />
+    <Content Include="skins\black\ie6\sw.png" />
+    <Content Include="skins\black\ie6\w.png" />
+    <Content Include="skins\blue.css" />
+    <Content Include="skins\blue\bg.png" />
+    <Content Include="skins\blue\bg2.png" />
+    <Content Include="skins\blue\bg_css3.png" />
+    <Content Include="skins\blue\bg_css3_2.png" />
+    <Content Include="skins\blue\ie6\close.hover.png" />
+    <Content Include="skins\blue\ie6\close.png" />
+    <Content Include="skins\blue\ie6\e.png" />
+    <Content Include="skins\blue\ie6\n.png" />
+    <Content Include="skins\blue\ie6\ne.png" />
+    <Content Include="skins\blue\ie6\nw.png" />
+    <Content Include="skins\blue\ie6\s.png" />
+    <Content Include="skins\blue\ie6\se.png" />
+    <Content Include="skins\blue\ie6\sw.png" />
+    <Content Include="skins\blue\ie6\w.png" />
+    <Content Include="skins\chrome.css" />
+    <Content Include="skins\chrome\border.png" />
+    <Content Include="skins\chrome\chrome_s.png" />
+    <Content Include="skins\default.css" />
+    <Content Include="skins\green.css" />
+    <Content Include="skins\green\bg.png" />
+    <Content Include="skins\green\bg2.png" />
+    <Content Include="skins\green\bg_css3.png" />
+    <Content Include="skins\green\bg_css3_2.png" />
+    <Content Include="skins\green\color_bg.png" />
+    <Content Include="skins\green\ie6\close.hover.png" />
+    <Content Include="skins\green\ie6\close.png" />
+    <Content Include="skins\green\ie6\e.png" />
+    <Content Include="skins\green\ie6\n.png" />
+    <Content Include="skins\green\ie6\ne.png" />
+    <Content Include="skins\green\ie6\nw.png" />
+    <Content Include="skins\green\ie6\s.png" />
+    <Content Include="skins\green\ie6\se.png" />
+    <Content Include="skins\green\ie6\sw.png" />
+    <Content Include="skins\green\ie6\w.png" />
+    <Content Include="skins\icons\error.png" />
+    <Content Include="skins\icons\face-sad.png" />
+    <Content Include="skins\icons\face-smile.png" />
+    <Content Include="skins\icons\loading.gif" />
+    <Content Include="skins\icons\question.png" />
+    <Content Include="skins\icons\succeed.png" />
+    <Content Include="skins\icons\warning.png" />
+    <Content Include="skins\idialog.css" />
+    <Content Include="skins\idialog\idialog_s.png" />
+    <Content Include="skins\idialog\idialog_s2.png" />
+    <Content Include="skins\idialog\ie6\aui_close.hover.png" />
+    <Content Include="skins\idialog\ie6\aui_close.png" />
+    <Content Include="skins\idialog\ie6\aui_e.png" />
+    <Content Include="skins\idialog\ie6\aui_n.png" />
+    <Content Include="skins\idialog\ie6\aui_ne.png" />
+    <Content Include="skins\idialog\ie6\aui_nw.png" />
+    <Content Include="skins\idialog\ie6\aui_s.png" />
+    <Content Include="skins\idialog\ie6\aui_se.png" />
+    <Content Include="skins\idialog\ie6\aui_sw.png" />
+    <Content Include="skins\idialog\ie6\aui_w.png" />
+    <Content Include="skins\opera.css" />
+    <Content Include="skins\opera\ie6\aui_close.hover.png" />
+    <Content Include="skins\opera\ie6\aui_close.png" />
+    <Content Include="skins\opera\ie6\aui_e.png" />
+    <Content Include="skins\opera\ie6\aui_n.png" />
+    <Content Include="skins\opera\ie6\aui_ne.png" />
+    <Content Include="skins\opera\ie6\aui_nw.png" />
+    <Content Include="skins\opera\ie6\aui_s.png" />
+    <Content Include="skins\opera\ie6\aui_se.png" />
+    <Content Include="skins\opera\ie6\aui_sw.png" />
+    <Content Include="skins\opera\ie6\aui_w.png" />
+    <Content Include="skins\opera\s1.png" />
+    <Content Include="skins\opera\s2.png" />
+    <Content Include="skins\simple.css" />
+    <Content Include="skins\twitter.css" />
+    <Content Include="TemplatePage\JobFeildKinds.aspx" />
+    <Content Include="TemplatePage\JobPositionKinds.aspx" />
+    <Content Include="TemplatePage\WorkAreas.aspx" />
+    <Content Include="UserControl\DefaultFooter.ascx" />
+    <Content Include="UserControl\DefaultHead.ascx" />
+    <Content Include="UserControl\EnterpriseHead.ascx" />
+    <Content Include="UserControl\IndustrySector.ascx" />
+    <Content Include="UserControl\JobCategories.ascx" />
+    <Content Include="UserControl\PageFooter.ascx" />
+    <Content Include="UserControl\PageHead.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityInfo.aspx.cs">
+      <DependentUpon>ActivityInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActivityInfo.aspx.designer.cs">
+      <DependentUpon>ActivityInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityList.aspx.cs">
+      <DependentUpon>ActivityList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActivityList.aspx.designer.cs">
+      <DependentUpon>ActivityList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="Account\Login.aspx.cs">
@@ -3419,8 +3889,78 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditEnterpriseInfo.aspx.cs">
+      <DependentUpon>EditEnterpriseInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditEnterpriseInfo.aspx.designer.cs">
+      <DependentUpon>EditEnterpriseInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditPersonalInfo.aspx.cs">
+      <DependentUpon>EditPersonalInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditPersonalInfo.aspx.designer.cs">
+      <DependentUpon>EditPersonalInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnterpriseRegister.aspx.cs">
+      <DependentUpon>EnterpriseRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnterpriseRegister.aspx.designer.cs">
+      <DependentUpon>EnterpriseRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnterpriseService.aspx.cs">
+      <DependentUpon>EnterpriseService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnterpriseService.aspx.designer.cs">
+      <DependentUpon>EnterpriseService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnterpriseServiceList.aspx.cs">
+      <DependentUpon>EnterpriseServiceList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnterpriseServiceList.aspx.designer.cs">
+      <DependentUpon>EnterpriseServiceList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExchangeCorner.aspx.cs">
+      <DependentUpon>ExchangeCorner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExchangeCorner.aspx.designer.cs">
+      <DependentUpon>ExchangeCorner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExchangeCornerList.aspx.cs">
+      <DependentUpon>ExchangeCornerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExchangeCornerList.aspx.designer.cs">
+      <DependentUpon>ExchangeCornerList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="JobPosting.aspx.cs">
+      <DependentUpon>JobPosting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobPosting.aspx.designer.cs">
+      <DependentUpon>JobPosting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JobSearchList.aspx.cs">
+      <DependentUpon>JobSearchList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobSearchList.aspx.designer.cs">
+      <DependentUpon>JobSearchList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\admin\AddAdImage.aspx.cs">
+      <DependentUpon>AddAdImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\AddAdImage.aspx.designer.cs">
+      <DependentUpon>AddAdImage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\admin\AddAdmin.aspx.cs">
       <DependentUpon>AddAdmin.aspx</DependentUpon>
@@ -3428,6 +3968,27 @@
     </Compile>
     <Compile Include="Manage\admin\AddAdmin.aspx.designer.cs">
       <DependentUpon>AddAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\admin\AddEnterpriseServiceInfo.aspx.cs">
+      <DependentUpon>AddEnterpriseServiceInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\AddEnterpriseServiceInfo.aspx.designer.cs">
+      <DependentUpon>AddEnterpriseServiceInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\admin\AddEnterpriseServiceType.aspx.cs">
+      <DependentUpon>AddEnterpriseServiceType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\AddEnterpriseServiceType.aspx.designer.cs">
+      <DependentUpon>AddEnterpriseServiceType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\admin\AddExchangeCorner.aspx.cs">
+      <DependentUpon>AddExchangeCorner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\AddExchangeCorner.aspx.designer.cs">
+      <DependentUpon>AddExchangeCorner.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\admin\AddGeneralActivity.aspx.cs">
       <DependentUpon>AddGeneralActivity.aspx</DependentUpon>
@@ -3478,12 +4039,68 @@
     <Compile Include="Manage\admin\AddJobPersonResume.aspx.designer.cs">
       <DependentUpon>AddJobPersonResume.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manage\admin\AddMerchantsJoin.aspx.cs">
+      <DependentUpon>AddMerchantsJoin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\AddMerchantsJoin.aspx.designer.cs">
+      <DependentUpon>AddMerchantsJoin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\admin\AddNavigate.aspx.cs">
+      <DependentUpon>AddNavigate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\AddNavigate.aspx.designer.cs">
+      <DependentUpon>AddNavigate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\admin\AddNavigateInfo.aspx.cs">
+      <DependentUpon>AddNavigateInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\AddNavigateInfo.aspx.designer.cs">
+      <DependentUpon>AddNavigateInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\admin\AddParticipatingCompanies.aspx.cs">
+      <DependentUpon>AddParticipatingCompanies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\AddParticipatingCompanies.aspx.designer.cs">
+      <DependentUpon>AddParticipatingCompanies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\admin\ADImageList.aspx.cs">
+      <DependentUpon>ADImageList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\ADImageList.aspx.designer.cs">
+      <DependentUpon>ADImageList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manage\admin\AdminList.aspx.cs">
       <DependentUpon>AdminList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Manage\admin\AdminList.aspx.designer.cs">
       <DependentUpon>AdminList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\admin\EnterpriseServiceInfoList.aspx.cs">
+      <DependentUpon>EnterpriseServiceInfoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\EnterpriseServiceInfoList.aspx.designer.cs">
+      <DependentUpon>EnterpriseServiceInfoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\admin\EnterpriseServiceTypeList.aspx.cs">
+      <DependentUpon>EnterpriseServiceTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\EnterpriseServiceTypeList.aspx.designer.cs">
+      <DependentUpon>EnterpriseServiceTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\admin\ExchangeCornerList.aspx.cs">
+      <DependentUpon>ExchangeCornerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\ExchangeCornerList.aspx.designer.cs">
+      <DependentUpon>ExchangeCornerList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\admin\GeneralActivityList.aspx.cs">
       <DependentUpon>GeneralActivityList.aspx</DependentUpon>
@@ -3541,6 +4158,34 @@
     <Compile Include="Manage\admin\JobPersonResumeList.aspx.designer.cs">
       <DependentUpon>JobPersonResumeList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manage\admin\MerchantsJoin.aspx.cs">
+      <DependentUpon>MerchantsJoin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\MerchantsJoin.aspx.designer.cs">
+      <DependentUpon>MerchantsJoin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\admin\NavigateInfoList.aspx.cs">
+      <DependentUpon>NavigateInfoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\NavigateInfoList.aspx.designer.cs">
+      <DependentUpon>NavigateInfoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\admin\NavigateList.aspx.cs">
+      <DependentUpon>NavigateList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\NavigateList.aspx.designer.cs">
+      <DependentUpon>NavigateList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\admin\ParticipatingCompaniesList.aspx.cs">
+      <DependentUpon>ParticipatingCompaniesList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\ParticipatingCompaniesList.aspx.designer.cs">
+      <DependentUpon>ParticipatingCompaniesList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manage\captcha\captcha.ashx.cs">
       <DependentUpon>captcha.ashx</DependentUpon>
     </Compile>
@@ -3559,24 +4204,134 @@
     <Compile Include="Manage\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site.Master.cs">
-      <DependentUpon>Site.Master</DependentUpon>
+    <Compile Include="MerchantsJoin.aspx.cs">
+      <DependentUpon>MerchantsJoin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site.Master.designer.cs">
-      <DependentUpon>Site.Master</DependentUpon>
+    <Compile Include="MerchantsJoin.aspx.designer.cs">
+      <DependentUpon>MerchantsJoin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NaviagteInfo.aspx.cs">
+      <DependentUpon>NaviagteInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NaviagteInfo.aspx.designer.cs">
+      <DependentUpon>NaviagteInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalRegistration.aspx.cs">
+      <DependentUpon>PersonalRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PersonalRegistration.aspx.designer.cs">
+      <DependentUpon>PersonalRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResumeSearchList.aspx.cs">
+      <DependentUpon>ResumeSearchList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResumeSearchList.aspx.designer.cs">
+      <DependentUpon>ResumeSearchList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\GetGeneralBasicSetting.asmx.cs">
+      <DependentUpon>GetGeneralBasicSetting.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\ManageADImage.asmx.cs">
+      <DependentUpon>ManageADImage.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\ValidateLogin.asmx.cs">
+      <DependentUpon>ValidateLogin.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\ValidatorRegisterUser.asmx.cs">
+      <DependentUpon>ValidatorRegisterUser.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TemplatePage\JobFeildKinds.aspx.cs">
+      <DependentUpon>JobFeildKinds.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TemplatePage\JobFeildKinds.aspx.designer.cs">
+      <DependentUpon>JobFeildKinds.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TemplatePage\JobPositionKinds.aspx.cs">
+      <DependentUpon>JobPositionKinds.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TemplatePage\JobPositionKinds.aspx.designer.cs">
+      <DependentUpon>JobPositionKinds.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TemplatePage\WorkAreas.aspx.cs">
+      <DependentUpon>WorkAreas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TemplatePage\WorkAreas.aspx.designer.cs">
+      <DependentUpon>WorkAreas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\DefaultFooter.ascx.cs">
+      <DependentUpon>DefaultFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\DefaultFooter.ascx.designer.cs">
+      <DependentUpon>DefaultFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\DefaultHead.ascx.cs">
+      <DependentUpon>DefaultHead.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\DefaultHead.ascx.designer.cs">
+      <DependentUpon>DefaultHead.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\EnterpriseHead.ascx.cs">
+      <DependentUpon>EnterpriseHead.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\EnterpriseHead.ascx.designer.cs">
+      <DependentUpon>EnterpriseHead.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\IndustrySector.ascx.cs">
+      <DependentUpon>IndustrySector.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\IndustrySector.ascx.designer.cs">
+      <DependentUpon>IndustrySector.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\JobCategories.ascx.cs">
+      <DependentUpon>JobCategories.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\JobCategories.ascx.designer.cs">
+      <DependentUpon>JobCategories.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\PageFooter.ascx.cs">
+      <DependentUpon>PageFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\PageFooter.ascx.designer.cs">
+      <DependentUpon>PageFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\PageHead.ascx.cs">
+      <DependentUpon>PageHead.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\PageHead.ascx.designer.cs">
+      <DependentUpon>PageHead.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="BusinessLicense\" />
+    <Folder Include="ExchangeCornerFile\" />
     <Folder Include="UploadImages\" />
+    <Folder Include="UserPhotos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
-    <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\jquery-ui-1.9.0.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

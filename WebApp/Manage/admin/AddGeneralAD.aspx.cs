@@ -78,6 +78,7 @@ namespace WebApp.Manage.admin
                 drpADType.SelectedValue = generalADModel.ADType.ToString();//广告类型
                 txbADScript.Text = generalADModel.ADScript;//广告脚本
                 txbADTargetUrl.Text = generalADModel.ADTargetUrl;//跳转地址
+                txbOrderNumber.Text = generalADModel.ADOrderNumber.ToString();//排序字段
                 if (generalADModel.ADStatus == 1)
                 {
                     ckbADStatus.Checked = true;
@@ -111,6 +112,7 @@ namespace WebApp.Manage.admin
                 generalADModel.ADTargetUrl = txbADTargetUrl.Text;//跳转地址
                 generalADModel.CreateDate = DateTime.Parse(ViewState["CreateDate"].ToString());
                 generalADModel.UpdateDate = DateTime.Now;//更新日期
+                generalADModel.ADOrderNumber = int.Parse(txbOrderNumber.Text);//排序字段
                 if (ckbADStatus.Checked)
                 {
                     generalADModel.ADStatus = 1;
@@ -146,6 +148,7 @@ namespace WebApp.Manage.admin
                 generalADModel.ADType = int.Parse(drpADType.SelectedValue);//广告类型
                 generalADModel.ADScript = txbADScript.Text;//广告脚本
                 generalADModel.ADTargetUrl = txbADTargetUrl.Text;//跳转地址
+                generalADModel.ADOrderNumber = int.Parse(txbOrderNumber.Text);//排序字段
                 generalADModel.CreateDate = DateTime.Now;//创建日期
                 generalADModel.UpdateDate = DateTime.Now;//更新日期
                 if (ckbADStatus.Checked)

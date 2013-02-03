@@ -1,4 +1,20 @@
 ﻿$().ready(function () {
+    $('#drpJobFeildKindsType').bind('change', function () {
+        $.ajax({
+            type: 'POST',
+            url: 'Services/GetGeneralBasicSetting.asmx/Get_JobPositionKindsList',
+            contentType: 'application/json',
+            data: '{"strJobPositionKindsType":"' + $('#drpJobFeildKindsType').val() + '"}',
+            success: function (data) {
+                if (data.d != "-1") {
+                    $('#drpItems').empty();
+                    $('#drpItems').append(data.d);
+                    return;
+                }
+            }
+        });
+    });
+
     /* 验证两个值是否相同 */
     $.extend($.fn.validatebox.defaults.rules, {
         equalTo: {

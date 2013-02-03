@@ -99,7 +99,7 @@ namespace WebApp
             string strSex = drpSex.SelectedValue;//性别
             string strShiSu = drpShiSu.SelectedValue;//食宿
             int nPageIndex = AspNetPager1.CurrentPageIndex;
-            int nPageSize = AspNetPager1.PageSize = 2;
+            int nPageSize = AspNetPager1.PageSize = 15;
             if (Session["DefaultSearchWhere"] != null)
             {
                 zlzw.BLL.JobEnterpriseJobPositionBLL jobEnterpriseJobPositionBLL = new zlzw.BLL.JobEnterpriseJobPositionBLL();

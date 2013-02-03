@@ -11,8 +11,26 @@ namespace WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                Load_HangYeList();
+            }
         }
+
+        #region 加载行业类别（小类）
+
+        private void Load_HangYeList()
+        {
+            zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
+            System.Data.DataTable dt = generalBasicSettingBLL.GetList("DisplayName='"+ drpJobFeildKindsType.SelectedValue +"'").Tables[0];
+            drpItems.DataTextField = "SettingValue";
+            drpItems.DataValueField = "SettingValue";
+
+            drpItems.DataSource = dt;
+            drpItems.DataBind();
+        }
+
+        #endregion
 
         #region 提交按钮事件
 

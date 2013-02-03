@@ -113,16 +113,16 @@ namespace WebApp
                 {
                     if (nCount == 15)
                     {
-                        labNonManageTypeOther.Text += dt.Rows[nCount]["SettingValue"].ToString();
+                        labNonManageTypeOther.Text += "<a href='SearchList.aspx?id=" + dt.Rows[nCount]["SettingValue"].ToString() + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>";
                     }
                     else
                     {
-                        labNonManageTypeOther.Text += dt.Rows[nCount]["SettingValue"].ToString() + "　";
+                        labNonManageTypeOther.Text += "<a href='SearchList.aspx?id=" + dt.Rows[nCount]["SettingValue"].ToString() + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "　</a>";
                     }
                 }
                 else
                 {
-                    labNonManageType.Text += dt.Rows[nCount]["SettingValue"].ToString() + "　";
+                    labNonManageType.Text += "<a href='SearchList.aspx?id=" + dt.Rows[nCount]["SettingValue"].ToString() + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "　</a>";
                 }
             }
         }
@@ -137,7 +137,7 @@ namespace WebApp
             DataTable dt = generalBasicSettingBLL.GetList("DisplayName='管理' and CanUsable=1").Tables[0];
             for (int nCount = 0; nCount < dt.Rows.Count; nCount++)
             {
-                labManageType.Text += dt.Rows[nCount]["SettingValue"].ToString() + "　";
+                labManageType.Text += "<a href='SearchList.aspx?id=" + dt.Rows[nCount]["SettingValue"].ToString() + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "　</a>";
             }
         }
 
@@ -193,6 +193,10 @@ namespace WebApp
             DataTable dt = generalBasicSettingBLL.GetList("DisplayName='制造行业' and CanUsable=1").Tables[0];
             for (int nCount = 0; nCount < dt.Rows.Count; nCount++)
             {
+                if (nCount == 11)
+                {
+                    labzzyType.Text += "<br/><br/><sapn style='padding-left:86px;'></span>";
+                }
                 labzzyType.Text += dt.Rows[nCount]["SettingValue"].ToString() + "　";
             }
         }
@@ -204,7 +208,7 @@ namespace WebApp
         private void Load_GeneralADList()
         {
             zlzw.BLL.GeneralADBLL generalADBLL = new zlzw.BLL.GeneralADBLL();
-            DataTable dt = generalADBLL.GetList(8, "CanUsable=1 and ADStatus=1", "ADOrderNumber asc").Tables[0];
+            DataTable dt = generalADBLL.GetList(9, "CanUsable=1 and ADStatus=1", "ADOrderNumber asc").Tables[0];
 
             Repeater2.DataSource = dt;
             Repeater2.DataBind();

@@ -96,11 +96,14 @@
                                 <table>
                                     <tr>
                                         <td align="left">
-                                            <asp:DropDownList ID="drpJobFeildKindsType" Height="26" Width="400" runat="server" class="easyui-combobox">
+                                            <asp:DropDownList ID="drpJobFeildKindsType" Height="26" Width="100" runat="server">
                                                 <asp:ListItem Text="制造行业" Value="制造行业" Selected="True"></asp:ListItem>
                                                 <asp:ListItem Text="第三产业" Value="第三产业"></asp:ListItem>
                                                 <asp:ListItem Text="第一产业" Value="第一产业"></asp:ListItem>
                                             </asp:DropDownList>
+                                        </td>
+                                        <td>
+                                            <asp:DropDownList ID="drpItems" runat="server" Height="26" Width="297"></asp:DropDownList>
                                         </td>
                                     </tr>
                                 </table> 

@@ -3678,6 +3678,7 @@
     <Content Include="Scripts\jquery-1.9.0.min.js" />
     <Content Include="Scripts\WebForms\jquery.artDialog.js" />
     <Content Include="Scripts\WebForms\jquery.watermark.min.js" />
+    <Content Include="SearchList.aspx" />
     <Content Include="Services\GetGeneralBasicSetting.asmx" />
     <Content Include="Services\ManageADImage.asmx" />
     <Content Include="Services\ValidateLogin.asmx" />
@@ -4232,6 +4233,13 @@
     </Compile>
     <Compile Include="ResumeSearchList.aspx.designer.cs">
       <DependentUpon>ResumeSearchList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchList.aspx.cs">
+      <DependentUpon>SearchList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchList.aspx.designer.cs">
+      <DependentUpon>SearchList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Services\GetGeneralBasicSetting.asmx.cs">
       <DependentUpon>GetGeneralBasicSetting.asmx</DependentUpon>

@@ -10,16 +10,7 @@
 namespace WebApp {
     
     
-    public partial class EnterpriseRegister {
-        
-        /// <summary>
-        /// Head1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+    public partial class SearchList {
         
         /// <summary>
         /// form01 控件。
@@ -31,15 +22,6 @@ namespace WebApp {
         protected global::System.Web.UI.HtmlControls.HtmlForm form01;
         
         /// <summary>
-        /// PageManager1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.PageManager PageManager1;
-        
-        /// <summary>
         /// PageHead1 控件。
         /// </summary>
         /// <remarks>
@@ -49,139 +31,112 @@ namespace WebApp {
         protected global::WebApp.UserControl.PageHead PageHead1;
         
         /// <summary>
-        /// txbUserName 控件。
+        /// txbJobPositionKinds 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbUserName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txbJobPositionKinds;
         
         /// <summary>
-        /// txbPassword 控件。
+        /// drpSex 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbPassword;
+        protected global::System.Web.UI.WebControls.DropDownList drpSex;
         
         /// <summary>
-        /// txbPassword01 控件。
+        /// txbWorkAreas 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbPassword01;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txbWorkAreas;
         
         /// <summary>
-        /// txbEnterpriseName 控件。
+        /// imgBtnSearch 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbEnterpriseName;
+        protected global::System.Web.UI.WebControls.ImageButton imgBtnSearch;
         
         /// <summary>
-        /// drpJobFeildKindsType 控件。
+        /// txbJobFeildKinds 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpJobFeildKindsType;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txbJobFeildKinds;
         
         /// <summary>
-        /// drpItems 控件。
+        /// drpShiSu 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpItems;
+        protected global::System.Web.UI.WebControls.DropDownList drpShiSu;
         
         /// <summary>
-        /// txbPrincipleAddress 控件。
+        /// txbSearchKey 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbPrincipleAddress;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txbSearchKey;
         
         /// <summary>
-        /// txbTelephone 控件。
+        /// JobCategories1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbTelephone;
+        protected global::WebApp.UserControl.JobCategories JobCategories1;
         
         /// <summary>
-        /// txbContactPerson 控件。
+        /// IndustrySector1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbContactPerson;
+        protected global::WebApp.UserControl.IndustrySector IndustrySector1;
         
         /// <summary>
-        /// txbUserMobileNO 控件。
+        /// Repeater1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbUserMobileNO;
+        protected global::System.Web.UI.WebControls.Repeater Repeater1;
         
         /// <summary>
-        /// txbEmail 控件。
+        /// AspNetPager1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbEmail;
+        protected global::Wuqi.Webdiyer.AspNetPager AspNetPager1;
         
         /// <summary>
-        /// txbEnterpriseWWW 控件。
+        /// labDataIsNull 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbEnterpriseWWW;
-        
-        /// <summary>
-        /// txbBusRoute 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbBusRoute;
-        
-        /// <summary>
-        /// uploadBusinessLicense 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload uploadBusinessLicense;
-        
-        /// <summary>
-        /// btnSubmit 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        protected global::System.Web.UI.WebControls.Label labDataIsNull;
         
         /// <summary>
         /// PageFooter1 控件。

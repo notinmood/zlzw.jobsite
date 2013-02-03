@@ -149,7 +149,7 @@
                         <table width="757" height="70" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                             <td>
-                                　<input type="text" runat="server" id="txbJobPositionKinds" class="easyui-validatebox" data-options="required:true" missingMessage="请选择岗位类别" style="width: 133px; height: 18px;" readonly="readonly" />
+                                　<input type="text" runat="server" id="txbJobPositionKinds" class="easyui-validatebox" style="width: 133px; height: 18px;" readonly="readonly" />
                             </td>
                             <td>
                                 <asp:DropDownList ID="drpSex" runat="server" Width="139" Height="23">
@@ -160,7 +160,7 @@
                                 </asp:DropDownList>
                             </td>
                             <td>
-                                <input id="txbWorkAreas" runat="server" type="text" class="easyui-validatebox" data-options="required:true" missingMessage="请选择工作地区" style="width: 193px; height: 18px;" readonly="readonly" />
+                                <input id="txbWorkAreas" runat="server" type="text" class="easyui-validatebox" style="width: 193px; height: 18px;" readonly="readonly" />
                             </td>
                             <td rowspan="2">
                                 <asp:ImageButton ID="imgBtnSearch" runat="server" ImageUrl="image/SearchWork.png" OnClick="imgBtnSearch_Click" />
@@ -168,7 +168,7 @@
                         </tr>
                         <tr>
                             <td>
-                                    　<input runat="server" type="text" id="txbJobFeildKinds" class="easyui-validatebox" data-options="required:true" missingMessage="请选择行业类别" style="width: 133px; height: 18px;" readonly="readonly" />
+                                    　<input runat="server" type="text" id="txbJobFeildKinds" class="easyui-validatebox" style="width: 133px; height: 18px;" readonly="readonly" />
                             </td>
                             <td>
                                 <asp:DropDownList ID="drpShiSu" runat="server" Width="139" Height="23">
@@ -237,7 +237,7 @@
                             <tr>
                                 <td>
                                     <div style="border: 1px solid #FF8000; font-size: 14px;">
-                                        <table width="757px" height="100px;" cellpadding="0" cellspacing="0">
+                                        <table width="757px" height="170px;" cellpadding="0" cellspacing="0">
                                             <tr>
                                                 <td height="15"><span id="span5"><span style="color: #325C93; font-weight: bold;">　制造行业：</span><span style="color: #6e6e6e;"><asp:Label ID="labzzyType" runat="server"></asp:Label></span></span></td>
                                             </tr>
@@ -258,7 +258,7 @@
                         </table>
                     </div>
                     <div class="top3rightmiddle">
-                        <table width="752" border="0" cellpadding="0" cellspacing="0">
+                        <table width="752" border="0" cellpadding="0" cellspacing="0" style="padding-top:75px;">
                             <tr>
                                 <td style="background-image: url('image/img3.png'); background-repeat: repeat-x;" height="32px;" width="752px;"><span id="span8" style="color: #fff; font-weight: bold; padding-left: 15px; font-size: 14px;">紧 急 招 聘</span></td>
                             </tr>
@@ -304,11 +304,11 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <div style="border: 1px solid #FF8000;">
+                                    <div style="border: 1px solid #FF8000; height:220px;">
                                         <asp:Repeater ID="Repeater3" runat="server" OnItemDataBound="Repeater3_ItemDataBound">
                                             <HeaderTemplate>
-                                                <div id="participatingCompaniesList">
-                                                    <ul id="participatingCompanies" style="padding: 2px 15px 5px 15px;font-size: 14px; width: 100%; overflow:hidden;"></ul>
+                                                <div id="participatingCompaniesList" style="height:200px;">
+                                                    <ul id="participatingCompanies" style="padding: 2px 15px 5px 15px;font-size: 14px;width: 100%;overflow:hidden;"></ul>
                                             </HeaderTemplate>
                                             <ItemTemplate>
                                                         <li style='padding: 0px 15px 0px 15px;list-style:none;'>

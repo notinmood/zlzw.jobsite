@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EnterpriseRegister.aspx.cs" Inherits="WebApp.EnterpriseRegister" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="EnterpriseRegister.aspx.cs" Inherits="WebApp.EnterpriseRegister" %>
 <%@ Register src="UserControl/PageHead.ascx" tagname="PageHead" tagprefix="uc1" %>
 <%@ Register src="UserControl/PageFooter.ascx" tagname="PageFooter" tagprefix="uc2" %>
 
@@ -117,8 +117,15 @@
                         </tr>
                         <tr>
                             <td style="font-size:14px; color:#6e6e6e;">公司地址：</td>
-                            <td align="left" style="width:410px;"> 
-                                <asp:TextBox ID="txbPrincipleAddress" Width="400" Height="22" runat="server" data-options="required:true" missingMessage="公司地址不能为空" CssClass="easyui-validatebox"></asp:TextBox>
+                            <td align="left" style="width:410px;">
+                                <table>
+                                    <tr>
+                                        <td><asp:DropDownList ID="drpShengList" Width="80" Height="24" runat="server"></asp:DropDownList></td>
+                                        <td><asp:DropDownList ID="drpShiList" Width="81" Height="24" runat="server"></asp:DropDownList></td>
+                                        <td><asp:DropDownList ID="drpQuList" Width="80" Height="24" runat="server"></asp:DropDownList></td>
+                                        <td><asp:TextBox ID="txbPrincipleAddress" Width="150" Height="22" runat="server" data-options="required:true" missingMessage="公司地址不能为空" CssClass="easyui-validatebox"></asp:TextBox></td>
+                                    </tr>
+                                </table> 
                             </td>
                             <td align="left" style="color:#6e6e6e;font-size:14px;">
                                 <span style="font-weight:bold; color:#f00;"></span>
@@ -194,6 +201,18 @@
                             </td>
                             <td align="left" style="color:#6e6e6e;font-size:14px;">
                                 <span style="font-weight:bold; color:#f00;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height:20px;"></td>
+                        </tr>
+                        <tr>
+                            <td style="font-size:14px; color:#6e6e6e;">企业简介：</td>
+                            <td align="left" style="width:410px;" class="uploader orange">
+                                <asp:TextBox ID="txbEnterpriseDescription" TextMode="MultiLine" Height="100" Width="400" runat="server"></asp:TextBox>
+                            </td>
+                            <td align="left" style="color:#6e6e6e;font-size:16px;">
+                                <span style="font-weight:bold; color:#6e6e6e;"></span>
                             </td>
                         </tr>
                         <tr>

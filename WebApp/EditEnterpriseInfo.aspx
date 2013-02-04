@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditEnterpriseInfo.aspx.cs" Inherits="WebApp.EditEnterpriseRegisterInfo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="EditEnterpriseInfo.aspx.cs" Inherits="WebApp.EditEnterpriseRegisterInfo" %>
 
 <%@ Register src="UserControl/EnterpriseHead.ascx" tagname="EnterpriseHead" tagprefix="uc1" %>
 <%@ Register Src="UserControl/PageFooter.ascx" TagName="PageFooter" TagPrefix="uc2" %>
@@ -94,11 +94,14 @@
                             <table>
                                 <tr>
                                     <td align="left">
-                                        <asp:DropDownList ID="drpJobFeildKindsType" Height="26" Width="400" runat="server" class="easyui-combobox">
+                                        <asp:DropDownList ID="drpJobFeildKindsType" Height="26" Width="100" runat="server">
                                             <asp:ListItem Text="制造行业" Value="制造行业" Selected="True"></asp:ListItem>
                                             <asp:ListItem Text="第三产业" Value="第三产业"></asp:ListItem>
                                             <asp:ListItem Text="第一产业" Value="第一产业"></asp:ListItem>
                                         </asp:DropDownList>
+                                    </td>
+                                    <td>
+                                        <asp:DropDownList ID="drpItems" runat="server" Height="26" Width="297"></asp:DropDownList>
                                     </td>
                                 </tr>
                             </table>
@@ -113,7 +116,14 @@
                     <tr>
                         <td style="font-size: 14px; color: #6e6e6e;">公司地址：</td>
                         <td align="left" style="width: 410px;">
-                            <asp:TextBox ID="txbPrincipleAddress" Width="400" Height="22" runat="server" data-options="required:true" missingMessage="公司地址不能为空" CssClass="easyui-validatebox"></asp:TextBox>
+                            <table>
+                                    <tr>
+                                        <td><asp:DropDownList ID="drpShengList" Width="80" Height="24" runat="server"></asp:DropDownList></td>
+                                        <td><asp:DropDownList ID="drpShiList" Width="81" Height="24" runat="server"></asp:DropDownList></td>
+                                        <td><asp:DropDownList ID="drpQuList" Width="80" Height="24" runat="server"></asp:DropDownList></td>
+                                        <td><asp:TextBox ID="txbPrincipleAddress" Width="150" Height="22" runat="server" data-options="required:true" missingMessage="公司地址不能为空" CssClass="easyui-validatebox"></asp:TextBox></td>
+                                    </tr>
+                                </table> 
                         </td>
                         <td align="left" style="color: #6e6e6e; font-size: 14px;">
                             <span style="font-weight: bold; color: #f00;"></span>
@@ -191,6 +201,18 @@
                             <span style="font-weight: bold; color: #f00;"></span>
                         </td>
                     </tr>
+                    <tr>
+                        <td style="height: 20px;"></td>
+                    </tr>
+                    <tr>
+                            <td style="font-size:14px; color:#6e6e6e;">企业简介：</td>
+                            <td align="left" style="width:410px;" class="uploader orange">
+                                <asp:TextBox ID="txbEnterpriseDescription" TextMode="MultiLine" Height="100" Width="400" runat="server"></asp:TextBox>
+                            </td>
+                            <td align="left" style="color:#6e6e6e;font-size:16px;">
+                                <span style="font-weight:bold; color:#6e6e6e;"></span>
+                            </td>
+                        </tr>
                     <tr>
                         <td style="height: 20px;"></td>
                     </tr>

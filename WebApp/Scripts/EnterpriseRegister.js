@@ -14,6 +14,39 @@
             }
         });
     });
+    //加载地区市
+    $('#drpShengList').bind('change', function () {
+        $.ajax({
+            type: 'POST',
+            url: 'Services/GetCityInfo.asmx/Get_ShiList',
+            contentType: 'application/json',
+            data: '{"strSheng":"' + $('#drpShengList').val() + '"}',
+            success: function (data) {
+                if (data.d != "-1") {
+                    $('#drpQuList').empty();
+                    $('#drpShiList').empty();
+                    $('#drpShiList').append(data.d);
+                    return;
+                }
+            }
+        });
+    })
+    //加载选择县级市
+    $('#drpShiList').bind('change', function () {
+        $.ajax({
+            type: 'POST',
+            url: 'Services/GetCityInfo.asmx/Get_quList',
+            contentType: 'application/json',
+            data: '{"strShi":"' + $('#drpShiList').val() + '"}',
+            success: function (data) {
+                if (data.d != "-1") {
+                    $('#drpQuList').empty();
+                    $('#drpQuList').append(data.d);
+                    return;
+                }
+            }
+        });
+    })
 
     /* 验证两个值是否相同 */
     $.extend($.fn.validatebox.defaults.rules, {

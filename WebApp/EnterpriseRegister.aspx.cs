@@ -4,18 +4,32 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Utility;
 
 namespace WebApp
 {
-    public partial class EnterpriseRegister : System.Web.UI.Page
+    public partial class EnterpriseRegister : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 Load_HangYeList();
+                Load_ShengList();//加载省列表
             }
         }
+
+        #region 加载省份信息
+
+        private void Load_ShengList()
+        {
+            drpShengList.DataSource = SHENG_JSON;
+            drpShengList.DataBind();
+
+            drpShengList.Items.Insert(0, new ListItem("选择省份", "-1"));
+        }
+
+        #endregion
 
         #region 加载行业类别（小类）
 
@@ -53,7 +67,7 @@ namespace WebApp
             zlzw.Model.GeneralEnterpriseModel generalEnterpriseModel = new zlzw.Model.GeneralEnterpriseModel();
             generalEnterpriseModel.UserGuid = new Guid(coreUserModel.UserGuid.ToString());//所属账号的GUID
             generalEnterpriseModel.CompanyName = Request.Form["txbEnterpriseName"];//企业名称
-            generalEnterpriseModel.IndustryKey = drpJobFeildKindsType.SelectedValue;//公司行业
+            generalEnterpriseModel.IndustryKey = drpJobFeildKindsType.SelectedValue + "-" + Request.Params["drpItems"];//公司行业
             generalEnterpriseModel.PrincipleAddress = Request.Form["txbPrincipleAddress"];//公司地址
             generalEnterpriseModel.Telephone = Request.Form["txbTelephone"];//联系电话
             generalEnterpriseModel.ContactPerson = Request.Form["txbContactPerson"];//联系人
@@ -62,6 +76,11 @@ namespace WebApp
             generalEnterpriseModel.BusRoute = Request.Form["txbBusRoute"];//乘车路线
             generalEnterpriseModel.CanUsable = 1;
             generalEnterpriseModel.CreateDate = DateTime.Now;//创建日期
+            //添加所在省市区信息
+            generalEnterpriseModel.ShengName = Request.Form["drpShengList"];//省名称
+            generalEnterpriseModel.ShiName = Request.Form["drpShiList"];//市名称
+            generalEnterpriseModel.QuName = Request.Form["drpQuList"];//区名称
+            generalEnterpriseModel.EnterpriseDescription = Request.Form["txbEnterpriseDescription"];//企业简介
 
             if (uploadBusinessLicense.HasFile)
             {

@@ -103,6 +103,33 @@ namespace WebApp {
         protected global::System.Web.UI.WebControls.DropDownList drpItems;
         
         /// <summary>
+        /// drpShengList 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpShengList;
+        
+        /// <summary>
+        /// drpShiList 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpShiList;
+        
+        /// <summary>
+        /// drpQuList 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpQuList;
+        
+        /// <summary>
         /// txbPrincipleAddress 控件。
         /// </summary>
         /// <remarks>
@@ -164,6 +191,15 @@ namespace WebApp {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txbBusRoute;
+        
+        /// <summary>
+        /// txbEnterpriseDescription 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txbEnterpriseDescription;
         
         /// <summary>
         /// uploadBusinessLicense 控件。

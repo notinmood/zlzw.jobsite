@@ -14,7 +14,6 @@
             }
         });
     });
-
     $('#drpJobFeildKindsType').bind('change', function () {
         $.ajax({
             type: 'POST',

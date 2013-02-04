@@ -3679,6 +3679,7 @@
     <Content Include="Scripts\WebForms\jquery.artDialog.js" />
     <Content Include="Scripts\WebForms\jquery.watermark.min.js" />
     <Content Include="SearchList.aspx" />
+    <Content Include="Services\GetCityInfo.asmx" />
     <Content Include="Services\GetGeneralBasicSetting.asmx" />
     <Content Include="Services\ManageADImage.asmx" />
     <Content Include="Services\ValidateLogin.asmx" />
@@ -4240,6 +4241,10 @@
     </Compile>
     <Compile Include="SearchList.aspx.designer.cs">
       <DependentUpon>SearchList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\GetCityInfo.asmx.cs">
+      <DependentUpon>GetCityInfo.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Services\GetGeneralBasicSetting.asmx.cs">
       <DependentUpon>GetGeneralBasicSetting.asmx</DependentUpon>

@@ -77,8 +77,6 @@ namespace WebApp.Manage.admin
             grid1.DataBind();
         }
 
-
-
         #endregion
 
         #region 分页事件
@@ -100,19 +98,44 @@ namespace WebApp.Manage.admin
             DataRowView dr = e.DataItem as DataRowView;
             if (dr != null)
             {
+                string strEnterpriseGUID = dr["EnterpriseGuid"].ToString();
+                e.Values[0] = Get_EnterpriseName(strEnterpriseGUID);
                 string strADType = dr["ADType"].ToString();
                 if (strADType == "1")
                 {
-                    e.Values[1] = "图片类型";
+                    e.Values[2] = "图片类型";
                 }
                 else if(strADType == "2")
                 {
-                    e.Values[1] = "脚本类型";
+                    e.Values[2] = "脚本类型";
                 }
                 else
                 {
-                    e.Values[1] = "未知类型";
+                    e.Values[2] = "未知类型";
                 }
+            }
+        }
+
+        #endregion
+
+        #region 获取企业名称
+
+        private string Get_EnterpriseName(string strEnterpriseGUID)
+        {
+            if (strEnterpriseGUID == "")
+            {
+                return "";
+            }
+            zlzw.BLL.GeneralEnterpriseBLL generalEnterpriseBLL = new zlzw.BLL.GeneralEnterpriseBLL();
+            DataTable dt = generalEnterpriseBLL.GetList("EnterpriseGuid='"+ strEnterpriseGUID +"'").Tables[0];
+
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["CompanyName"].ToString();
+            }
+            else
+            {
+                return "未知";
             }
         }
 

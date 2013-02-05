@@ -17,7 +17,7 @@
             }
         }
     });
-    var strUserType = 2;
+    var strUserType = 1;
     $('[type*=radio]').bind('click', function () {
         strUserType = this.value;
     });
@@ -62,7 +62,7 @@
                 }
                 else
                 {
-                    window.location.href = 'EditEnterpriseInfo.aspx?id='+data.d;
+                    window.location.href = 'JobPosting.aspx?id=' + data.d;
                 }
             }
         });
@@ -71,7 +71,7 @@
     $('#txbUsername').watermark("登陆账号");
     $("#txbJobPositionKinds").watermark("请选择岗位类别");
     $("#txbJobFeildKinds").watermark("请选择行业类别");
-    $("#txbSearchKey").watermark("公司名或职位关键字");
+    $("#txbSearchKey").watermark("公司或职位 关键字/词");
     $('#txbWorkAreas').watermark("请选择工作地区");
     //art.dialog.open('TemplatePage/JobPositionKinds.aspx');
     $('#txbJobPositionKinds').bind('click', function () {

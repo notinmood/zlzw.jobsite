@@ -174,7 +174,7 @@ namespace WebApp
                 Label labAddress = (Label)e.Item.FindControl("labAddress");
                 Label labPublishDate = (Label)e.Item.FindControl("labPublishDate");
 
-                labJobName.Text = drv["JobPositionName"].ToString();//企业发布的岗位名称
+                labJobName.Text = "<a href='EnterpriseInfo/EnterpriseInfo.aspx?type=" + drv["EnterpriseKey"].ToString() + "&id=" + drv["JobPositionGuid"].ToString() + "' style='text-decoration:none;color:#093C7E;font-weight:bold;'>" + drv["JobPositionName"].ToString() + "</a>";//企业发布的岗位名称
                 labEnterpriseName.Text = drv["EnterpriseName"].ToString();//企业名称
                 labAddress.Text = drv["JobWorkPlaceNames"].ToString();//工作地址
                 labPublishDate.Text = DateTime.Parse(drv["CreateDate"].ToString()).ToString("yyyy年MM月dd");

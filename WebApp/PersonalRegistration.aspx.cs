@@ -31,7 +31,7 @@ namespace WebApp
         {
             zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
             DataTable dt = generalBasicSettingBLL.GetList("SettingCategory='NeedEducation' and CanUsable=1 order by OrderNumber asc").Tables[0];
-
+            
             drpUserEducationalBackground.DataTextField = "SettingValue";
             drpUserEducationalBackground.DataValueField = "SettingKey";
 

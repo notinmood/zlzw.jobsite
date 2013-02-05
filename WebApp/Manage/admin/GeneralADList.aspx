@@ -30,6 +30,7 @@
                 EnableRowNumber="True" IsDatabasePaging="true" 
                 OnRowDataBound="Grid1_RowDataBound" ForceFitAllTime="true" EnableAjaxLoading="true">
                 <Columns>
+                    <x:BoundField Width="150px" DataField="EnterpriseGuid" HeaderText="所属企业" TextAlign="Center" />
                     <x:BoundField Width="70px" DataField="ADName" HeaderText="广告名称" TextAlign="Center" />
                     <x:BoundField Width="100px" DataField="ADType" HeaderText="广告类型" TextAlign="Center" />
                     <x:BoundField Width="120px" DataField="CreateUserName" HeaderText="创建人" TextAlign="Center" />

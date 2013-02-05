@@ -45,18 +45,6 @@
                         <td style="height:20px;"></td>
                     </tr>
                     <tr>
-                        <td style="font-size:14px; color:#6e6e6e;">职位类型：<asp:DropDownList ID="drpSpecialType" Enabled="false" Height="26" runat="server" Width="405"></asp:DropDownList>
-                        </td>
-                        <td align="left" style="width:410px;"> 
-                            &nbsp;</td>
-                        <td align="left" style="color:#6e6e6e;font-size:14px;">
-                            <span style="font-weight:bold; color:#f00;"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="height:20px;"></td>
-                    </tr>
-                    <tr>
                         <td style="font-size:14px; color:#6e6e6e;">岗位名称：<asp:TextBox ID="txbJobPositionName" data-options="required:true" missingMessage="岗位名称不能为空" Width="405" Height="22" runat="server" CssClass="easyui-validatebox"></asp:TextBox><span style="font-weight:bold; color:#f00;"> *</span>
                         </td>
                         <td align="left" style="width:410px;"> 
@@ -276,6 +264,18 @@
                     </tr>
                     <tr>
                         <td style="font-size:14px; color:#6e6e6e;">工作性质：<asp:DropDownList ID="drpJobWorkType" Height="26" runat="server" Width="405"></asp:DropDownList>
+                        </td>
+                        <td align="left" style="width:410px;"> 
+                            &nbsp;</td>
+                        <td align="left" style="color:#6e6e6e;font-size:14px;">
+                            <span style="font-weight:bold; color:#f00;"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height:20px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size:14px; color:#6e6e6e;">发布类型：<asp:DropDownList ID="drpSpecialType" Enabled="false" Height="26" runat="server" Width="405"></asp:DropDownList>
                         </td>
                         <td align="left" style="width:410px;"> 
                             &nbsp;</td>

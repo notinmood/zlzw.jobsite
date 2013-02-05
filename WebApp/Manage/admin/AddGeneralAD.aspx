@@ -34,6 +34,7 @@
                         AutoScroll="true" BodyPadding="5px" runat="server" EnableCollapse="True">
                         <Items>
                             <x:Label ID="labCreateUserName" runat="server" Label="创建人"></x:Label>
+                            <x:DropDownList ID="drpEnterpriseType" runat="server" Label="所属企业"></x:DropDownList>
                             <x:TextBox ID="txbADName" runat="server" Label="广告名称" EmptyText="广告名称" Required="true"
                                 RequiredMessage="广告名称不能为空">
                             </x:TextBox>

@@ -22,7 +22,7 @@
 
 <body>
     <form id="form01" runat="server">
-        <div>
+        <div style="width:1003px;margin-left:20%;">
             <uc1:PageHead ID="PageHead1" runat="server" />
             <div class="top2right">
                 <div style="background-image:url('image/img8.png');background-repeat:repeat-x;">

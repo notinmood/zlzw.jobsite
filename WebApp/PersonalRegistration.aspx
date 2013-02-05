@@ -153,10 +153,10 @@
                         <tr>
                             <td style="font-size:14px; color:#6e6e6e;">户口原籍：</td>
                             <td align="left" style="width:410px;"> 
-                                <asp:TextBox ID="txbUserCountry" Width="400" Height="22" runat="server" CssClass="easyui-validatebox" data-options="required:true" missingMessage="户口原籍不能为空" ></asp:TextBox>
+                                <asp:TextBox ID="txbUserCountry" Width="400" Height="22" runat="server" CssClass="easyui-validatebox"></asp:TextBox>
                             </td>
                             <td align="left" style="color:#6e6e6e;font-size:14px;">
-                                <span style="font-weight:bold; color:#f00;">*</span>
+                                <span style="font-weight:bold; color:#f00;"></span>
                             </td>
                         </tr>
                         <tr>
@@ -165,10 +165,10 @@
                         <tr>
                             <td style="font-size:14px; color:#6e6e6e;">现居住地：</td>
                             <td align="left" style="width:410px;"> 
-                                <asp:TextBox ID="txbCurrentResidence" Width="400" Height="22" runat="server" CssClass="easyui-validatebox" data-options="required:true" missingMessage="现居住地不能为空" ></asp:TextBox>
+                                <asp:TextBox ID="txbCurrentResidence" Width="400" Height="22" runat="server" CssClass="easyui-validatebox"></asp:TextBox>
                             </td>
                             <td align="left" style="color:#6e6e6e;font-size:14px;">
-                                <span style="font-weight:bold; color:#f00;">*</span>
+                                <span style="font-weight:bold; color:#f00;"></span>
                             </td>
                         </tr>
                         <tr>
@@ -177,10 +177,10 @@
                         <tr>
                             <td style="font-size:14px; color:#6e6e6e;">电子信箱：</td>
                             <td align="left" style="width:410px;"> 
-                                <asp:TextBox ID="txbUserEmail" Width="400" Height="22" runat="server" CssClass="easyui-validatebox" data-options="required:true,validType:'email'" missingMessage="电子信箱不能为空" invalidMessage="电子信箱格式错误"></asp:TextBox>
+                                <asp:TextBox ID="txbUserEmail" Width="400" Height="22" runat="server" CssClass="easyui-validatebox" data-options="validType:'email'" invalidMessage="电子信箱格式错误"></asp:TextBox>
                             </td>
                             <td align="left" style="color:#6e6e6e;font-size:14px;">
-                                <span style="font-weight:bold; color:#f00;">*</span>
+                                <span style="font-weight:bold; color:#f00;"></span>
                             </td>
                         </tr>
                         <tr>

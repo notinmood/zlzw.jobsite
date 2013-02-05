@@ -31,16 +31,16 @@ namespace WebApp.UserControl
                 {
                     if (nCount == 19)
                     {
-                        labNonManageTypeOther.Text += "<a href='SearchList.aspx?id=" + dt.Rows[nCount]["SettingValue"].ToString() + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>";
+                        labNonManageTypeOther.Text += "<a href='SearchList.aspx?type=1&id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>";
                     }
                     else
                     {
-                        labNonManageTypeOther.Text += "<a href='SearchList.aspx?id=" + dt.Rows[nCount]["SettingValue"].ToString() + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "　</a>";
+                        labNonManageTypeOther.Text += "<a href='SearchList.aspx?type=1&id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "　</a>";
                     }
                 }
                 else
                 {
-                    labNonManageType.Text += "<a href='SearchList.aspx?id=" + dt.Rows[nCount]["SettingValue"].ToString() + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "　</a>";
+                    labNonManageType.Text += "<a href='SearchList.aspx?type=1&id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "　</a>";
                 }
             }
         }
@@ -55,7 +55,7 @@ namespace WebApp.UserControl
             DataTable dt = generalBasicSettingBLL.GetList("DisplayName='管理' and CanUsable=1").Tables[0];
             for (int nCount = 0; nCount < dt.Rows.Count; nCount++)
             {
-                labManageType.Text += "<a href='SearchList.aspx?id=" + dt.Rows[nCount]["SettingValue"].ToString() + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "　</a>";
+                labManageType.Text += "<a href='SearchList.aspx?id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "　</a>";
             }
         }
 

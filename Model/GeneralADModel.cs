@@ -11,6 +11,7 @@ namespace zlzw.Model
         { }
         #region Model
         private int _adid;
+        private Guid _enterpriseguid;
         private Guid _adguid;
         private string _adname;
         private string _adimagekey;
@@ -45,6 +46,14 @@ namespace zlzw.Model
         {
             set { _adid = value; }
             get { return _adid; }
+        }
+        /// <summary>
+        /// 所属企业ID
+        /// </summary>
+        public Guid EnterpriseGuid
+        {
+            set { _enterpriseguid = value; }
+            get { return _enterpriseguid; }
         }
         /// <summary>
         /// 

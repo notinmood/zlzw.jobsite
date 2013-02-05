@@ -20,6 +20,7 @@ namespace WebApp.Manage.admin
                 {
                     fileUploadImage.Required = false;
                 }
+                Load_EnterpriseList();//加载所属企业列表
                 Load_ADTypeList();//加载广告类型
                 LoadData(strType);
                 labCreateUserName.Text = Get_UserName();//获取创建人名称
@@ -31,6 +32,21 @@ namespace WebApp.Manage.admin
             btnClose.OnClientClick = ActiveWindow.GetConfirmHideReference();
             Panel2.Title = DateTime.Now.ToString("yyyy年MM月dd日");
         }
+
+        #region 加载企业列表
+
+        private void Load_EnterpriseList()
+        {
+            zlzw.BLL.GeneralEnterpriseBLL generalEnterpriseBLL = new zlzw.BLL.GeneralEnterpriseBLL();
+            DataTable dt = generalEnterpriseBLL.GetList("Canusable=1 order by CreateDate desc").Tables[0];
+            drpEnterpriseType.DataTextField = "CompanyName";
+            drpEnterpriseType.DataValueField = "EnterpriseGuid";
+
+            drpEnterpriseType.DataSource = dt;
+            drpEnterpriseType.DataBind();
+        }
+
+        #endregion
 
         #region 加载广告类型
 
@@ -87,6 +103,7 @@ namespace WebApp.Manage.admin
                 {
                     ckbADStatus.Checked = false;
                 }
+                drpEnterpriseType.SelectedValue = generalADModel.EnterpriseGuid.ToString();//所属企业ID
                 txbADDesc.Text = generalADModel.ADDesc;//广告简介
                 ViewState["ADImagePath"] = generalADModel.ADImagePath;//广告图片路径
                 ViewState["CreateDate"] = generalADModel.CreateDate.ToString();//创建日期
@@ -130,6 +147,7 @@ namespace WebApp.Manage.admin
                 {
                     generalADModel.ADImagePath = ViewState["ADImagePath"].ToString();
                 }
+                generalADModel.EnterpriseGuid = new Guid(drpEnterpriseType.SelectedValue);//所属企业GUID
                 generalADModel.CreateUserKey = Request.Cookies["UserID"].Value;//创建人GUID
                 generalADModel.CreateUserName = Get_UserName();
                 generalADModel.CanUsable = 1;
@@ -166,6 +184,7 @@ namespace WebApp.Manage.admin
                     fileUploadImage.SaveAs(Server.MapPath("~/UploadImages/" + fileName));
                     generalADModel.ADImagePath = "~/UploadImages/" + fileName;//保存广告图片路径
                 }
+                generalADModel.EnterpriseGuid = new Guid(drpEnterpriseType.SelectedValue);//所属企业GUID
                 generalADModel.CreateUserKey = Request.Cookies["UserID"].Value;//创建人GUID
                 generalADModel.CreateUserName = Get_UserName();
                 generalADModel.ADDesc = txbADDesc.Text;//广告简介
@@ -211,7 +230,5 @@ namespace WebApp.Manage.admin
         #endregion
 
         #endregion
-
-
     }
 }

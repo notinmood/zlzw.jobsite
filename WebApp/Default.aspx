@@ -29,20 +29,26 @@
                 <div class="top1left">
                     <table width="223" border="0" cellpadding="0" cellspacing="0">
                         <tr>
-                            <td colspan="2">
-                            <div style="border: 1px solid #d4d4d4; padding-left: 10px;">
-                                <table id="loginForm" width="213" border="0" cellpadding="0" cellspacing="0" style="height: 165px" runat="server">
+                            <td colspan="3">
+                                <div style="border: 1px solid #d4d4d4;">
+                                <table id="loginForm" width="222" border="0" cellpadding="0" cellspacing="0" style="height: 165px" runat="server">
+                                    <tr>
+                                        <td style="background-image:url('image/img3.png'); background-repeat:repeat-x;height:32px">
+                                            <span style="font-size:15px; color:#fff; font-weight:bold;">&nbsp;&nbsp;登陆窗口</span>
+                                        </td>
+                                    </tr>
                                     <tr id="rows1">
-                                        <td><span style="color: #FA7A00; font-size: 13px; font-weight: bold;">请首先选择</span>
-                                            <input type="radio" id="radioEnterprise" name="userType" checked="checked" value="2" /><span style="color: #FA7A00; font-size: 13px; font-weight: bold;">企业</span>
-                                            <input type="radio" id="radioPersonal" name="userType" value="1" /><span style="color: #FA7A00; font-size: 13px; font-weight: bold;">个人</span></td>
+                                        <td><span style="color: #FA7A00; font-size: 13px; font-weight: bold;">　请首先选择</span>
+                                            <input type="radio" id="radioPersonal" name="userType" checked="checked" value="1" /><span style="color: #FA7A00; font-size: 13px; font-weight: bold;">个人</span>
+                                            <input type="radio" id="radioEnterprise" name="userType" value="2" /><span style="color: #FA7A00; font-size: 13px; font-weight: bold;">企业</span>
+                                        </td>
                                     </tr>
                                     <tr id="rows2">
                                         <td>
                                             <table>
                                                 <tr>
-                                                    <td>账号:
-                                                        <input id="txbUsername" type="text" name="txbUsername" style="width: 105px" class="easyui-validatebox" data-options="required:true,validType:'length[6,10]'" missingMessage="账号不能为空" />
+                                                    <td>　账号:
+                                                        <input id="txbUsername" type="text" name="txbUsername" style="width: 102px" class="easyui-validatebox" data-options="required:true,validType:'length[6,10]'" missingMessage="账号不能为空" />
                                                     </td>
                                                     <td rowspan="3">
                                                         <%--<input id="Button1" type="button" value="登陆" style="height: 65px;" />--%>
@@ -50,11 +56,11 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="height: 10px;"></td>
+                                                    <td style="height: 5px;"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>密码:
-                                                        <input type="password" id="txbPassword" name="txbPassword" style="width: 105px" class="easyui-validatebox" data-options="required:true,validType:'length[6,10]'" missingMessage="密码不能为空">
+                                                    <td>　密码:
+                                                        <input type="password" id="txbPassword" name="txbPassword" style="width: 102px" class="easyui-validatebox" data-options="required:true,validType:'length[6,10]'" missingMessage="密码不能为空">
                                                     </td>
                                                 </tr>
                                             </table>
@@ -68,12 +74,12 @@
                                 </table>
                                 <asp:Label ID="labSuccessLogin" runat="server"></asp:Label>
                             </div>
-                        </td>
+                            </td>
                         </tr>
                     </table>
                 </div>
                 <div class="top1right">
-                    <ul id="portfolio" style="list-style: none; padding-left: 0.5px; margin-top: -0.5px;">
+                    <ul id="portfolio" style="list-style: none;margin-left:0.5px; padding-left: 0.5px; margin-top: -0.5px;">
                     </ul>
                 </div>
                 <div class="top1middle">
@@ -258,9 +264,20 @@
                         </table>
                     </div>
                     <div class="top3rightmiddle">
-                        <table width="752" border="0" cellpadding="0" cellspacing="0" style="padding-top:75px;">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-top:92px;">
                             <tr>
-                                <td style="background-image: url('image/img3.png'); background-repeat: repeat-x;" height="32px;" width="752px;"><span id="span8" style="color: #fff; font-weight: bold; padding-left: 15px; font-size: 14px;">紧 急 招 聘</span></td>
+                                <td style="background-image: url('image/img3.png'); background-repeat: repeat-x;" height="32px;" width="752px;">
+                                    <table style="width:100%;">
+                                        <tr>
+                                            <td align="left" valign="middle">
+                                                <span style="color:#fff; font-weight:bold; font-size:14px;">　紧急招聘</span>
+                                            </td>
+                                            <td align="right" style="color:#fff; font-weight:bold; font-size:14px;">
+                                                <a href="EmergencyRecruitmentList.aspx" target="_blank" style="color:#fff;text-decoration:none;">更多>></a>　
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
                             </tr>
                             <tr>
                                 <td>
@@ -271,7 +288,7 @@
                                             </HeaderTemplate>
                                             <ItemTemplate>
                                                     <tr>
-                                                        <td width="220" align="center"><span id="span9"><asp:Label ID="labJobTitle" runat="server"></asp:Label></span></td>
+                                                        <td width="220" align="left"><span id="span9">　<asp:Label ID="labJobTitle" runat="server"></asp:Label></span></td>
                                                         <td width="157" align="center"><asp:Label ID="labAdd" runat="server"></asp:Label></td>
                                                         <td width="231" align="center"><asp:Label ID="labXueLi" runat="server"></asp:Label></td>
                                                         <td width="185" align="center"><asp:Label ID="labTel" runat="server"></asp:Label></td>
@@ -296,7 +313,7 @@
                                                 <span style="color:#fff; font-weight:bold; font-size:14px;">　部分最近参会企业信息</span>
                                             </td>
                                             <td align="right" style="color:#fff; font-weight:bold; font-size:14px;">
-                                                <a href="#" style="color:#fff;text-decoration:none;">更多>></a>　
+                                                <a href="ParticipatingCompaniesList.aspx" target="_blank" style="color:#fff;text-decoration:none;">更多>></a>　
                                             </td>
                                         </tr>
                                     </table>

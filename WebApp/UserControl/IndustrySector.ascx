@@ -27,9 +27,10 @@
     </tr>--%>
     <tr>
         <td height="15">
+            <br />
             <span style="color: #325C93; font-weight:bold; font-size:14px;">　第一产业：</span>
             <span style="color:#6e6e6e;">
-                <asp:Label ID="labddcyType" runat="server" style="font-size:14px;"></asp:Label>
+                <asp:Label ID="labddcyType" runat="server" style="font-size:14px;"></asp:Label><br />
             </span>
        </td>
     </tr>

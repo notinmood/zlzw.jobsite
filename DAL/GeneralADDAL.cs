@@ -5,44 +5,45 @@ using System.Data.SqlClient;
 using Maticsoft.DBUtility;//Please add references
 namespace zlzw.DAL
 {
-    /// <summary>
-    /// 数据访问类:GeneralADDAL
-    /// </summary>
-    public partial class GeneralADDAL
-    {
-        public GeneralADDAL()
-        { }
-        #region  Method
-        /// <summary>
-        /// 是否存在该记录
-        /// </summary>
-        public bool Exists(int ADID)
-        {
-            int rowsAffected;
-            SqlParameter[] parameters = {
+	/// <summary>
+	/// 数据访问类:GeneralADDAL
+	/// </summary>
+	public partial class GeneralADDAL
+	{
+		public GeneralADDAL()
+		{}
+		#region  Method
+		/// <summary>
+		/// 是否存在该记录
+		/// </summary>
+		public bool Exists(int ADID)
+		{
+			int rowsAffected;
+			SqlParameter[] parameters = {
 					new SqlParameter("@ADID", SqlDbType.Int,4)
 			};
-            parameters[0].Value = ADID;
+			parameters[0].Value = ADID;
 
-            int result = DbHelperSQL.RunProcedure("GeneralAD_Exists", parameters, out rowsAffected);
-            if (result == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+			int result= DbHelperSQL.RunProcedure("GeneralAD_Exists",parameters,out rowsAffected);
+			if(result==1)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 
-        /// <summary>
-        ///  增加一条数据
-        /// </summary>
-        public int Add(zlzw.Model.GeneralADModel model)
-        {
-            int rowsAffected;
-            SqlParameter[] parameters = {
+		/// <summary>
+		///  增加一条数据
+		/// </summary>
+		public int Add(zlzw.Model.GeneralADModel model)
+		{
+			int rowsAffected;
+			SqlParameter[] parameters = {
 					new SqlParameter("@ADID", SqlDbType.Int,4),
+					new SqlParameter("@EnterpriseGuid", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@ADGuid", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@ADName", SqlDbType.NVarChar,50),
 					new SqlParameter("@ADImageKey", SqlDbType.NVarChar,50),
@@ -70,47 +71,49 @@ namespace zlzw.DAL
 					new SqlParameter("@CanUsable", SqlDbType.Int,4),
 					new SqlParameter("@PropertyNames", SqlDbType.NVarChar,-1),
 					new SqlParameter("@PropertyValues", SqlDbType.NVarChar,-1)};
-            parameters[0].Direction = ParameterDirection.Output;
-            parameters[1].Value = Guid.NewGuid();
-            parameters[2].Value = model.ADName;
-            parameters[3].Value = model.ADImageKey;
-            parameters[4].Value = model.ADImagePath;
-            parameters[5].Value = model.ADScript;
-            parameters[6].Value = model.ADTargetUrl;
-            parameters[7].Value = model.ADType;
-            parameters[8].Value = Guid.NewGuid();
-            parameters[9].Value = model.ADCategory;
-            parameters[10].Value = model.ADStatus;
-            parameters[11].Value = model.DisplayStartDate;
-            parameters[12].Value = model.DisplayEndDate;
-            parameters[13].Value = model.ADDesc;
-            parameters[14].Value = model.ADMemo;
-            parameters[15].Value = model.ADOrderNumber;
-            parameters[16].Value = model.ADWidth;
-            parameters[17].Value = model.ADHeight;
-            parameters[18].Value = model.CreateUserKey;
-            parameters[19].Value = model.CreateUserName;
-            parameters[20].Value = model.CreateDate;
-            parameters[21].Value = model.UpdateDate;
-            parameters[22].Value = model.RefreshDate;
-            parameters[23].Value = model.ADOwnerKey;
-            parameters[24].Value = model.ADOwnerName;
-            parameters[25].Value = model.CanUsable;
-            parameters[26].Value = model.PropertyNames;
-            parameters[27].Value = model.PropertyValues;
+			parameters[0].Direction = ParameterDirection.Output;
+			parameters[1].Value = Guid.NewGuid();
+			parameters[2].Value = model.EnterpriseGuid;
+			parameters[3].Value = model.ADName;
+			parameters[4].Value = model.ADImageKey;
+			parameters[5].Value = model.ADImagePath;
+			parameters[6].Value = model.ADScript;
+			parameters[7].Value = model.ADTargetUrl;
+			parameters[8].Value = model.ADType;
+			parameters[9].Value = Guid.NewGuid();
+			parameters[10].Value = model.ADCategory;
+			parameters[11].Value = model.ADStatus;
+			parameters[12].Value = model.DisplayStartDate;
+			parameters[13].Value = model.DisplayEndDate;
+			parameters[14].Value = model.ADDesc;
+			parameters[15].Value = model.ADMemo;
+			parameters[16].Value = model.ADOrderNumber;
+			parameters[17].Value = model.ADWidth;
+			parameters[18].Value = model.ADHeight;
+			parameters[19].Value = model.CreateUserKey;
+			parameters[20].Value = model.CreateUserName;
+			parameters[21].Value = model.CreateDate;
+			parameters[22].Value = model.UpdateDate;
+			parameters[23].Value = model.RefreshDate;
+			parameters[24].Value = model.ADOwnerKey;
+			parameters[25].Value = model.ADOwnerName;
+			parameters[26].Value = model.CanUsable;
+			parameters[27].Value = model.PropertyNames;
+			parameters[28].Value = model.PropertyValues;
 
-            DbHelperSQL.RunProcedure("GeneralAD_ADD", parameters, out rowsAffected);
-            return (int)parameters[0].Value;
-        }
+			DbHelperSQL.RunProcedure("GeneralAD_ADD",parameters,out rowsAffected);
+			return (int)parameters[0].Value;
+		}
 
-        /// <summary>
-        ///  更新一条数据
-        /// </summary>
-        public bool Update(zlzw.Model.GeneralADModel model)
-        {
-            int rowsAffected = 0;
-            SqlParameter[] parameters = {
+		/// <summary>
+		///  更新一条数据
+		/// </summary>
+		public bool Update(zlzw.Model.GeneralADModel model)
+		{
+			int rowsAffected=0;
+			SqlParameter[] parameters = {
 					new SqlParameter("@ADID", SqlDbType.Int,4),
+					new SqlParameter("@EnterpriseGuid", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@ADGuid", SqlDbType.UniqueIdentifier,16),
 					new SqlParameter("@ADName", SqlDbType.NVarChar,50),
 					new SqlParameter("@ADImageKey", SqlDbType.NVarChar,50),
@@ -138,342 +141,348 @@ namespace zlzw.DAL
 					new SqlParameter("@CanUsable", SqlDbType.Int,4),
 					new SqlParameter("@PropertyNames", SqlDbType.NVarChar,-1),
 					new SqlParameter("@PropertyValues", SqlDbType.NVarChar,-1)};
-            parameters[0].Value = model.ADID;
-            parameters[1].Value = model.ADGuid;
-            parameters[2].Value = model.ADName;
-            parameters[3].Value = model.ADImageKey;
-            parameters[4].Value = model.ADImagePath;
-            parameters[5].Value = model.ADScript;
-            parameters[6].Value = model.ADTargetUrl;
-            parameters[7].Value = model.ADType;
-            parameters[8].Value = model.ADKind;
-            parameters[9].Value = model.ADCategory;
-            parameters[10].Value = model.ADStatus;
-            parameters[11].Value = model.DisplayStartDate;
-            parameters[12].Value = model.DisplayEndDate;
-            parameters[13].Value = model.ADDesc;
-            parameters[14].Value = model.ADMemo;
-            parameters[15].Value = model.ADOrderNumber;
-            parameters[16].Value = model.ADWidth;
-            parameters[17].Value = model.ADHeight;
-            parameters[18].Value = model.CreateUserKey;
-            parameters[19].Value = model.CreateUserName;
-            parameters[20].Value = model.CreateDate;
-            parameters[21].Value = model.UpdateDate;
-            parameters[22].Value = model.RefreshDate;
-            parameters[23].Value = model.ADOwnerKey;
-            parameters[24].Value = model.ADOwnerName;
-            parameters[25].Value = model.CanUsable;
-            parameters[26].Value = model.PropertyNames;
-            parameters[27].Value = model.PropertyValues;
+			parameters[0].Value = model.ADID;
+			parameters[1].Value = model.EnterpriseGuid;
+			parameters[2].Value = model.ADGuid;
+			parameters[3].Value = model.ADName;
+			parameters[4].Value = model.ADImageKey;
+			parameters[5].Value = model.ADImagePath;
+			parameters[6].Value = model.ADScript;
+			parameters[7].Value = model.ADTargetUrl;
+			parameters[8].Value = model.ADType;
+			parameters[9].Value = model.ADKind;
+			parameters[10].Value = model.ADCategory;
+			parameters[11].Value = model.ADStatus;
+			parameters[12].Value = model.DisplayStartDate;
+			parameters[13].Value = model.DisplayEndDate;
+			parameters[14].Value = model.ADDesc;
+			parameters[15].Value = model.ADMemo;
+			parameters[16].Value = model.ADOrderNumber;
+			parameters[17].Value = model.ADWidth;
+			parameters[18].Value = model.ADHeight;
+			parameters[19].Value = model.CreateUserKey;
+			parameters[20].Value = model.CreateUserName;
+			parameters[21].Value = model.CreateDate;
+			parameters[22].Value = model.UpdateDate;
+			parameters[23].Value = model.RefreshDate;
+			parameters[24].Value = model.ADOwnerKey;
+			parameters[25].Value = model.ADOwnerName;
+			parameters[26].Value = model.CanUsable;
+			parameters[27].Value = model.PropertyNames;
+			parameters[28].Value = model.PropertyValues;
 
-            DbHelperSQL.RunProcedure("GeneralAD_Update", parameters, out rowsAffected);
-            if (rowsAffected > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+			DbHelperSQL.RunProcedure("GeneralAD_Update",parameters,out rowsAffected);
+			if (rowsAffected > 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 
-        /// <summary>
-        /// 删除一条数据
-        /// </summary>
-        public bool Delete(int ADID)
-        {
-            int rowsAffected = 0;
-            SqlParameter[] parameters = {
+		/// <summary>
+		/// 删除一条数据
+		/// </summary>
+		public bool Delete(int ADID)
+		{
+			int rowsAffected=0;
+			SqlParameter[] parameters = {
 					new SqlParameter("@ADID", SqlDbType.Int,4)
 			};
-            parameters[0].Value = ADID;
+			parameters[0].Value = ADID;
 
-            DbHelperSQL.RunProcedure("GeneralAD_Delete", parameters, out rowsAffected);
-            if (rowsAffected > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        /// <summary>
-        /// 批量删除数据
-        /// </summary>
-        public bool DeleteList(string ADIDlist)
-        {
-            StringBuilder strSql = new StringBuilder();
-            strSql.Append("delete from GeneralAD ");
-            strSql.Append(" where ADID in (" + ADIDlist + ")  ");
-            int rows = DbHelperSQL.ExecuteSql(strSql.ToString());
-            if (rows > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+			DbHelperSQL.RunProcedure("GeneralAD_Delete",parameters,out rowsAffected);
+			if (rowsAffected > 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		/// <summary>
+		/// 批量删除数据
+		/// </summary>
+		public bool DeleteList(string ADIDlist )
+		{
+			StringBuilder strSql=new StringBuilder();
+			strSql.Append("delete from GeneralAD ");
+			strSql.Append(" where ADID in ("+ADIDlist + ")  ");
+			int rows=DbHelperSQL.ExecuteSql(strSql.ToString());
+			if (rows > 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 
-        /// <summary>
-        /// 得到一个对象实体
-        /// </summary>
-        public zlzw.Model.GeneralADModel GetModel(int ADID)
-        {
-            SqlParameter[] parameters = {
+		/// <summary>
+		/// 得到一个对象实体
+		/// </summary>
+		public zlzw.Model.GeneralADModel GetModel(int ADID)
+		{
+			SqlParameter[] parameters = {
 					new SqlParameter("@ADID", SqlDbType.Int,4)
 			};
-            parameters[0].Value = ADID;
+			parameters[0].Value = ADID;
 
-            zlzw.Model.GeneralADModel model = new zlzw.Model.GeneralADModel();
-            DataSet ds = DbHelperSQL.RunProcedure("GeneralAD_GetModel", parameters, "ds");
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                return DataRowToModel(ds.Tables[0].Rows[0]);
-            }
-            else
-            {
-                return null;
-            }
-        }
+			zlzw.Model.GeneralADModel model=new zlzw.Model.GeneralADModel();
+			DataSet ds= DbHelperSQL.RunProcedure("GeneralAD_GetModel",parameters,"ds");
+			if(ds.Tables[0].Rows.Count>0)
+			{
+				return DataRowToModel(ds.Tables[0].Rows[0]);
+			}
+			else
+			{
+				return null;
+			}
+		}
 
 
-        /// <summary>
-        /// 得到一个对象实体
-        /// </summary>
-        public zlzw.Model.GeneralADModel DataRowToModel(DataRow row)
-        {
-            zlzw.Model.GeneralADModel model = new zlzw.Model.GeneralADModel();
-            if (row != null)
-            {
-                if (row["ADID"] != null && row["ADID"].ToString() != "")
-                {
-                    model.ADID = int.Parse(row["ADID"].ToString());
-                }
-                if (row["ADGuid"] != null && row["ADGuid"].ToString() != "")
-                {
-                    model.ADGuid = new Guid(row["ADGuid"].ToString());
-                }
-                if (row["ADName"] != null)
-                {
-                    model.ADName = row["ADName"].ToString();
-                }
-                if (row["ADImageKey"] != null)
-                {
-                    model.ADImageKey = row["ADImageKey"].ToString();
-                }
-                if (row["ADImagePath"] != null)
-                {
-                    model.ADImagePath = row["ADImagePath"].ToString();
-                }
-                if (row["ADScript"] != null)
-                {
-                    model.ADScript = row["ADScript"].ToString();
-                }
-                if (row["ADTargetUrl"] != null)
-                {
-                    model.ADTargetUrl = row["ADTargetUrl"].ToString();
-                }
-                if (row["ADType"] != null && row["ADType"].ToString() != "")
-                {
-                    model.ADType = int.Parse(row["ADType"].ToString());
-                }
-                if (row["ADKind"] != null && row["ADKind"].ToString() != "")
-                {
-                    model.ADKind = new Guid(row["ADKind"].ToString());
-                }
-                if (row["ADCategory"] != null)
-                {
-                    model.ADCategory = row["ADCategory"].ToString();
-                }
-                if (row["ADStatus"] != null && row["ADStatus"].ToString() != "")
-                {
-                    model.ADStatus = int.Parse(row["ADStatus"].ToString());
-                }
-                if (row["DisplayStartDate"] != null && row["DisplayStartDate"].ToString() != "")
-                {
-                    model.DisplayStartDate = DateTime.Parse(row["DisplayStartDate"].ToString());
-                }
-                if (row["DisplayEndDate"] != null && row["DisplayEndDate"].ToString() != "")
-                {
-                    model.DisplayEndDate = DateTime.Parse(row["DisplayEndDate"].ToString());
-                }
-                if (row["ADDesc"] != null)
-                {
-                    model.ADDesc = row["ADDesc"].ToString();
-                }
-                if (row["ADMemo"] != null)
-                {
-                    model.ADMemo = row["ADMemo"].ToString();
-                }
-                if (row["ADOrderNumber"] != null && row["ADOrderNumber"].ToString() != "")
-                {
-                    model.ADOrderNumber = int.Parse(row["ADOrderNumber"].ToString());
-                }
-                if (row["ADWidth"] != null && row["ADWidth"].ToString() != "")
-                {
-                    model.ADWidth = int.Parse(row["ADWidth"].ToString());
-                }
-                if (row["ADHeight"] != null && row["ADHeight"].ToString() != "")
-                {
-                    model.ADHeight = int.Parse(row["ADHeight"].ToString());
-                }
-                if (row["CreateUserKey"] != null)
-                {
-                    model.CreateUserKey = row["CreateUserKey"].ToString();
-                }
-                if (row["CreateUserName"] != null)
-                {
-                    model.CreateUserName = row["CreateUserName"].ToString();
-                }
-                if (row["CreateDate"] != null && row["CreateDate"].ToString() != "")
-                {
-                    model.CreateDate = DateTime.Parse(row["CreateDate"].ToString());
-                }
-                if (row["UpdateDate"] != null && row["UpdateDate"].ToString() != "")
-                {
-                    model.UpdateDate = DateTime.Parse(row["UpdateDate"].ToString());
-                }
-                if (row["RefreshDate"] != null && row["RefreshDate"].ToString() != "")
-                {
-                    model.RefreshDate = DateTime.Parse(row["RefreshDate"].ToString());
-                }
-                if (row["ADOwnerKey"] != null)
-                {
-                    model.ADOwnerKey = row["ADOwnerKey"].ToString();
-                }
-                if (row["ADOwnerName"] != null)
-                {
-                    model.ADOwnerName = row["ADOwnerName"].ToString();
-                }
-                if (row["CanUsable"] != null && row["CanUsable"].ToString() != "")
-                {
-                    model.CanUsable = int.Parse(row["CanUsable"].ToString());
-                }
-                if (row["PropertyNames"] != null)
-                {
-                    model.PropertyNames = row["PropertyNames"].ToString();
-                }
-                if (row["PropertyValues"] != null)
-                {
-                    model.PropertyValues = row["PropertyValues"].ToString();
-                }
-            }
-            return model;
-        }
+		/// <summary>
+		/// 得到一个对象实体
+		/// </summary>
+		public zlzw.Model.GeneralADModel DataRowToModel(DataRow row)
+		{
+			zlzw.Model.GeneralADModel model=new zlzw.Model.GeneralADModel();
+			if (row != null)
+			{
+				if(row["ADID"]!=null && row["ADID"].ToString()!="")
+				{
+					model.ADID=int.Parse(row["ADID"].ToString());
+				}
+				if(row["EnterpriseGuid"]!=null && row["EnterpriseGuid"].ToString()!="")
+				{
+					model.EnterpriseGuid= new Guid(row["EnterpriseGuid"].ToString());
+				}
+				if(row["ADGuid"]!=null && row["ADGuid"].ToString()!="")
+				{
+					model.ADGuid= new Guid(row["ADGuid"].ToString());
+				}
+				if(row["ADName"]!=null)
+				{
+					model.ADName=row["ADName"].ToString();
+				}
+				if(row["ADImageKey"]!=null)
+				{
+					model.ADImageKey=row["ADImageKey"].ToString();
+				}
+				if(row["ADImagePath"]!=null)
+				{
+					model.ADImagePath=row["ADImagePath"].ToString();
+				}
+				if(row["ADScript"]!=null)
+				{
+					model.ADScript=row["ADScript"].ToString();
+				}
+				if(row["ADTargetUrl"]!=null)
+				{
+					model.ADTargetUrl=row["ADTargetUrl"].ToString();
+				}
+				if(row["ADType"]!=null && row["ADType"].ToString()!="")
+				{
+					model.ADType=int.Parse(row["ADType"].ToString());
+				}
+				if(row["ADKind"]!=null && row["ADKind"].ToString()!="")
+				{
+					model.ADKind= new Guid(row["ADKind"].ToString());
+				}
+				if(row["ADCategory"]!=null)
+				{
+					model.ADCategory=row["ADCategory"].ToString();
+				}
+				if(row["ADStatus"]!=null && row["ADStatus"].ToString()!="")
+				{
+					model.ADStatus=int.Parse(row["ADStatus"].ToString());
+				}
+				if(row["DisplayStartDate"]!=null && row["DisplayStartDate"].ToString()!="")
+				{
+					model.DisplayStartDate=DateTime.Parse(row["DisplayStartDate"].ToString());
+				}
+				if(row["DisplayEndDate"]!=null && row["DisplayEndDate"].ToString()!="")
+				{
+					model.DisplayEndDate=DateTime.Parse(row["DisplayEndDate"].ToString());
+				}
+				if(row["ADDesc"]!=null)
+				{
+					model.ADDesc=row["ADDesc"].ToString();
+				}
+				if(row["ADMemo"]!=null)
+				{
+					model.ADMemo=row["ADMemo"].ToString();
+				}
+				if(row["ADOrderNumber"]!=null && row["ADOrderNumber"].ToString()!="")
+				{
+					model.ADOrderNumber=int.Parse(row["ADOrderNumber"].ToString());
+				}
+				if(row["ADWidth"]!=null && row["ADWidth"].ToString()!="")
+				{
+					model.ADWidth=int.Parse(row["ADWidth"].ToString());
+				}
+				if(row["ADHeight"]!=null && row["ADHeight"].ToString()!="")
+				{
+					model.ADHeight=int.Parse(row["ADHeight"].ToString());
+				}
+				if(row["CreateUserKey"]!=null)
+				{
+					model.CreateUserKey=row["CreateUserKey"].ToString();
+				}
+				if(row["CreateUserName"]!=null)
+				{
+					model.CreateUserName=row["CreateUserName"].ToString();
+				}
+				if(row["CreateDate"]!=null && row["CreateDate"].ToString()!="")
+				{
+					model.CreateDate=DateTime.Parse(row["CreateDate"].ToString());
+				}
+				if(row["UpdateDate"]!=null && row["UpdateDate"].ToString()!="")
+				{
+					model.UpdateDate=DateTime.Parse(row["UpdateDate"].ToString());
+				}
+				if(row["RefreshDate"]!=null && row["RefreshDate"].ToString()!="")
+				{
+					model.RefreshDate=DateTime.Parse(row["RefreshDate"].ToString());
+				}
+				if(row["ADOwnerKey"]!=null)
+				{
+					model.ADOwnerKey=row["ADOwnerKey"].ToString();
+				}
+				if(row["ADOwnerName"]!=null)
+				{
+					model.ADOwnerName=row["ADOwnerName"].ToString();
+				}
+				if(row["CanUsable"]!=null && row["CanUsable"].ToString()!="")
+				{
+					model.CanUsable=int.Parse(row["CanUsable"].ToString());
+				}
+				if(row["PropertyNames"]!=null)
+				{
+					model.PropertyNames=row["PropertyNames"].ToString();
+				}
+				if(row["PropertyValues"]!=null)
+				{
+					model.PropertyValues=row["PropertyValues"].ToString();
+				}
+			}
+			return model;
+		}
 
-        /// <summary>
-        /// 获得数据列表
-        /// </summary>
-        public DataSet GetList(string strWhere)
-        {
-            StringBuilder strSql = new StringBuilder();
-            strSql.Append("select ADID,ADGuid,ADName,ADImageKey,ADImagePath,ADScript,ADTargetUrl,ADType,ADKind,ADCategory,ADStatus,DisplayStartDate,DisplayEndDate,ADDesc,ADMemo,ADOrderNumber,ADWidth,ADHeight,CreateUserKey,CreateUserName,CreateDate,UpdateDate,RefreshDate,ADOwnerKey,ADOwnerName,CanUsable,PropertyNames,PropertyValues ");
-            strSql.Append(" FROM GeneralAD ");
-            if (strWhere.Trim() != "")
-            {
-                strSql.Append(" where " + strWhere);
-            }
-            return DbHelperSQL.Query(strSql.ToString());
-        }
+		/// <summary>
+		/// 获得数据列表
+		/// </summary>
+		public DataSet GetList(string strWhere)
+		{
+			StringBuilder strSql=new StringBuilder();
+			strSql.Append("select ADID,EnterpriseGuid,ADGuid,ADName,ADImageKey,ADImagePath,ADScript,ADTargetUrl,ADType,ADKind,ADCategory,ADStatus,DisplayStartDate,DisplayEndDate,ADDesc,ADMemo,ADOrderNumber,ADWidth,ADHeight,CreateUserKey,CreateUserName,CreateDate,UpdateDate,RefreshDate,ADOwnerKey,ADOwnerName,CanUsable,PropertyNames,PropertyValues ");
+			strSql.Append(" FROM GeneralAD ");
+			if(strWhere.Trim()!="")
+			{
+				strSql.Append(" where "+strWhere);
+			}
+			return DbHelperSQL.Query(strSql.ToString());
+		}
 
-        /// <summary>
-        /// 获得前几行数据
-        /// </summary>
-        public DataSet GetList(int Top, string strWhere, string filedOrder)
-        {
-            StringBuilder strSql = new StringBuilder();
-            strSql.Append("select ");
-            if (Top > 0)
-            {
-                strSql.Append(" top " + Top.ToString());
-            }
-            strSql.Append(" ADID,ADGuid,ADName,ADImageKey,ADImagePath,ADScript,ADTargetUrl,ADType,ADKind,ADCategory,ADStatus,DisplayStartDate,DisplayEndDate,ADDesc,ADMemo,ADOrderNumber,ADWidth,ADHeight,CreateUserKey,CreateUserName,CreateDate,UpdateDate,RefreshDate,ADOwnerKey,ADOwnerName,CanUsable,PropertyNames,PropertyValues ");
-            strSql.Append(" FROM GeneralAD ");
-            if (strWhere.Trim() != "")
-            {
-                strSql.Append(" where " + strWhere);
-            }
-            strSql.Append(" order by " + filedOrder);
-            return DbHelperSQL.Query(strSql.ToString());
-        }
+		/// <summary>
+		/// 获得前几行数据
+		/// </summary>
+		public DataSet GetList(int Top,string strWhere,string filedOrder)
+		{
+			StringBuilder strSql=new StringBuilder();
+			strSql.Append("select ");
+			if(Top>0)
+			{
+				strSql.Append(" top "+Top.ToString());
+			}
+			strSql.Append(" ADID,EnterpriseGuid,ADGuid,ADName,ADImageKey,ADImagePath,ADScript,ADTargetUrl,ADType,ADKind,ADCategory,ADStatus,DisplayStartDate,DisplayEndDate,ADDesc,ADMemo,ADOrderNumber,ADWidth,ADHeight,CreateUserKey,CreateUserName,CreateDate,UpdateDate,RefreshDate,ADOwnerKey,ADOwnerName,CanUsable,PropertyNames,PropertyValues ");
+			strSql.Append(" FROM GeneralAD ");
+			if(strWhere.Trim()!="")
+			{
+				strSql.Append(" where "+strWhere);
+			}
+			strSql.Append(" order by " + filedOrder);
+			return DbHelperSQL.Query(strSql.ToString());
+		}
 
-        /// <summary>
-        /// 获取记录总数
-        /// </summary>
-        public int GetRecordCount(string strWhere)
-        {
-            StringBuilder strSql = new StringBuilder();
-            strSql.Append("select count(1) FROM GeneralAD ");
-            if (strWhere.Trim() != "")
-            {
-                strSql.Append(" where " + strWhere);
-            }
-            object obj = DbHelperSQL.GetSingle(strSql.ToString());
-            if (obj == null)
-            {
-                return 0;
-            }
-            else
-            {
-                return Convert.ToInt32(obj);
-            }
-        }
-        /// <summary>
-        /// 分页获取数据列表
-        /// </summary>
-        public DataSet GetListByPage(string strWhere, string orderby, int startIndex, int endIndex)
-        {
-            StringBuilder strSql = new StringBuilder();
-            strSql.Append("SELECT * FROM ( ");
-            strSql.Append(" SELECT ROW_NUMBER() OVER (");
-            if (!string.IsNullOrEmpty(orderby.Trim()))
-            {
-                strSql.Append("order by T." + orderby);
-            }
-            else
-            {
-                strSql.Append("order by T.ADID desc");
-            }
-            strSql.Append(")AS Row, T.*  from GeneralAD T ");
-            if (!string.IsNullOrEmpty(strWhere.Trim()))
-            {
-                strSql.Append(" WHERE " + strWhere);
-            }
-            strSql.Append(" ) TT");
-            strSql.AppendFormat(" WHERE TT.Row between {0} and {1}", startIndex, endIndex);
-            return DbHelperSQL.Query(strSql.ToString());
-        }
+		/// <summary>
+		/// 获取记录总数
+		/// </summary>
+		public int GetRecordCount(string strWhere)
+		{
+			StringBuilder strSql=new StringBuilder();
+			strSql.Append("select count(1) FROM GeneralAD ");
+			if(strWhere.Trim()!="")
+			{
+				strSql.Append(" where "+strWhere);
+			}
+			object obj = DbHelperSQL.GetSingle(strSql.ToString());
+			if (obj == null)
+			{
+				return 0;
+			}
+			else
+			{
+				return Convert.ToInt32(obj);
+			}
+		}
+		/// <summary>
+		/// 分页获取数据列表
+		/// </summary>
+		public DataSet GetListByPage(string strWhere, string orderby, int startIndex, int endIndex)
+		{
+			StringBuilder strSql=new StringBuilder();
+			strSql.Append("SELECT * FROM ( ");
+			strSql.Append(" SELECT ROW_NUMBER() OVER (");
+			if (!string.IsNullOrEmpty(orderby.Trim()))
+			{
+				strSql.Append("order by T." + orderby );
+			}
+			else
+			{
+				strSql.Append("order by T.ADID desc");
+			}
+			strSql.Append(")AS Row, T.*  from GeneralAD T ");
+			if (!string.IsNullOrEmpty(strWhere.Trim()))
+			{
+				strSql.Append(" WHERE " + strWhere);
+			}
+			strSql.Append(" ) TT");
+			strSql.AppendFormat(" WHERE TT.Row between {0} and {1}", startIndex, endIndex);
+			return DbHelperSQL.Query(strSql.ToString());
+		}
 
-        /*
-        /// <summary>
-        /// 分页获取数据列表
-        /// </summary>
-        public DataSet GetList(int PageSize,int PageIndex,string strWhere)
-        {
-            SqlParameter[] parameters = {
-                    new SqlParameter("@tblName", SqlDbType.VarChar, 255),
-                    new SqlParameter("@fldName", SqlDbType.VarChar, 255),
-                    new SqlParameter("@PageSize", SqlDbType.Int),
-                    new SqlParameter("@PageIndex", SqlDbType.Int),
-                    new SqlParameter("@IsReCount", SqlDbType.Bit),
-                    new SqlParameter("@OrderType", SqlDbType.Bit),
-                    new SqlParameter("@strWhere", SqlDbType.VarChar,1000),
-                    };
-            parameters[0].Value = "GeneralAD";
-            parameters[1].Value = "ADID";
-            parameters[2].Value = PageSize;
-            parameters[3].Value = PageIndex;
-            parameters[4].Value = 0;
-            parameters[5].Value = 0;
-            parameters[6].Value = strWhere;	
-            return DbHelperSQL.RunProcedure("UP_GetRecordByPage",parameters,"ds");
-        }*/
+		/*
+		/// <summary>
+		/// 分页获取数据列表
+		/// </summary>
+		public DataSet GetList(int PageSize,int PageIndex,string strWhere)
+		{
+			SqlParameter[] parameters = {
+					new SqlParameter("@tblName", SqlDbType.VarChar, 255),
+					new SqlParameter("@fldName", SqlDbType.VarChar, 255),
+					new SqlParameter("@PageSize", SqlDbType.Int),
+					new SqlParameter("@PageIndex", SqlDbType.Int),
+					new SqlParameter("@IsReCount", SqlDbType.Bit),
+					new SqlParameter("@OrderType", SqlDbType.Bit),
+					new SqlParameter("@strWhere", SqlDbType.VarChar,1000),
+					};
+			parameters[0].Value = "GeneralAD";
+			parameters[1].Value = "ADID";
+			parameters[2].Value = PageSize;
+			parameters[3].Value = PageIndex;
+			parameters[4].Value = 0;
+			parameters[5].Value = 0;
+			parameters[6].Value = strWhere;	
+			return DbHelperSQL.RunProcedure("UP_GetRecordByPage",parameters,"ds");
+		}*/
 
-        #endregion  Method
+		#endregion  Method
+
         #region  MethodEx
         /// <summary>
         /// 
@@ -508,5 +517,5 @@ namespace zlzw.DAL
             return DbHelperSQL.RunProcedure("GetRecordFromPage", parameters, "ds");
         }
         #endregion  MethodEx
-    }
+	}
 }

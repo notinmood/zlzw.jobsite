@@ -49,7 +49,7 @@ namespace WebApp
             }
             else if(Get_UserType(Request.Cookies["CurrentUserGUID"].Value) == "2")
             {
-                strBuilder.Append("<tr><td><table style='width:100%;'><tr><td style='width:50%;text-align:center;'>[<a href='JobPosting.aspx?id=" + Request.Cookies["CurrentUserGUID"].Value + "' style='text-decoration:none;color:#093C7E;'>职位发布</a>]<br/><br/>[<a href='EditEnterpriseInfo.aspx?id=" + Request.Cookies["CurrentUserGUID"].Value + "' id='linkBtnEdit' style='text-decoration:none;color:#093C7E;'>企业修改</a>]</td>");
+                strBuilder.Append("<tr><td><table style='width:100%;'><tr><td style='width:50%;text-align:center;'>[<a href='JobPosting.aspx?id=" + Request.Cookies["CurrentUserGUID"].Value + "' style='text-decoration:none;color:#093C7E;'>职位发布</a>]<br/><br/>[<a href='EditEnterpriseInfo.aspx?id=" + Request.Cookies["CurrentUserGUID"].Value + "' id='linkBtnEdit' style='text-decoration:none;color:#093C7E;'>资料修改</a>]</td>");
                 strBuilder.Append("<td style='width:50%;text-align:center;'>[<a href='ResumeSearchList.aspx?id=" + Request.Cookies["CurrentUserGUID"].Value + "' style='text-decoration:none;color:#093C7E;'>简历搜索</a>]<br/><br/>[<a id='linkBtnCancel' href='#'style='text-decoration:none;color:#093C7E;'>退出登录</a>]</td></tr></table></td></tr></table></td></tr></table>");
             }
             labSuccessLogin.Text = strBuilder.ToString();
@@ -113,16 +113,16 @@ namespace WebApp
                 {
                     if (nCount == 15)
                     {
-                        labNonManageTypeOther.Text += "<a href='SearchList.aspx?id=" + dt.Rows[nCount]["SettingValue"].ToString() + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>";
+                        labNonManageTypeOther.Text += "<a href='SearchList.aspx?type=1&id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>";
                     }
                     else
                     {
-                        labNonManageTypeOther.Text += "<a href='SearchList.aspx?id=" + dt.Rows[nCount]["SettingValue"].ToString() + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "　</a>";
+                        labNonManageTypeOther.Text += "<a href='SearchList.aspx?type=1&id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>　";
                     }
                 }
                 else
                 {
-                    labNonManageType.Text += "<a href='SearchList.aspx?id=" + dt.Rows[nCount]["SettingValue"].ToString() + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "　</a>";
+                    labNonManageType.Text += "<a href='SearchList.aspx?type=1&id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>　";
                 }
             }
         }
@@ -137,7 +137,7 @@ namespace WebApp
             DataTable dt = generalBasicSettingBLL.GetList("DisplayName='管理' and CanUsable=1").Tables[0];
             for (int nCount = 0; nCount < dt.Rows.Count; nCount++)
             {
-                labManageType.Text += "<a href='SearchList.aspx?id=" + dt.Rows[nCount]["SettingValue"].ToString() + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "　</a>";
+                labManageType.Text += "<a href='SearchList.aspx?type=1&id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>　";
             }
         }
 
@@ -155,16 +155,16 @@ namespace WebApp
                 {
                     if (nCount == 12)
                     {
-                        lablandscyOther.Text += dt.Rows[nCount]["SettingValue"].ToString();
+                        lablandscyOther.Text += "<a href='SearchList.aspx?type=2&id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>";
                     }
                     else
                     {
-                        lablandscyOther.Text += dt.Rows[nCount]["SettingValue"].ToString() + "　";
+                        lablandscyOther.Text += "<a href='SearchList.aspx?type=2&id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>　";
                     }
                 }
                 else
                 {
-                    landscy.Text += dt.Rows[nCount]["SettingValue"].ToString() + "　";
+                    landscy.Text += "<a href='SearchList.aspx?type=2&id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>　";
                 }
             }
         }
@@ -179,7 +179,7 @@ namespace WebApp
             DataTable dt = generalBasicSettingBLL.GetList("DisplayName='第一产业' and CanUsable=1").Tables[0];
             for (int nCount = 0; nCount < dt.Rows.Count; nCount++)
             {
-                labddcyType.Text += dt.Rows[nCount]["SettingValue"].ToString() + "　";
+                labddcyType.Text += "<a href='SearchList.aspx?type=2&id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>　";
             }
         }
 
@@ -197,7 +197,7 @@ namespace WebApp
                 {
                     labzzyType.Text += "<br/><br/><sapn style='padding-left:86px;'></span>";
                 }
-                labzzyType.Text += dt.Rows[nCount]["SettingValue"].ToString() + "　";
+                labzzyType.Text += "<a href='SearchList.aspx?type=2&id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>　";
             }
         }
 
@@ -208,7 +208,7 @@ namespace WebApp
         private void Load_GeneralADList()
         {
             zlzw.BLL.GeneralADBLL generalADBLL = new zlzw.BLL.GeneralADBLL();
-            DataTable dt = generalADBLL.GetList(9, "CanUsable=1 and ADStatus=1", "ADOrderNumber asc").Tables[0];
+            DataTable dt = generalADBLL.GetList(10, "CanUsable=1 and ADStatus=1", "ADOrderNumber asc").Tables[0];
 
             Repeater2.DataSource = dt;
             Repeater2.DataBind();
@@ -267,7 +267,7 @@ namespace WebApp
         private void Load_JobEnterpriseJobPositionList()
         {
             zlzw.BLL.JobEnterpriseJobPositionBLL jobEnterpriseJobPositionBLL = new zlzw.BLL.JobEnterpriseJobPositionBLL();
-            DataTable dt = jobEnterpriseJobPositionBLL.GetList("CanUsable=1 and SpecialType=1 order by CreateDate desc").Tables[0];
+            DataTable dt = jobEnterpriseJobPositionBLL.GetList(10, "CanUsable=1 and SpecialType=1", "CreateDate desc").Tables[0];
 
             Repeater4.DataSource = dt;
             Repeater4.DataBind();
@@ -338,7 +338,7 @@ namespace WebApp
                 System.Data.DataRowView drv = (System.Data.DataRowView)e.Item.DataItem;
                 Label labGeneralAD = (Label)e.Item.FindControl("labGeneralAD");
 
-                labGeneralAD.Text = "<a href='#'><img src='" + drv["ADImagePath"].ToString().Split('~')[1] + "' style=border:0px;' alt='" + drv["ADName"].ToString() + "' /></a>";
+                labGeneralAD.Text = "<a target='_blank' href='EnterpriseInfo/EnterpriseJobList.aspx?id=" + drv["EnterpriseGuid"].ToString() + "'><img src='" + drv["ADImagePath"].ToString().Split('~')[1] + "' style=border:0px;' alt='" + drv["ADName"].ToString() + "' /></a>";
             }
         }
 
@@ -372,7 +372,7 @@ namespace WebApp
                 System.Data.DataRowView drv = (System.Data.DataRowView)e.Item.DataItem;
                 Label labParticipatingCompaniesList = (Label)e.Item.FindControl("labParticipatingCompaniesList");
 
-                labParticipatingCompaniesList.Text = "<p style='line-height: 25px; '><img src='image/img7.png' width='11' height='12' />" + drv["ParticipatingCompaniesContent"].ToString() + "</span></p>";
+                labParticipatingCompaniesList.Text = "<p style='line-height: 25px;'><img style='border:0px;' src='image/img7.png' width='11' height='12' /><a style='color:#6e6e6e;text-decoration:none;' target='_blank' href='ParticipatingCompaniesInfo.aspx?id=" + drv["ParticipatingCompaniesGUID"].ToString() + "'>" + drv["ParticipatingCompaniesContent"].ToString() + "</p>";
             }
         }
 
@@ -390,9 +390,9 @@ namespace WebApp
                 Label labAdd = (Label)e.Item.FindControl("labAdd");
                 Label labXueLi = (Label)e.Item.FindControl("labXueLi");
                 Label labTel = (Label)e.Item.FindControl("labTel");
-                labJobTitle.Text = "<a href='#' target='_blank' style='text-decoration:none;color:#6e6e6e;'>" + drv["EnterpriseName"].ToString() + "</a>";
-                labAdd.Text = "<a href='#'  style='text-decoration:none;color:#6e6e6e;' target='_blank'>" + drv["JobWorkPlaceNames"].ToString() + "</a>";
-                labXueLi.Text = "<a href='#' style='text-decoration:none;color:#6e6e6e;'>" + drv["JobPositionKind"].ToString() + "</a>";
+                labJobTitle.Text = "<a href='EnterpriseInfo/EnterpriseInfo.aspx?type=" + drv["EnterpriseKey"].ToString() + "&id=" + drv["JobPositionGuid"].ToString() + "' target='_blank' title='" + drv["EnterpriseName"].ToString() + "' style='text-decoration:none;color:#6e6e6e;'>" + Set_TitleLength(drv["EnterpriseName"].ToString()) + "</a>";
+                labAdd.Text = "<a href='EnterpriseInfo/EnterpriseInfo.aspx?type=" + drv["EnterpriseKey"].ToString() + "&id=" + drv["JobPositionGuid"].ToString() + "'  style='text-decoration:none;color:#6e6e6e;' target='_blank' title='" + drv["JobWorkPlaceNames"].ToString() + "'>" + Get_AddLength(drv["JobWorkPlaceNames"].ToString()) + "</a>";
+                labXueLi.Text = "<a href='EnterpriseInfo/EnterpriseInfo.aspx?type=" + drv["EnterpriseKey"].ToString() + "&id=" + drv["JobPositionGuid"].ToString() + "' style='text-decoration:none;color:#6e6e6e;'>" + drv["JobPositionKind"].ToString() + "</a>";
                 labTel.Text = "<span style='text-decoration:none;color:#6e6e6e;'>" + drv["ContactTelephone"].ToString() + "</span>";
             }
         }
@@ -434,6 +434,38 @@ namespace WebApp
             }
             Session["DefaultSearchWhere"] = strBuilder.ToString();
             Response.Redirect("JobSearchList.aspx?id=" + Request.Cookies["CurrentUserGUID"].Value);
+        }
+
+        #endregion
+
+        #region 设置紧急招聘标题长度
+
+        private string Set_TitleLength(string strTitle)
+        {
+            if (strTitle.Length >= 12)
+            {
+                return strTitle.Substring(0,12)+"...";
+            }
+            else
+            {
+                return strTitle;
+            }
+        }
+
+        #endregion
+
+        #region 设置地址长度
+
+        private string Get_AddLength(string strAdd)
+        {
+            if (strAdd.Length > 9)
+            {
+                return strAdd.Substring(0,9) + "...";
+            }
+            else
+            {
+                return strAdd;
+            }
         }
 
         #endregion

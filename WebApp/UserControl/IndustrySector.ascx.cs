@@ -28,21 +28,7 @@ namespace WebApp.UserControl
             DataTable dt = generalBasicSettingBLL.GetList("DisplayName='第三产业' and CanUsable=1").Tables[0];
             for (int nCount = 0; nCount < dt.Rows.Count; nCount++)
             {
-                //if (nCount > 15)
-                //{
-                //    if (nCount == 15)
-                //    {
-                //        lablandscyOther.Text += dt.Rows[nCount]["SettingValue"].ToString();
-                //    }
-                //    else
-                //    {
-                //        lablandscyOther.Text += dt.Rows[nCount]["SettingValue"].ToString() + "　";
-                //    }
-                //}
-                //else
-                //{
-                    landscy.Text += dt.Rows[nCount]["SettingValue"].ToString() + "　";
-                //}
+                landscy.Text += "<a href='SearchList.aspx?Type=2&id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>　";
             }
         }
 
@@ -56,7 +42,7 @@ namespace WebApp.UserControl
             DataTable dt = generalBasicSettingBLL.GetList("DisplayName='第一产业' and CanUsable=1").Tables[0];
             for (int nCount = 0; nCount < dt.Rows.Count; nCount++)
             {
-                labddcyType.Text += dt.Rows[nCount]["SettingValue"].ToString() + "　";
+                labddcyType.Text += "<a href='SearchList.aspx?Type=2&id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>　";
             }
         }
 
@@ -70,7 +56,7 @@ namespace WebApp.UserControl
             DataTable dt = generalBasicSettingBLL.GetList("DisplayName='制造行业' and CanUsable=1").Tables[0];
             for (int nCount = 0; nCount < dt.Rows.Count; nCount++)
             {
-                labzzyType.Text += dt.Rows[nCount]["SettingValue"].ToString() + "　";
+                labzzyType.Text += "<a href='SearchList.aspx?Type=2&id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>　";
             }
         }
 

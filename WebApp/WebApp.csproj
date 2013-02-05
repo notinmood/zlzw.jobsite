@@ -202,6 +202,17 @@
     <Content Include="EasyUI\Script\easyui-lang-zh_CN.js" />
     <Content Include="EditEnterpriseInfo.aspx" />
     <Content Include="EditPersonalInfo.aspx" />
+    <Content Include="EmergencyRecruitmentList.aspx" />
+    <Content Include="EnterpriseInfo\css\styles.css" />
+    <Content Include="EnterpriseInfo\EnterpriseInfo.aspx" />
+    <Content Include="EnterpriseInfo\EnterpriseJobList.aspx" />
+    <Content Include="EnterpriseInfo\images\index_01.jpg" />
+    <Content Include="EnterpriseInfo\images\index_03.jpg" />
+    <Content Include="EnterpriseInfo\images\index_04.jpg" />
+    <Content Include="EnterpriseInfo\images\index_06.jpg" />
+    <Content Include="EnterpriseInfo\images\index_07.jpg" />
+    <Content Include="EnterpriseInfo\images\index_09.jpg" />
+    <Content Include="EnterpriseInfo\images\index_new_03.jpg" />
     <Content Include="EnterpriseRegister.aspx" />
     <Content Include="EnterpriseService.aspx" />
     <Content Include="EnterpriseServiceList.aspx" />
@@ -231,6 +242,7 @@
     <Content Include="image\img7.png" />
     <Content Include="image\img8.png" />
     <Content Include="image\img9.png" />
+    <Content Include="image\index_new_03.jpg" />
     <Content Include="image\logo.png" />
     <Content Include="image\SearchJIanLi.png" />
     <Content Include="image\SearchWork.png" />
@@ -3632,6 +3644,8 @@
     <Content Include="Manage\fckeditor\editor\filemanager\browser\default\images\icons\Thumbs.db" />
     <Content Include="Manage\fckeditor\editor\filemanager\browser\default\images\Thumbs.db" />
     <Content Include="Manage\fckeditor\editor\images\Thumbs.db" />
+    <Content Include="ParticipatingCompaniesInfo.aspx" />
+    <Content Include="ParticipatingCompaniesList.aspx" />
     <Content Include="PersonalRegistration.aspx" />
     <Content Include="qdrcsc\home1.html" />
     <Content Include="qdrcsc\image\img1.png" />
@@ -3691,6 +3705,7 @@
     <Content Include="EasyUI\css\default\images\Thumbs.db" />
     <Content Include="EasyUI\css\gray\images\Thumbs.db" />
     <Content Include="EasyUI\css\metro\images\Thumbs.db" />
+    <Content Include="EnterpriseInfo\images\Thumbs.db" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -3904,6 +3919,27 @@
     </Compile>
     <Compile Include="EditPersonalInfo.aspx.designer.cs">
       <DependentUpon>EditPersonalInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmergencyRecruitmentList.aspx.cs">
+      <DependentUpon>EmergencyRecruitmentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmergencyRecruitmentList.aspx.designer.cs">
+      <DependentUpon>EmergencyRecruitmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnterpriseInfo\EnterpriseInfo.aspx.cs">
+      <DependentUpon>EnterpriseInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnterpriseInfo\EnterpriseInfo.aspx.designer.cs">
+      <DependentUpon>EnterpriseInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnterpriseInfo\EnterpriseJobList.aspx.cs">
+      <DependentUpon>EnterpriseJobList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnterpriseInfo\EnterpriseJobList.aspx.designer.cs">
+      <DependentUpon>EnterpriseJobList.aspx</DependentUpon>
     </Compile>
     <Compile Include="EnterpriseRegister.aspx.cs">
       <DependentUpon>EnterpriseRegister.aspx</DependentUpon>
@@ -4219,6 +4255,20 @@
     </Compile>
     <Compile Include="NaviagteInfo.aspx.designer.cs">
       <DependentUpon>NaviagteInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ParticipatingCompaniesInfo.aspx.cs">
+      <DependentUpon>ParticipatingCompaniesInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ParticipatingCompaniesInfo.aspx.designer.cs">
+      <DependentUpon>ParticipatingCompaniesInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ParticipatingCompaniesList.aspx.cs">
+      <DependentUpon>ParticipatingCompaniesList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ParticipatingCompaniesList.aspx.designer.cs">
+      <DependentUpon>ParticipatingCompaniesList.aspx</DependentUpon>
     </Compile>
     <Compile Include="PersonalRegistration.aspx.cs">
       <DependentUpon>PersonalRegistration.aspx</DependentUpon>

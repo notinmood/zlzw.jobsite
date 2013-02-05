@@ -40,15 +40,6 @@ namespace WebApp {
         protected global::WebApp.UserControl.EnterpriseHead EnterpriseHead1;
         
         /// <summary>
-        /// drpSpecialType 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpSpecialType;
-        
-        /// <summary>
         /// txbJobPositionName 控件。
         /// </summary>
         /// <remarks>
@@ -191,6 +182,15 @@ namespace WebApp {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList drpJobWorkType;
+        
+        /// <summary>
+        /// drpSpecialType 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpSpecialType;
         
         /// <summary>
         /// btnSubmit 控件。

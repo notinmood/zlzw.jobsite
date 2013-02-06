@@ -387,14 +387,47 @@ namespace WebApp
             {
                 System.Data.DataRowView drv = (System.Data.DataRowView)e.Item.DataItem;
                 Label labJobTitle = (Label)e.Item.FindControl("labJobTitle");
-                Label labAdd = (Label)e.Item.FindControl("labAdd");
+                //Label labAdd = (Label)e.Item.FindControl("labAdd");
                 Label labXueLi = (Label)e.Item.FindControl("labXueLi");
                 Label labTel = (Label)e.Item.FindControl("labTel");
                 labJobTitle.Text = "<a href='EnterpriseInfo/EnterpriseInfo.aspx?type=" + drv["EnterpriseKey"].ToString() + "&id=" + drv["JobPositionGuid"].ToString() + "' target='_blank' title='" + drv["EnterpriseName"].ToString() + "' style='text-decoration:none;color:#6e6e6e;'>" + Set_TitleLength(drv["EnterpriseName"].ToString()) + "</a>";
-                labAdd.Text = "<a href='EnterpriseInfo/EnterpriseInfo.aspx?type=" + drv["EnterpriseKey"].ToString() + "&id=" + drv["JobPositionGuid"].ToString() + "'  style='text-decoration:none;color:#6e6e6e;' target='_blank' title='" + drv["JobWorkPlaceNames"].ToString() + "'>" + Get_AddLength(drv["JobWorkPlaceNames"].ToString()) + "</a>";
-                labXueLi.Text = "<a href='EnterpriseInfo/EnterpriseInfo.aspx?type=" + drv["EnterpriseKey"].ToString() + "&id=" + drv["JobPositionGuid"].ToString() + "' style='text-decoration:none;color:#6e6e6e;'>" + drv["JobPositionKind"].ToString() + "</a>";
+                //labAdd.Text = "<a href='EnterpriseInfo/EnterpriseInfo.aspx?type=" + drv["EnterpriseKey"].ToString() + "&id=" + drv["JobPositionGuid"].ToString() + "'  style='text-decoration:none;color:#6e6e6e;' target='_blank' title='" + drv["JobWorkPlaceNames"].ToString() + "'>" + Get_AddLength(drv["JobWorkPlaceNames"].ToString()) + "</a>";
+                //labXueLi.Text = "<a href='EnterpriseInfo/EnterpriseInfo.aspx?type=" + drv["EnterpriseKey"].ToString() + "&id=" + drv["JobPositionGuid"].ToString() + "' style='text-decoration:none;color:#6e6e6e;'>" + drv["JobPositionKind"].ToString() + "</a>　" + Get_JobList(drv["JobPositionGuid"].ToString());
+                labXueLi.Text = Get_JobList(drv["EnterpriseKey"].ToString());
                 labTel.Text = "<span style='text-decoration:none;color:#6e6e6e;'>" + drv["ContactTelephone"].ToString() + "</span>";
             }
+        }
+
+        #endregion
+
+        #region 根据当前的企业GUID获取该企业下的所有紧急招聘职位
+
+        private string Get_JobList(string strEnterpriseGUID)
+        {
+            zlzw.BLL.JobEnterpriseJobPositionBLL jobEnterpriseJobPositionBLL = new zlzw.BLL.JobEnterpriseJobPositionBLL();
+            System.Data.DataTable dt = jobEnterpriseJobPositionBLL.GetList(10,"EnterpriseKey='"+ strEnterpriseGUID +"' and SpecialType=1 and CanUsable=1","CreateDate desc").Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                System.Text.StringBuilder strBuilder = new System.Text.StringBuilder();
+                int nAllCount = dt.Rows.Count;
+                for (int nCount = 0; nCount < nAllCount; nCount++)
+                {
+                    if ((nCount + 1) != nAllCount)
+                    {
+                        strBuilder.Append("<a target='_blank' style='text-decoration:none;color:#325C93;' href='EnterpriseInfo/EnterpriseInfo.aspx?type=" + strEnterpriseGUID + "&id=" + dt.Rows[nCount]["JobPositionGuid"].ToString() + "'>" + dt.Rows[nCount]["JobPositionName"].ToString() + "</a><span style='color:#3277C9;font-weight:bold;'>/</span>");
+                    }
+                    else
+                    {
+                        strBuilder.Append("<a target='_blank' style='text-decoration:none;color:#325C93;' href='EnterpriseInfo/EnterpriseInfo.aspx?type=" + strEnterpriseGUID + "&id=" + dt.Rows[nCount]["JobPositionGuid"].ToString() + "'>" + dt.Rows[nCount]["JobPositionName"].ToString() + "</a>");
+                    }
+                }
+                return strBuilder.ToString();
+            }
+            else
+            {
+                return "";
+            }
+        
         }
 
         #endregion
@@ -442,9 +475,9 @@ namespace WebApp
 
         private string Set_TitleLength(string strTitle)
         {
-            if (strTitle.Length >= 12)
+            if (strTitle.Length > 14)
             {
-                return strTitle.Substring(0,12)+"...";
+                return strTitle.Substring(0,13)+"...";
             }
             else
             {

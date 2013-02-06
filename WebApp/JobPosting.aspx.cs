@@ -220,6 +220,14 @@ namespace WebApp
                 jobEnterpriseJobPositionModel.CreateUserKey = strUserGUID;//发布人GUID
                 jobEnterpriseJobPositionModel.CreateDate = DateTime.Now;//创建日期
                 jobEnterpriseJobPositionModel.UpdateDate = DateTime.Now;//修改日期
+                if (drpSpecialType.Enabled == true)
+                {
+                    jobEnterpriseJobPositionModel.SpecialType = int.Parse(drpSpecialType.SelectedValue);
+                }
+                else
+                {
+                    jobEnterpriseJobPositionModel.SpecialType = 0;//普通招聘
+                }
                 if (Request.Form["txbInterviewTime"].Length > 0)
                 {
                     jobEnterpriseJobPositionModel.InterviewTime = Request.Form["txbInterviewTime"];//面试时间

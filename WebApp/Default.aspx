@@ -288,10 +288,10 @@
                                             </HeaderTemplate>
                                             <ItemTemplate>
                                                     <tr>
-                                                        <td width="220" align="left"><span id="span9">　<asp:Label ID="labJobTitle" runat="server"></asp:Label></span></td>
-                                                        <td width="157" align="center"><asp:Label ID="labAdd" runat="server"></asp:Label></td>
-                                                        <td width="231" align="center"><asp:Label ID="labXueLi" runat="server"></asp:Label></td>
-                                                        <td width="185" align="center"><asp:Label ID="labTel" runat="server"></asp:Label></td>
+                                                        <td width="230" align="left"><span id="span9">　<asp:Label ID="labJobTitle" runat="server"></asp:Label></span></td>
+                                                        <%--<td width="157" align="center"><asp:Label ID="labAdd" runat="server"></asp:Label></td>--%>
+                                                        <td width="433" align="left"><asp:Label ID="labXueLi" runat="server" style="overflow:hidden;"></asp:Label></td>
+                                                        <td width="130" align="center"><asp:Label ID="labTel" runat="server"></asp:Label></td>
                                                     </tr>
                                             </ItemTemplate>
                                             <FooterTemplate>

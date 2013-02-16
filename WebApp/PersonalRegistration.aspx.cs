@@ -37,6 +37,7 @@ namespace WebApp
 
             drpUserEducationalBackground.DataSource = dt;
             drpUserEducationalBackground.DataBind();
+            drpUserEducationalBackground.Items.RemoveAt(0);
         }
 
         #endregion

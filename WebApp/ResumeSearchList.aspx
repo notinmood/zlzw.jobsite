@@ -37,7 +37,7 @@
                                 <table style="padding-left: 80px;" width="757" height="70" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                         <td>
-                                            <input type="text" runat="server" id="txbJobPositionKinds" class="easyui-validatebox" data-options="required:true" missingMessage="请选择岗位类别" style="width: 133px; height: 22px;" readonly="readonly" />
+                                            <input type="text" runat="server" id="txbJobPositionKinds" class="easyui-validatebox" style="width: 133px; height: 18px;" readonly="readonly" />
                                         </td>
                                         <td>
                                             <asp:DropDownList ID="drpSex" runat="server" Width="139" Height="23">
@@ -48,25 +48,25 @@
                                             </asp:DropDownList>
                                         </td>
                                         <td>
-                                            <input id="txbWorkAreas" runat="server" type="text" class="easyui-validatebox" data-options="required:true" missingMessage="请选择工作地区" style="width: 193px; height: 22px;" readonly="readonly" />
+                                            <input id="txbWorkAreas" runat="server" type="text" class="easyui-validatebox" style="width: 193px; height: 18px;" readonly="readonly" />
                                         </td>
                                         <td rowspan="2">
-                                            <asp:ImageButton ID="imgBtnSearch" runat="server" ImageUrl="image/SearchJIanLi.png" OnClientClick="return validatorForm();" OnClick="imgBtnSearch_Click" />
+                                            <asp:ImageButton ID="imgBtnSearch" runat="server" ImageUrl="image/SearchJIanLi.png" OnClientClick="return validatorForm();" OnClick="imgBtnSearch_Click" style="height: 34px" />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <input runat="server" type="text" id="txbJobFeildKinds" class="easyui-validatebox" data-options="required:true" missingMessage="请选择行业类别" style="width: 133px; height: 22px;" readonly="readonly" />
+                                            <input runat="server" type="text" id="txbJobFeildKinds" class="easyui-validatebox" style="width: 133px; height: 18px;" readonly="readonly" />
                                         </td>
                                         <td>
                                             <asp:DropDownList ID="drpShiSu" runat="server" style="width:139px;height:22px;">
                                                 <asp:ListItem Value="-1" Selected="True">请选择食宿要求</asp:ListItem>
-                                                <asp:ListItem Value="1">是</asp:ListItem>
-                                                <asp:ListItem Value="0">否</asp:ListItem>
+                                                <asp:ListItem Value="0">不限</asp:ListItem>
+                                                <asp:ListItem Value="1">提供食宿</asp:ListItem>
                                             </asp:DropDownList>
                                         </td>
                                         <td>
-                                            <input runat="server" type="text" id="txbSearchKey" style="width: 193px; height: 22px;" />
+                                            <input runat="server" type="text" id="txbSearchKey" style="width: 193px; height: 18px;" />
                                         </td>
                                     </tr>
                                 </table>

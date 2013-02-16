@@ -22,7 +22,7 @@
 
 <body>
     <form id="form01" runat="server">
-        <div style="width:1003px;margin-left:20%;">
+        <div style="width:1003px;display:inline;margin-left:20%;">
             <uc1:PageHead ID="PageHead1" runat="server" />
             <div class="top2right">
                 <div style="background-image:url('image/img8.png');background-repeat:repeat-x;">
@@ -53,8 +53,8 @@
                             <td>
                                 <asp:DropDownList ID="drpShiSu" runat="server" Width="139" Height="23">
                                     <asp:ListItem Text="请选择食宿要求" Value="-1" Selected="True"></asp:ListItem>
-                                    <asp:ListItem Text="是" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="否" Value="0"></asp:ListItem>
+                                    <asp:ListItem Text="不限" Value="0"></asp:ListItem>
+                                    <asp:ListItem Text="提供食宿" Value="1"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
                             <td>
@@ -129,7 +129,7 @@
                         </tr>
                         <tr>
                             <td colspan="4" align='center'>
-                                <webdiyer:AspNetPager ID="AspNetPager1" runat="server" PageSize="15" 
+                                <webdiyer:AspNetPager ID="AspNetPager1" runat="server" PageSize="10" 
                                 onpagechanged="AspNetPager1_PageChanged" CssClass="paginator" CurrentPageButtonClass="cpb" FirstPageText="首页"  LastPageText="尾页" NextPageText="下一页" PrevPageText="上一页" >
                             </webdiyer:AspNetPager>
                             </td>

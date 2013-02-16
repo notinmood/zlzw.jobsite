@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADImageListBLL.cs" />
+    <Compile Include="CareerGuidanceListBLL.cs" />
     <Compile Include="CoreUserBLL.cs" />
     <Compile Include="EnterpriseServiceInfoListBLL.cs" />
     <Compile Include="EnterpriseServiceTypeListBLL.cs" />

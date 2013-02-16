@@ -52,4 +52,8 @@
     <TreeNode Text="招商加盟管理" NavigateUrl="admin/MerchantsJoin.aspx" >
     </TreeNode>
   </TreeNode>
+  <TreeNode Text="就业指导管理" SingleClickExpand="true">
+    <TreeNode Text="就业指导管理" NavigateUrl="admin/CareerGuidance.aspx" >
+    </TreeNode>
+  </TreeNode>
 </Tree>

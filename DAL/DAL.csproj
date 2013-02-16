@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADImageListDAL.cs" />
+    <Compile Include="CareerGuidanceListDAL.cs" />
     <Compile Include="CoreUserDAL.cs" />
     <Compile Include="EnterpriseServiceInfoListDAL.cs" />
     <Compile Include="EnterpriseServiceTypeListDAL.cs" />

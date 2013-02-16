@@ -45,7 +45,7 @@
                         <tr>
                             <td style="font-size:14px; color:#6e6e6e; width:100px;">账号：</td>
                             <td align="left" style="width:410px;"><!-- data-options="required:true,validType:['length[6,10]','RepeatRegisterName[txbUserName]']" -->
-                                <asp:TextBox ID="txbUserName" runat="server" Height="22" Width="400" CssClass="easyui-validatebox" data-options="required:true,validType:['length[6,10]']" missingMessage="账号不能为空"></asp:TextBox>
+                                <asp:TextBox ID="txbUserName" runat="server" Height="22" Width="400" CssClass="easyui-validatebox" data-options="required:true,validType:['length[6,10]','RepeatRegisterName[txbUserName]']" missingMessage="账号不能为空"></asp:TextBox>
                             </td>
                             <td align="left" style="color:#6e6e6e;font-size:14px;">
                                 <span style="font-weight:bold; color:#f00;">*</span> 账号为6-10位英文字母或数字
@@ -273,8 +273,8 @@
                             <td style="font-size:14px; color:#6e6e6e;">期望食宿：</td>
                             <td align="left" style="width:410px;"> 
                                 <asp:DropDownList ID="drpHopeRoomAndBoard" Height="26" runat="server" Width="405">
-                                    <asp:ListItem Text="是" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="否" Value="0"></asp:ListItem>
+                                    <asp:ListItem Text="不限" Value="0"></asp:ListItem>
+                                    <asp:ListItem Text="提供食宿" Value="1"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
                             <td align="left" style="color:#6e6e6e;font-size:14px;">

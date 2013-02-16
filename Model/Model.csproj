@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADImageListModel.cs" />
+    <Compile Include="CareerGuidanceListModel.cs" />
     <Compile Include="CoreUserModel.cs" />
     <Compile Include="EnterpriseServiceInfoListModel.cs" />
     <Compile Include="EnterpriseServiceTypeListModel.cs" />

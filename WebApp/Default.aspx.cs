@@ -456,6 +456,10 @@ namespace WebApp
             {
                 strBuilder.Append(" and JobWorkPlaceNames like '%" + strWorkAreas + "%'");
             }
+            if (strShiSu != "-1" || strShiSu != "0")
+            {
+                strBuilder.Append(" and HopeRoomAndBoard like '%" + strShiSu + "%'");
+            }
             if (strSex != "-1")
             {
                 strBuilder.Append(" and NeedSex like '%" + strSex + "%'");

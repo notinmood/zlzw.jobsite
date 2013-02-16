@@ -54,8 +54,8 @@
                             <td>
                                 <asp:DropDownList ID="drpShiSu" runat="server" Width="139" Height="23">
                                     <asp:ListItem Text="请选择食宿要求" Value="-1" Selected="True"></asp:ListItem>
-                                    <asp:ListItem Text="是" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="否" Value="0"></asp:ListItem>
+                                    <asp:ListItem Text="不限" Value="0"></asp:ListItem>
+                                    <asp:ListItem Text="提供食宿" Value="1"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
                             <td>

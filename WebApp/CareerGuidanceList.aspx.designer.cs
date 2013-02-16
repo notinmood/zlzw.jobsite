@@ -7,63 +7,54 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace WebApp.UserControl {
+namespace WebApp {
     
     
-    public partial class PageHead {
+    public partial class CareerGuidanceList {
         
         /// <summary>
-        /// linkBtnJobSearchList 控件。
+        /// form1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkBtnJobSearchList;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// linkBtnResumeCenter 控件。
+        /// PageHead1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkBtnResumeCenter;
+        protected global::WebApp.UserControl.PageHead PageHead1;
         
         /// <summary>
-        /// linkBtnActivityList 控件。
+        /// Repeater1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkBtnActivityList;
+        protected global::System.Web.UI.WebControls.Repeater Repeater1;
         
         /// <summary>
-        /// linkBtnExchangeCorner 控件。
+        /// AspNetPager1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkBtnExchangeCorner;
+        protected global::Wuqi.Webdiyer.AspNetPager AspNetPager1;
         
         /// <summary>
-        /// linkBtnCareerGuidanceList 控件。
+        /// PageFooter1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkBtnCareerGuidanceList;
-        
-        /// <summary>
-        /// linkBtnMerchantsJoin 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkBtnMerchantsJoin;
+        protected global::WebApp.UserControl.PageFooter PageFooter1;
     }
 }

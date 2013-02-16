@@ -7,63 +7,90 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace WebApp.UserControl {
+namespace WebApp.Manage.admin {
     
     
-    public partial class PageHead {
+    public partial class CareerGuidance {
         
         /// <summary>
-        /// linkBtnJobSearchList 控件。
+        /// form1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkBtnJobSearchList;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// linkBtnResumeCenter 控件。
+        /// PageManager1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkBtnResumeCenter;
+        protected global::FineUI.PageManager PageManager1;
         
         /// <summary>
-        /// linkBtnActivityList 控件。
+        /// Panel1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkBtnActivityList;
+        protected global::FineUI.Panel Panel1;
         
         /// <summary>
-        /// linkBtnExchangeCorner 控件。
+        /// Toolbar2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkBtnExchangeCorner;
+        protected global::FineUI.Toolbar Toolbar2;
         
         /// <summary>
-        /// linkBtnCareerGuidanceList 控件。
+        /// btnAdd 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkBtnCareerGuidanceList;
+        protected global::FineUI.Button btnAdd;
         
         /// <summary>
-        /// linkBtnMerchantsJoin 控件。
+        /// ToolbarSeparator1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkBtnMerchantsJoin;
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator1;
+        
+        /// <summary>
+        /// btnDel 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button btnDel;
+        
+        /// <summary>
+        /// grid1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Grid grid1;
+        
+        /// <summary>
+        /// Window1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Window Window1;
     }
 }

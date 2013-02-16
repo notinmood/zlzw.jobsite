@@ -141,6 +141,8 @@
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="ActivityInfo.aspx" />
     <Content Include="ActivityList.aspx" />
+    <Content Include="CareerGuidanceInfo.aspx" />
+    <Content Include="CareerGuidanceList.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -251,6 +253,7 @@
     <Content Include="JobSearchList.aspx" />
     <Content Include="Manage\admin\AddAdImage.aspx" />
     <Content Include="Manage\admin\AddAdmin.aspx" />
+    <Content Include="Manage\admin\AddCareerGuidance.aspx" />
     <Content Include="Manage\admin\AddEnterpriseServiceInfo.aspx" />
     <Content Include="Manage\admin\AddEnterpriseServiceType.aspx" />
     <Content Include="Manage\admin\AddExchangeCorner.aspx" />
@@ -267,6 +270,7 @@
     <Content Include="Manage\admin\AddParticipatingCompanies.aspx" />
     <Content Include="Manage\admin\ADImageList.aspx" />
     <Content Include="Manage\admin\AdminList.aspx" />
+    <Content Include="Manage\admin\CareerGuidance.aspx" />
     <Content Include="Manage\admin\EnterpriseServiceInfoList.aspx" />
     <Content Include="Manage\admin\EnterpriseServiceTypeList.aspx" />
     <Content Include="Manage\admin\ExchangeCornerList.aspx" />
@@ -3899,6 +3903,20 @@
     <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CareerGuidanceInfo.aspx.cs">
+      <DependentUpon>CareerGuidanceInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CareerGuidanceInfo.aspx.designer.cs">
+      <DependentUpon>CareerGuidanceInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CareerGuidanceList.aspx.cs">
+      <DependentUpon>CareerGuidanceList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CareerGuidanceList.aspx.designer.cs">
+      <DependentUpon>CareerGuidanceList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4006,6 +4024,13 @@
     </Compile>
     <Compile Include="Manage\admin\AddAdmin.aspx.designer.cs">
       <DependentUpon>AddAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\admin\AddCareerGuidance.aspx.cs">
+      <DependentUpon>AddCareerGuidance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\AddCareerGuidance.aspx.designer.cs">
+      <DependentUpon>AddCareerGuidance.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\admin\AddEnterpriseServiceInfo.aspx.cs">
       <DependentUpon>AddEnterpriseServiceInfo.aspx</DependentUpon>
@@ -4118,6 +4143,13 @@
     </Compile>
     <Compile Include="Manage\admin\AdminList.aspx.designer.cs">
       <DependentUpon>AdminList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\admin\CareerGuidance.aspx.cs">
+      <DependentUpon>CareerGuidance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\CareerGuidance.aspx.designer.cs">
+      <DependentUpon>CareerGuidance.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\admin\EnterpriseServiceInfoList.aspx.cs">
       <DependentUpon>EnterpriseServiceInfoList.aspx</DependentUpon>

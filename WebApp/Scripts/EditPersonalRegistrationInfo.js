@@ -1,33 +1,42 @@
 ﻿$().ready(function () {
-    $('#drpJobPositionKindsType').bind('change', function () {
-        $.ajax({
-            type: 'POST',
-            url: 'Services/GetGeneralBasicSetting.asmx/Get_JobPositionKindsList',
-            contentType: 'application/json',
-            data: '{"strJobPositionKindsType":"' + $('#drpJobPositionKindsType').val() + '"}',
-            success: function (data) {
-                if (data.d != "-1") {
-                    $('#drpJobPositionKinds').empty();
-                    $('#drpJobPositionKinds').append(data.d);
-                    return;
-                }
-            }
-        });
+    //$('#drpJobPositionKindsType').bind('change', function () {
+    //    $.ajax({
+    //        type: 'POST',
+    //        url: 'Services/GetGeneralBasicSetting.asmx/Get_JobPositionKindsList',
+    //        contentType: 'application/json',
+    //        data: '{"strJobPositionKindsType":"' + $('#drpJobPositionKindsType').val() + '"}',
+    //        success: function (data) {
+    //            if (data.d != "-1") {
+    //                $('#drpJobPositionKinds').empty();
+    //                $('#drpJobPositionKinds').append(data.d);
+    //                return;
+    //            }
+    //        }
+    //    });
+    //});
+    //$('#drpJobFeildKindsType').bind('change', function () {
+    //    $.ajax({
+    //        type: 'POST',
+    //        url: 'Services/GetGeneralBasicSetting.asmx/Get_JobPositionKindsList',
+    //        contentType: 'application/json',
+    //        data: '{"strJobPositionKindsType":"' + $('#drpJobFeildKindsType').val() + '"}',
+    //        success: function (data) {
+    //            if (data.d != "-1") {
+    //                $('#drpJobFeildKinds').empty();
+    //                $('#drpJobFeildKinds').append(data.d);
+    //                return;
+    //            }
+    //        }
+    //    });
+    //});
+
+    $("#txbJobPositionKinds").watermark("请选择岗位类别");
+    $("#txbJobFeildKinds").watermark("请选择行业类别");
+    $('#txbJobPositionKinds').bind('click', function () {
+        var dialog = art.dialog.open('TemplatePage/JobPositionKinds.aspx', { title: '请选择岗位类别', width: 755, height: 299 });
     });
-    $('#drpJobFeildKindsType').bind('change', function () {
-        $.ajax({
-            type: 'POST',
-            url: 'Services/GetGeneralBasicSetting.asmx/Get_JobPositionKindsList',
-            contentType: 'application/json',
-            data: '{"strJobPositionKindsType":"' + $('#drpJobFeildKindsType').val() + '"}',
-            success: function (data) {
-                if (data.d != "-1") {
-                    $('#drpJobFeildKinds').empty();
-                    $('#drpJobFeildKinds').append(data.d);
-                    return;
-                }
-            }
-        });
+    $('#txbJobFeildKinds').bind('click', function () {
+        var dialog = art.dialog.open('TemplatePage/JobFeildKinds.aspx', { title: '请选择行业类别', width: 1048, height: 230 });
     });
 
     /* 验证两个值是否相同 */

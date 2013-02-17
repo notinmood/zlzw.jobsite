@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ActivityInfo.aspx.cs" Inherits="WebApp.ActivityInfo" %>
-<%@ Register src="UserControl/DefaultHead.ascx" tagname="DefaultHead" tagprefix="uc1" %>
-<%@ Register src="UserControl/DefaultFooter.ascx" tagname="DefaultFooter" tagprefix="uc2" %>
+<%@ Register src="UserControl/PageHead.ascx" tagname="PageHead" tagprefix="uc1" %>
+<%@ Register src="UserControl/PageFooter.ascx" tagname="PageFooter" tagprefix="uc2" %>
 
 <!DOCTYPE html>
 
@@ -8,12 +8,12 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title runat="server" id="titleName"></title>
-    <link href="css/zong.css" type="text/css" rel="stylesheet" />
+    <link href="css/sousuo.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <uc1:DefaultHead ID="DefaultHead1" runat="server" />
+            <uc1:PageHead ID="PageHead1" runat="server" />
             <div>
                 <table style="width:100%;">
                     <tr>
@@ -55,7 +55,7 @@
                         </td>
                     </tr>
                 </table> 
-                <uc2:DefaultFooter ID="DefaultFooter1" runat="server" />
+                <uc2:PageFooter ID="PageFooter1" runat="server" />
             </div>
         </div>
     </form>

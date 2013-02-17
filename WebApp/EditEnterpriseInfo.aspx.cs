@@ -68,15 +68,15 @@ namespace WebApp
 
         private void LoadItemList(string strType)
         {
-            zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
-            System.Data.DataTable dt = generalBasicSettingBLL.GetList("DisPlayName='"+ strType +"'").Tables[0];
-            if (dt.Rows.Count > 0)
-            {
-                drpItems.DataTextField = "SettingValue";
-                drpItems.DataValueField = "SettingValue";
-                drpItems.DataSource = dt;
-                drpItems.DataBind();
-            }
+            //zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
+            //System.Data.DataTable dt = generalBasicSettingBLL.GetList("DisPlayName='"+ strType +"'").Tables[0];
+            //if (dt.Rows.Count > 0)
+            //{
+            //    drpItems.DataTextField = "SettingValue";
+            //    drpItems.DataValueField = "SettingValue";
+            //    drpItems.DataSource = dt;
+            //    drpItems.DataBind();
+            //}
         }
 
         #endregion
@@ -93,9 +93,10 @@ namespace WebApp
             zlzw.Model.GeneralEnterpriseModel generalEnterpriseModel = generalEnterpriseBLL.GetModel(int.Parse(dt01.Rows[0]["EnterpriseID"].ToString()));
             txbUserName.Text = coreUserModel.UserName;//账号
             txbEnterpriseName.Text = generalEnterpriseModel.CompanyName;//公司名称
-            drpJobFeildKindsType.SelectedValue = generalEnterpriseModel.IndustryKey.Split('-')[0];//所属行业
-            LoadItemList(generalEnterpriseModel.IndustryKey.Split('-')[0]);
-            drpItems.SelectedValue = generalEnterpriseModel.IndustryKey.Split('-')[1];//所属行业分类
+            //drpJobFeildKindsType.SelectedValue = generalEnterpriseModel.IndustryKey.Split('-')[0];//所属行业
+            //LoadItemList(generalEnterpriseModel.IndustryKey.Split('-')[0]);
+            //drpItems.SelectedValue = generalEnterpriseModel.IndustryKey.Split('-')[1];//所属行业分类
+            txbJobFeildKinds.Value = generalEnterpriseModel.IndustryKey.Split('-')[1];//所属行业分类
             drpShengList.SelectedValue = generalEnterpriseModel.ShengName;
             Load_ShiList(generalEnterpriseModel.ShengName);
             drpShiList.SelectedValue = generalEnterpriseModel.ShiName;
@@ -146,7 +147,8 @@ namespace WebApp
 
             generalEnterpriseModel.EnterpriseID = int.Parse(dt01.Rows[0]["EnterpriseID"].ToString());//企业表ID
             generalEnterpriseModel.CompanyName = txbEnterpriseName.Text;//企业名称
-            generalEnterpriseModel.IndustryKey = Request.Form["drpJobFeildKindsType"] + "-" + Request.Form["drpItems"];//公司行业
+            //generalEnterpriseModel.IndustryKey = Request.Form["drpJobFeildKindsType"] + "-" + Request.Form["drpItems"];//公司行业
+            generalEnterpriseModel.IndustryKey = Get_CurrentValue(Request.Params["txbJobFeildKinds"]) + "-" + Request.Params["txbJobFeildKinds"];
             generalEnterpriseModel.PrincipleAddress = Request.Form["txbPrincipleAddress"];//公司地址
             generalEnterpriseModel.Telephone = Request.Form["txbTelephone"];//联系电话
             generalEnterpriseModel.ContactPerson = Request.Form["txbContactPerson"];//联系人
@@ -193,6 +195,24 @@ namespace WebApp
             catch (Exception exp)
             {
                 FineUI.Alert.Show("修改信息失败，请稍后重试");
+            }
+        }
+
+        #endregion
+
+        #region 获取当前职位类别的大类
+
+        private string Get_CurrentValue(string strValue)
+        {
+            zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
+            System.Data.DataTable dt = generalBasicSettingBLL.GetList("SettingValue='" + strValue + "'").Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["DisplayName"].ToString();
+            }
+            else
+            {
+                return "未知";
             }
         }
 

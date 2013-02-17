@@ -36,7 +36,7 @@ namespace WebApp
             string strHangYe = Request.Params["txbJobFeildKinds"];//行业类别
             string strWorkAreas = Request.Params["txbWorkAreas"];//工作地区
             string strSearchKey = Request.Params["txbSearchKey"];//关键字
-            string strSex = drpSex.SelectedItem.Text;//性别
+            string strSex = drpSex.SelectedValue;//性别
             string strShiSu = drpShiSu.SelectedValue;//食宿
 
             System.Text.StringBuilder strBuilder = new System.Text.StringBuilder();
@@ -53,10 +53,10 @@ namespace WebApp
             {
                 strBuilder.Append(" and JobWorkPlaceNames like '%" + strWorkAreas + "%'");
             }
-            //if (strShiSu != "-1" || strShiSu != "0")
-            //{
-            //    strBuilder.Append(" and HopeRoomAndBoard like '%" + strShiSu + "%'");
-            //}
+            if (strShiSu != "-1" && strShiSu != "0")
+            {
+                strBuilder.Append(" and HopeRoomAndBoard like '%" + strShiSu + "%'");
+            }
             if (strSex != "-1")
             {
                 strBuilder.Append(" and UserSex like '%" + strSex + "%'");
@@ -81,10 +81,10 @@ namespace WebApp
             string strHangYe = Request.Params["txbJobFeildKinds"];//行业类别
             string strWorkAreas = Request.Params["txbWorkAreas"];//工作地区
             string strSearchKey = Request.Params["txbSearchKey"];//关键字
-            string strSex = drpSex.SelectedItem.Text;//性别
+            string strSex = drpSex.SelectedValue;//性别
             string strShiSu = drpShiSu.SelectedValue;//食宿
             int nPageIndex = AspNetPager1.CurrentPageIndex;
-            int nPageSize = AspNetPager1.PageSize = 1;
+            int nPageSize = AspNetPager1.PageSize = 15;
 
             System.Text.StringBuilder strBuilder = new System.Text.StringBuilder();
             strBuilder.Append("CanUsable=1");
@@ -100,7 +100,7 @@ namespace WebApp
             {
                 strBuilder.Append(" and JobWorkPlaceNames like '%" + strWorkAreas + "%'");
             }
-            if (strShiSu != "-1")
+            if (strShiSu != "-1" && strShiSu != "0")
             {
                 strBuilder.Append(" and HopeRoomAndBoard like '%" + strShiSu + "%'");
             }
@@ -155,14 +155,16 @@ namespace WebApp
                 Label labSex = (Label)e.Item.FindControl("labSex");
                 Label labAge = (Label)e.Item.FindControl("labAge");
                 Label labPublishDate = (Label)e.Item.FindControl("labPublishDate");
+                Label labView = (Label)e.Item.FindControl("labView");
 
                 labJobName.Text = Get_UserName(drv["OwnerUserKey"].ToString());//求职者姓名
                 labShiSu.Text = Get_HopeRoomAndBoard(drv["HopeRoomAndBoard"].ToString());//期望食宿
-                labHangye.Text = drv["JobFeildKinds"].ToString();//期望行业
-                labGangwei.Text = drv["JobPositionKinds"].ToString();//期望岗位
+                labHangye.Text = drv["JobFeildKinds"].ToString().Split('-')[1];//期望行业
+                labGangwei.Text = drv["JobPositionKinds"].ToString().Split('-')[1];//期望岗位
                 labSex.Text = drv["UserSex"].ToString();//性别
                 labAge.Text = Get_UserAge(drv["OwnerUserKey"].ToString());//年龄
                 labPublishDate.Text = DateTime.Parse(drv["UpdateDate"].ToString()).ToString("yyyy年MM月dd");
+                labView.Text = "<a class='linkResumeID' target='_blank' href='ResumeSearchInfo.aspx?id=" + drv["OwnerUserKey"].ToString() + "' style='font-size:14px;font-weight:bold;color:#F97D00; text-decoration:none;'>查看简历</a>";
             }
         }
 

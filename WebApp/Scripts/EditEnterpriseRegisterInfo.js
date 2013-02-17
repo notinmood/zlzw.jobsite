@@ -1,18 +1,22 @@
 ﻿$().ready(function () {
-    $('#drpJobFeildKindsType').bind('change', function () {
-        $.ajax({
-            type: 'POST',
-            url: 'Services/GetGeneralBasicSetting.asmx/Get_JobPositionKindsList',
-            contentType: 'application/json',
-            data: '{"strJobPositionKindsType":"' + $('#drpJobFeildKindsType').val() + '"}',
-            success: function (data) {
-                if (data.d != "-1") {
-                    $('#drpItems').empty();
-                    $('#drpItems').append(data.d);
-                    return;
-                }
-            }
-        });
+    //$('#drpJobFeildKindsType').bind('change', function () {
+    //    $.ajax({
+    //        type: 'POST',
+    //        url: 'Services/GetGeneralBasicSetting.asmx/Get_JobPositionKindsList',
+    //        contentType: 'application/json',
+    //        data: '{"strJobPositionKindsType":"' + $('#drpJobFeildKindsType').val() + '"}',
+    //        success: function (data) {
+    //            if (data.d != "-1") {
+    //                $('#drpItems').empty();
+    //                $('#drpItems').append(data.d);
+    //                return;
+    //            }
+    //        }
+    //    });
+    //});
+    $("#txbJobFeildKinds").watermark("请选择行业类别");
+    $('#txbJobFeildKinds').bind('click', function () {
+        var dialog = art.dialog.open('TemplatePage/JobFeildKinds.aspx', { title: '请选择行业类别', width: 1048, height: 230 });
     });
     //加载地区市
     $('#drpShengList').bind('change', function () {

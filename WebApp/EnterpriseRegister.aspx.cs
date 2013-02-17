@@ -35,13 +35,13 @@ namespace WebApp
 
         private void Load_HangYeList()
         {
-            zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
-            System.Data.DataTable dt = generalBasicSettingBLL.GetList("DisplayName='"+ drpJobFeildKindsType.SelectedValue +"'").Tables[0];
-            drpItems.DataTextField = "SettingValue";
-            drpItems.DataValueField = "SettingValue";
+            //zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
+            //System.Data.DataTable dt = generalBasicSettingBLL.GetList("DisplayName='"+ drpJobFeildKindsType.SelectedValue +"'").Tables[0];
+            //drpItems.DataTextField = "SettingValue";
+            //drpItems.DataValueField = "SettingValue";
 
-            drpItems.DataSource = dt;
-            drpItems.DataBind();
+            //drpItems.DataSource = dt;
+            //drpItems.DataBind();
         }
 
         #endregion
@@ -67,7 +67,8 @@ namespace WebApp
             zlzw.Model.GeneralEnterpriseModel generalEnterpriseModel = new zlzw.Model.GeneralEnterpriseModel();
             generalEnterpriseModel.UserGuid = new Guid(coreUserModel.UserGuid.ToString());//所属账号的GUID
             generalEnterpriseModel.CompanyName = Request.Form["txbEnterpriseName"];//企业名称
-            generalEnterpriseModel.IndustryKey = drpJobFeildKindsType.SelectedValue + "-" + Request.Params["drpItems"];//公司行业
+            //generalEnterpriseModel.IndustryKey = drpJobFeildKindsType.SelectedValue + "-" + Request.Params["drpItems"];//公司行业
+            generalEnterpriseModel.IndustryKey = Get_CurrentValue(Request.Params["txbJobFeildKinds"]) + "-" + Request.Params["txbJobFeildKinds"];//行业类别
             generalEnterpriseModel.PrincipleAddress = Request.Form["txbPrincipleAddress"];//公司地址
             generalEnterpriseModel.Telephone = Request.Form["txbTelephone"];//联系电话
             generalEnterpriseModel.ContactPerson = Request.Form["txbContactPerson"];//联系人
@@ -114,6 +115,24 @@ namespace WebApp
             catch (Exception exp)
             {
                 FineUI.Alert.Show("用户注册失败，请稍后重试");
+            }
+        }
+
+        #endregion
+
+        #region 获取当前职位类别的大类
+
+        private string Get_CurrentValue(string strValue)
+        {
+            zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
+            System.Data.DataTable dt = generalBasicSettingBLL.GetList("SettingValue='" + strValue + "'").Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["DisplayName"].ToString();
+            }
+            else
+            {
+                return "未知";
             }
         }
 

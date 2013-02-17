@@ -222,6 +222,7 @@
     <Content Include="ExchangeCornerList.aspx" />
     <Content Include="image\12450456761.gif" />
     <Content Include="image\beizhanditu.jpg" />
+    <Content Include="image\downloadJianLi.gif" />
     <Content Include="image\go.gif" />
     <Content Include="image\img1.png" />
     <Content Include="image\img10.png" />
@@ -3677,6 +3678,7 @@
     <Content Include="qdrcsc\sousuo.css" />
     <Content Include="qdrcsc\sousuo.html" />
     <Content Include="css\zong.css" />
+    <Content Include="ResumeSearchInfo.aspx" />
     <Content Include="ResumeSearchList.aspx" />
     <Content Include="Scripts\default.js" />
     <Content Include="Scripts\EditEnterpriseRegisterInfo.js" />
@@ -3840,6 +3842,7 @@
     <Content Include="skins\twitter.css" />
     <Content Include="TemplatePage\JobFeildKinds.aspx" />
     <Content Include="TemplatePage\JobPositionKinds.aspx" />
+    <Content Include="TemplatePage\ResumeSearchInfo.aspx" />
     <Content Include="TemplatePage\WorkAreas.aspx" />
     <Content Include="UserControl\DefaultFooter.ascx" />
     <Content Include="UserControl\DefaultHead.ascx" />
@@ -4310,6 +4313,13 @@
       <DependentUpon>PersonalRegistration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResumeSearchInfo.aspx.cs">
+      <DependentUpon>ResumeSearchInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResumeSearchInfo.aspx.designer.cs">
+      <DependentUpon>ResumeSearchInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ResumeSearchList.aspx.cs">
       <DependentUpon>ResumeSearchList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4357,6 +4367,13 @@
     </Compile>
     <Compile Include="TemplatePage\JobPositionKinds.aspx.designer.cs">
       <DependentUpon>JobPositionKinds.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TemplatePage\ResumeSearchInfo.aspx.cs">
+      <DependentUpon>ResumeSearchInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TemplatePage\ResumeSearchInfo.aspx.designer.cs">
+      <DependentUpon>ResumeSearchInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="TemplatePage\WorkAreas.aspx.cs">
       <DependentUpon>WorkAreas.aspx</DependentUpon>

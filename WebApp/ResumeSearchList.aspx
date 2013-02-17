@@ -76,7 +76,7 @@
                 </table>
                 <table style="width:100%; font-size:14px;" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                        <td colspan="7" style="height:20px;"></td>
+                        <td colspan="8" style="height:20px;"></td>
                     </tr>
                     <tr>
                         <td align="center">求职者</td>
@@ -86,15 +86,16 @@
                         <td align="center">性别</td>
                         <td align="center">年龄</td>
                         <td align="center">更新日期</td>
+                        <td align="center">操作</td>
                     </tr>
                     <tr>
-                        <td colspan="7" style="height:15px;"></td>
+                        <td colspan="8" style="height:15px;"></td>
                     </tr>
                     <tr>
-                        <td width="100%;" height="1px" colspan="7" style="background-color: #999999; background-repeat: repeat-x;"></td>
+                        <td width="100%;" height="1px" colspan="8" style="background-color: #999999; background-repeat: repeat-x;"></td>
                     </tr>
                     <tr>
-                        <td colspan="7" style="height:15px;"></td>
+                        <td colspan="8" style="height:15px;"></td>
                     </tr>
                     <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound">
                         <ItemTemplate>
@@ -106,19 +107,20 @@
                                 <td align="center"><asp:Label ID="labSex" runat="server"></asp:Label></td>
                                 <td align="center"><asp:Label ID="labAge" runat="server"></asp:Label></td>
                                 <td align="center"><asp:Label ID="labPublishDate" runat="server"></asp:Label></td>
+                                <td align="center"><asp:Label ID="labView" runat="server"></asp:Label></td>
                             </tr>
                         </ItemTemplate>
                         <SeparatorTemplate>
-                                <tr><td colspan="7" style="height:30px;"></td></tr>
+                                <tr><td colspan="8" style="height:30px;"></td></tr>
                         </SeparatorTemplate>
                     </asp:Repeater>
                     <tr>
-                        <td colspan="7" style="height:50px;" align="center">
+                        <td colspan="8" style="height:50px;" align="center">
                             <asp:Label Visible="true" runat="server" ID="labDataIsNull" style="color:#093C7E; font-size:30px; font-weight:bold;" Text="暂无相关简历"></asp:Label>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="7" align="center">
+                        <td colspan="8" align="center">
                             <webdiyer:AspNetPager ID="AspNetPager1" runat="server" PageSize="1" 
                                 onpagechanged="AspNetPager1_PageChanged" CssClass="paginator" CurrentPageButtonClass="cpb" FirstPageText="首页"  LastPageText="尾页" NextPageText="下一页" PrevPageText="上一页" >
                             </webdiyer:AspNetPager>

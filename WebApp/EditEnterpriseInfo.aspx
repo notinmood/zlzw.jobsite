@@ -15,6 +15,7 @@
     <script type="text/javascript" src="Scripts/jquery-ui-1.9.0.js"></script>
     <script type="text/javascript" src="EasyUI/Script/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="EasyUI/Script/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="Scripts/WebForms/jquery.watermark.min.js"></script>
     <script type="text/javascript" src="Scripts/EditEnterpriseRegisterInfo.js"></script>
 </head>
 <body>
@@ -93,7 +94,7 @@
                         <td align="left" style="width: 410px;">
                             <table>
                                 <tr>
-                                    <td align="left">
+                                    <%--<td align="left">
                                         <asp:DropDownList ID="drpJobFeildKindsType" Height="26" Width="100" runat="server">
                                             <asp:ListItem Text="制造行业" Value="制造行业" Selected="True"></asp:ListItem>
                                             <asp:ListItem Text="第三产业" Value="第三产业"></asp:ListItem>
@@ -102,6 +103,9 @@
                                     </td>
                                     <td>
                                         <asp:DropDownList ID="drpItems" runat="server" Height="26" Width="297"></asp:DropDownList>
+                                    </td>--%>
+                                    <td colspan="2">
+                                        <input runat="server" type="text" id="txbJobFeildKinds" class="easyui-validatebox" data-options="required:true" missingMessage="请选择行业类别" style="width: 400px; height: 22px;" readonly="readonly" />
                                     </td>
                                 </tr>
                             </table>
@@ -247,6 +251,9 @@
                 <uc2:PageFooter ID="PageFooter1" runat="server" />
             </div>
         </div>
+        <script type="text/javascript" src="Scripts/WebForms/jquery.artDialog.js"></script>
+        <link type="text/css" href="skins/blue.css" rel="stylesheet" />
+        <script type="text/javascript" src="Scripts/WebForms/iframeTools.js"></script>
     </form>
 </body>
 </html>

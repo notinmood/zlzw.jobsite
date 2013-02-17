@@ -104,14 +104,14 @@ namespace WebApp
 
         private void Load_JobPositionKindsTypeList()
         {
-            zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
-            DataTable dt = generalBasicSettingBLL.GetList("DisplayName='" + drpJobPositionKindsType.SelectedValue + "'").Tables[0];
+            //zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
+            //DataTable dt = generalBasicSettingBLL.GetList("DisplayName='" + drpJobPositionKindsType.SelectedValue + "'").Tables[0];
 
-            drpJobPositionKinds.DataTextField = "SettingValue";
-            drpJobPositionKinds.DataValueField = "SettingValue";
+            //drpJobPositionKinds.DataTextField = "SettingValue";
+            //drpJobPositionKinds.DataValueField = "SettingValue";
 
-            drpJobPositionKinds.DataSource = dt;
-            drpJobPositionKinds.DataBind();
+            //drpJobPositionKinds.DataSource = dt;
+            //drpJobPositionKinds.DataBind();
         }
 
         #endregion
@@ -120,14 +120,14 @@ namespace WebApp
 
         private void Load_JobFeildKinds()
         {
-            zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
-            DataTable dt = generalBasicSettingBLL.GetList("DisplayName='" + drpJobFeildKindsType.SelectedValue + "'").Tables[0];
+            //zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
+            //DataTable dt = generalBasicSettingBLL.GetList("DisplayName='" + drpJobFeildKindsType.SelectedValue + "'").Tables[0];
 
-            drpJobFeildKinds.DataTextField = "SettingValue";
-            drpJobFeildKinds.DataValueField = "SettingValue";
+            //drpJobFeildKinds.DataTextField = "SettingValue";
+            //drpJobFeildKinds.DataValueField = "SettingValue";
 
-            drpJobFeildKinds.DataSource = dt;
-            drpJobFeildKinds.DataBind();
+            //drpJobFeildKinds.DataSource = dt;
+            //drpJobFeildKinds.DataBind();
         }
 
         #endregion
@@ -159,10 +159,12 @@ namespace WebApp
             zlzw.BLL.JobPersonResumeBLL jobPersonResumeBLL = new zlzw.BLL.JobPersonResumeBLL();
             DataTable dt01 = jobPersonResumeBLL.GetList("OwnerUserKey='" + strUserID + "'").Tables[0];
             zlzw.Model.JobPersonResumeModel jobPersonResumeModel = jobPersonResumeBLL.GetModel(int.Parse(dt01.Rows[0]["ResumeID"].ToString()));
-            drpJobPositionKindsType.SelectedValue = jobPersonResumeModel.JobPositionKinds.Split('-')[0];//职位类别（大类）
-            drpJobPositionKinds.SelectedValue = jobPersonResumeModel.JobPositionKinds.Split('-')[1];//职位列别（小类）
-            drpJobFeildKindsType.SelectedValue = jobPersonResumeModel.JobFeildKinds.Split('-')[0];//期望行业（小类）
-            drpJobFeildKinds.SelectedValue = jobPersonResumeModel.JobFeildKinds.Split('-')[1];//期望行业（小类）
+            //drpJobPositionKindsType.SelectedValue = jobPersonResumeModel.JobPositionKinds.Split('-')[0];//职位类别（大类）
+            //drpJobPositionKinds.SelectedValue = jobPersonResumeModel.JobPositionKinds.Split('-')[1];//职位列别（小类）
+            //drpJobFeildKindsType.SelectedValue = jobPersonResumeModel.JobFeildKinds.Split('-')[0];//期望行业（小类）
+            //drpJobFeildKinds.SelectedValue = jobPersonResumeModel.JobFeildKinds.Split('-')[1];//期望行业（小类）
+            txbJobPositionKinds.Value = jobPersonResumeModel.JobPositionKinds.Split('-')[1];
+            txbJobFeildKinds.Value = jobPersonResumeModel.JobFeildKinds.Split('-')[1];
             txbHopeJob.Text = jobPersonResumeModel.HopeJob;//意向职位
             txbJobWorkPlaceNames.Text = jobPersonResumeModel.JobWorkPlaceNames;//期望地址
             drpHopeRoomAndBoard.SelectedValue = jobPersonResumeModel.HopeRoomAndBoard.ToString();//期望食宿
@@ -235,8 +237,10 @@ namespace WebApp
             zlzw.Model.JobPersonResumeModel jobPersonResumeModel = jobPersonResumeBLL.GetModel(int.Parse(dt01.Rows[0]["ResumeID"].ToString()));
             jobPersonResumeModel.ResumeID = int.Parse(dt01.Rows[0]["ResumeID"].ToString());
             jobPersonResumeModel.OwnerUserKey = Request.QueryString["ID"];
-            jobPersonResumeModel.JobPositionKinds = drpJobPositionKindsType.SelectedValue + "-" + Request.Form["drpJobPositionKinds"];//职位类别
-            jobPersonResumeModel.JobFeildKinds = drpJobFeildKindsType.SelectedValue + "-" + Request.Form["drpJobFeildKinds"];//期望行业
+            //jobPersonResumeModel.JobPositionKinds = drpJobPositionKindsType.SelectedValue + "-" + Request.Form["drpJobPositionKinds"];//职位类别
+            //jobPersonResumeModel.JobFeildKinds = drpJobFeildKindsType.SelectedValue + "-" + Request.Form["drpJobFeildKinds"];//期望行业
+            jobPersonResumeModel.JobPositionKinds = Get_CurrentValue(Request.Params["txbJobPositionKinds"]) + "-" + Request.Params["txbJobPositionKinds"];
+            jobPersonResumeModel.JobFeildKinds = Get_CurrentValue(Request.Params["txbJobFeildKinds"]) + "-" + Request.Params["txbJobFeildKinds"];
             jobPersonResumeModel.HopeJob = Request.Params["txbHopeJob"];//意向职位
             jobPersonResumeModel.JobWorkPlaceNames = Request.Params["txbJobWorkPlaceNames"];//期望地址
             jobPersonResumeModel.HopeRoomAndBoard = int.Parse(Request.Form["drpHopeRoomAndBoard"]);//期望食宿
@@ -290,6 +294,24 @@ namespace WebApp
             catch (Exception exp)
             {
                 FineUI.Alert.Show("简历更新失败，请稍后重试");
+            }
+        }
+
+        #endregion
+
+        #region 获取当前职位类别的大类
+
+        private string Get_CurrentValue(string strValue)
+        {
+            zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
+            DataTable dt = generalBasicSettingBLL.GetList("SettingValue='"+ strValue +"'").Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["DisplayName"].ToString();
+            }
+            else
+            {
+                return "未知";
             }
         }
 

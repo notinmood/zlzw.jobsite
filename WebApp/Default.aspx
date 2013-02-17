@@ -99,14 +99,25 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound">
-                                            <ItemTemplate>
-                                                <tr>
-                                                    <td height="15">
-                                                        <asp:Label ID="labNewsTitle" runat="server"></asp:Label></td>
-                                                </tr>
-                                            </ItemTemplate>
-                                        </asp:Repeater>
+                                        <tr>
+                                            <td>
+                                                <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound">
+                                                    <HeaderTemplate>
+                                                        <table>
+                                                    </HeaderTemplate>
+                                                    <ItemTemplate>
+                                                        <tr>
+                                                            <td style="line-height:25px;">
+                                                                <asp:Label ID="labNewsTitle" runat="server"></asp:Label></td>
+                                                        </tr>
+                                                    </ItemTemplate>
+                                                    <FooterTemplate>
+                                                        </table>
+                                                    </FooterTemplate>
+                                                </asp:Repeater>
+                                            </td>
+                                        </tr>
+                                        
                                     </table>
                                 </div>
 
@@ -321,7 +332,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <div style="border: 1px solid #FF8000; height:220px;">
+                                    <div style="border: 1px solid #FF8000; height:320px;">
                                         <asp:Repeater ID="Repeater3" runat="server" OnItemDataBound="Repeater3_ItemDataBound">
                                             <HeaderTemplate>
                                                 <div id="participatingCompaniesList" style="height:200px;">
@@ -391,7 +402,7 @@
     <script type="text/javascript" src="Scripts/WebForms/iframeTools.js"></script>
     <script type="text/javascript" src="Scripts/default.js"></script>
     <script type="text/javascript" language="javascript">
-        new Marquee(["participatingCompaniesList", "participatingCompanies"], 0, 1, 757, 185, 20, 0, 0);
+        new Marquee(["participatingCompaniesList", "participatingCompanies"], 0, 1, 757, 300, 20, 0, 0);
     </script>
 </body>
 </html>

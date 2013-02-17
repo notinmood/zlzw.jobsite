@@ -31,13 +31,13 @@ namespace WebApp {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// DefaultHead1 控件。
+        /// PageHead1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::WebApp.UserControl.DefaultHead DefaultHead1;
+        protected global::WebApp.UserControl.PageHead PageHead1;
         
         /// <summary>
         /// labNavigate 控件。
@@ -85,12 +85,12 @@ namespace WebApp {
         protected global::System.Web.UI.WebControls.Label labContent;
         
         /// <summary>
-        /// DefaultFooter1 控件。
+        /// PageFooter1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::WebApp.UserControl.DefaultFooter DefaultFooter1;
+        protected global::WebApp.UserControl.PageFooter PageFooter1;
     }
 }

@@ -100,14 +100,14 @@ namespace WebApp
 
         private void Load_JobPositionKindsTypeList()
         {
-            zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
-            DataTable dt = generalBasicSettingBLL.GetList("DisplayName='" + drpJobPositionKindsType.SelectedValue + "'").Tables[0];
+            //zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
+            //DataTable dt = generalBasicSettingBLL.GetList("DisplayName='" + drpJobPositionKindsType.SelectedValue + "'").Tables[0];
 
-            drpJobPositionKinds.DataTextField = "SettingValue";
-            drpJobPositionKinds.DataValueField = "SettingValue";
+            //drpJobPositionKinds.DataTextField = "SettingValue";
+            //drpJobPositionKinds.DataValueField = "SettingValue";
 
-            drpJobPositionKinds.DataSource = dt;
-            drpJobPositionKinds.DataBind();
+            //drpJobPositionKinds.DataSource = dt;
+            //drpJobPositionKinds.DataBind();
         }
 
         #endregion
@@ -116,14 +116,14 @@ namespace WebApp
 
         private void Load_JobFeildKinds()
         {
-            zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
-            DataTable dt = generalBasicSettingBLL.GetList("DisplayName='" + drpJobFeildKindsType.SelectedValue + "'").Tables[0];
+            //zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
+            //DataTable dt = generalBasicSettingBLL.GetList("DisplayName='" + drpJobFeildKindsType.SelectedValue + "'").Tables[0];
 
-            drpJobFeildKinds.DataTextField = "SettingValue";
-            drpJobFeildKinds.DataValueField = "SettingValue";
+            //drpJobFeildKinds.DataTextField = "SettingValue";
+            //drpJobFeildKinds.DataValueField = "SettingValue";
 
-            drpJobFeildKinds.DataSource = dt;
-            drpJobFeildKinds.DataBind();
+            //drpJobFeildKinds.DataSource = dt;
+            //drpJobFeildKinds.DataBind();
         }
 
         #endregion
@@ -182,8 +182,10 @@ namespace WebApp
 
             zlzw.Model.JobPersonResumeModel jobPersonResumeModel = new zlzw.Model.JobPersonResumeModel();
             jobPersonResumeModel.OwnerUserKey = coreUserModel.UserGuid.ToString();//用户表GUID 
-            jobPersonResumeModel.JobPositionKinds = drpJobPositionKindsType.SelectedValue + "-" + Request.Form["drpJobPositionKinds"];//职位类别
-            jobPersonResumeModel.JobFeildKinds = drpJobFeildKindsType.SelectedValue + "-" + Request.Form["drpJobFeildKinds"];//期望行业
+            //jobPersonResumeModel.JobPositionKinds = drpJobPositionKindsType.SelectedValue + "-" + Request.Form["drpJobPositionKinds"];//职位类别
+            //jobPersonResumeModel.JobFeildKinds = drpJobFeildKindsType.SelectedValue + "-" + Request.Form["drpJobFeildKinds"];//期望行业
+            jobPersonResumeModel.JobPositionKinds = Get_CurrentValue(Request.Params["txbJobPositionKinds"]) + "-" + Request.Params["txbJobPositionKinds"];
+            jobPersonResumeModel.JobFeildKinds = Get_CurrentValue(Request.Params["txbJobFeildKinds"]) + "-" + Request.Params["txbJobFeildKinds"];
             jobPersonResumeModel.HopeJob = Request.Form["txbHopeJob"];//意向职位
             jobPersonResumeModel.JobWorkPlaceNames = Request.Form["txbJobWorkPlaceNames"];//期望地址
             jobPersonResumeModel.HopeRoomAndBoard = int.Parse(Request.Form["drpHopeRoomAndBoard"]);//期望食宿
@@ -239,6 +241,24 @@ namespace WebApp
                 FineUI.Alert.Show("简历提交失败，请稍后重试");
             }
 
+        }
+
+        #endregion
+
+        #region 获取当前职位类别的大类
+
+        private string Get_CurrentValue(string strValue)
+        {
+            zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
+            DataTable dt = generalBasicSettingBLL.GetList("SettingValue='" + strValue + "'").Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["DisplayName"].ToString();
+            }
+            else
+            {
+                return "未知";
+            }
         }
 
         #endregion

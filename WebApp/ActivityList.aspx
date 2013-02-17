@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ActivityList.aspx.cs" Inherits="WebApp.ActivityList" %>
-<%@ Register src="UserControl/DefaultHead.ascx" tagname="DefaultHead" tagprefix="uc1" %>
-<%@ Register src="UserControl/DefaultFooter.ascx" tagname="DefaultFooter" tagprefix="uc2" %>
+<%@ Register src="UserControl/PageHead.ascx" tagname="PageHead" tagprefix="uc1" %>
+<%@ Register src="UserControl/PageFooter.ascx" tagname="PageFooter" tagprefix="uc2" %>
 <%@ Register assembly="AspNetPager" namespace="Wuqi.Webdiyer" tagprefix="webdiyer" %>
 
 <!DOCTYPE html>
@@ -9,16 +9,16 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>企业招聘会信息</title>
-    <link href="css/zong.css" type="text/css" rel="stylesheet" />
+    <link href="css/sousuo.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <uc1:DefaultHead ID="DefaultHead1" runat="server" />
+            <uc1:PageHead ID="PageHead1" runat="server" />
             <div>
                 <table style="width:100%;">
                     <tr>
-                        <td style="background-image: url('image/img3.png'); background-repeat: repeat-x; height:3px;">
+                        <td style="background-image: url('image/img3.png'); background-repeat: repeat-x; height:1px;">
                                 
                         </td>
                     </tr>
@@ -29,11 +29,14 @@
                             　<a href="default.aspx" style="color:#093C7E; text-decoration:none;">首页</a> > <span style="color:#093C7E;">招聘会</span>
                         </td>
                     </tr>
+                    <tr>
+                        <td style="height:20px;"></td>
+                    </tr>
                     <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound">
                         <ItemTemplate>
                             <tr>
                                 <td style="padding-left:20px;">
-                                    <asp:Label ID="labActivityTitle" runat="server"></asp:Label>
+                                    <asp:Label ID="labActivityTitle" style="font-size:14px;" runat="server"></asp:Label>
                                 </td>
                             </tr>
                         </ItemTemplate>
@@ -46,7 +49,7 @@
                         </td>
                     </tr>
                 </table> 
-                <uc2:DefaultFooter ID="DefaultFooter1" runat="server" />
+                <uc2:PageFooter ID="PageFooter1" runat="server" />
             </div>
         </div>
     </form>

@@ -10,6 +10,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <x:PageManager ID="PageManager1" runat="server" AutoSizePanelID="Panel1" Theme="Blue" />
         <table align="center" border="0" cellpadding="0" cellspacing="0" width="1024">
             <tr>
                 <td colspan="4">
@@ -38,7 +39,13 @@
             <!---->
             <tr>
                 <td colspan="4" style="background-color:#FFFFFF; background-image:url('images/index_new_03.jpg'); height:70px;" height="20" valign="top">
-                    
+                    <table style="width:100%;height:80px;">
+                        <tr>
+                            <td align="right">
+                                <asp:LinkButton ID="linkBtnApply" runat="server" style="font-size:20px;color:#F97101;font-weight:bold;" OnClick="linkBtnApply_Click">+申请职位</asp:LinkButton>　　　
+                            </td>
+                        </tr>
+                    </table>
                 </td>
             </tr>
             <tr>

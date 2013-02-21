@@ -150,10 +150,21 @@ namespace WebApp.Manage.admin
                 {
                     ckbIsEmergencyRecruitment.Checked = true;
                 }
+                //是否允许职位发布
+                if (generalEnterpriseModel.IsEnablePublishJob.ToString() == "1")
+                {
+                    ckbIsEnablePublishJob.Checked = true;
+                }
+                else
+                {
+                    ckbIsEnablePublishJob.Checked = false;
+                }
+                txbDownloadResume.Text = generalEnterpriseModel.DownloadResume.ToString();//允许陌生简历下载次数
                 txbEnterpriseDescription.Text = generalEnterpriseModel.EnterpriseDescription;//企业简介
                 ViewState["fileBusinessLicense"] = generalEnterpriseModel.BusinessLicense;//营业执照存储地址
                 ViewState["CreateDate"] = generalEnterpriseModel.CreateDate.ToString();
                 ViewState["EnterpriseGuid"] = generalEnterpriseModel.EnterpriseGuid.ToString();
+                ViewState["UserGuid"] = generalEnterpriseModel.UserGuid.ToString();
                 ToolbarText2.Text = "编辑一个管理员账号";
             }
             btnClose.OnClientClick = ActiveWindow.GetConfirmHideReference();
@@ -192,6 +203,16 @@ namespace WebApp.Manage.admin
                 {
                     generalEnterpriseModel.IsEmergencyRecruitment = 0;
                 }
+                //是否允许职位发布
+                if (ckbIsEnablePublishJob.Checked)
+                {
+                    generalEnterpriseModel.IsEnablePublishJob = 1;
+                }
+                else
+                {
+                    generalEnterpriseModel.IsEnablePublishJob = 0;
+                }
+                generalEnterpriseModel.DownloadResume = int.Parse(txbDownloadResume.Text);//允许下载陌生简历数量
                 generalEnterpriseModel.CreateDate = DateTime.Parse(ViewState["CreateDate"].ToString());
                 zlzw.BLL.GeneralEnterpriseBLL generalEnterpriseBLL = new zlzw.BLL.GeneralEnterpriseBLL();
                 generalEnterpriseModel.EnterpriseID = int.Parse(Get_ID(generalEnterpriseBLL, Request.QueryString["value"]));
@@ -204,6 +225,8 @@ namespace WebApp.Manage.admin
                 {
                     generalEnterpriseModel.BusinessLicense = ViewState["fileBusinessLicense"].ToString();
                 }
+                generalEnterpriseModel.UserGuid = new Guid(ViewState["UserGuid"].ToString());
+                generalEnterpriseModel.EnterpriseGuid = new Guid(ViewState["EnterpriseGuid"].ToString());
                 generalEnterpriseBLL.Update(generalEnterpriseModel);
             }
             else
@@ -227,6 +250,7 @@ namespace WebApp.Manage.admin
                 generalEnterpriseModel.EnterpriseDescription = txbEnterpriseDescription.Text;//企业简介
                 generalEnterpriseModel.CreateDate = DateTime.Now;//企业系统创建日期
                 generalEnterpriseModel.CanUsable = 1;//可用
+                generalEnterpriseModel.UserGuid = new Guid(Request.Cookies["UserID"].Value);
                 if (ckbIsEmergencyRecruitment.Checked)
                 {
                     generalEnterpriseModel.IsEmergencyRecruitment = 1;
@@ -235,6 +259,19 @@ namespace WebApp.Manage.admin
                 {
                     generalEnterpriseModel.IsEmergencyRecruitment = 0;
                 }
+                //是否允许职位发布
+                //是否允许职位发布
+                if (ckbIsEnablePublishJob.Checked)
+                {
+                    generalEnterpriseModel.IsEnablePublishJob = 1;
+                }
+                else
+                {
+                    generalEnterpriseModel.IsEnablePublishJob = 0;
+                }
+                generalEnterpriseModel.DownloadResume = int.Parse(txbDownloadResume.Text);//允许下载陌生简历数量
+                generalEnterpriseModel.EnterpriseGuid = new Guid(ViewState["EnterpriseGuid"].ToString());
+                generalEnterpriseModel.UserGuid = new Guid(Request.Cookies["UserID"].Value);
                 if (fileBusinessLicense.PostedFile.ContentLength > 0)
                 {
                     string fileName = DateTime.Now.Ticks.ToString() + "_" + fileBusinessLicense.FileName;

@@ -104,7 +104,15 @@ namespace zlzw.DAL
 					new SqlParameter("@QuName", SqlDbType.NVarChar,50),
 					new SqlParameter("@QuCode", SqlDbType.NVarChar,50),
 					new SqlParameter("@BusRoute", SqlDbType.NVarChar,200),
+					new SqlParameter("@IsEnablePublishJob", SqlDbType.Int,4),
 					new SqlParameter("@IsEmergencyRecruitment", SqlDbType.Int,4),
+					new SqlParameter("@Expand_PublishJobCount", SqlDbType.Int,4),
+					new SqlParameter("@Expand_MainResumeCount", SqlDbType.Int,4),
+					new SqlParameter("@Expand_SearchStrangeResumeCount", SqlDbType.Int,4),
+					new SqlParameter("@Expand_DownloadStrangeResumeCount", SqlDbType.Int,4),
+					new SqlParameter("@Expand_Balance", SqlDbType.Float,8),
+					new SqlParameter("@Expand_RechargeGUID", SqlDbType.UniqueIdentifier,16),
+					new SqlParameter("@DownloadResume", SqlDbType.Int,4),
 					new SqlParameter("@PropertyNames", SqlDbType.NText),
 					new SqlParameter("@PropertyValues", SqlDbType.NText)};
 			parameters[0].Direction = ParameterDirection.Output;
@@ -169,9 +177,17 @@ namespace zlzw.DAL
 			parameters[59].Value = model.QuName;
 			parameters[60].Value = model.QuCode;
 			parameters[61].Value = model.BusRoute;
-			parameters[62].Value = model.IsEmergencyRecruitment;
-			parameters[63].Value = model.PropertyNames;
-			parameters[64].Value = model.PropertyValues;
+			parameters[62].Value = model.IsEnablePublishJob;
+			parameters[63].Value = model.IsEmergencyRecruitment;
+			parameters[64].Value = model.Expand_PublishJobCount;
+			parameters[65].Value = model.Expand_MainResumeCount;
+			parameters[66].Value = model.Expand_SearchStrangeResumeCount;
+			parameters[67].Value = model.Expand_DownloadStrangeResumeCount;
+			parameters[68].Value = model.Expand_Balance;
+			parameters[69].Value = Guid.NewGuid();
+			parameters[70].Value = model.DownloadResume;
+			parameters[71].Value = model.PropertyNames;
+			parameters[72].Value = model.PropertyValues;
 
 			DbHelperSQL.RunProcedure("GeneralEnterprise_ADD",parameters,out rowsAffected);
 			return (int)parameters[0].Value;
@@ -246,7 +262,15 @@ namespace zlzw.DAL
 					new SqlParameter("@QuName", SqlDbType.NVarChar,50),
 					new SqlParameter("@QuCode", SqlDbType.NVarChar,50),
 					new SqlParameter("@BusRoute", SqlDbType.NVarChar,200),
+					new SqlParameter("@IsEnablePublishJob", SqlDbType.Int,4),
 					new SqlParameter("@IsEmergencyRecruitment", SqlDbType.Int,4),
+					new SqlParameter("@Expand_PublishJobCount", SqlDbType.Int,4),
+					new SqlParameter("@Expand_MainResumeCount", SqlDbType.Int,4),
+					new SqlParameter("@Expand_SearchStrangeResumeCount", SqlDbType.Int,4),
+					new SqlParameter("@Expand_DownloadStrangeResumeCount", SqlDbType.Int,4),
+					new SqlParameter("@Expand_Balance", SqlDbType.Float,8),
+					new SqlParameter("@Expand_RechargeGUID", SqlDbType.UniqueIdentifier,16),
+					new SqlParameter("@DownloadResume", SqlDbType.Int,4),
 					new SqlParameter("@PropertyNames", SqlDbType.NText),
 					new SqlParameter("@PropertyValues", SqlDbType.NText)};
 			parameters[0].Value = model.EnterpriseID;
@@ -311,9 +335,17 @@ namespace zlzw.DAL
 			parameters[59].Value = model.QuName;
 			parameters[60].Value = model.QuCode;
 			parameters[61].Value = model.BusRoute;
-			parameters[62].Value = model.IsEmergencyRecruitment;
-			parameters[63].Value = model.PropertyNames;
-			parameters[64].Value = model.PropertyValues;
+			parameters[62].Value = model.IsEnablePublishJob;
+			parameters[63].Value = model.IsEmergencyRecruitment;
+			parameters[64].Value = model.Expand_PublishJobCount;
+			parameters[65].Value = model.Expand_MainResumeCount;
+			parameters[66].Value = model.Expand_SearchStrangeResumeCount;
+			parameters[67].Value = model.Expand_DownloadStrangeResumeCount;
+			parameters[68].Value = model.Expand_Balance;
+			parameters[69].Value = model.Expand_RechargeGUID;
+			parameters[70].Value = model.DownloadResume;
+			parameters[71].Value = model.PropertyNames;
+			parameters[72].Value = model.PropertyValues;
 
 			DbHelperSQL.RunProcedure("GeneralEnterprise_Update",parameters,out rowsAffected);
 			if (rowsAffected > 0)
@@ -645,9 +677,41 @@ namespace zlzw.DAL
 				{
 					model.BusRoute=row["BusRoute"].ToString();
 				}
+				if(row["IsEnablePublishJob"]!=null && row["IsEnablePublishJob"].ToString()!="")
+				{
+					model.IsEnablePublishJob=int.Parse(row["IsEnablePublishJob"].ToString());
+				}
 				if(row["IsEmergencyRecruitment"]!=null && row["IsEmergencyRecruitment"].ToString()!="")
 				{
 					model.IsEmergencyRecruitment=int.Parse(row["IsEmergencyRecruitment"].ToString());
+				}
+				if(row["Expand_PublishJobCount"]!=null && row["Expand_PublishJobCount"].ToString()!="")
+				{
+					model.Expand_PublishJobCount=int.Parse(row["Expand_PublishJobCount"].ToString());
+				}
+				if(row["Expand_MainResumeCount"]!=null && row["Expand_MainResumeCount"].ToString()!="")
+				{
+					model.Expand_MainResumeCount=int.Parse(row["Expand_MainResumeCount"].ToString());
+				}
+				if(row["Expand_SearchStrangeResumeCount"]!=null && row["Expand_SearchStrangeResumeCount"].ToString()!="")
+				{
+					model.Expand_SearchStrangeResumeCount=int.Parse(row["Expand_SearchStrangeResumeCount"].ToString());
+				}
+				if(row["Expand_DownloadStrangeResumeCount"]!=null && row["Expand_DownloadStrangeResumeCount"].ToString()!="")
+				{
+					model.Expand_DownloadStrangeResumeCount=int.Parse(row["Expand_DownloadStrangeResumeCount"].ToString());
+				}
+				if(row["Expand_Balance"]!=null && row["Expand_Balance"].ToString()!="")
+				{
+					model.Expand_Balance=decimal.Parse(row["Expand_Balance"].ToString());
+				}
+				if(row["Expand_RechargeGUID"]!=null && row["Expand_RechargeGUID"].ToString()!="")
+				{
+					model.Expand_RechargeGUID= new Guid(row["Expand_RechargeGUID"].ToString());
+				}
+				if(row["DownloadResume"]!=null && row["DownloadResume"].ToString()!="")
+				{
+					model.DownloadResume=int.Parse(row["DownloadResume"].ToString());
 				}
 				if(row["PropertyNames"]!=null)
 				{
@@ -667,7 +731,7 @@ namespace zlzw.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select EnterpriseID,UserGuid,EnterpriseGuid,CompanyName,CompanyNameShort,BusinessType,TradingName,IndustryKey,IndustryType,EnterpriseCode,TaxCode,PrincipleAddress,PostCode,Telephone,TelephoneOther,Fax,Email,EstablishedYears,EstablishedTime,GrossIncome,Profit,AssociatedEnterpriseGuid,ContactPerson,AreaCode,AreaOther,CanUsable,Longitude,Lantitude,BrokerKey,EnterpriseDescription,EnterpriseMemo,EnterpriseAddon,EnterpriseWWW,StaffScope,EnterpriseLevel,EnterpriseLevel1,EnterpriseLevel2,EnterpriseLevel3,EnterpriseLevel4,EnterpriseLevel5,EnterpriseLevel6,EnterpriseLevel7,EnterpriseRank,EnterpriseKind,ManageUserKey,ManageUserName,CreateUserKey,CreateUserName,CreateDate,LastUpdateUserKey,LastUpdateUserName,LastUpdateDate,IsProtectedByOwner,CooperateStatus,BusinessLicense,ShengName,ShengCode,ShiName,ShiCode,QuName,QuCode,BusRoute,IsEmergencyRecruitment,PropertyNames,PropertyValues ");
+			strSql.Append("select EnterpriseID,UserGuid,EnterpriseGuid,CompanyName,CompanyNameShort,BusinessType,TradingName,IndustryKey,IndustryType,EnterpriseCode,TaxCode,PrincipleAddress,PostCode,Telephone,TelephoneOther,Fax,Email,EstablishedYears,EstablishedTime,GrossIncome,Profit,AssociatedEnterpriseGuid,ContactPerson,AreaCode,AreaOther,CanUsable,Longitude,Lantitude,BrokerKey,EnterpriseDescription,EnterpriseMemo,EnterpriseAddon,EnterpriseWWW,StaffScope,EnterpriseLevel,EnterpriseLevel1,EnterpriseLevel2,EnterpriseLevel3,EnterpriseLevel4,EnterpriseLevel5,EnterpriseLevel6,EnterpriseLevel7,EnterpriseRank,EnterpriseKind,ManageUserKey,ManageUserName,CreateUserKey,CreateUserName,CreateDate,LastUpdateUserKey,LastUpdateUserName,LastUpdateDate,IsProtectedByOwner,CooperateStatus,BusinessLicense,ShengName,ShengCode,ShiName,ShiCode,QuName,QuCode,BusRoute,IsEnablePublishJob,IsEmergencyRecruitment,Expand_PublishJobCount,Expand_MainResumeCount,Expand_SearchStrangeResumeCount,Expand_DownloadStrangeResumeCount,Expand_Balance,Expand_RechargeGUID,DownloadResume,PropertyNames,PropertyValues ");
 			strSql.Append(" FROM GeneralEnterprise ");
 			if(strWhere.Trim()!="")
 			{
@@ -687,7 +751,7 @@ namespace zlzw.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" EnterpriseID,UserGuid,EnterpriseGuid,CompanyName,CompanyNameShort,BusinessType,TradingName,IndustryKey,IndustryType,EnterpriseCode,TaxCode,PrincipleAddress,PostCode,Telephone,TelephoneOther,Fax,Email,EstablishedYears,EstablishedTime,GrossIncome,Profit,AssociatedEnterpriseGuid,ContactPerson,AreaCode,AreaOther,CanUsable,Longitude,Lantitude,BrokerKey,EnterpriseDescription,EnterpriseMemo,EnterpriseAddon,EnterpriseWWW,StaffScope,EnterpriseLevel,EnterpriseLevel1,EnterpriseLevel2,EnterpriseLevel3,EnterpriseLevel4,EnterpriseLevel5,EnterpriseLevel6,EnterpriseLevel7,EnterpriseRank,EnterpriseKind,ManageUserKey,ManageUserName,CreateUserKey,CreateUserName,CreateDate,LastUpdateUserKey,LastUpdateUserName,LastUpdateDate,IsProtectedByOwner,CooperateStatus,BusinessLicense,ShengName,ShengCode,ShiName,ShiCode,QuName,QuCode,BusRoute,IsEmergencyRecruitment,PropertyNames,PropertyValues ");
+			strSql.Append(" EnterpriseID,UserGuid,EnterpriseGuid,CompanyName,CompanyNameShort,BusinessType,TradingName,IndustryKey,IndustryType,EnterpriseCode,TaxCode,PrincipleAddress,PostCode,Telephone,TelephoneOther,Fax,Email,EstablishedYears,EstablishedTime,GrossIncome,Profit,AssociatedEnterpriseGuid,ContactPerson,AreaCode,AreaOther,CanUsable,Longitude,Lantitude,BrokerKey,EnterpriseDescription,EnterpriseMemo,EnterpriseAddon,EnterpriseWWW,StaffScope,EnterpriseLevel,EnterpriseLevel1,EnterpriseLevel2,EnterpriseLevel3,EnterpriseLevel4,EnterpriseLevel5,EnterpriseLevel6,EnterpriseLevel7,EnterpriseRank,EnterpriseKind,ManageUserKey,ManageUserName,CreateUserKey,CreateUserName,CreateDate,LastUpdateUserKey,LastUpdateUserName,LastUpdateDate,IsProtectedByOwner,CooperateStatus,BusinessLicense,ShengName,ShengCode,ShiName,ShiCode,QuName,QuCode,BusRoute,IsEnablePublishJob,IsEmergencyRecruitment,Expand_PublishJobCount,Expand_MainResumeCount,Expand_SearchStrangeResumeCount,Expand_DownloadStrangeResumeCount,Expand_Balance,Expand_RechargeGUID,DownloadResume,PropertyNames,PropertyValues ");
 			strSql.Append(" FROM GeneralEnterprise ");
 			if(strWhere.Trim()!="")
 			{

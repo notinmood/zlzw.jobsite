@@ -100,19 +100,19 @@ namespace WebApp.Manage.admin
             {
                 string strEnterpriseGUID = dr["EnterpriseGuid"].ToString();
                 e.Values[0] = Get_EnterpriseName(strEnterpriseGUID);
-                string strADType = dr["ADType"].ToString();
-                if (strADType == "1")
-                {
-                    e.Values[2] = "图片类型";
-                }
-                else if(strADType == "2")
-                {
-                    e.Values[2] = "脚本类型";
-                }
-                else
-                {
-                    e.Values[2] = "未知类型";
-                }
+                //string strADType = dr["ADType"].ToString();
+                //if (strADType == "1")
+                //{
+                //    e.Values[2] = "图片类型";
+                //}
+                //else if(strADType == "2")
+                //{
+                //    e.Values[2] = "脚本类型";
+                //}
+                //else
+                //{
+                //    e.Values[2] = "未知类型";
+                //}
             }
         }
 

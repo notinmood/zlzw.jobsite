@@ -234,5 +234,39 @@ namespace WebApp.EnterpriseInfo
         }
 
         #endregion
+
+        #region 职位申请事件
+
+        protected void linkBtnApply_Click(object sender, EventArgs e)
+        {
+            if (Request.Cookies["CurrentUserGUID"] == null)
+            {
+                linkBtnApply.Text = "用户尚未登陆";
+                return;
+            }
+            else
+            {
+                zlzw.BLL.ResumeCollectionListBLL resumeCollectionListBLL = new zlzw.BLL.ResumeCollectionListBLL();
+                System.Data.DataTable dt = resumeCollectionListBLL.GetList("ResumeGuid='"+ Request.QueryString["id"] +"' and EnterpriseGuid='"+ Request.QueryString["type"] +"' and EnterpriseIsDel=1 and IsEnable=1").Tables[0];
+                if(dt.Rows.Count > 0)
+                {
+                    FineUI.Alert.Show("您已申请过该职位");
+                    return;
+                }
+
+                zlzw.Model.ResumeCollectionListModel resumeCollectionListModel = new zlzw.Model.ResumeCollectionListModel();
+                resumeCollectionListModel.EnterpriseGuid = new Guid(Request.QueryString["type"]);//企业GUID
+                resumeCollectionListModel.ResumeGuid = new Guid(Request.QueryString["id"]);//职位ID
+                resumeCollectionListModel.ResumeCollectionType = 1;//主投简历
+                resumeCollectionListModel.EnterpriseIsDel = 1;//企业删除标记
+                resumeCollectionListModel.IsEnable = 1;//管理员删除标记
+                resumeCollectionListModel.PublishDate = DateTime.Now;//投递日期
+                resumeCollectionListModel.Other01 = Request.Cookies["CurrentUserGUID"].Value;//投递人GUID
+                resumeCollectionListBLL.Add(resumeCollectionListModel);
+                FineUI.Alert.Show("职位申请成功");
+            }
+        }
+
+        #endregion
     }
 }

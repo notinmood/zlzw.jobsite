@@ -70,7 +70,7 @@ namespace WebApp.Manage.admin
         private void GeneralEnterpriseList_BindGrid()
         {
             zlzw.BLL.GeneralEnterpriseBLL generalEnterpriseBLL = new zlzw.BLL.GeneralEnterpriseBLL();
-            DataTable dt = generalEnterpriseBLL.GetList(grid1.PageSize, grid1.PageIndex + 1, "CompanyName,EnterpriseGuid,BusinessType,IndustryKey,PrincipleAddress,Telephone,CreateDate,CanUsable", "CreateDate", 0, "desc", "CanUsable=1").Tables[0];
+            DataTable dt = generalEnterpriseBLL.GetList(grid1.PageSize, grid1.PageIndex + 1, "*", "CreateDate", 0, "desc", "CanUsable=1").Tables[0];
 
             grid1.DataSource = dt;
             grid1.DataBind();
@@ -96,15 +96,37 @@ namespace WebApp.Manage.admin
 
         protected void Grid1_RowDataBound(object sender, GridRowEventArgs e)
         {
-            //DataRowView dr = e.DataItem as DataRowView;
-            //if (dr != null)
-            //{
-            //    string strBusinessType = dr["BusinessType"].ToString();
-            //    e.Values[1] = Get_EnterpriseTypeName(strBusinessType);
+            DataRowView dr = e.DataItem as DataRowView;
+            if (dr != null)
+            {
+                //string strIsEmergencyRecruitment = dr["IsEmergencyRecruitment"].ToString();
+                //if (Convert.IsDBNull(strIsEmergencyRecruitment))
+                //{
+                //    e.Values[4] = "0";
+                //}
+                //else if (strIsEmergencyRecruitment == "0")
+                //{
+                //    e.Values[4] = "0";
+                //}
+                //else
+                //{
+                //    e.Values[4] = "1";
+                //}
 
-            //    string strIndustryKey = dr["IndustryKey"].ToString();
-            //    e.Values[1] = Get_IndustrySectorName(strIndustryKey);
-            //}
+                //string strDownloadResume = dr["DownloadResume"].ToString();
+                //if (Convert.IsDBNull(strDownloadResume))
+                //{
+                //    e.Values[5] = "0";
+                //}
+                //else if (strDownloadResume == "0")
+                //{
+                //    e.Values[5] = "0";
+                //}
+                //else
+                //{
+                //    e.Values[5] = "1";
+                //}
+            }
         }
 
         #endregion

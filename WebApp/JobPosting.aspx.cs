@@ -13,17 +13,28 @@ namespace WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Get_IsEnablePublishJob(Request.QueryString["id"]) == "0")
+            {
+                Alert.Show("当前账号暂不允许发布职位");
+                return;
+            }
             if (!IsPostBack)
             {
                 try
                 {
-                    Get_UserIsEmergencyRecruitment(Request.QueryString["id"]);//获取当前企业是否具有发布紧急招聘的权限
+                    Get_UserIsEmergencyRecruitment(Get_EnterpriseGUID(Request.QueryString["id"]));//获取当前企业是否具有发布紧急招聘的权限
                     Load_SpecialTypeList();//加载职位发布类型
                     Load_JobPositionKindsTypeList();//加载职位类别
                     //Load_JobFeildKinds();//加载期望行业
                     Load_UserEducationalBackground();//学历加载
                     Load_JobWorkTypeList();//加载工作性质
-                    Load_DefaultValue(Request.QueryString["id"]);//加载默认值
+                    Load_DefaultValue(Get_EnterpriseGUID(Request.QueryString["id"]));//加载默认值
+                    labReceive.InnerText = Get_ReceiveCount(Request.Cookies["CurrentUserGUID"].Value) + " ";
+                    labView02.Text = "<a style='font-size:14px;color:#fff;font-weight:bold;text-decoration:none;' target='_blank' href='AlreadyDownLoadResumeList.aspx?id=" + Request.QueryString["id"] + "&type=1'>查看简历</a>";
+                    labView01.Text = " " + "<a style='font-size:14px;color:#fff;font-weight:bold;text-decoration:none;' target='_blank' href='AlreadyDownLoadResumeList.aspx?id=" + Request.QueryString["id"] + "&type=0'>查看简历</a>";
+                    labJobPublish.InnerText = " " + Get_EnterpriseJobPublishCount(Request.Cookies["CurrentUserGUID"].Value) + " ";//发布职位数量
+                    labDownloadCount.InnerText = " " + Get_DownLoadCount(Request.Cookies["CurrentUserGUID"].Value) + " ";
+                    labAlreadyDownload.InnerText = " " + Get_AlreadyDownLoadCount(Request.Cookies["CurrentUserGUID"].Value) + " ";//已下载的简历数
                 }
                 catch (Exception exp)
                 {
@@ -31,6 +42,80 @@ namespace WebApp
                 }
             }
         }
+
+        #region 获取是否允许发布职位
+
+        private string Get_IsEnablePublishJob(string strUserGUID)
+        {
+            zlzw.BLL.GeneralEnterpriseBLL generalEnterpriseBLL = new zlzw.BLL.GeneralEnterpriseBLL();
+            System.Data.DataTable dt = generalEnterpriseBLL.GetList("UserGuid='"+ strUserGUID +"'").Tables[0];
+            string strEnterpriseGUID = dt.Rows[0]["EnterpriseGuid"].ToString();
+            if (dt.Rows[0]["IsEnablePublishJob"].ToString() == "0")
+            {
+                return "0";
+            }
+            else
+            {
+                return "1";
+            }
+        }
+
+        #endregion
+
+        #region 获取收到的简历数量
+
+        private string Get_ReceiveCount(string strEnterpriseGUID)
+        {
+            zlzw.BLL.ResumeCollectionListBLL resumeCollectionListBLL = new zlzw.BLL.ResumeCollectionListBLL();
+            DataTable dt = resumeCollectionListBLL.GetList("ResumeCollectionType=1 and EnterpriseGuid='" + strEnterpriseGUID + "' and EnterpriseIsDel=1 and IsEnable=1 order by PublishDate desc").Tables[0];
+
+            return dt.Rows.Count.ToString();
+        }
+
+        #endregion
+
+        #region 企业发布职位数量
+
+        private string Get_EnterpriseJobPublishCount(string strEnterpriseGUID)
+        {
+            zlzw.BLL.JobEnterpriseJobPositionBLL jobEnterpriseJobPositionBLL = new zlzw.BLL.JobEnterpriseJobPositionBLL();
+            System.Data.DataTable dt = jobEnterpriseJobPositionBLL.GetList("EnterpriseKey='" + strEnterpriseGUID + "' and JobPositionStatus=1 and CanUsable=1").Tables[0];
+
+            return dt.Rows.Count.ToString();
+        }
+
+        #endregion
+
+        #region 获取当前企业已下载简历数量
+
+        private string Get_AlreadyDownLoadCount(string strEnterpriseGUID)
+        {
+            zlzw.BLL.ResumeCollectionListBLL resumeCollectionListBLL = new zlzw.BLL.ResumeCollectionListBLL();
+            DataTable dt = resumeCollectionListBLL.GetList("ResumeCollectionType=0 and EnterpriseGuid='" + strEnterpriseGUID + "' and EnterpriseIsDel=1 and IsEnable=1 order by PublishDate desc").Tables[0];
+
+
+            return dt.Rows.Count.ToString();
+        }
+
+        #endregion
+
+        #region 获取当前企业剩余下载简历数
+
+        private string Get_DownLoadCount(string strEnterpriseGUID)
+        {
+            zlzw.BLL.GeneralEnterpriseBLL generalEnterpriseBLL = new zlzw.BLL.GeneralEnterpriseBLL();
+            System.Data.DataTable dt = generalEnterpriseBLL.GetList("EnterpriseGuid='" + strEnterpriseGUID + "'").Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["DownloadResume"].ToString();
+            }
+            else
+            {
+                return "0";
+            }
+        }
+
+        #endregion
 
         #region 加载职位发布类型
 
@@ -51,14 +136,14 @@ namespace WebApp
 
         private void Load_JobPositionKindsTypeList()
         {
-            zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
-            DataTable dt = generalBasicSettingBLL.GetList("DisplayName='" + drpJobPositionKindsType.SelectedValue + "'").Tables[0];
+            //zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
+            //DataTable dt = generalBasicSettingBLL.GetList("DisplayName='" + drpJobPositionKindsType.SelectedValue + "'").Tables[0];
 
-            drpJobPositionKinds.DataTextField = "SettingValue";
-            drpJobPositionKinds.DataValueField = "SettingValue";
+            //drpJobPositionKinds.DataTextField = "SettingValue";
+            //drpJobPositionKinds.DataValueField = "SettingValue";
 
-            drpJobPositionKinds.DataSource = dt;
-            drpJobPositionKinds.DataBind();
+            //drpJobPositionKinds.DataSource = dt;
+            //drpJobPositionKinds.DataBind();
         }
 
         #endregion
@@ -143,7 +228,7 @@ namespace WebApp
         private bool Get_UserIsEmergencyRecruitment(string strUserGUID)
         {
             zlzw.BLL.GeneralEnterpriseBLL generalEnterpriseBLL = new zlzw.BLL.GeneralEnterpriseBLL();
-            DataTable dt = generalEnterpriseBLL.GetList("UserGuid='" + strUserGUID + "'").Tables[0];
+            DataTable dt = generalEnterpriseBLL.GetList("EnterpriseGuid='" + strUserGUID + "'").Tables[0];
 
             if (dt.Rows[0]["IsEmergencyRecruitment"].ToString() != "0")
             {
@@ -164,7 +249,7 @@ namespace WebApp
         private string Get_EnterpriseName(string strUserGUID)
         {
             zlzw.BLL.GeneralEnterpriseBLL generalEnterpriseBLL = new zlzw.BLL.GeneralEnterpriseBLL();
-            DataTable dt = generalEnterpriseBLL.GetList("UserGuid='" + strUserGUID + "'").Tables[0];
+            DataTable dt = generalEnterpriseBLL.GetList("EnterpriseGuid='" + strUserGUID + "'").Tables[0];
             if (dt.Rows.Count > 0)
             {
                 return dt.Rows[0]["CompanyName"].ToString();
@@ -201,10 +286,17 @@ namespace WebApp
         {
             try
             {
-                string strUserGUID = Request.QueryString["id"];
+                if (Get_IsEnablePublishJob(Request.QueryString["id"]) == "0")
+                {
+                    Alert.Show("当前账号暂不允许发布职位");
+                    return;
+                }
+                string strUserGUID = Request.QueryString["id"];//用户ID
+                strUserGUID = Get_EnterpriaseGUID(strUserGUID);//获取企业GUID
                 zlzw.Model.JobEnterpriseJobPositionModel jobEnterpriseJobPositionModel = new zlzw.Model.JobEnterpriseJobPositionModel();
                 jobEnterpriseJobPositionModel.JobPositionName = Request.Form["txbJobPositionName"];//岗位名称
-                jobEnterpriseJobPositionModel.JobPositionKind = drpJobPositionKindsType.SelectedValue + "-" + Request.Params["drpJobPositionKinds"];//岗位类别
+                //jobEnterpriseJobPositionModel.JobPositionKind = drpJobPositionKindsType.SelectedValue + "-" + Request.Params["drpJobPositionKinds"];//岗位类别
+                jobEnterpriseJobPositionModel.JobPositionKind = Get_CurrentValue(Request.Params["txbJobPositionKinds"]) + "-" + Request.Params["txbJobPositionKinds"];//岗位类别
                 jobEnterpriseJobPositionModel.JobWorkPlaceNames = Request.Form["txbJobWorkPlaceNames"];//工作地点
                 jobEnterpriseJobPositionModel.ComprehensivePayroll = txbComprehensivePayroll.Text;//综合薪资
                 jobEnterpriseJobPositionModel.HopeRoomAndBoard = int.Parse(drpHopeRoomAndBoard.SelectedValue);//是否提供食宿
@@ -216,10 +308,11 @@ namespace WebApp
                 jobEnterpriseJobPositionModel.ContactMail = Request.Form["txbContactMail"];//联系人邮箱
                 jobEnterpriseJobPositionModel.JobPositionDesc = Request.Form["txbJobPositionDesc"];//职位描述
                 jobEnterpriseJobPositionModel.EnterpriseName = Get_EnterpriseName(strUserGUID);//所属企业名称
-                jobEnterpriseJobPositionModel.EnterpriseKey = Get_EnterpriseGUID(strUserGUID);//所属企业GUID
+                jobEnterpriseJobPositionModel.EnterpriseKey = strUserGUID;//所属企业GUID
                 jobEnterpriseJobPositionModel.CreateUserKey = strUserGUID;//发布人GUID
                 jobEnterpriseJobPositionModel.CreateDate = DateTime.Now;//创建日期
                 jobEnterpriseJobPositionModel.UpdateDate = DateTime.Now;//修改日期
+                jobEnterpriseJobPositionModel.IsEnableEmergencyRecruitment = 0;//不显示在首页的紧急发布中
                 if (drpSpecialType.Enabled == true)
                 {
                     jobEnterpriseJobPositionModel.SpecialType = int.Parse(drpSpecialType.SelectedValue);
@@ -243,6 +336,7 @@ namespace WebApp
                 jobEnterpriseJobPositionModel.InterviewAddress = Request.Form["txbInterviewAddress"];//面试地点
                 jobEnterpriseJobPositionModel.JobWorkType = int.Parse(drpJobWorkType.SelectedValue);//工作性质
                 jobEnterpriseJobPositionModel.CanUsable = 1;//
+                jobEnterpriseJobPositionModel.JobPositionStatus = 1;
                 zlzw.BLL.JobEnterpriseJobPositionBLL jobEnterpriseJobPositionBLL = new zlzw.BLL.JobEnterpriseJobPositionBLL();
                 jobEnterpriseJobPositionBLL.Add(jobEnterpriseJobPositionModel);
                 Set_FormValue();
@@ -255,6 +349,36 @@ namespace WebApp
             }
 
 
+        }
+
+        #endregion
+
+        #region 获取当前职位类别的大类
+
+        private string Get_CurrentValue(string strValue)
+        {
+            zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
+            DataTable dt = generalBasicSettingBLL.GetList("SettingValue='" + strValue + "'").Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["DisplayName"].ToString();
+            }
+            else
+            {
+                return "未知";
+            }
+        }
+
+        #endregion
+
+        #region 根据用户ID获取企业ID
+
+        private string Get_EnterpriaseGUID(string strUserGUID)
+        {
+            zlzw.BLL.GeneralEnterpriseBLL generalEnterpriseBLL = new zlzw.BLL.GeneralEnterpriseBLL();
+            System.Data.DataTable dt = generalEnterpriseBLL.GetList("UserGuid='"+ strUserGUID +"'").Tables[0];
+
+            return dt.Rows[0]["EnterpriseGuid"].ToString();
         }
 
         #endregion

@@ -54,6 +54,9 @@ namespace zlzw.Model
         private string _interviewaddress;
         private int? _hoperoomandboard;
         private string _comprehensivepayroll;
+        private int? _isenableemergencyrecruitment = 0;
+        private DateTime? _displaystartdate;
+        private DateTime? _displayenddate;
         private string _propertynames;
         private string _propertyvalues;
         /// <summary>
@@ -89,7 +92,7 @@ namespace zlzw.Model
             get { return _jobpositionname; }
         }
         /// <summary>
-        /// 是否在首页显示等类别（用枚举实现）
+        /// 是否为紧急招聘
         /// </summary>
         public int? SpecialType
         {
@@ -407,6 +410,30 @@ namespace zlzw.Model
         {
             set { _comprehensivepayroll = value; }
             get { return _comprehensivepayroll; }
+        }
+        /// <summary>
+        /// 是否允许将紧急招聘显示在首页（由管理员控制）
+        /// </summary>
+        public int? IsEnableEmergencyRecruitment
+        {
+            set { _isenableemergencyrecruitment = value; }
+            get { return _isenableemergencyrecruitment; }
+        }
+        /// <summary>
+        /// 显示开始时间
+        /// </summary>
+        public DateTime? DisplayStartDate
+        {
+            set { _displaystartdate = value; }
+            get { return _displaystartdate; }
+        }
+        /// <summary>
+        /// 显示的结束时间
+        /// </summary>
+        public DateTime? DisplayEndDate
+        {
+            set { _displayenddate = value; }
+            get { return _displayenddate; }
         }
         /// <summary>
         /// 

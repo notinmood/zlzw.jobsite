@@ -62,8 +62,11 @@
     <Compile Include="MerchantsJoinListDAL.cs" />
     <Compile Include="NavigateInfoListDAL.cs" />
     <Compile Include="NavigateListDAL.cs" />
+    <Compile Include="PaidServicesListDAL.cs" />
     <Compile Include="ParticipatingCompaniesListDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RechargeListDAL.cs" />
+    <Compile Include="ResumeCollectionListDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">

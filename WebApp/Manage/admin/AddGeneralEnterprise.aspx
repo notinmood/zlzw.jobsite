@@ -58,6 +58,8 @@
                             </x:FileUpload>
                             <x:TextBox ID="txbEnterpriseWWW" runat="server" Label="企业网址" EmptyText="企业网址以http://开头"></x:TextBox>
                             <x:TextBox ID="txbBusRoute" runat="server" Label="乘车路线" EmptyText="到达企业的乘车路线"></x:TextBox>
+                            <x:TextBox ID="txbDownloadResume" runat="server" Label="陌生简历下载次数"></x:TextBox>
+                            <x:CheckBox ID="ckbIsEnablePublishJob" runat="server" Label="职位发布"></x:CheckBox>
                             <x:CheckBox ID="ckbIsEmergencyRecruitment" runat="server" Label="紧急发布"></x:CheckBox>
                             <x:HtmlEditor ID="txbEnterpriseDescription" runat="server" Label="企业简介"></x:HtmlEditor>
                         </Items>

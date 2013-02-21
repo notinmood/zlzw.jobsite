@@ -141,8 +141,10 @@
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="ActivityInfo.aspx" />
     <Content Include="ActivityList.aspx" />
+    <Content Include="AlreadyDownLoadResumeList.aspx" />
     <Content Include="CareerGuidanceInfo.aspx" />
     <Content Include="CareerGuidanceList.aspx" />
+    <Content Include="ContactUs.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -201,6 +203,7 @@
     <Content Include="css\fakeFileInputs.css" />
     <Content Include="css\sousuo.css" />
     <Content Include="default.aspx" />
+    <Content Include="DefaultSearchResult.aspx" />
     <Content Include="EasyUI\Script\easyui-lang-zh_CN.js" />
     <Content Include="EditEnterpriseInfo.aspx" />
     <Content Include="EditPersonalInfo.aspx" />
@@ -223,6 +226,7 @@
     <Content Include="image\12450456761.gif" />
     <Content Include="image\beizhanditu.jpg" />
     <Content Include="image\downloadJianLi.gif" />
+    <Content Include="image\fanhui.gif" />
     <Content Include="image\go.gif" />
     <Content Include="image\img1.png" />
     <Content Include="image\img10.png" />
@@ -239,6 +243,7 @@
     <Content Include="image\img20.png" />
     <Content Include="image\img21.png" />
     <Content Include="image\img3.png" />
+    <Content Include="image\img3_long.png" />
     <Content Include="image\img4.png" />
     <Content Include="image\img5.png" />
     <Content Include="image\img6.png" />
@@ -255,6 +260,7 @@
     <Content Include="Manage\admin\AddAdImage.aspx" />
     <Content Include="Manage\admin\AddAdmin.aspx" />
     <Content Include="Manage\admin\AddCareerGuidance.aspx" />
+    <Content Include="Manage\admin\AddEmergencyRecruitment.aspx" />
     <Content Include="Manage\admin\AddEnterpriseServiceInfo.aspx" />
     <Content Include="Manage\admin\AddEnterpriseServiceType.aspx" />
     <Content Include="Manage\admin\AddExchangeCorner.aspx" />
@@ -268,10 +274,12 @@
     <Content Include="Manage\admin\AddMerchantsJoin.aspx" />
     <Content Include="Manage\admin\AddNavigate.aspx" />
     <Content Include="Manage\admin\AddNavigateInfo.aspx" />
+    <Content Include="Manage\admin\AddPaidServices.aspx" />
     <Content Include="Manage\admin\AddParticipatingCompanies.aspx" />
     <Content Include="Manage\admin\ADImageList.aspx" />
     <Content Include="Manage\admin\AdminList.aspx" />
     <Content Include="Manage\admin\CareerGuidance.aspx" />
+    <Content Include="Manage\admin\EmergencyRecruitmentList.aspx" />
     <Content Include="Manage\admin\EnterpriseServiceInfoList.aspx" />
     <Content Include="Manage\admin\EnterpriseServiceTypeList.aspx" />
     <Content Include="Manage\admin\ExchangeCornerList.aspx" />
@@ -288,6 +296,7 @@
     <Content Include="Manage\admin\MerchantsJoin.aspx" />
     <Content Include="Manage\admin\NavigateInfoList.aspx" />
     <Content Include="Manage\admin\NavigateList.aspx" />
+    <Content Include="Manage\admin\PaidServicesList.aspx" />
     <Content Include="Manage\admin\ParticipatingCompaniesList.aspx" />
     <Content Include="Manage\css\default.css" />
     <Content Include="Manage\css\main.css" />
@@ -3869,6 +3878,13 @@
     <Compile Include="ActivityList.aspx.designer.cs">
       <DependentUpon>ActivityList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AlreadyDownLoadResumeList.aspx.cs">
+      <DependentUpon>AlreadyDownLoadResumeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlreadyDownLoadResumeList.aspx.designer.cs">
+      <DependentUpon>AlreadyDownLoadResumeList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="Account\Login.aspx.cs">
@@ -3920,12 +3936,26 @@
     <Compile Include="CareerGuidanceList.aspx.designer.cs">
       <DependentUpon>CareerGuidanceList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultSearchResult.aspx.cs">
+      <DependentUpon>DefaultSearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultSearchResult.aspx.designer.cs">
+      <DependentUpon>DefaultSearchResult.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditEnterpriseInfo.aspx.cs">
       <DependentUpon>EditEnterpriseInfo.aspx</DependentUpon>
@@ -4035,6 +4065,13 @@
     <Compile Include="Manage\admin\AddCareerGuidance.aspx.designer.cs">
       <DependentUpon>AddCareerGuidance.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manage\admin\AddEmergencyRecruitment.aspx.cs">
+      <DependentUpon>AddEmergencyRecruitment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\AddEmergencyRecruitment.aspx.designer.cs">
+      <DependentUpon>AddEmergencyRecruitment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manage\admin\AddEnterpriseServiceInfo.aspx.cs">
       <DependentUpon>AddEnterpriseServiceInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4126,6 +4163,13 @@
     <Compile Include="Manage\admin\AddNavigateInfo.aspx.designer.cs">
       <DependentUpon>AddNavigateInfo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manage\admin\AddPaidServices.aspx.cs">
+      <DependentUpon>AddPaidServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\AddPaidServices.aspx.designer.cs">
+      <DependentUpon>AddPaidServices.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manage\admin\AddParticipatingCompanies.aspx.cs">
       <DependentUpon>AddParticipatingCompanies.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4153,6 +4197,13 @@
     </Compile>
     <Compile Include="Manage\admin\CareerGuidance.aspx.designer.cs">
       <DependentUpon>CareerGuidance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\admin\EmergencyRecruitmentList.aspx.cs">
+      <DependentUpon>EmergencyRecruitmentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\EmergencyRecruitmentList.aspx.designer.cs">
+      <DependentUpon>EmergencyRecruitmentList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\admin\EnterpriseServiceInfoList.aspx.cs">
       <DependentUpon>EnterpriseServiceInfoList.aspx</DependentUpon>
@@ -4251,6 +4302,13 @@
     </Compile>
     <Compile Include="Manage\admin\NavigateList.aspx.designer.cs">
       <DependentUpon>NavigateList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\admin\PaidServicesList.aspx.cs">
+      <DependentUpon>PaidServicesList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\admin\PaidServicesList.aspx.designer.cs">
+      <DependentUpon>PaidServicesList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\admin\ParticipatingCompaniesList.aspx.cs">
       <DependentUpon>ParticipatingCompaniesList.aspx</DependentUpon>

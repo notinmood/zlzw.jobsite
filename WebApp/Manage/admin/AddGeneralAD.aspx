@@ -38,12 +38,14 @@
                             <x:TextBox ID="txbADName" runat="server" Label="广告名称" EmptyText="广告名称" Required="true"
                                 RequiredMessage="广告名称不能为空">
                             </x:TextBox>
-                            <x:DropDownList ID="drpADType" runat="server" Label="广告类型" AutoPostBack="true" OnSelectedIndexChanged="drpADType_SelectedIndexChanged"></x:DropDownList>
-                            <x:TextArea ID="txbADScript" runat="server" Label="广告代码" Hidden="true" EmptyText="广告脚本代码"></x:TextArea>
-                            <x:TextBox ID="txbADTargetUrl" runat="server" Label="跳转地址" EmptyText="广告点击后的跳转地址"></x:TextBox>
-                            <x:CheckBox ID="ckbADStatus" runat="server" Label="是否显示"></x:CheckBox>
+                            <x:DropDownList ID="drpADType" runat="server" Label="广告类型" AutoPostBack="true" Visible="false" OnSelectedIndexChanged="drpADType_SelectedIndexChanged"></x:DropDownList>
+                            <%--<x:TextArea ID="txbADScript" runat="server" Label="广告代码" Hidden="true" EmptyText="广告脚本代码"></x:TextArea>
+                            <x:TextBox ID="txbADTargetUrl" runat="server" Label="跳转地址" EmptyText="广告点击后的跳转地址"></x:TextBox>--%>
+                            <%--<x:CheckBox ID="ckbADStatus" runat="server" Label="是否显示"></x:CheckBox>--%>
                             <x:TextBox ID="txbOrderNumber" runat="server" Label="排序" EmptyText="排序字段，只能为正整数" Required="true" RequiredMessage="排序字段不能为空" RegexPattern="NUMBER" RegexMessage="排序类型错误"></x:TextBox>
                             <x:TextArea ID="txbADDesc" runat="server" Label="广告简介" EmptyText="广告简介"></x:TextArea>
+                            <x:DatePicker ID="dateStartTime" runat="server" Required="true" Label="开始日期" EmptyText="广告显示日期"></x:DatePicker>
+                            <x:DatePicker ID="dateEndTime" runat="server" Required="true" CompareControl="dateStartTime" CompareOperator="GreaterThanEqual" CompareMessage="结束日期应该大于开始日期" Label="结束日期" EmptyText="广告结束日期"></x:DatePicker>
                             <x:FileUpload ID="fileUploadImage" runat="server" Label="广告图片" EmptyText="图片尺寸为222*84px" Required="true" RequiredMessage="请上传一张广告图片"></x:FileUpload>
                         </Items>
                     </x:SimpleForm>

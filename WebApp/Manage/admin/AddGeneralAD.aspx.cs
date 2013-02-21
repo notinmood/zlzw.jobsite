@@ -24,10 +24,10 @@ namespace WebApp.Manage.admin
                 Load_ADTypeList();//加载广告类型
                 LoadData(strType);
                 labCreateUserName.Text = Get_UserName();//获取创建人名称
-                if (drpADType.SelectedText == "脚本类型")
-                {
-                    txbADScript.Hidden = false;
-                }
+                //if (drpADType.SelectedText == "脚本类型")
+                //{
+                //    txbADScript.Hidden = false;
+                //}
             }
             btnClose.OnClientClick = ActiveWindow.GetConfirmHideReference();
             Panel2.Title = DateTime.Now.ToString("yyyy年MM月dd日");
@@ -69,14 +69,14 @@ namespace WebApp.Manage.admin
         
         protected void drpADType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (drpADType.SelectedText == "脚本类型")
-            {
-                txbADScript.Hidden = false;
-            }
-            else
-            {
-                txbADScript.Hidden = true;
-            }
+            //if (drpADType.SelectedText == "脚本类型")
+            //{
+            //    txbADScript.Hidden = false;
+            //}
+            //else
+            //{
+            //    txbADScript.Hidden = true;
+            //}
         }
 
         #endregion
@@ -91,18 +91,20 @@ namespace WebApp.Manage.admin
                 zlzw.BLL.GeneralADBLL generalADBLL = new zlzw.BLL.GeneralADBLL();
                 zlzw.Model.GeneralADModel generalADModel = generalADBLL.GetModel(int.Parse(Get_ID(generalADBLL, strID)));
                 txbADName.Text = generalADModel.ADName;//广告名称
-                drpADType.SelectedValue = generalADModel.ADType.ToString();//广告类型
-                txbADScript.Text = generalADModel.ADScript;//广告脚本
-                txbADTargetUrl.Text = generalADModel.ADTargetUrl;//跳转地址
+                //drpADType.SelectedValue = generalADModel.ADType.ToString();//广告类型
+                //txbADScript.Text = generalADModel.ADScript;//广告脚本
+                //txbADTargetUrl.Text = generalADModel.ADTargetUrl;//跳转地址
                 txbOrderNumber.Text = generalADModel.ADOrderNumber.ToString();//排序字段
-                if (generalADModel.ADStatus == 1)
-                {
-                    ckbADStatus.Checked = true;
-                }
-                else
-                {
-                    ckbADStatus.Checked = false;
-                }
+                //if (generalADModel.ADStatus == 1)
+                //{
+                //    ckbADStatus.Checked = true;
+                //}
+                //else
+                //{
+                //    ckbADStatus.Checked = false;
+                //}
+                dateStartTime.Text = generalADModel.DisplayStartDate.ToString();//开始日期
+                dateEndTime.Text = generalADModel.DisplayEndDate.ToString();//结束日期
                 drpEnterpriseType.SelectedValue = generalADModel.EnterpriseGuid.ToString();//所属企业ID
                 txbADDesc.Text = generalADModel.ADDesc;//广告简介
                 ViewState["ADImagePath"] = generalADModel.ADImagePath;//广告图片路径
@@ -124,20 +126,16 @@ namespace WebApp.Manage.admin
                 //编辑保存
                 zlzw.Model.GeneralADModel generalADModel = new zlzw.Model.GeneralADModel();
                 generalADModel.ADName = txbADName.Text;//广告名称
-                generalADModel.ADType = int.Parse(drpADType.SelectedValue);//广告类型
-                generalADModel.ADScript = txbADScript.Text;//广告脚本
-                generalADModel.ADTargetUrl = txbADTargetUrl.Text;//跳转地址
+                //generalADModel.ADType = int.Parse(drpADType.SelectedValue);//广告类型
+                generalADModel.ADType = 1;//广告类型
+                //generalADModel.ADScript = txbADScript.Text;//广告脚本
+                //generalADModel.ADTargetUrl = txbADTargetUrl.Text;//跳转地址
                 generalADModel.CreateDate = DateTime.Parse(ViewState["CreateDate"].ToString());
                 generalADModel.UpdateDate = DateTime.Now;//更新日期
                 generalADModel.ADOrderNumber = int.Parse(txbOrderNumber.Text);//排序字段
-                if (ckbADStatus.Checked)
-                {
-                    generalADModel.ADStatus = 1;
-                }
-                else
-                {
-                    generalADModel.ADStatus = 0;
-                }
+                generalADModel.ADStatus = 1;
+                generalADModel.DisplayStartDate = DateTime.Parse(dateStartTime.Text);//开始日期
+                generalADModel.DisplayEndDate = DateTime.Parse(dateEndTime.Text);//结束日期
                 if (fileUploadImage.PostedFile.ContentLength > 0)
                 {
                     fileUploadImage.SaveAs(Server.MapPath(ViewState["ADImagePath"].ToString()));
@@ -163,21 +161,16 @@ namespace WebApp.Manage.admin
                 //添加保存
                 zlzw.Model.GeneralADModel generalADModel = new zlzw.Model.GeneralADModel();
                 generalADModel.ADName = txbADName.Text;//广告名称
-                generalADModel.ADType = int.Parse(drpADType.SelectedValue);//广告类型
-                generalADModel.ADScript = txbADScript.Text;//广告脚本
-                generalADModel.ADTargetUrl = txbADTargetUrl.Text;//跳转地址
+                generalADModel.ADType = 1;//广告类型
+                //generalADModel.ADScript = txbADScript.Text;//广告脚本
+                //generalADModel.ADTargetUrl = txbADTargetUrl.Text;//跳转地址
                 generalADModel.ADOrderNumber = int.Parse(txbOrderNumber.Text);//排序字段
                 generalADModel.CreateDate = DateTime.Now;//创建日期
                 generalADModel.UpdateDate = DateTime.Now;//更新日期
-                if (ckbADStatus.Checked)
-                {
-                    generalADModel.ADStatus = 1;
-                }
-                else
-                {
-                    generalADModel.ADStatus = 0;
-                }
+                generalADModel.ADStatus = 1;
                 generalADModel.CanUsable = 1;
+                generalADModel.DisplayStartDate = DateTime.Parse(dateStartTime.Text);//开始日期
+                generalADModel.DisplayEndDate = DateTime.Parse(dateEndTime.Text);//结束日期
                 if (fileUploadImage.PostedFile.ContentLength > 0)
                 {
                     string fileName = DateTime.Now.Ticks.ToString() + "_" + fileUploadImage.FileName;

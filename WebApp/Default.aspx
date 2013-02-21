@@ -79,7 +79,7 @@
                     </table>
                 </div>
                 <div class="top1right">
-                    <ul id="portfolio" style="list-style: none;margin-left:0.5px; padding-left: 0.5px; margin-top: -0.5px;">
+                    <ul id="portfolio" style="list-style: none;margin-left:0.5px; padding-left: 0.5px; margin-top: -0.5px;z-index:-9999;">
                     </ul>
                 </div>
                 <div class="top1middle">
@@ -127,7 +127,7 @@
                 </div>
 
             </div>
-            <div class="top2">
+            <div class="top2" style="z-index:99999;">
                 <div class="top2left">
                     <table width="223" border="0" cellpadding="0" cellspacing="0">
                         <tr>

@@ -11,6 +11,8 @@
   <TreeNode Text="企业管理" SingleClickExpand="true">
     <TreeNode Text="企业信息管理" NavigateUrl="admin/GeneralEnterpriseList.aspx" >
     </TreeNode>
+    <TreeNode Text="紧急招聘管理" NavigateUrl="admin/EmergencyRecruitmentList.aspx" >
+    </TreeNode>
     <TreeNode Text="企业岗位发布管理" NavigateUrl="admin/JobEnterpriseJobPositionList.aspx" >
     </TreeNode>
     <TreeNode Text="企业招聘业务基本信息管理" NavigateUrl="admin/JobEnterpriseServiceList.aspx" >
@@ -54,6 +56,10 @@
   </TreeNode>
   <TreeNode Text="就业指导管理" SingleClickExpand="true">
     <TreeNode Text="就业指导管理" NavigateUrl="admin/CareerGuidance.aspx" >
+    </TreeNode>
+  </TreeNode>
+  <TreeNode Text="基础数据管理" SingleClickExpand="true">
+    <TreeNode Text="基础数据管理" NavigateUrl="admin/PaidServicesList.aspx" >
     </TreeNode>
   </TreeNode>
 </Tree>

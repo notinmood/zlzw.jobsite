@@ -16,13 +16,74 @@ namespace WebApp
             try
             {
                 Load_ShengList();//加载省列表
-                Load_EnterpriseInfo(Request.QueryString["ID"]);
+                Load_EnterpriseInfo(Get_EnterpriseGUID(Request.QueryString["ID"]));
+                labReceive.InnerText = Get_ReceiveCount(Request.Cookies["CurrentUserGUID"].Value) + " ";
+                labView02.Text = " " + "<a style='font-size:14px;color:#fff;font-weight:bold;text-decoration:none;' target='_blank' href='AlreadyDownLoadResumeList.aspx?id=" + Request.QueryString["id"] + "&type=1'>查看简历</a>";
+                labView01.Text = " " + "<a style='font-size:14px;color:#fff;font-weight:bold;text-decoration:none;' target='_blank' href='AlreadyDownLoadResumeList.aspx?id=" + Request.QueryString["id"] + "&type=0'>查看简历</a>";
+                labJobPublish.InnerText = " " + Get_EnterpriseJobPublishCount(Request.Cookies["CurrentUserGUID"].Value) + " ";//发布职位数量
+                labDownloadCount.InnerText = " " + Get_DownLoadCount(Request.Cookies["CurrentUserGUID"].Value) + " ";
+                labAlreadyDownload.InnerText = " " + Get_AlreadyDownLoadCount(Request.Cookies["CurrentUserGUID"].Value) + " ";//已下载的简历数
             }
             catch (Exception exp)
             {
                 Response.Redirect("default.aspx");
             }
         }
+
+        #region 获取收到的简历数量
+
+        private string Get_ReceiveCount(string strEnterpriseGUID)
+        {
+            zlzw.BLL.ResumeCollectionListBLL resumeCollectionListBLL = new zlzw.BLL.ResumeCollectionListBLL();
+            DataTable dt = resumeCollectionListBLL.GetList("ResumeCollectionType=1 and EnterpriseGuid='" + strEnterpriseGUID + "' and EnterpriseIsDel=1 and IsEnable=1 order by PublishDate desc").Tables[0];
+
+            return dt.Rows.Count.ToString();
+        }
+
+        #endregion
+
+        #region 企业发布职位数量
+
+        private string Get_EnterpriseJobPublishCount(string strEnterpriseGUID)
+        {
+            zlzw.BLL.JobEnterpriseJobPositionBLL jobEnterpriseJobPositionBLL = new zlzw.BLL.JobEnterpriseJobPositionBLL();
+            System.Data.DataTable dt = jobEnterpriseJobPositionBLL.GetList("EnterpriseKey='" + strEnterpriseGUID + "' and JobPositionStatus=1 and CanUsable=1").Tables[0];
+
+            return dt.Rows.Count.ToString();
+        }
+
+        #endregion
+
+        #region 获取当前企业已下载简历数量
+
+        private string Get_AlreadyDownLoadCount(string strEnterpriseGUID)
+        {
+            zlzw.BLL.ResumeCollectionListBLL resumeCollectionListBLL = new zlzw.BLL.ResumeCollectionListBLL();
+            DataTable dt = resumeCollectionListBLL.GetList("ResumeCollectionType=0 and EnterpriseGuid='" + strEnterpriseGUID + "' and ResumeCollectionType=0 and EnterpriseIsDel=1 and IsEnable=1 order by PublishDate desc").Tables[0];
+
+
+            return dt.Rows.Count.ToString();
+        }
+
+        #endregion
+
+        #region 获取当前企业剩余下载简历数
+
+        private string Get_DownLoadCount(string strEnterpriseGUID)
+        {
+            zlzw.BLL.GeneralEnterpriseBLL generalEnterpriseBLL = new zlzw.BLL.GeneralEnterpriseBLL();
+            System.Data.DataTable dt = generalEnterpriseBLL.GetList("EnterpriseGuid='" + strEnterpriseGUID + "'").Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["DownloadResume"].ToString();
+            }
+            else
+            {
+                return "0";
+            }
+        }
+
+        #endregion
 
         #region 加载省份信息
 
@@ -85,18 +146,19 @@ namespace WebApp
 
         private void Load_EnterpriseInfo(string strUserGUID)
         {
-            zlzw.BLL.CoreUserBLL coreUserBLL = new zlzw.BLL.CoreUserBLL();
-            DataTable dt = coreUserBLL.GetList("UserGuid='" + strUserGUID + "'").Tables[0];
-            zlzw.Model.CoreUserModel coreUserModel = coreUserBLL.GetModel(int.Parse(dt.Rows[0]["UserID"].ToString()));
             zlzw.BLL.GeneralEnterpriseBLL generalEnterpriseBLL = new zlzw.BLL.GeneralEnterpriseBLL();
-            DataTable dt01 = generalEnterpriseBLL.GetList("UserGuid='" + strUserGUID + "'").Tables[0];
+            DataTable dt01 = generalEnterpriseBLL.GetList("EnterpriseGuid='" + strUserGUID + "'").Tables[0];
+            zlzw.BLL.CoreUserBLL coreUserBLL = new zlzw.BLL.CoreUserBLL();
+            DataTable dt = coreUserBLL.GetList("UserGuid='" + dt01.Rows[0]["UserGuid"].ToString() + "'").Tables[0];
+            zlzw.Model.CoreUserModel coreUserModel = coreUserBLL.GetModel(int.Parse(dt.Rows[0]["UserID"].ToString()));
+            
             zlzw.Model.GeneralEnterpriseModel generalEnterpriseModel = generalEnterpriseBLL.GetModel(int.Parse(dt01.Rows[0]["EnterpriseID"].ToString()));
             txbUserName.Text = coreUserModel.UserName;//账号
             txbEnterpriseName.Text = generalEnterpriseModel.CompanyName;//公司名称
             //drpJobFeildKindsType.SelectedValue = generalEnterpriseModel.IndustryKey.Split('-')[0];//所属行业
             //LoadItemList(generalEnterpriseModel.IndustryKey.Split('-')[0]);
             //drpItems.SelectedValue = generalEnterpriseModel.IndustryKey.Split('-')[1];//所属行业分类
-            txbJobFeildKinds.Value = generalEnterpriseModel.IndustryKey.Split('-')[1];//所属行业分类
+            txbJobFeildKinds.Value = generalEnterpriseModel.IndustryKey;//所属行业分类
             drpShengList.SelectedValue = generalEnterpriseModel.ShengName;
             Load_ShiList(generalEnterpriseModel.ShengName);
             drpShiList.SelectedValue = generalEnterpriseModel.ShiName;
@@ -195,6 +257,24 @@ namespace WebApp
             catch (Exception exp)
             {
                 FineUI.Alert.Show("修改信息失败，请稍后重试");
+            }
+        }
+
+        #endregion
+
+        #region 获取企业GUID
+
+        private string Get_EnterpriseGUID(string strUserGUID)
+        {
+            zlzw.BLL.GeneralEnterpriseBLL generalEnterpriseBLL = new zlzw.BLL.GeneralEnterpriseBLL();
+            DataTable dt = generalEnterpriseBLL.GetList("UserGuid='" + strUserGUID + "'").Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["EnterpriseGuid"].ToString();
+            }
+            else
+            {
+                return "未知";
             }
         }
 

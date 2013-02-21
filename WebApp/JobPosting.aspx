@@ -14,6 +14,7 @@
     <script type="text/javascript" src="Scripts/jquery-ui-1.9.0.js"></script>
     <script type="text/javascript" src="EasyUI/Script/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="EasyUI/Script/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="Scripts/WebForms/jquery.watermark.min.js"></script>
     <script type="text/javascript" src="Scripts/JobPosting.js"></script>
 </head>
 <body>
@@ -26,6 +27,38 @@
                     <tr>
                         <td style="background-image: url('image/img3.png'); background-repeat: repeat-x; height:3px;">
                                 
+                        </td>
+                    </tr>
+                </table>
+                <table border="0" cellspacing="0" cellpadding="0" style="width: 86%; margin-left: 8%;">
+                    <tr>
+                        <td style="height: 25px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="background-image:url('image/img3_long.png'); background-repeat:repeat-x;height:80px;" align="center">
+                            <span style="font-size:14px;color:#fff;font-weight:bold;">　您已收到</span> <span style="font-size:20px;color:#093C7E;font-weight:bold;" id="labReceive" runat="server"></span><span style="font-size:14px;color:#fff;font-weight:bold;">份简历</span>
+                            <br /><br />
+                            <asp:Label ID="labView02" runat="server"></asp:Label>
+                        </td>
+                        <td style="width:15px;">
+
+                        </td>
+                        <td style="background-image:url('image/img3_long.png'); background-repeat:repeat-x;height:80px;" align="center">
+                            <span style="font-size:14px;color:#fff;font-weight:bold;">　您已经下载</span> <span style="font-size:20px;color:#093C7E;font-weight:bold;" id="labAlreadyDownload" runat="server"></span><span style="font-size:14px;color:#fff;font-weight:bold;">份简历</span>
+                            <br /><br />
+                            <asp:Label ID="labView01" runat="server"></asp:Label>
+                        </td>
+                        <td style="width:15px;">
+
+                        </td>
+                        <td style="background-image:url('image/img3_long.png'); background-repeat:repeat-x;height:80px;">
+                            <span style="font-size:14px;color:#fff;font-weight:bold;">　您已经发布了</span> <span style="font-size:20px;color:#093C7E;font-weight:bold;" id="labJobPublish" runat="server"></span><span style="font-size:14px;color:#fff;font-weight:bold;">个职位</span>
+                        </td>
+                        <td style="width:15px;">
+
+                        </td>
+                        <td style="background-image:url('image/img3_long.png'); background-repeat:repeat-x;height:80px;">
+                            <span style="font-size:14px;color:#fff;font-weight:bold;">　您还可以下载</span> <span style="font-size:20px;color:#093C7E;font-weight:bold;" id="labDownloadCount" runat="server"></span><span style="font-size:14px;color:#fff;font-weight:bold;">份简历</span>
                         </td>
                     </tr>
                 </table>
@@ -57,11 +90,13 @@
                         <td style="height:20px;"></td>
                     </tr>
                     <tr>
-                        <td style="font-size:14px; color:#6e6e6e;">岗位类别：<asp:DropDownList ID="drpJobPositionKindsType" runat="server" Height="26" Width="100">
+                        <td style="font-size:14px; color:#6e6e6e;">岗位类别:
+                                        <%--<asp:DropDownList ID="drpJobPositionKindsType" runat="server" Height="26" Width="100">
                                             <asp:ListItem Text="非管理" Value="非管理" Selected="True"></asp:ListItem>
                                             <asp:ListItem Text="管理" Value="管理"></asp:ListItem>
                                         </asp:DropDownList>
-                                        <asp:DropDownList ID="drpJobPositionKinds" Height="26" runat="server" Width="300"></asp:DropDownList><span style="font-weight:bold; color:#f00;"> *</span>
+                                        <asp:DropDownList ID="drpJobPositionKinds" Height="26" runat="server" Width="300"></asp:DropDownList>--%>
+                                        <input runat="server" type="text" id="txbJobPositionKinds" class="easyui-validatebox" data-options="required:true" missingMessage="请选择行业类别" style="width: 400px; height: 22px;" readonly="readonly" /><span style="font-weight:bold; color:#f00;"> *</span>
                                     </td>
                         <td align="left" style="width:410px;">
                             <table>
@@ -311,6 +346,9 @@
         </div>
         <input id="Hidden1" type="hidden" runat="server" />
         <input id="Hidden2" type="hidden" runat="server"/>
+        <script type="text/javascript" src="Scripts/WebForms/jquery.artDialog.js"></script>
+        <link type="text/css" href="skins/blue.css" rel="stylesheet" />
+        <script type="text/javascript" src="Scripts/WebForms/iframeTools.js"></script>
     </form>
 </body>
 </html>

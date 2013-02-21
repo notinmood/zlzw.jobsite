@@ -86,6 +86,9 @@ namespace zlzw.DAL
 					new SqlParameter("@InterviewAddress", SqlDbType.NVarChar,50),
 					new SqlParameter("@HopeRoomAndBoard", SqlDbType.Int,4),
 					new SqlParameter("@ComprehensivePayroll", SqlDbType.NVarChar,200),
+					new SqlParameter("@IsEnableEmergencyRecruitment", SqlDbType.Int,4),
+					new SqlParameter("@DisplayStartDate", SqlDbType.DateTime),
+					new SqlParameter("@DisplayEndDate", SqlDbType.DateTime),
 					new SqlParameter("@PropertyNames", SqlDbType.NVarChar,-1),
 					new SqlParameter("@PropertyValues", SqlDbType.NVarChar,-1)};
 			parameters[0].Direction = ParameterDirection.Output;
@@ -132,8 +135,11 @@ namespace zlzw.DAL
 			parameters[41].Value = model.InterviewAddress;
 			parameters[42].Value = model.HopeRoomAndBoard;
 			parameters[43].Value = model.ComprehensivePayroll;
-			parameters[44].Value = model.PropertyNames;
-			parameters[45].Value = model.PropertyValues;
+			parameters[44].Value = model.IsEnableEmergencyRecruitment;
+			parameters[45].Value = model.DisplayStartDate;
+			parameters[46].Value = model.DisplayEndDate;
+			parameters[47].Value = model.PropertyNames;
+			parameters[48].Value = model.PropertyValues;
 
 			DbHelperSQL.RunProcedure("JobEnterpriseJobPosition_ADD",parameters,out rowsAffected);
 			return (int)parameters[0].Value;
@@ -190,6 +196,9 @@ namespace zlzw.DAL
 					new SqlParameter("@InterviewAddress", SqlDbType.NVarChar,50),
 					new SqlParameter("@HopeRoomAndBoard", SqlDbType.Int,4),
 					new SqlParameter("@ComprehensivePayroll", SqlDbType.NVarChar,200),
+					new SqlParameter("@IsEnableEmergencyRecruitment", SqlDbType.Int,4),
+					new SqlParameter("@DisplayStartDate", SqlDbType.DateTime),
+					new SqlParameter("@DisplayEndDate", SqlDbType.DateTime),
 					new SqlParameter("@PropertyNames", SqlDbType.NVarChar,-1),
 					new SqlParameter("@PropertyValues", SqlDbType.NVarChar,-1)};
 			parameters[0].Value = model.JobPositionID;
@@ -236,8 +245,11 @@ namespace zlzw.DAL
 			parameters[41].Value = model.InterviewAddress;
 			parameters[42].Value = model.HopeRoomAndBoard;
 			parameters[43].Value = model.ComprehensivePayroll;
-			parameters[44].Value = model.PropertyNames;
-			parameters[45].Value = model.PropertyValues;
+			parameters[44].Value = model.IsEnableEmergencyRecruitment;
+			parameters[45].Value = model.DisplayStartDate;
+			parameters[46].Value = model.DisplayEndDate;
+			parameters[47].Value = model.PropertyNames;
+			parameters[48].Value = model.PropertyValues;
 
 			DbHelperSQL.RunProcedure("JobEnterpriseJobPosition_Update",parameters,out rowsAffected);
 			if (rowsAffected > 0)
@@ -497,6 +509,18 @@ namespace zlzw.DAL
 				{
 					model.ComprehensivePayroll=row["ComprehensivePayroll"].ToString();
 				}
+				if(row["IsEnableEmergencyRecruitment"]!=null && row["IsEnableEmergencyRecruitment"].ToString()!="")
+				{
+					model.IsEnableEmergencyRecruitment=int.Parse(row["IsEnableEmergencyRecruitment"].ToString());
+				}
+				if(row["DisplayStartDate"]!=null && row["DisplayStartDate"].ToString()!="")
+				{
+					model.DisplayStartDate=DateTime.Parse(row["DisplayStartDate"].ToString());
+				}
+				if(row["DisplayEndDate"]!=null && row["DisplayEndDate"].ToString()!="")
+				{
+					model.DisplayEndDate=DateTime.Parse(row["DisplayEndDate"].ToString());
+				}
 				if(row["PropertyNames"]!=null)
 				{
 					model.PropertyNames=row["PropertyNames"].ToString();
@@ -515,7 +539,7 @@ namespace zlzw.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select JobPositionID,JobPositionGuid,JobPositionStatus,JobPositionName,SpecialType,EnterpriseKey,EnterpriseName,DepartmentName,JobPositionType,JobPositionKind,JobWorkType,JobWorkPlaceKeys,JobWorkPlaceNames,JobFeildTypes,JobFeildKinds,JobPositionTypes,JobPositionKinds,JobSalary,JobSalaryDetails,NeedPersonCount,NeedEducation,NeedAge,NeedSex,NeedWorkExperience,NeedMangeExperience,JobPositionDesc,ContactInformation,ContactPerson,ContactTelephone,ContactMail,JobPositionStartDate,JobPositionEndDate,BrowseCount,ResumeCount,CreateUserKey,CreateUserName,CreateDate,UpdateDate,RefreshDate,CanUsable,InterviewTime,InterviewAddress,HopeRoomAndBoard,ComprehensivePayroll,PropertyNames,PropertyValues ");
+			strSql.Append("select JobPositionID,JobPositionGuid,JobPositionStatus,JobPositionName,SpecialType,EnterpriseKey,EnterpriseName,DepartmentName,JobPositionType,JobPositionKind,JobWorkType,JobWorkPlaceKeys,JobWorkPlaceNames,JobFeildTypes,JobFeildKinds,JobPositionTypes,JobPositionKinds,JobSalary,JobSalaryDetails,NeedPersonCount,NeedEducation,NeedAge,NeedSex,NeedWorkExperience,NeedMangeExperience,JobPositionDesc,ContactInformation,ContactPerson,ContactTelephone,ContactMail,JobPositionStartDate,JobPositionEndDate,BrowseCount,ResumeCount,CreateUserKey,CreateUserName,CreateDate,UpdateDate,RefreshDate,CanUsable,InterviewTime,InterviewAddress,HopeRoomAndBoard,ComprehensivePayroll,IsEnableEmergencyRecruitment,DisplayStartDate,DisplayEndDate,PropertyNames,PropertyValues ");
 			strSql.Append(" FROM JobEnterpriseJobPosition ");
 			if(strWhere.Trim()!="")
 			{
@@ -535,7 +559,7 @@ namespace zlzw.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" JobPositionID,JobPositionGuid,JobPositionStatus,JobPositionName,SpecialType,EnterpriseKey,EnterpriseName,DepartmentName,JobPositionType,JobPositionKind,JobWorkType,JobWorkPlaceKeys,JobWorkPlaceNames,JobFeildTypes,JobFeildKinds,JobPositionTypes,JobPositionKinds,JobSalary,JobSalaryDetails,NeedPersonCount,NeedEducation,NeedAge,NeedSex,NeedWorkExperience,NeedMangeExperience,JobPositionDesc,ContactInformation,ContactPerson,ContactTelephone,ContactMail,JobPositionStartDate,JobPositionEndDate,BrowseCount,ResumeCount,CreateUserKey,CreateUserName,CreateDate,UpdateDate,RefreshDate,CanUsable,InterviewTime,InterviewAddress,HopeRoomAndBoard,ComprehensivePayroll,PropertyNames,PropertyValues ");
+			strSql.Append(" JobPositionID,JobPositionGuid,JobPositionStatus,JobPositionName,SpecialType,EnterpriseKey,EnterpriseName,DepartmentName,JobPositionType,JobPositionKind,JobWorkType,JobWorkPlaceKeys,JobWorkPlaceNames,JobFeildTypes,JobFeildKinds,JobPositionTypes,JobPositionKinds,JobSalary,JobSalaryDetails,NeedPersonCount,NeedEducation,NeedAge,NeedSex,NeedWorkExperience,NeedMangeExperience,JobPositionDesc,ContactInformation,ContactPerson,ContactTelephone,ContactMail,JobPositionStartDate,JobPositionEndDate,BrowseCount,ResumeCount,CreateUserKey,CreateUserName,CreateDate,UpdateDate,RefreshDate,CanUsable,InterviewTime,InterviewAddress,HopeRoomAndBoard,ComprehensivePayroll,IsEnableEmergencyRecruitment,DisplayStartDate,DisplayEndDate,PropertyNames,PropertyValues ");
 			strSql.Append(" FROM JobEnterpriseJobPosition ");
 			if(strWhere.Trim()!="")
 			{

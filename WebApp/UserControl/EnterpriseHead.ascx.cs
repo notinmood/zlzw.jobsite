@@ -16,9 +16,9 @@ namespace WebApp.UserControl
                 try
                 {
                     string strParam = Request.QueryString["id"];
-                    linkBtnEnterpriseInfo.HRef = "../EditEnterpriseInfo.aspx?id=" + strParam;
-                    linkBtnEnterpriseJobPosting.HRef = "../JobPosting.aspx?id=" + strParam;
-                    linkBtnResumeSearchList.HRef = "../ResumeSearchList.aspx?id=" + strParam;
+                    linkBtnEnterpriseInfo.HRef = "../EditEnterpriseInfo.aspx?id=" + Request.Cookies["CurrentUserGUID"].Value;
+                    linkBtnEnterpriseJobPosting.HRef = "../JobPosting.aspx?id=" + Request.Cookies["CurrentUserGUID"].Value;
+                    linkBtnResumeSearchList.HRef = "../ResumeSearchList.aspx?id=" + Request.Cookies["CurrentUserGUID"].Value;
                     Get_NavigateItemGUID();
                     Set_ExchangeCornerList();//设置交流园地链接地址
                 }

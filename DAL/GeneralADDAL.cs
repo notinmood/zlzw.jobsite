@@ -72,7 +72,7 @@ namespace zlzw.DAL
 					new SqlParameter("@PropertyNames", SqlDbType.NVarChar,-1),
 					new SqlParameter("@PropertyValues", SqlDbType.NVarChar,-1)};
 			parameters[0].Direction = ParameterDirection.Output;
-			parameters[1].Value = Guid.NewGuid();
+			parameters[1].Value = model.EnterpriseGuid;
 			parameters[2].Value = model.EnterpriseGuid;
 			parameters[3].Value = model.ADName;
 			parameters[4].Value = model.ADImageKey;

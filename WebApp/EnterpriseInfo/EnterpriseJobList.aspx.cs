@@ -20,7 +20,7 @@ namespace WebApp.EnterpriseInfo
                 }
                 catch (Exception exp)
                 {
-                    Response.Redirect("../default.aspx");
+                    //Response.Redirect("../default.aspx");
                 }
             }
         }
@@ -30,10 +30,10 @@ namespace WebApp.EnterpriseInfo
         private void Get_EnterpriseJobList(string strEnterpriseID)
         {
             zlzw.BLL.JobEnterpriseJobPositionBLL jobEnterpriseJobPositionBLL = new zlzw.BLL.JobEnterpriseJobPositionBLL();
-            System.Data.DataTable dt = jobEnterpriseJobPositionBLL.GetList("CanUsable=1 order by CreateDate desc").Tables[0];
+            System.Data.DataTable dt = jobEnterpriseJobPositionBLL.GetList("EnterpriseKey='"+ Request.QueryString["id"] +"' and CanUsable=1 order by CreateDate desc").Tables[0];
             labBanner.Text = dt.Rows[0]["EnterpriseName"].ToString();
             labEnterpriseContent.Text = Get_EnterpriseDesc(strEnterpriseID);
-            txbTitle.Text = dt.Rows[0]["EnterpriseName"].ToString() + "-" + labEnterpriseContent.Text;
+            txbTitle.Text = dt.Rows[0]["EnterpriseName"].ToString() + "-" + dt.Rows[0]["JobPositionName"].ToString();
             DataList1.DataSource = dt;
             DataList1.DataBind();
         }

@@ -139,33 +139,6 @@ namespace WebApp.Manage.admin {
         protected global::FineUI.DropDownList drpADType;
         
         /// <summary>
-        /// txbADScript 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.TextArea txbADScript;
-        
-        /// <summary>
-        /// txbADTargetUrl 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.TextBox txbADTargetUrl;
-        
-        /// <summary>
-        /// ckbADStatus 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.CheckBox ckbADStatus;
-        
-        /// <summary>
         /// txbOrderNumber 控件。
         /// </summary>
         /// <remarks>
@@ -182,6 +155,24 @@ namespace WebApp.Manage.admin {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.TextArea txbADDesc;
+        
+        /// <summary>
+        /// dateStartTime 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.DatePicker dateStartTime;
+        
+        /// <summary>
+        /// dateEndTime 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.DatePicker dateEndTime;
         
         /// <summary>
         /// fileUploadImage 控件。

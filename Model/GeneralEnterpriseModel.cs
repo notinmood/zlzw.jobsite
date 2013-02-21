@@ -72,7 +72,15 @@ namespace zlzw.Model
         private string _quname;
         private string _qucode;
         private string _busroute;
+        private int? _isenablepublishjob = 0;
         private int? _isemergencyrecruitment;
+        private int? _expand_publishjobcount;
+        private int? _expand_mainresumecount;
+        private int? _expand_searchstrangeresumecount;
+        private int? _expand_downloadstrangeresumecount;
+        private decimal? _expand_balance;
+        private Guid _expand_rechargeguid;
+        private int? _downloadresume = 0;
         private string _propertynames;
         private string _propertyvalues;
         /// <summary>
@@ -572,12 +580,76 @@ namespace zlzw.Model
             get { return _busroute; }
         }
         /// <summary>
+        /// 是否允许发布职位 0:不允许 1:允许
+        /// </summary>
+        public int? IsEnablePublishJob
+        {
+            set { _isenablepublishjob = value; }
+            get { return _isenablepublishjob; }
+        }
+        /// <summary>
         /// 是否允许紧急招聘 0不允许 1允许
         /// </summary>
         public int? IsEmergencyRecruitment
         {
             set { _isemergencyrecruitment = value; }
             get { return _isemergencyrecruitment; }
+        }
+        /// <summary>
+        /// 当前企业已发布职位数量(取消)
+        /// </summary>
+        public int? Expand_PublishJobCount
+        {
+            set { _expand_publishjobcount = value; }
+            get { return _expand_publishjobcount; }
+        }
+        /// <summary>
+        /// 已查看主投简历数量(取消)
+        /// </summary>
+        public int? Expand_MainResumeCount
+        {
+            set { _expand_mainresumecount = value; }
+            get { return _expand_mainresumecount; }
+        }
+        /// <summary>
+        /// 已搜索陌生简历数量(取消)
+        /// </summary>
+        public int? Expand_SearchStrangeResumeCount
+        {
+            set { _expand_searchstrangeresumecount = value; }
+            get { return _expand_searchstrangeresumecount; }
+        }
+        /// <summary>
+        /// 已下载陌生简历数量(取消)
+        /// </summary>
+        public int? Expand_DownloadStrangeResumeCount
+        {
+            set { _expand_downloadstrangeresumecount = value; }
+            get { return _expand_downloadstrangeresumecount; }
+        }
+        /// <summary>
+        /// 剩余金额(取消)
+        /// </summary>
+        public decimal? Expand_Balance
+        {
+            set { _expand_balance = value; }
+            get { return _expand_balance; }
+        }
+        /// <summary>
+        /// 每次充值后由系统统一生成一个GUID与充值记录表中的充值GUID对应(取消)
+        /// </summary>
+        public Guid Expand_RechargeGUID
+        {
+            set { _expand_rechargeguid = value; }
+            get { return _expand_rechargeguid; }
+        }
+        /// <summary>
+        /// 管理员指定可下载的陌生简历数
+        /// </summary>
+        public int? DownloadResume
+        {
+            set { _downloadresume = value; }
+            get { return _downloadresume; }
         }
         /// <summary>
         /// 

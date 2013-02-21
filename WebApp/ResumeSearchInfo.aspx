@@ -21,6 +21,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <x:PageManager ID="PageManager1" Theme="Blue" AutoSizePanelID="Panel1" runat="server">
+        </x:PageManager>
         <div>
             <uc1:EnterpriseHead ID="EnterpriseHead1" runat="server" />
             <table style="width: 100%;">
@@ -208,7 +210,8 @@
                 </tr>
                 <tr>
                     <td colspan="8" align="center">
-                        <asp:ImageButton ImageUrl="~/image/downloadJianLi.gif" runat="server" />
+                        <asp:ImageButton ImageUrl="~/image/downloadJianLi.gif" ID="imgBtnDownload" runat="server" OnClick="imgBtnDownload_Click" Visible="false" />
+                        <asp:ImageButton ImageUrl="~/image/fanhui.gif" ID="imgBtnReturn" runat="server" Visible="true" OnClick="imgBtnReturn_Click" />
                     </td>
                 </tr>                
             </table>

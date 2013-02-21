@@ -62,8 +62,11 @@
     <Compile Include="MerchantsJoinListBLL.cs" />
     <Compile Include="NavigateInfoListBLL.cs" />
     <Compile Include="NavigateListBLL.cs" />
+    <Compile Include="PaidServicesListBLL.cs" />
     <Compile Include="ParticipatingCompaniesListBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RechargeListBLL.cs" />
+    <Compile Include="ResumeCollectionListBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

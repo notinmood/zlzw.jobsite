@@ -82,7 +82,14 @@ namespace WebApp
             generalEnterpriseModel.ShiName = Request.Form["drpShiList"];//市名称
             generalEnterpriseModel.QuName = Request.Form["drpQuList"];//区名称
             generalEnterpriseModel.EnterpriseDescription = Request.Form["txbEnterpriseDescription"];//企业简介
-
+            ////设置企业基本数据
+            //generalEnterpriseModel.Expand_PublishJobCount = 0;//企业已发布的职位数
+            //generalEnterpriseModel.Expand_MainResumeCount = 0;//企业已查看主投简历数
+            //generalEnterpriseModel.Expand_SearchStrangeResumeCount = 0;//企业已搜索陌生简历数
+            //generalEnterpriseModel.Expand_DownloadStrangeResumeCount = 0;//企业已下载陌生简历数量
+            //generalEnterpriseModel.Expand_Balance = 0;//企业充值金额
+            generalEnterpriseModel.IsEmergencyRecruitment = 0;//默认不允许企业发布紧急招聘
+            generalEnterpriseModel.DownloadResume = 0;//默认下载陌生简历次数为0
             if (uploadBusinessLicense.HasFile)
             {
                 string strFileExt = System.IO.Path.GetExtension(uploadBusinessLicense.FileName);

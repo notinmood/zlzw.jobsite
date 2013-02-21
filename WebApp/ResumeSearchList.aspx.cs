@@ -14,9 +14,63 @@ namespace WebApp
             if (!IsPostBack)
             {
                 //AspNetPager1.RecordCount = Get_RecordCount();
+                if (Request.Cookies["CurrentUserGUID"] == null)
+                {
+                    Response.Redirect("default.aspx");
+                }
+                else
+                {
+                    labJobPublish.InnerText = " " + Get_EnterprisePublishCount(Request.Cookies["CurrentUserGUID"].Value) + " ";//企业发布简历数量
+                    labDownloadCount.InnerText = " "+Get_DownLoadCount(Request.Cookies["CurrentUserGUID"].Value) + " ";//企业允许下载简历数量
+                    labAlreadyDownload.InnerText = " " + Get_AlreadyDownLoadCount(Request.Cookies["CurrentUserGUID"].Value) + " ";//已下载的简历数
+                }
+                
             }
             
         }
+
+        #region 获取企业已发布的简历数量
+
+        private string Get_EnterprisePublishCount(string strEnterpriseGUID)
+        {
+            zlzw.BLL.JobEnterpriseJobPositionBLL jobEnterpriseJobPositionBLL = new zlzw.BLL.JobEnterpriseJobPositionBLL();
+            System.Data.DataTable dt = jobEnterpriseJobPositionBLL.GetList("EnterpriseKey='" + strEnterpriseGUID + "' and JobPositionStatus=1 and CanUsable=1").Tables[0];
+
+            return dt.Rows.Count.ToString();
+        }
+
+        #endregion
+
+        #region 获取当前企业已下载简历数量
+
+        private string Get_AlreadyDownLoadCount(string strEnterpriseGUID)
+        {
+            zlzw.BLL.ResumeCollectionListBLL resumeCollectionListBLL = new zlzw.BLL.ResumeCollectionListBLL();
+            System.Data.DataTable dt = resumeCollectionListBLL.GetList("ResumeCollectionType=0 and EnterpriseGuid='" + strEnterpriseGUID + "' and EnterpriseIsDel=1 and IsEnable=1 order by PublishDate desc").Tables[0];
+
+
+            return dt.Rows.Count.ToString();
+        }
+
+        #endregion
+
+        #region 获取当前企业剩余下载简历数
+
+        private string Get_DownLoadCount(string strEnterpriseGUID)
+        {
+            zlzw.BLL.GeneralEnterpriseBLL generalEnterpriseBLL = new zlzw.BLL.GeneralEnterpriseBLL();
+            System.Data.DataTable dt = generalEnterpriseBLL.GetList("EnterpriseGuid='"+ strEnterpriseGUID +"'").Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["DownloadResume"].ToString();
+            }
+            else
+            {
+                return "0";
+            }
+        }
+
+        #endregion
 
         #region 分页事件
 
@@ -164,7 +218,7 @@ namespace WebApp
                 labSex.Text = drv["UserSex"].ToString();//性别
                 labAge.Text = Get_UserAge(drv["OwnerUserKey"].ToString());//年龄
                 labPublishDate.Text = DateTime.Parse(drv["UpdateDate"].ToString()).ToString("yyyy年MM月dd");
-                labView.Text = "<a class='linkResumeID' target='_blank' href='ResumeSearchInfo.aspx?id=" + drv["OwnerUserKey"].ToString() + "' style='font-size:14px;font-weight:bold;color:#F97D00; text-decoration:none;'>查看简历</a>";
+                labView.Text = "<a class='linkResumeID' target='_blank' href='ResumeSearchInfo.aspx?id=" + drv["ResumeGuid"].ToString() + "' style='font-size:14px;font-weight:bold;color:#F97D00; text-decoration:none;'>查看简历</a>";
             }
         }
 

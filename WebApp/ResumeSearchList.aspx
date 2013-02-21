@@ -34,7 +34,7 @@
                     <tr>
                         <td>
                             <div class="top2righttop">
-                                <table style="padding-left: 80px;" width="757" height="70" border="0" cellspacing="0" cellpadding="0">
+                                <table style="padding-left: 80px;" width="100%" height="70" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                         <td>
                                             <input type="text" runat="server" id="txbJobPositionKinds" class="easyui-validatebox" style="width: 133px; height: 18px;" readonly="readonly" />
@@ -52,6 +52,13 @@
                                         </td>
                                         <td rowspan="2">
                                             <asp:ImageButton ID="imgBtnSearch" runat="server" ImageUrl="image/SearchJIanLi.png" OnClientClick="return validatorForm();" OnClick="imgBtnSearch_Click" style="height: 34px" />
+                                        </td>
+                                        <td rowspan="2" style="width:200px;" align="left">
+                                            <span style="font-size:14px;color:#fff;font-weight:bold;">您已经发布了</span> <span style="font-size:20px;color:#093C7E;font-weight:bold;" id="labJobPublish" runat="server"></span><span style="font-size:14px;color:#fff;font-weight:bold;">个职位</span>
+                                            <br /> 
+                                            <span style="font-size:14px;color:#fff;font-weight:bold;">您还可以下载</span> <span style="font-size:20px;color:#093C7E;font-weight:bold;" id="labDownloadCount" runat="server"></span><span style="font-size:14px;color:#fff;font-weight:bold;">份简历</span>
+                                            <br />
+                                            <span style="font-size:14px;color:#fff;font-weight:bold;">您已经下载了</span> <span style="font-size:20px;color:#093C7E;font-weight:bold;" id="labAlreadyDownload" runat="server"></span><span style="font-size:14px;color:#fff;font-weight:bold;">份简历</span>
                                         </td>
                                     </tr>
                                     <tr>

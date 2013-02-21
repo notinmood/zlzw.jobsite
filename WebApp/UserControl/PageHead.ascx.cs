@@ -17,12 +17,22 @@ namespace WebApp.UserControl
                 {
                     if (Request.Cookies["CurrentUserGUID"] != null)
                     {
+                        if (Get_UserType(Request.Cookies["CurrentUserGUID"].Value) == "2")
+                        {
+                            menuItem01.Visible = false;
+                            menuItem02.Visible = false;
+                        }
                         string strParam = Request.Cookies["CurrentUserGUID"].Value;
                         linkBtnResumeCenter.HRef = "../EditPersonalInfo.aspx?id=" + strParam;
                         linkBtnActivityList.HRef = "../ActivityList.aspx?id=" + strParam;
                         linkBtnJobSearchList.HRef = "../JobSearchList.aspx?id=" + strParam;
                         Set_ExchangeCornerList();//设置交流园地链接地址
                         Set_MerchantsJoin();//招商加盟
+                    }
+                    else
+                    {
+                        menuItem01.Visible = false;
+                        menuItem02.Visible = false;
                     }
                 }
                 catch (Exception exp)
@@ -31,6 +41,19 @@ namespace WebApp.UserControl
                 }
             }
         }
+
+        #region 获取当前用户的类型
+
+        private string Get_UserType(string strUserGUID)
+        {
+            zlzw.BLL.CoreUserBLL coreUserBLL = new zlzw.BLL.CoreUserBLL();
+            System.Data.DataTable dt = coreUserBLL.GetList("UserGuid='" + strUserGUID + "'").Tables[0];
+
+            return dt.Rows[0]["UserType"].ToString();
+        }
+
+        #endregion
+
         #region 设置招商加盟
 
         private void Set_MerchantsJoin()

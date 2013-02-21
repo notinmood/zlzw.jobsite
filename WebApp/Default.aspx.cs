@@ -208,7 +208,8 @@ namespace WebApp
         private void Load_GeneralADList()
         {
             zlzw.BLL.GeneralADBLL generalADBLL = new zlzw.BLL.GeneralADBLL();
-            DataTable dt = generalADBLL.GetList(10, "CanUsable=1 and ADStatus=1", "ADOrderNumber asc").Tables[0];
+            string strCurrent = DateTime.Now.ToString();//当前系统日期
+            DataTable dt = generalADBLL.GetList(10, "CanUsable=1 and ADStatus=1 and DisplayStartDate<='" + strCurrent + "' and DisplayEndDate >='"+strCurrent+"'", "ADOrderNumber asc").Tables[0];
 
             Repeater2.DataSource = dt;
             Repeater2.DataBind();
@@ -267,7 +268,8 @@ namespace WebApp
         private void Load_JobEnterpriseJobPositionList()
         {
             zlzw.BLL.JobEnterpriseJobPositionBLL jobEnterpriseJobPositionBLL = new zlzw.BLL.JobEnterpriseJobPositionBLL();
-            DataTable dt = jobEnterpriseJobPositionBLL.GetList(10, "CanUsable=1 and SpecialType=1", "CreateDate desc").Tables[0];
+            string strCurrent = DateTime.Now.ToString();//当前系统日期
+            DataTable dt = jobEnterpriseJobPositionBLL.GetList(10, "CanUsable=1 and SpecialType=1 and IsEnableEmergencyRecruitment=1 and DisplayStartDate<='" + strCurrent + "' and DisplayEndDate >='" + strCurrent + "'", "CreateDate desc").Tables[0];
 
             Repeater4.DataSource = dt;
             Repeater4.DataBind();
@@ -295,9 +297,9 @@ namespace WebApp
 
         private string Set_ActivityTitle_Length(string strTitle)
         {
-            if (strTitle.Length >= 24)
+            if (strTitle.Length >= 28)
             {
-                return strTitle.Substring(0, 24) + "...";
+                return strTitle.Substring(0, 28) + "...";
             }
             else
             {
@@ -338,7 +340,7 @@ namespace WebApp
                 System.Data.DataRowView drv = (System.Data.DataRowView)e.Item.DataItem;
                 Label labGeneralAD = (Label)e.Item.FindControl("labGeneralAD");
 
-                labGeneralAD.Text = "<a target='_blank' href='EnterpriseInfo/EnterpriseJobList.aspx?id=" + drv["EnterpriseGuid"].ToString() + "'><img src='" + drv["ADImagePath"].ToString().Split('~')[1] + "' style=border:0px;' alt='" + drv["ADName"].ToString() + "' /></a>";
+                labGeneralAD.Text = "<a target='_blank' href='EnterpriseInfo/EnterpriseJobList.aspx?id=" + drv["ADGuid"].ToString() + "'><img src='" + drv["ADImagePath"].ToString().Split('~')[1] + "' style=border:0px;' alt='" + drv["ADName"].ToString() + "' /></a>";
             }
         }
 
@@ -456,7 +458,7 @@ namespace WebApp
             {
                 strBuilder.Append(" and JobWorkPlaceNames like '%" + strWorkAreas + "%'");
             }
-            if (strShiSu != "-1" || strShiSu != "0")
+            if (strShiSu != "-1" && strShiSu != "0")
             {
                 strBuilder.Append(" and HopeRoomAndBoard like '%" + strShiSu + "%'");
             }
@@ -470,7 +472,8 @@ namespace WebApp
                 strBuilder.Append(" or (JobPositionDesc like '%" + strSearchKey + "%' or EnterpriseName like '%" + strSearchKey + "%' or JobPositionName like '%" + strSearchKey + "%')");
             }
             Session["DefaultSearchWhere"] = strBuilder.ToString();
-            Response.Redirect("JobSearchList.aspx?id=" + Request.Cookies["CurrentUserGUID"].Value);
+
+            Response.Redirect("DefaultSearchResult.aspx");
         }
 
         #endregion

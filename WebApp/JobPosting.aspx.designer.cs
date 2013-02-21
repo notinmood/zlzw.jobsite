@@ -40,6 +40,60 @@ namespace WebApp {
         protected global::WebApp.UserControl.EnterpriseHead EnterpriseHead1;
         
         /// <summary>
+        /// labReceive 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl labReceive;
+        
+        /// <summary>
+        /// labView02 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labView02;
+        
+        /// <summary>
+        /// labAlreadyDownload 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl labAlreadyDownload;
+        
+        /// <summary>
+        /// labView01 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labView01;
+        
+        /// <summary>
+        /// labJobPublish 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl labJobPublish;
+        
+        /// <summary>
+        /// labDownloadCount 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl labDownloadCount;
+        
+        /// <summary>
         /// txbJobPositionName 控件。
         /// </summary>
         /// <remarks>
@@ -49,22 +103,13 @@ namespace WebApp {
         protected global::System.Web.UI.WebControls.TextBox txbJobPositionName;
         
         /// <summary>
-        /// drpJobPositionKindsType 控件。
+        /// txbJobPositionKinds 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpJobPositionKindsType;
-        
-        /// <summary>
-        /// drpJobPositionKinds 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpJobPositionKinds;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txbJobPositionKinds;
         
         /// <summary>
         /// txbJobWorkPlaceNames 控件。

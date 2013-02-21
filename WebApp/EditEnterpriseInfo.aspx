@@ -29,6 +29,38 @@
                         <td style="background-image: url('image/img3.png'); background-repeat: repeat-x; height: 3px;"></td>
                     </tr>
                 </table>
+                <table border="0" cellspacing="0" cellpadding="0" style="width: 86%; margin-left: 7%;">
+                    <tr>
+                        <td style="height: 25px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="background-image:url('image/img3_long.png'); background-repeat:repeat-x;height:80px;" align="center">
+                            <span style="font-size:14px;color:#fff;font-weight:bold;">　您已收到</span> <span style="font-size:20px;color:#093C7E;font-weight:bold;" id="labReceive" runat="server"></span><span style="font-size:14px;color:#fff;font-weight:bold;">份简历</span>
+                            <br /><br />
+                            <asp:Label ID="labView02" runat="server"></asp:Label>
+                        </td>
+                        <td style="width:15px;">
+
+                        </td>
+                        <td style="background-image:url('image/img3_long.png'); background-repeat:repeat-x;height:80px;" align="center">
+                            <span style="font-size:14px;color:#fff;font-weight:bold;">　您已经下载</span> <span style="font-size:20px;color:#093C7E;font-weight:bold;" id="labAlreadyDownload" runat="server"></span><span style="font-size:14px;color:#fff;font-weight:bold;">份简历</span>
+                            <br /><br />
+                            <asp:Label ID="labView01" runat="server"></asp:Label>
+                        </td>
+                        <td style="width:15px;">
+
+                        </td>
+                        <td style="background-image:url('image/img3_long.png'); background-repeat:repeat-x;height:80px;">
+                            <span style="font-size:14px;color:#fff;font-weight:bold;">　您已经发布了</span> <span style="font-size:20px;color:#093C7E;font-weight:bold;" id="labJobPublish" runat="server"></span><span style="font-size:14px;color:#fff;font-weight:bold;">个职位</span>
+                        </td>
+                        <td style="width:15px;">
+
+                        </td>
+                        <td style="background-image:url('image/img3_long.png'); background-repeat:repeat-x;height:80px;">
+                            <span style="font-size:14px;color:#fff;font-weight:bold;">　您还可以下载</span> <span style="font-size:20px;color:#093C7E;font-weight:bold;" id="labDownloadCount" runat="server"></span><span style="font-size:14px;color:#fff;font-weight:bold;">份简历</span>
+                        </td>
+                    </tr>
+                </table>
                 <table border="0" cellspacing="0" cellpadding="0" style="width: 100%; margin-left: 15%;">
                     <tr>
                         <td style="height: 25px;"></td>

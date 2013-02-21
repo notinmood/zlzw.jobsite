@@ -8,7 +8,7 @@
             <li><a id="linkBtnResumeSearchList" runat="server" href="ResumeSearchList.aspx">简历搜索</a></li>
             <li><a id="linkBtnServiceItem" runat="server" href="EnterpriseServiceList.aspx">服务项目</a></li>
             <li><a id="linkBtnExchangeCornerList" runat="server" href="ExchangeCornerList.aspx">交流园地</a></li>
-            <li><a href="NaviagteInfo.aspx?id=41c7853f-2998-4c70-ad17-76a4b4056315">联系我们</a></li>
+            <li><a href="ContactUs.aspx?id=41c7853f-2998-4c70-ad17-76a4b4056315">联系我们</a></li>
         </ul>
     </div>
     <div class="logo">

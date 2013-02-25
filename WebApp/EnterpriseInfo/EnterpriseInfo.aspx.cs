@@ -235,6 +235,25 @@ namespace WebApp.EnterpriseInfo
 
         #endregion
 
+        #region 判断用户类型
+
+        private bool Check_UserType()
+        {
+            string strUserGUID = Request.Cookies["CurrentUserGUID"].Value;
+            zlzw.BLL.CoreUserBLL coreUserBLL = new zlzw.BLL.CoreUserBLL();
+            System.Data.DataTable dt = coreUserBLL.GetList("UserGuid='"+ strUserGUID +"'").Tables[0];
+            if (dt.Rows[0]["UserType"].ToString() == "2")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        #endregion
+
         #region 职位申请事件
 
         protected void linkBtnApply_Click(object sender, EventArgs e)
@@ -246,6 +265,11 @@ namespace WebApp.EnterpriseInfo
             }
             else
             {
+                if (!Check_UserType())
+                {
+                    FineUI.Alert.Show("当前账号不允许申请职位");
+                    return;
+                }
                 zlzw.BLL.ResumeCollectionListBLL resumeCollectionListBLL = new zlzw.BLL.ResumeCollectionListBLL();
                 System.Data.DataTable dt = resumeCollectionListBLL.GetList("ResumeGuid='"+ Request.QueryString["id"] +"' and EnterpriseGuid='"+ Request.QueryString["type"] +"' and EnterpriseIsDel=1 and IsEnable=1").Tables[0];
                 if(dt.Rows.Count > 0)

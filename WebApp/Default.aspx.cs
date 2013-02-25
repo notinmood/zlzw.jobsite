@@ -271,8 +271,70 @@ namespace WebApp
             string strCurrent = DateTime.Now.ToString();//当前系统日期
             DataTable dt = jobEnterpriseJobPositionBLL.GetList(10, "CanUsable=1 and SpecialType=1 and IsEnableEmergencyRecruitment=1 and DisplayStartDate<='" + strCurrent + "' and DisplayEndDate >='" + strCurrent + "'", "CreateDate desc").Tables[0];
 
-            Repeater4.DataSource = dt;
+            Repeater4.DataSource = SelectDistinctByField(dt,"EnterpriseKey");
             Repeater4.DataBind();
+        }
+
+        #endregion
+
+        #region 过滤重复数据
+        
+        public DataTable SelectDistinctByField(DataTable dt, string FieldName)
+
+        {
+
+            DataTable returnDt = new DataTable();
+
+            returnDt = dt.Copy();//将原DataTable复制一个新的   
+
+            DataRow[] drs = returnDt.Select("", FieldName);//将DataTable按指定的字段排序   
+
+            object LastValue = null;
+
+            for (int i = 0; i < drs.Length; i++)
+
+            {
+
+                if ((LastValue == null) || (!(ColumnEqual(LastValue, drs[i][FieldName]))))
+
+                {
+
+                    LastValue = drs[i][FieldName];
+
+                    continue;
+
+                }
+
+                drs[i].Delete();
+
+            }
+
+            returnDt.AcceptChanges();
+
+            return returnDt;
+
+        }
+
+        private bool ColumnEqual(object A, object B)
+
+        {
+
+            //   Compares   two   values   to   see   if   they   are   equal.   Also   compares   DBNULL.Value.   
+
+            //   Note:   If   your   DataTable   contains   object   fields,   then   you   must   extend   this   
+
+            //   function   to   handle   them   in   a   meaningful   way   if   you   intend   to   group   on   them.  
+
+            if (A == DBNull.Value && B == DBNull.Value)   //     both   are   DBNull.Value   
+
+                return true;
+
+            if (A == DBNull.Value || B == DBNull.Value)   //     only   one   is   DBNull.Value   
+
+                return false;
+
+            return (A.Equals(B));     //   value   type   standard   comparison   
+
         }
 
         #endregion

@@ -295,13 +295,13 @@
                                     <div style="border: 1px solid #d4d4d4;">
                                         <asp:Repeater ID="Repeater4" runat="server" OnItemDataBound="Repeater4_ItemDataBound">
                                             <HeaderTemplate>
-                                                <table width="757px" height="320" cellpadding="0" cellspacing="0" border="0" style="font-size: 14px;">
+                                                <table width="757px" height="320" cellpadding="0" cellspacing="0" border="0" style="font-size: 14px;table-layout:fixed;">
                                             </HeaderTemplate>
                                             <ItemTemplate>
                                                     <tr>
                                                         <td width="230" align="left"><span id="span9">　<asp:Label ID="labJobTitle" runat="server"></asp:Label></span></td>
                                                         <%--<td width="157" align="center"><asp:Label ID="labAdd" runat="server"></asp:Label></td>--%>
-                                                        <td width="433" align="left"><asp:Label ID="labXueLi" runat="server" style="overflow:hidden;"></asp:Label></td>
+                                                        <td width="396" align="left" style="word-break:keep-all;white-space:nowrap;overflow:hidden;"><asp:Label ID="labXueLi" runat="server"></asp:Label></td>
                                                         <td width="130" align="center"><asp:Label ID="labTel" runat="server"></asp:Label></td>
                                                     </tr>
                                             </ItemTemplate>

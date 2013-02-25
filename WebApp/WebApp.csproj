@@ -120,6 +120,9 @@
     <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\Solution\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.0\lib\net45\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
     </Reference>
+    <Reference Include="Utility">
+      <HintPath>..\..\..\zlzw.jobsite\Utility\bin\Debug\Utility.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\Solution\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
@@ -4510,10 +4513,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\zlzwProject\Utility\Utility.csproj">
-      <Project>{44be7cd2-fb06-46ff-bb9f-03a512961cb7}</Project>
-      <Name>Utility</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{1e04ca8d-6a67-4e3a-b0d8-d90c24b241d9}</Project>
       <Name>BLL</Name>

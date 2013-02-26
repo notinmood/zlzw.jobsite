@@ -3725,6 +3725,7 @@
     <Content Include="EasyUI\css\gray\images\Thumbs.db" />
     <Content Include="EasyUI\css\metro\images\Thumbs.db" />
     <Content Include="EnterpriseInfo\images\Thumbs.db" />
+    <None Include="Properties\PublishProfiles\JobSite.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />

@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html>
-<head runat="server">
+<head id="Head1" runat="server">
     <title>校企英才人才招聘网后台管理</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link href="css/default.css" rel="stylesheet" type="tx/css" />

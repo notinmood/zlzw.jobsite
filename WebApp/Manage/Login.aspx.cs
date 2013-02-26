@@ -69,7 +69,8 @@ namespace WebApp.Manage
                 //cookie.Expires = DateTime.Now.AddDays(1);
                 //Response.Cookies.Add(cookie01);
                 Update_UserInfo(coreUserBLL, dt.Rows[0]["UserGuid"].ToString());
-                Response.Redirect("default.aspx");
+                Response.Redirect("default.aspx",true);
+                //Server.Transfer("default.aspx");
             }
             else
             {

@@ -104,13 +104,16 @@ namespace WebApp.Manage.admin
                 e.Values[0] = Get_EnterpriseName(strEnterpriseKey);
 
                 string strJobWorkType = dr["JobWorkType"].ToString();
-                e.Values[3] = Get_JobWorkType(strJobWorkType);
+                e.Values[2] = Get_JobWorkType(strJobWorkType);
 
-                string strJobPositionStatus = dr["JobPositionStatus"].ToString();
-                e.Values[5] = Get_JobPositionStatus(strJobPositionStatus);
+                //string strEnterpriseType = dr["JobFeildKinds"].ToString();
+                //e.Values[3] = Get_EnterpriseType(strEnterpriseType);
+
+                //string strJobPositionStatus = dr["JobPositionStatus"].ToString();
+                //e.Values[7] = Get_JobPositionStatus(strJobPositionStatus);
 
                 string strJobSalary = dr["JobSalary"].ToString();
-                e.Values[8] = Get_JobSalary(strJobSalary);
+                e.Values[4] = Get_JobSalary(strJobSalary);
 
             }
         }
@@ -193,6 +196,10 @@ namespace WebApp.Manage.admin
 
         private string Get_JobSalary(string strID)
         {
+            if (strID == "")
+            {
+                return "无";
+            }
             zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
             DataTable dt = generalBasicSettingBLL.GetList("SettingCategory='JobSalary' and SettingKey=" + strID).Tables[0];
             if (dt.Rows.Count > 0)
@@ -220,6 +227,33 @@ namespace WebApp.Manage.admin
             else
             {
                 return "未知类型";
+            }
+        }
+
+        #endregion
+
+        #region 获取企业所属行业类型
+
+        private string Get_EnterpriseType(string strGUID)
+        {
+            zlzw.BLL.JobEnterpriseJobPositionBLL jobEnterpriseJobPositionBLL = new zlzw.BLL.JobEnterpriseJobPositionBLL();
+            DataTable dt = jobEnterpriseJobPositionBLL.GetList("EnterpriseKey='" + strGUID + "'").Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                return "无";
+            }
+            else
+            {
+                zlzw.BLL.GeneralEnterpriseBLL generalEnterpriseBLL = new zlzw.BLL.GeneralEnterpriseBLL();
+                DataTable dt01 = generalEnterpriseBLL.GetList("EnterpriseGuid='"+ dt.Rows[0]["EnterpriseKey"].ToString() +"'").Tables[0];
+                if (dt01.Rows.Count > 0)
+                {
+                    return dt.Rows[0]["IndustryKey"].ToString();
+                }
+                else
+                {
+                    return "未知";
+                }
             }
         }
 

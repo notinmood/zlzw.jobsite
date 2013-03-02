@@ -17,7 +17,7 @@
                 <Items>
                     <x:Button ID="btnClose" EnablePostBack="false" Text="关闭" runat="server" Icon="BulletCross">
                     </x:Button>
-                    <x:Button ID="btnSaveRefresh" Text="保存" ValidateForms="SimpleForm1" runat="server"
+                    <x:Button ID="btnSaveRefresh" Text="保存" Visible="true" ValidateForms="SimpleForm1" runat="server"
                         Icon="Accept" OnClick="btnSaveRefresh_Click">
                     </x:Button>
                     <x:ToolbarFill ID="ToolbarFill1" runat="server">
@@ -34,7 +34,7 @@
                         AutoScroll="true" BodyPadding="5px" runat="server" EnableCollapse="True">
                         <Items>
                             <x:Label ID="labCreateUserName" runat="server" Label="创建人"></x:Label>
-                            <x:DropDownList ID="drpJobPositionStatus" runat="server" Label="简历状态"></x:DropDownList>
+                            <x:DropDownList ID="drpJobPositionStatus" runat="server" Label="简历状态" Visible="true"></x:DropDownList>
                             <x:DropDownList ID="drpEnterpriseKey" runat="server" Label="所属企业"></x:DropDownList>
                             <x:TextBox ID="txbJobPositionName" runat="server" Label="岗位名称" EmptyText="岗位名称可以是中文或其它语言" Required="true"
                                 RequiredMessage="岗位名称不能为空">
@@ -43,8 +43,8 @@
                             <x:TextBox ID="txbJobPositionKind" runat="server" EmptyText="岗位名称中文" Label="岗位名称"></x:TextBox>
                             <x:DropDownList ID="drpJobWorkType" runat="server" Label="工作性质"></x:DropDownList>
                             <x:TextBox ID="txbJobWorkPlaceNames" runat="server" Label="工作地点" EmptyText="如有多个工作地点请用'|'分隔" Required="true" RequiredMessage="工作地点不能为空"></x:TextBox>
-                            <x:DropDownList ID="drpJobFeildKinds" runat="server" Label="行业分类" AutoPostBack="true" OnSelectedIndexChanged="drpJobFeildKinds_SelectedIndexChanged"></x:DropDownList>
-                            <x:DropDownList ID="drpJobFeildKinds01" runat="server" Label="所属行业"></x:DropDownList>
+                            <%--<x:DropDownList ID="drpJobFeildKinds" runat="server" Label="行业分类" AutoPostBack="true" OnSelectedIndexChanged="drpJobFeildKinds_SelectedIndexChanged"></x:DropDownList>
+                            <x:DropDown>List ID="drpJobFeildKinds01" runat="server" Label="所属行业"></x:DropDownList>--%>
                             <x:TextBox ID="txbJobPositionKinds" runat="server" Label="从事职业" EmptyText="从事职业类别"></x:TextBox>
                             <x:DropDownList ID="drpJobSalary" runat="server" Label="月薪"></x:DropDownList>
                             <x:TextBox ID="txbNeedPersonCount" runat="server" Label="招聘人数" EmptyText="企业所要招聘的员工数量。请输入一个正整数" RegexPattern="NUMBER" RegexMessage="招聘人数格式错误，请输入一个正整数" Required="true" RequiredMessage="招聘人数不能为空"></x:TextBox>

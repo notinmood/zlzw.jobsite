@@ -62,7 +62,14 @@
                 }
                 else
                 {
-                    window.location.href = 'JobPosting.aspx?id=' + data.d;
+                    var val = $('input:radio[name="userType"]:checked').val();
+                    if (val == "1") {
+                        window.location.href = 'JobSearchList.aspx?id=' + data.d;
+                        return;
+                    } else if (val == "2") {
+                        window.location.href = 'JobPosting.aspx?id=' + data.d;
+                        return;
+                    }
                 }
             }
         });

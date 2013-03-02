@@ -10,12 +10,13 @@
     <link href="css/sousuo.css" type="text/css" rel="stylesheet" />
     <link href="EasyUI/css/bootstrap/easyui.css" rel="stylesheet" />
     <link href="EasyUI/css/icon.css" rel="stylesheet" />
-    <script type="text/javascript" src="Scripts/jquery-1.9.0.min.js"></script>
-    <script type="text/javascript" src="Scripts/jquery-ui-1.9.0.js"></script>
+    <link type="text/css" href="skins/blue.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery-ui/1.9.0/jquery-ui.min.js"></script>
     <script type="text/javascript" src="EasyUI/Script/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="EasyUI/Script/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript" src="Scripts/WebForms/jquery.watermark.min.js"></script>
-    <script type="text/javascript" src="Scripts/JobPosting.js"></script>
+    
 </head>
 <body>
     <form id="form01" runat="server">
@@ -344,11 +345,10 @@
                 <uc2:PageFooter ID="PageFooter1" runat="server" />
             </div>
         </div>
-        <input id="Hidden1" type="hidden" runat="server" />
-        <input id="Hidden2" type="hidden" runat="server"/>
         <script type="text/javascript" src="Scripts/WebForms/jquery.artDialog.js"></script>
-        <link type="text/css" href="skins/blue.css" rel="stylesheet" />
+        
         <script type="text/javascript" src="Scripts/WebForms/iframeTools.js"></script>
+        <script type="text/javascript" src="Scripts/JobPosting.js"></script>
     </form>
 </body>
 </html>

@@ -102,23 +102,23 @@ namespace WebApp.Manage.admin
                 }
             }
 
-            drpJobFeildKinds.DataTextField = "DisPlayName";
-            drpJobFeildKinds.DataValueField = "SettingID";
+            //drpJobFeildKinds.DataTextField = "DisPlayName";
+            //drpJobFeildKinds.DataValueField = "SettingID";
 
-            drpJobFeildKinds.DataSource = arrList;
-            drpJobFeildKinds.DataBind();
+            //drpJobFeildKinds.DataSource = arrList;
+            //drpJobFeildKinds.DataBind();
 
-            Load_JobFeildKinds01(drpJobFeildKinds.SelectedValue);
+            //Load_JobFeildKinds01(drpJobFeildKinds.SelectedValue);
         }
         //根据大类别绑定小类别
         private void Load_JobFeildKinds01(string strDisPlayName)
         {
-            zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
-            DataTable dt = generalBasicSettingBLL.GetList("DisPlayName='" + strDisPlayName + "'").Tables[0];
-            drpJobFeildKinds01.DataTextField = "SettingValue";
-            drpJobFeildKinds01.DataValueField = "SettingKey";
-            drpJobFeildKinds01.DataSource = dt;
-            drpJobFeildKinds01.DataBind();
+            //zlzw.BLL.GeneralBasicSettingBLL generalBasicSettingBLL = new zlzw.BLL.GeneralBasicSettingBLL();
+            //DataTable dt = generalBasicSettingBLL.GetList("DisPlayName='" + strDisPlayName + "'").Tables[0];
+            //drpJobFeildKinds01.DataTextField = "SettingValue";
+            //drpJobFeildKinds01.DataValueField = "SettingKey";
+            //drpJobFeildKinds01.DataSource = dt;
+            //drpJobFeildKinds01.DataBind();
 
         }
 
@@ -186,11 +186,11 @@ namespace WebApp.Manage.admin
 
         #region 行业类别选择事件
 
-        protected void drpJobFeildKinds_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            drpJobFeildKinds01.Items.Clear();
-            Load_JobFeildKinds01(drpJobFeildKinds.SelectedValue);
-        }
+        //protected void drpJobFeildKinds_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    //drpJobFeildKinds01.Items.Clear();
+        //    Load_JobFeildKinds01(drpJobFeildKinds.SelectedValue);
+        //}
 
         #endregion
 
@@ -203,11 +203,11 @@ namespace WebApp.Manage.admin
                 string strID = Request.QueryString["value"];//操作ID
                 zlzw.BLL.JobEnterpriseJobPositionBLL jobEnterpriseJobPositionBLL = new zlzw.BLL.JobEnterpriseJobPositionBLL();
                 zlzw.Model.JobEnterpriseJobPositionModel jobEnterpriseJobPositionModel = jobEnterpriseJobPositionBLL.GetModel(int.Parse(Get_ID(jobEnterpriseJobPositionBLL, strID)));
-                string[] strJobFeildKindsList = jobEnterpriseJobPositionModel.JobFeildKinds.Split('|');
+                //string[] strJobFeildKindsList = jobEnterpriseJobPositionModel.JobFeildKinds.Split('|');
                 drpEnterpriseKey.SelectedValue = jobEnterpriseJobPositionModel.EnterpriseKey;//所属企业
                 txbDepartmentName.Text = jobEnterpriseJobPositionModel.DepartmentName;//所要招聘的部门
-                drpJobFeildKinds.SelectedValue = strJobFeildKindsList[0];//行业分类
-                drpJobFeildKinds01.SelectedValue = strJobFeildKindsList[1];//所属行业
+                //drpJobFeildKinds.SelectedValue = strJobFeildKindsList[0];//行业分类
+                //drpJobFeildKinds01.SelectedValue = strJobFeildKindsList[1];//所属行业
                 drpJobPositionStatus.SelectedValue = jobEnterpriseJobPositionModel.JobPositionStatus.ToString();//简历状态
                 drpEnterpriseKey.SelectedValue = jobEnterpriseJobPositionModel.EnterpriseKey;//所属企业
                 txbJobPositionName.Text = jobEnterpriseJobPositionModel.JobPositionName;//岗位名称
@@ -249,7 +249,7 @@ namespace WebApp.Manage.admin
             {
                 //编辑保存
                 zlzw.Model.JobEnterpriseJobPositionModel jobEnterpriseJobPositionModel = new zlzw.Model.JobEnterpriseJobPositionModel();
-                jobEnterpriseJobPositionModel.JobFeildKinds = drpJobFeildKinds01.SelectedText + "|" + drpJobFeildKinds.SelectedText;//行业类别
+                //jobEnterpriseJobPositionModel.JobFeildKinds = drpJobFeildKinds01.SelectedText + "|" + drpJobFeildKinds.SelectedText;//行业类别
                 jobEnterpriseJobPositionModel.EnterpriseKey = drpEnterpriseKey.SelectedValue;//所属企业GUID
                 jobEnterpriseJobPositionModel.DepartmentName = txbDepartmentName.Text;//所要招聘的部门
                 jobEnterpriseJobPositionModel.JobPositionStatus = int.Parse(drpJobPositionStatus.SelectedValue);//简历状态
@@ -290,7 +290,7 @@ namespace WebApp.Manage.admin
                 //添加保存
 
                 zlzw.Model.JobEnterpriseJobPositionModel jobEnterpriseJobPositionModel = new zlzw.Model.JobEnterpriseJobPositionModel();
-                jobEnterpriseJobPositionModel.JobFeildKinds = drpJobFeildKinds01.SelectedText + "|" + drpJobFeildKinds.SelectedText;//行业类别
+                //jobEnterpriseJobPositionModel.JobFeildKinds = drpJobFeildKinds01.SelectedText + "|" + drpJobFeildKinds.SelectedText;//行业类别
                 jobEnterpriseJobPositionModel.EnterpriseKey = drpEnterpriseKey.SelectedValue;//所属企业GUID
                 jobEnterpriseJobPositionModel.DepartmentName = txbDepartmentName.Text;//所要招聘的部门
                 jobEnterpriseJobPositionModel.JobPositionStatus = int.Parse(drpJobPositionStatus.SelectedValue);//简历状态

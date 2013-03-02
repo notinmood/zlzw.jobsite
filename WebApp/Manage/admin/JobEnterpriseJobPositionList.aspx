@@ -32,13 +32,13 @@
                 <Columns>
                     <x:BoundField Width="100px" DataField="EnterpriseKey" TextAlign="Center" HeaderText="所属企业" />
                     <x:BoundField Width="80px" DataField="JobPositionName" HeaderText="岗位名称" TextAlign="Center" DataToolTipField="JobPositionName" />
-                    <x:BoundField Width="80px" DataField="DepartmentName" HeaderText="招聘部门" TextAlign="Center" DataToolTipField="DepartmentName" />
+                   <%-- <x:BoundField Width="80px" DataField="DepartmentName" HeaderText="招聘部门" TextAlign="Center" DataToolTipField="DepartmentName" />--%>
                     <x:BoundField Width="50px" DataField="JobWorkType" HeaderText="工作性质" TextAlign="Center" />
-                    <x:BoundField Width="100px" DataField="JobFeildKinds" HeaderText="行业类别" TextAlign="Center"/>
+                    <x:BoundField Width="100px" DataField="JobPositionKind" HeaderText="行业类别" TextAlign="Center"/>
                     <x:BoundField Width="80px" DataField="JobSalary" HeaderText="月薪" TextAlign="Center"/>
                     <x:BoundField Width="50px" DataField="ContactPerson" HeaderText="联系人" DataToolTipField="ContactPerson" TextAlign="Center"/>
                     <x:BoundField Width="100px" DataField="ContactTelephone" HeaderText="联系人电话" DataToolTipField="ContactTelephone" TextAlign="Center"/>
-                    <x:BoundField Width="100px" DataField="JobPositionStatus" HeaderText="岗位状态" DataToolTipField="JobPositionStatus" TextAlign="Center"/>
+                    <%--<x:BoundField Width="100px" DataField="JobPositionStatus" HeaderText="岗位状态" DataToolTipField="JobPositionStatus" TextAlign="Center"/>--%>
                     <x:BoundField Width="80px" DataField="CreateDate" HeaderText="创建日期" DataToolTipField="CreateDate" TextAlign="Center" DataFormatString="{0:yyyy年MM月dd日}"/>
                     <x:BoundField Width="120px" DataField="UpdateDate" HeaderText="修改日期" TextAlign="Center" DataFormatString="{0:yyyy年MM月dd日}"/>
                     <x:TemplateField HeaderText="编辑操作" TextAlign="Center">

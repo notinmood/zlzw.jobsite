@@ -175,24 +175,6 @@ namespace WebApp.Manage.admin {
         protected global::FineUI.TextBox txbJobWorkPlaceNames;
         
         /// <summary>
-        /// drpJobFeildKinds 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.DropDownList drpJobFeildKinds;
-        
-        /// <summary>
-        /// drpJobFeildKinds01 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.DropDownList drpJobFeildKinds01;
-        
-        /// <summary>
         /// txbJobPositionKinds 控件。
         /// </summary>
         /// <remarks>

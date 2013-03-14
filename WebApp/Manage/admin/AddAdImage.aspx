@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddAdImage.aspx.cs" Inherits="WebApp.Manage.admin.AddAdImage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" ValidateRequest="false" CodeBehind="AddAdImage.aspx.cs" Inherits="WebApp.Manage.admin.AddAdImage" %>
 
 <!DOCTYPE html>
 

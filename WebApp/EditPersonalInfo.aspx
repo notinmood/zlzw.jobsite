@@ -36,7 +36,7 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <span style="color:#355f95; font-weight:bold; font-size:16px;">账号注册</span>
+                                <span style="color:#355f95; font-weight:bold; font-size:16px;">账号修改</span>
                             </td>
                         </tr>
                         <tr>

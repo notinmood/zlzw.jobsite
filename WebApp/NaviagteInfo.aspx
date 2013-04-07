@@ -32,6 +32,9 @@
                                 <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound">
                                     <HeaderTemplate>
                                         <table style="width:100%;font-size:14px;">
+                                            <tr>
+                                                <td style="width:100%;"><a style="text-decoration:none;color:#fff;color:#093C7E;" href="default.aspx">网站首页</a></td>
+                                            </tr>
                                     </HeaderTemplate>
                                     <ItemTemplate>
                                             <tr>

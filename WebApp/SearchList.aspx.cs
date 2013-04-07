@@ -159,6 +159,16 @@ namespace WebApp
                 Label labAddress = (Label)e.Item.FindControl("labAddress");
                 Label labPublishDate = (Label)e.Item.FindControl("labPublishDate");
 
+                int i = e.Item.ItemIndex;
+                if (i % 2 == 0)
+                {
+                    System.Web.UI.HtmlControls.HtmlTableRow row = (System.Web.UI.HtmlControls.HtmlTableRow)e.Item.FindControl("row");
+                    if (row != null)
+                    {
+                        row.BgColor = "#EBF1FF";
+                    }
+                }
+
                 labJobName.Text = "<a href='EnterpriseInfo/EnterpriseInfo.aspx?type=" + drv["EnterpriseKey"].ToString() +"&id=" + drv["JobPositionGuid"].ToString() + "' style='text-decoration:none;color:#093C7E;font-weight:bold;'>" + drv["JobPositionName"].ToString() + "</a>";//企业发布的岗位名称
                 labEnterpriseName.Text = drv["EnterpriseName"].ToString();//企业名称
                 labAddress.Text = drv["JobWorkPlaceNames"].ToString();//工作地址

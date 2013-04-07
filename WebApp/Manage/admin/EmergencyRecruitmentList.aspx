@@ -16,30 +16,25 @@
         <Toolbars>
             <x:Toolbar ID="Toolbar2" runat="server">
                 <Items>
-                    <%--<x:Button ID="btnAdd" runat="server" Text="添加管理员" Icon="Add">
-                    </x:Button>--%>
-                    <%--<x:ToolbarSeparator ID="ToolbarSeparator1" runat="server"></x:ToolbarSeparator>
-                    <x:Button ID="btnDel" runat="server" Text="删除管理员" Icon="BulletCross" OnClick="btnDel_Click"></x:Button>--%>
+                    <x:button id="btnadd" runat="server" text="添加紧急招聘" icon="add">
+                    </x:button>
+                    <x:toolbarseparator id="toolbarseparator1" runat="server"></x:toolbarseparator>
+                    <x:button id="btnDel" runat="server" text="删除紧急招聘" icon="bulletcross" onclick="btndel_click"></x:button>
                 </Items>
             </x:Toolbar>
         </Toolbars>
         <Items>
             <x:Grid ID="grid1" PageSize="10" ShowBorder="true" ShowHeader="false"
                 AutoHeight="true" AllowPaging="true" runat="server" EnableCheckBoxSelect="True"
-                Width="800px" DataKeyNames="JobPositionGuid" OnPageIndexChange="Grid1_PageIndexChange"
+                Width="800px" DataKeyNames="SysGUID" OnPageIndexChange="Grid1_PageIndexChange"
                 EnableRowNumber="True" IsDatabasePaging="true" 
                 OnRowDataBound="Grid1_RowDataBound" ForceFitAllTime="true" EnableAjaxLoading="true">
                 <Columns>
-                    <x:BoundField Width="70px" DataField="EnterpriseName" HeaderText="企业名称" TextAlign="Center" />
-                    <x:BoundField Width="100px" DataField="JobPositionName" HeaderText="职位名称" TextAlign="Center" />
-                    <x:BoundField Width="100px" DataField="JobWorkPlaceNames" HeaderText="企业地址" TextAlign="Center" />
-                    <x:CheckBoxField Width="50px" DataField="IsEnableEmergencyRecruitment" HeaderText="显示状态" TextAlign="Center" />
-                    <x:BoundField Width="70px" DataField="DisplayStartDate" HeaderText="开始日期"  TextAlign="Center" DataFormatString="{0:yyyy年MM月dd日}"/>
-                    <x:BoundField Width="70px" DataField="DisplayEndDate" HeaderText="结束日期" TextAlign="Center" DataFormatString="{0:yyyy年MM月dd日}"/>
-                    <x:BoundField Width="150px" DataField="CreateDate" HeaderText="提交日期" TextAlign="Center" DataFormatString="{0:yyyy年MM月dd日}"/>
+                    <x:BoundField Width="70px" DataField="PublishID" HeaderText="创建人" TextAlign="Center" />
+                    <x:BoundField Width="150px" DataField="PublishDate" HeaderText="提交日期" TextAlign="Center" DataFormatString="{0:yyyy年MM月dd日}"/>
                     <x:TemplateField HeaderText="编辑操作" TextAlign="Center">
                         <ItemTemplate>
-                            <a style="text-decoration:none;" href="<%# GetEditUrl(DataBinder.Eval(Container.DataItem, "[JobPositionGuid]")) %>">编辑</a>
+                            <a style="text-decoration:none;" href="<%# GetEditUrl(DataBinder.Eval(Container.DataItem, "[SysGUID]")) %>">编辑</a>
                         </ItemTemplate>
                     </x:TemplateField>
                 </Columns>

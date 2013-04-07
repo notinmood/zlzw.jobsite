@@ -55,6 +55,7 @@
     <Compile Include="GeneralEnterpriseDAL.cs" />
     <Compile Include="GeneralFriendlyLinkDAL.cs" />
     <Compile Include="GeneralImageDAL.cs" />
+    <Compile Include="jjzpListDAL.cs" />
     <Compile Include="JobEnterpriseJobPositionDAL.cs" />
     <Compile Include="JobEnterpriseResumeFavoriteDAL.cs" />
     <Compile Include="JobEnterpriseServiceContractDAL.cs" />

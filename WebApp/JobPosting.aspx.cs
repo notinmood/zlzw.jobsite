@@ -340,12 +340,12 @@ namespace WebApp
                 zlzw.BLL.JobEnterpriseJobPositionBLL jobEnterpriseJobPositionBLL = new zlzw.BLL.JobEnterpriseJobPositionBLL();
                 jobEnterpriseJobPositionBLL.Add(jobEnterpriseJobPositionModel);
                 Set_FormValue();
-                Alert.Show("简历发布成功");
+                Alert.Show("职位发布成功");
                 //跳转到企业登录成功页面
             }
             catch (Exception exp)
             {
-                Alert.Show("简历发布失败，请稍后重试");
+                Alert.Show("职位发布失败，请稍后重试");
             }
 
 

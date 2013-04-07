@@ -56,7 +56,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <asp:DataList ID="DataList2" runat="server" RepeatColumns="4" RepeatDirection="Horizontal" OnItemDataBound="DataList2_ItemDataBound">
+                                    <asp:DataList ID="DataList2" runat="server" RepeatColumns="2" RepeatDirection="Horizontal" OnItemDataBound="DataList2_ItemDataBound">
                                         <ItemTemplate>
                                             <table>
                                                 <tr>

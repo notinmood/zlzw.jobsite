@@ -5,10 +5,10 @@
     $('#txbWorkAreas').watermark("请选择工作地区");
     //art.dialog.open('TemplatePage/JobPositionKinds.aspx');
     $('#txbJobPositionKinds').bind('click', function () {
-        var dialog = art.dialog.open('TemplatePage/JobPositionKinds.aspx', { title: '请选择岗位类别', width: 755, height: 299 });
+        var dialog = art.dialog.open('TemplatePage/JobPositionKinds.aspx', { title: '请选择岗位类别', width: 550, height: 299 });
     });
     $('#txbJobFeildKinds').bind('click', function () {
-        var dialog = art.dialog.open('TemplatePage/JobFeildKinds.aspx', { title: '请选择行业类别', width: 1048, height: 230 });
+        var dialog = art.dialog.open('TemplatePage/JobFeildKinds.aspx', { title: '请选择行业类别', width: 850, height: 235 });
     });
     $('#txbWorkAreas').bind('click', function () {
         var dialog = art.dialog.open('TemplatePage/WorkAreas.aspx', { title: '请选择工作地区', width: 755, height: 330 });

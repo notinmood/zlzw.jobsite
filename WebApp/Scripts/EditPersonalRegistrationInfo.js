@@ -33,10 +33,10 @@
     $("#txbJobPositionKinds").watermark("请选择岗位类别");
     $("#txbJobFeildKinds").watermark("请选择行业类别");
     $('#txbJobPositionKinds').bind('click', function () {
-        var dialog = art.dialog.open('TemplatePage/JobPositionKinds.aspx', { title: '请选择岗位类别', width: 755, height: 299 });
+        var dialog = art.dialog.open('TemplatePage/JobPositionKinds.aspx', { title: '请选择岗位类别', width: 550, height: 299 });
     });
     $('#txbJobFeildKinds').bind('click', function () {
-        var dialog = art.dialog.open('TemplatePage/JobFeildKinds.aspx', { title: '请选择行业类别', width: 1048, height: 230 });
+        var dialog = art.dialog.open('TemplatePage/JobFeildKinds.aspx', { title: '请选择行业类别', width: 850, height: 235 });
     });
 
     /* 验证两个值是否相同 */

@@ -270,7 +270,6 @@ namespace WebApp.Manage.admin
                     generalEnterpriseModel.IsEnablePublishJob = 0;
                 }
                 generalEnterpriseModel.DownloadResume = int.Parse(txbDownloadResume.Text);//允许下载陌生简历数量
-                generalEnterpriseModel.EnterpriseGuid = new Guid(ViewState["EnterpriseGuid"].ToString());
                 generalEnterpriseModel.UserGuid = new Guid(Request.Cookies["UserID"].Value);
                 if (fileBusinessLicense.PostedFile.ContentLength > 0)
                 {

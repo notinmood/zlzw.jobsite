@@ -55,6 +55,7 @@
     <Compile Include="GeneralEnterpriseBLL.cs" />
     <Compile Include="GeneralFriendlyLinkBLL.cs" />
     <Compile Include="GeneralImageBLL.cs" />
+    <Compile Include="jjzpListBLL.cs" />
     <Compile Include="JobEnterpriseJobPositionBLL.cs" />
     <Compile Include="JobEnterpriseResumeFavoriteBLL.cs" />
     <Compile Include="JobEnterpriseServiceBLL.cs" />

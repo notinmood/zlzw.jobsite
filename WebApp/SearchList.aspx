@@ -96,10 +96,10 @@
                     <table width="995" style="text-align: center; font-size: 14px; margin-top:50px;" border="0" cellspacing="0" cellpadding="0">
                         <thead>
                             <tr>
-                                <td>职位名称</td>
-                                <td>公司名称</td>
-                                <td>工作地点</td>
-                                <td>发布日期</td>
+                                <td align="left">　职位名称</td>
+                                <td align="left">公司名称</td>
+                                <td align="left">工作地点</td>
+                                <td align="left">发布日期</td>
                             </tr>
                         </thead>
                         <tr>
@@ -113,15 +113,15 @@
                         </tr>
                         <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound">
                             <ItemTemplate>
-                                <tr style="font-size:14px;">
+                                <tr style="font-size:14px;height:33px;" id="row" runat="server">
                                     <td align="left">　<asp:Label ID="labJobName" runat="server"></asp:Label></td>
-                                    <td><asp:Label ID="labEnterpriseName" runat="server"></asp:Label></td>
-                                    <td><asp:Label ID="labAddress" runat="server"></asp:Label></td>
-                                    <td><asp:Label ID="labPublishDate" runat="server"></asp:Label></td>
+                                    <td align="left"><asp:Label ID="labEnterpriseName" runat="server"></asp:Label></td>
+                                    <td align="left"><asp:Label ID="labAddress" runat="server"></asp:Label></td>
+                                    <td align="left"><asp:Label ID="labPublishDate" runat="server"></asp:Label></td>
                                 </tr>
                             </ItemTemplate>
                             <SeparatorTemplate>
-                                <tr><td style="height:30px;"></td></tr>
+                                <tr><td style="height:15px;"></td></tr>
                             </SeparatorTemplate>
                         </asp:Repeater>
                         

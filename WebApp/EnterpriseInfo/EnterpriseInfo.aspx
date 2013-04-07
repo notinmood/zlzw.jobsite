@@ -24,11 +24,11 @@
                     
                 </td>
             </tr>
-            <tr>
+            <tr align="left">
                 <td colspan="4" style="background-image:url('images/index_04.jpg'); background-color:#FFFFFF;" height="20">
                     <table align="center" border="0" cellpadding="0" cellspacing="0" width="90%">
                         <tr>
-                            <td>
+                            <td align="left">
                                 <asp:Label ID="labEnterpriseContent" runat="server"></asp:Label>
                             </td>
                         </tr>

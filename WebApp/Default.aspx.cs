@@ -267,12 +267,22 @@ namespace WebApp
 
         private void Load_JobEnterpriseJobPositionList()
         {
-            zlzw.BLL.JobEnterpriseJobPositionBLL jobEnterpriseJobPositionBLL = new zlzw.BLL.JobEnterpriseJobPositionBLL();
-            string strCurrent = DateTime.Now.ToString();//当前系统日期
-            DataTable dt = jobEnterpriseJobPositionBLL.GetList(10, "CanUsable=1 and SpecialType=1 and IsEnableEmergencyRecruitment=1 and DisplayStartDate<='" + strCurrent + "' and DisplayEndDate >='" + strCurrent + "'", "CreateDate desc").Tables[0];
+            //zlzw.BLL.JobEnterpriseJobPositionBLL jobEnterpriseJobPositionBLL = new zlzw.BLL.JobEnterpriseJobPositionBLL();
+            //string strCurrent = DateTime.Now.ToString();//当前系统日期
+            //DataTable dt = jobEnterpriseJobPositionBLL.GetList(10, "CanUsable=1 and SpecialType=1 and IsEnableEmergencyRecruitment=1 and DisplayStartDate<='" + strCurrent + "' and DisplayEndDate >='" + strCurrent + "'", "CreateDate desc").Tables[0];
 
-            Repeater4.DataSource = SelectDistinctByField(dt,"EnterpriseKey");
-            Repeater4.DataBind();
+            //Repeater4.DataSource = SelectDistinctByField(dt,"EnterpriseKey");
+            //Repeater4.DataBind();
+            zlzw.BLL.jjzpListBLL jjzpListBLL = new zlzw.BLL.jjzpListBLL();
+            DataTable dt = jjzpListBLL.GetList(1,"IsEnable=1","PublishDate desc").Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                labjjzp.Text = dt.Rows[0]["jjzpContent"].ToString();
+            }
+            else
+            {
+                labjjzp.Text = "";
+            }
         }
 
         #endregion
@@ -444,23 +454,23 @@ namespace WebApp
 
         #region 紧急招聘行绑定事件
 
-        protected void Repeater4_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            System.Web.UI.WebControls.ListItemType lit = e.Item.ItemType;
-            if (lit == System.Web.UI.WebControls.ListItemType.Item || lit == System.Web.UI.WebControls.ListItemType.AlternatingItem)
-            {
-                System.Data.DataRowView drv = (System.Data.DataRowView)e.Item.DataItem;
-                Label labJobTitle = (Label)e.Item.FindControl("labJobTitle");
-                //Label labAdd = (Label)e.Item.FindControl("labAdd");
-                Label labXueLi = (Label)e.Item.FindControl("labXueLi");
-                Label labTel = (Label)e.Item.FindControl("labTel");
-                labJobTitle.Text = "<a href='EnterpriseInfo/EnterpriseInfo.aspx?type=" + drv["EnterpriseKey"].ToString() + "&id=" + drv["JobPositionGuid"].ToString() + "' target='_blank' title='" + drv["EnterpriseName"].ToString() + "' style='text-decoration:none;color:#6e6e6e;'>" + Set_TitleLength(drv["EnterpriseName"].ToString()) + "</a>";
-                //labAdd.Text = "<a href='EnterpriseInfo/EnterpriseInfo.aspx?type=" + drv["EnterpriseKey"].ToString() + "&id=" + drv["JobPositionGuid"].ToString() + "'  style='text-decoration:none;color:#6e6e6e;' target='_blank' title='" + drv["JobWorkPlaceNames"].ToString() + "'>" + Get_AddLength(drv["JobWorkPlaceNames"].ToString()) + "</a>";
-                //labXueLi.Text = "<a href='EnterpriseInfo/EnterpriseInfo.aspx?type=" + drv["EnterpriseKey"].ToString() + "&id=" + drv["JobPositionGuid"].ToString() + "' style='text-decoration:none;color:#6e6e6e;'>" + drv["JobPositionKind"].ToString() + "</a>　" + Get_JobList(drv["JobPositionGuid"].ToString());
-                labXueLi.Text = Get_JobList(drv["EnterpriseKey"].ToString());
-                labTel.Text = "<span style='text-decoration:none;color:#6e6e6e;'>" + drv["ContactTelephone"].ToString() + "</span>";
-            }
-        }
+        //protected void Repeater4_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        //{
+        //    System.Web.UI.WebControls.ListItemType lit = e.Item.ItemType;
+        //    if (lit == System.Web.UI.WebControls.ListItemType.Item || lit == System.Web.UI.WebControls.ListItemType.AlternatingItem)
+        //    {
+        //        System.Data.DataRowView drv = (System.Data.DataRowView)e.Item.DataItem;
+        //        Label labJobTitle = (Label)e.Item.FindControl("labJobTitle");
+        //        //Label labAdd = (Label)e.Item.FindControl("labAdd");
+        //        Label labXueLi = (Label)e.Item.FindControl("labXueLi");
+        //        Label labTel = (Label)e.Item.FindControl("labTel");
+        //        labJobTitle.Text = "<a href='EnterpriseInfo/EnterpriseInfo.aspx?type=" + drv["EnterpriseKey"].ToString() + "&id=" + drv["JobPositionGuid"].ToString() + "' target='_blank' title='" + drv["EnterpriseName"].ToString() + "' style='text-decoration:none;color:#6e6e6e;'>" + Set_TitleLength(drv["EnterpriseName"].ToString()) + "</a>";
+        //        //labAdd.Text = "<a href='EnterpriseInfo/EnterpriseInfo.aspx?type=" + drv["EnterpriseKey"].ToString() + "&id=" + drv["JobPositionGuid"].ToString() + "'  style='text-decoration:none;color:#6e6e6e;' target='_blank' title='" + drv["JobWorkPlaceNames"].ToString() + "'>" + Get_AddLength(drv["JobWorkPlaceNames"].ToString()) + "</a>";
+        //        //labXueLi.Text = "<a href='EnterpriseInfo/EnterpriseInfo.aspx?type=" + drv["EnterpriseKey"].ToString() + "&id=" + drv["JobPositionGuid"].ToString() + "' style='text-decoration:none;color:#6e6e6e;'>" + drv["JobPositionKind"].ToString() + "</a>　" + Get_JobList(drv["JobPositionGuid"].ToString());
+        //        labXueLi.Text = Get_JobList(drv["EnterpriseKey"].ToString());
+        //        labTel.Text = "<span style='text-decoration:none;color:#6e6e6e;'>" + drv["ContactTelephone"].ToString() + "</span>";
+        //    }
+        //}
 
         #endregion
 

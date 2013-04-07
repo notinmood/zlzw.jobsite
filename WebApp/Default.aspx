@@ -86,6 +86,7 @@
                     <table width="505" border="0" cellpadding="0" cellspacing="0" style="margin-left: 8px;">
                         <tr>
                             <td style="background: url(image/img3.png) repeat-x;" height="32px"><span id="span">招 聘 会</span>
+                                <div style="float:right;margin-right:5px;*margin-top:-20px;"><a href="ActivityList.aspx" target="_blank" style="color:#fff;font-weight:bolder;text-decoration:none;">更多>></a></div>
                             </td>
                         </tr>
                         <tr>
@@ -292,23 +293,24 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <div style="border: 1px solid #d4d4d4;">
-                                        <asp:Repeater ID="Repeater4" runat="server" OnItemDataBound="Repeater4_ItemDataBound">
+                                    <div id="participatingCompaniesList01" style="border: 1px solid #d4d4d4;width:757px;height:320px; overflow:hidden;">
+                                        <%--<asp:Repeater ID="Repeater4" runat="server" OnItemDataBound="Repeater4_ItemDataBound">
                                             <HeaderTemplate>
                                                 <table width="757px" height="320" cellpadding="0" cellspacing="0" border="0" style="font-size: 14px;table-layout:fixed;">
                                             </HeaderTemplate>
                                             <ItemTemplate>
                                                     <tr>
                                                         <td width="230" align="left"><span id="span9">　<asp:Label ID="labJobTitle" runat="server"></asp:Label></span></td>
-                                                        <%--<td width="157" align="center"><asp:Label ID="labAdd" runat="server"></asp:Label></td>--%>
-                                                        <td width="396" align="left" style="word-break:keep-all;white-space:nowrap;overflow:hidden;"><asp:Label ID="labXueLi" runat="server"></asp:Label></td>
+                                                        <%--这一句不取消<td width="157" align="center"><asp:Label ID="labAdd" runat="server"></asp:Label></td>--%>
+                                                        <%--<td width="396" align="left" style="word-break:keep-all;white-space:nowrap;overflow:hidden;"><asp:Label ID="labXueLi" runat="server"></asp:Label></td>
                                                         <td width="130" align="center"><asp:Label ID="labTel" runat="server"></asp:Label></td>
                                                     </tr>
                                             </ItemTemplate>
                                             <FooterTemplate>
                                                 </table>
                                             </FooterTemplate>
-                                        </asp:Repeater>
+                                        </asp:Repeater>--%>
+                                        <asp:Label ID="labjjzp" Visible="true" runat="server" style="padding-left:30px;"></asp:Label>
                                     </div>
                                 </td>
                             </tr>
@@ -403,6 +405,7 @@
     <script type="text/javascript" src="Scripts/default.js"></script>
     <script type="text/javascript" language="javascript">
         new Marquee(["participatingCompaniesList", "participatingCompanies"], 0, 1, 757, 300, 20, 0, 0);
+        new Marquee(["participatingCompaniesList01", ""], 0, 1, 757, 300, 20, 0, 0);
     </script>
 </body>
 </html>

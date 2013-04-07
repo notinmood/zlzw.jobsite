@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddEmergencyRecruitment.aspx.cs" Inherits="WebApp.Manage.admin.AddEmergencyRecruitment" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" ValidateRequest="false" CodeBehind="AddEmergencyRecruitment.aspx.cs" Inherits="WebApp.Manage.admin.AddEmergencyRecruitment" %>
 
 <!DOCTYPE html>
 
@@ -33,12 +33,8 @@
                     <x:SimpleForm ID="SimpleForm1" ShowBorder="true" ShowHeader="false" EnableLightBackgroundColor="true"
                         AutoScroll="true" BodyPadding="5px" runat="server" EnableCollapse="True">
                         <Items>
-                            <x:Label ID="labEnterpriseName" runat="server" Label="企业名称"></x:Label>
-                            <x:Label ID="labJobPositionName" runat="server" Label="职位名称"></x:Label>
-                            <x:Label ID="labJobPositionDesc" runat="server" Label="职位介绍"></x:Label>
-                            <x:DatePicker ID="dateStartTime" runat="server" Required="true" Label="开始日期" EmptyText="开始日期"></x:DatePicker>
-                            <x:DatePicker ID="dateEndTime" runat="server" Required="true" CompareControl="dateStartTime" CompareOperator="GreaterThanEqual" CompareMessage="结束日期应该大于开始日期" Label="结束日期" EmptyText="结束日期"></x:DatePicker>
-                            <x:CheckBox ID="ckbIsEnableEmergencyRecruitment" runat="server" Label="是否允许显示"></x:CheckBox>
+                            <x:Label ID="labCreateUserKey" runat="server" Label="发布人"></x:Label>
+                            <x:HtmlEditor ID="labContent" runat="server" Label="紧急招聘"></x:HtmlEditor>
                         </Items>
                     </x:SimpleForm>
                 </Items>

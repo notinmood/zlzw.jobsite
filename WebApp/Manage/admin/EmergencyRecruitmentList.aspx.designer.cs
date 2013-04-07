@@ -49,6 +49,33 @@ namespace WebApp.Manage.admin {
         protected global::FineUI.Toolbar Toolbar2;
         
         /// <summary>
+        /// btnadd 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button btnadd;
+        
+        /// <summary>
+        /// toolbarseparator1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.ToolbarSeparator toolbarseparator1;
+        
+        /// <summary>
+        /// btnDel 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button btnDel;
+        
+        /// <summary>
         /// grid1 控件。
         /// </summary>
         /// <remarks>

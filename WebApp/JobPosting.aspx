@@ -79,7 +79,7 @@
                         <td style="height:20px;"></td>
                     </tr>
                     <tr>
-                        <td style="font-size:14px; color:#6e6e6e;">岗位名称：<asp:TextBox ID="txbJobPositionName" data-options="required:true" missingMessage="岗位名称不能为空" Width="405" Height="22" runat="server" CssClass="easyui-validatebox"></asp:TextBox><span style="font-weight:bold; color:#f00;"> *</span>
+                        <td style="font-size:14px; color:#6e6e6e;">岗位名称：<asp:TextBox ID="txbJobPositionName" Width="405" Height="22" runat="server"></asp:TextBox>
                         </td>
                         <td align="left" style="width:410px;"> 
                             &nbsp;</td>
@@ -97,7 +97,7 @@
                                             <asp:ListItem Text="管理" Value="管理"></asp:ListItem>
                                         </asp:DropDownList>
                                         <asp:DropDownList ID="drpJobPositionKinds" Height="26" runat="server" Width="300"></asp:DropDownList>--%>
-                                        <input runat="server" type="text" id="txbJobPositionKinds" class="easyui-validatebox" data-options="required:true" missingMessage="请选择行业类别" style="width: 400px; height: 22px;" readonly="readonly" /><span style="font-weight:bold; color:#f00;"> *</span>
+                                        <input runat="server" type="text" id="txbJobPositionKinds" style="width: 400px; height: 22px;" readonly="readonly" />
                                     </td>
                         <td align="left" style="width:410px;">
                             <table>
@@ -144,7 +144,7 @@
                         <td style="height:20px;"></td>
                     </tr>
                     <tr>
-                        <td style="font-size:14px; color:#6e6e6e;">工作地点：<asp:TextBox ID="txbJobWorkPlaceNames" data-options="required:true" missingMessage="工作地点不能为空" Width="405" Height="22" runat="server" CssClass="easyui-validatebox"></asp:TextBox><span style="font-weight:bold; color:#f00;"> *</span>
+                        <td style="font-size:14px; color:#6e6e6e;">工作地点：<asp:TextBox ID="txbJobWorkPlaceNames" Width="405" Height="22" runat="server"></asp:TextBox>
                         </td>
                         <td align="left" style="width:410px;"> 
                             &nbsp;</td>

@@ -146,11 +146,12 @@ namespace WebApp.Manage.admin
                         strSelectID = key.ToString();
                     }
                 }
+
                 #region 删除逻辑
 
                 zlzw.BLL.GeneralEnterpriseBLL generalEnterpriseBLL = new zlzw.BLL.GeneralEnterpriseBLL();
-                DataTable dt = generalEnterpriseBLL.GetList("UserGuid='" + strSelectID + "'").Tables[0];
-                zlzw.Model.GeneralEnterpriseModel generalEnterpriseModel = generalEnterpriseBLL.GetModel(int.Parse(dt.Rows[0]["UserID"].ToString()));
+                DataTable dt = generalEnterpriseBLL.GetList("EnterpriseGuid='" + strSelectID + "'").Tables[0];
+                zlzw.Model.GeneralEnterpriseModel generalEnterpriseModel = generalEnterpriseBLL.GetModel(int.Parse(dt.Rows[0]["EnterpriseID"].ToString()));
                 generalEnterpriseModel.CanUsable = 0;
                 generalEnterpriseBLL.Update(generalEnterpriseModel);
                 GeneralEnterpriseList_BindGrid();

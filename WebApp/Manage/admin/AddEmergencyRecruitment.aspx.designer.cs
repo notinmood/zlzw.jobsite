@@ -103,57 +103,21 @@ namespace WebApp.Manage.admin {
         protected global::FineUI.SimpleForm SimpleForm1;
         
         /// <summary>
-        /// labEnterpriseName 控件。
+        /// labCreateUserKey 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label labEnterpriseName;
+        protected global::FineUI.Label labCreateUserKey;
         
         /// <summary>
-        /// labJobPositionName 控件。
+        /// labContent 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label labJobPositionName;
-        
-        /// <summary>
-        /// labJobPositionDesc 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Label labJobPositionDesc;
-        
-        /// <summary>
-        /// dateStartTime 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.DatePicker dateStartTime;
-        
-        /// <summary>
-        /// dateEndTime 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.DatePicker dateEndTime;
-        
-        /// <summary>
-        /// ckbIsEnableEmergencyRecruitment 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.CheckBox ckbIsEnableEmergencyRecruitment;
+        protected global::FineUI.HtmlEditor labContent;
     }
 }

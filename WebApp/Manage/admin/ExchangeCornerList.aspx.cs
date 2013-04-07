@@ -128,8 +128,8 @@ namespace WebApp.Manage.admin
                 #region 删除逻辑
 
                 zlzw.BLL.ExchangeCornerListBLL exchangeCornerListBLL = new zlzw.BLL.ExchangeCornerListBLL();
-                DataTable dt = exchangeCornerListBLL.GetList("UserGuid='" + strSelectID + "'").Tables[0];
-                zlzw.Model.ExchangeCornerListModel exchangeCornerListModel = exchangeCornerListBLL.GetModel(int.Parse(dt.Rows[0]["UserID"].ToString()));
+                DataTable dt = exchangeCornerListBLL.GetList("ExchangeCornerGUID='" + strSelectID + "'").Tables[0];
+                zlzw.Model.ExchangeCornerListModel exchangeCornerListModel = exchangeCornerListBLL.GetModel(int.Parse(dt.Rows[0]["ExchangeCornerID"].ToString()));
                 exchangeCornerListModel.IsEnable = 0;
                 exchangeCornerListBLL.Update(exchangeCornerListModel);
                 ExchangeCornerList_BindGrid();

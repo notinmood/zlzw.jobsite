@@ -1,7 +1,7 @@
 ﻿$().ready(function () {
     $("#txbJobPositionKinds").watermark("请选择岗位类别");
     $('#txbJobPositionKinds').bind('click', function () {
-        var dialog = art.dialog.open('TemplatePage/JobPositionKinds.aspx', { title: '请选择岗位类别', width: 755, height: 299 });
+        var dialog = art.dialog.open('TemplatePage/JobPositionKinds.aspx', { title: '请选择岗位类别', width: 550, height: 299 });
     });
     /* 日期格式 */
     $.extend($.fn.validatebox.defaults.rules, {

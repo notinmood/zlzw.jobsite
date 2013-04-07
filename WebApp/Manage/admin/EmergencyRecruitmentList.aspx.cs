@@ -26,9 +26,9 @@ namespace WebApp.Manage.admin
                 EmergencyRecruitmentList_BindGrid();
 
                 #endregion
-                Window1.Title = "添加用户";
-                //btnAdd.OnClientClick = Window1.GetShowReference("AddAdmin.aspx?Type=0", "添加管理员") + "return false;";
-               // btnDel.OnClientClick = grid1.GetNoSelectionAlertReference("请选择要删除的管理员!");
+                Window1.Title = "添加紧急招聘";
+                btnadd.OnClientClick = Window1.GetShowReference("AddEmergencyRecruitment.aspx?Type=0", "添加管理员") + "return false;";
+                btnDel.OnClientClick = grid1.GetNoSelectionAlertReference("请选择要删除的管理员!");
             }
         }
 
@@ -55,8 +55,8 @@ namespace WebApp.Manage.admin
         /// <returns></returns>
         private int Get_EmergencyRecruitmentListTotalCount()
         {
-            zlzw.BLL.JobEnterpriseJobPositionBLL jobEnterpriseJobPositionBLL = new zlzw.BLL.JobEnterpriseJobPositionBLL();
-            DataTable dt = jobEnterpriseJobPositionBLL.GetList("CanUsable=1 and SpecialType=1").Tables[0];
+            zlzw.BLL.jjzpListBLL jjzpListBLL = new zlzw.BLL.jjzpListBLL();
+            DataTable dt = jjzpListBLL.GetList("IsEnable=1").Tables[0];
             if (dt.Rows.Count > 0)
             {
                 return dt.Rows.Count;
@@ -69,8 +69,8 @@ namespace WebApp.Manage.admin
 
         private void EmergencyRecruitmentList_BindGrid()
         {
-            zlzw.BLL.JobEnterpriseJobPositionBLL jobEnterpriseJobPositionBLL = new zlzw.BLL.JobEnterpriseJobPositionBLL();
-            DataTable dt = jobEnterpriseJobPositionBLL.GetList(grid1.PageSize, grid1.PageIndex + 1, "*", "CreateDate", 0, "desc", "CanUsable=1 and SpecialType=1").Tables[0];
+            zlzw.BLL.jjzpListBLL jjzpListBLL = new zlzw.BLL.jjzpListBLL();
+            DataTable dt = jjzpListBLL.GetList(grid1.PageSize, grid1.PageIndex + 1, "*", "PublishDate", 0, "desc", "IsEnable=1").Tables[0];
 
             grid1.DataSource = dt;
             grid1.DataBind();
@@ -96,12 +96,64 @@ namespace WebApp.Manage.admin
 
         protected void Grid1_RowDataBound(object sender, GridRowEventArgs e)
         {
-            //DataRowView dr = e.DataItem as DataRowView;
-            //if (dr != null)
-            //{
-            //    string strUserType = dr["UserType"].ToString();
-            //    e.Values[0] = Get_UserTypeName(strUserType);
-            //}
+            DataRowView dr = e.DataItem as DataRowView;
+            if (dr != null)
+            {
+                string strCreateUserKey = dr["PublishID"].ToString();
+                e.Values[0] = Get_UserName(strCreateUserKey);
+            }
+        }
+
+        #endregion
+
+        #region 删除按钮事件
+
+        protected void btndel_click(object sender, EventArgs e)
+        {
+            if (grid1.SelectedRowIndexArray != null && grid1.SelectedRowIndexArray.Length > 0)
+            {
+                string strSelectID = "0";
+                for (int i = 0, count = grid1.SelectedRowIndexArray.Length; i < count; i++)
+                {
+                    int rowIndex = grid1.SelectedRowIndexArray[i];
+                    foreach (object key in grid1.DataKeys[rowIndex])
+                    {
+                        strSelectID = key.ToString();
+                    }
+                }
+                #region 删除逻辑
+
+                zlzw.BLL.jjzpListBLL jjzpListBLL = new zlzw.BLL.jjzpListBLL();
+                System.Data.DataTable dt = jjzpListBLL.GetList("SysGUID='" + strSelectID + "'").Tables[0];
+                zlzw.Model.jjzpListModel jjzpListModel = jjzpListBLL.GetModel(int.Parse(dt.Rows[0]["JobPositionID"].ToString()));
+                jjzpListModel.IsEnable = 0;
+                jjzpListBLL.Update(jjzpListModel);
+                EmergencyRecruitmentList_BindGrid();
+
+                #endregion
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        #endregion
+
+        #region 获取用户名称
+
+        private string Get_UserName(string strUserGUID)
+        {
+            zlzw.BLL.CoreUserBLL coreUserBLL = new zlzw.BLL.CoreUserBLL();
+            System.Data.DataTable dt = coreUserBLL.GetList("UserGuid='" + strUserGUID + "'").Tables[0];
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["UserName"].ToString();
+            }
+            else
+            {
+                return "未知";
+            }
         }
 
         #endregion

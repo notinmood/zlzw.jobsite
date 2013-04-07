@@ -88,7 +88,11 @@ namespace WebApp.Manage.admin
                 txbEducationExperience.Text = jobPersonResumeModel.EducationExperience;//教育经历
                 txbUserHeight.Text = coreUserModel.UserHeight.ToString();//身高
                 txbUserWeight.Text = coreUserModel.UserWeight.ToString();//体重
-                imgUserPhoto.ImageUrl = coreUserModel.UserPhoto.Split('~')[1];//求职者照片
+                if (coreUserModel.UserPhoto != null && coreUserModel.UserPhoto != "")
+                {
+                    imgUserPhoto.ImageUrl = coreUserModel.UserPhoto.Split('~')[1];//求职者照片
+                }
+                
                 labCreateDate.Text = DateTime.Parse(jobPersonResumeModel.CreateDate.ToString()).ToString("yyyy年MM月dd");//简历创建时间
                 labUpdateDate.Text = DateTime.Parse(jobPersonResumeModel.UpdateDate.ToString()).ToString("yyyy年MM月dd");//简历更新时间
 

@@ -52,6 +52,7 @@
     <Compile Include="GeneralEnterpriseModel.cs" />
     <Compile Include="GeneralFriendlyLinkModel.cs" />
     <Compile Include="GeneralImageModel.cs" />
+    <Compile Include="jjzpListModel.cs" />
     <Compile Include="JobEnterpriseJobPositionModel.cs" />
     <Compile Include="JobEnterpriseResumeFavoriteModel.cs" />
     <Compile Include="JobEnterpriseServiceContractModel.cs" />

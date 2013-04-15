@@ -42,12 +42,13 @@
 
     $.innerfade = function(container, options) {
         var settings = {
-        		'animationtype':    'fade',
+        	'animationtype':    'fade',
             'speed':            'normal',
             'type':             'sequence',
             'timeout':          2000,
             'containerheight':  'auto',
-            'runningclass':     'innerfade',
+            'runningclass': 'innerfade',
+            'browerType':   '',
             'children':         null
         };
         if (options)
@@ -57,7 +58,12 @@
         else
             var elements = $(container).children(settings.children);
         if (elements.length > 1) {
-            $(container).css('position', 'relative').css('height', settings.containerheight).addClass(settings.runningclass);
+            if (settings.browerType == "IE6.0") {
+                $(container).css('position', 'relative').css('-height', settings.containerheight).addClass(settings.runningclass);
+            }
+            else {
+                $(container).css('position', 'relative').css('height', settings.containerheight).addClass(settings.runningclass);
+            }
             for (var i = 0; i < elements.length; i++) {
                 $(elements[i]).css('z-index', String(elements.length-i)).css('position', 'absolute').hide();
             };

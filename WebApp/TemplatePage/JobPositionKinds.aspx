@@ -12,7 +12,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <table style="font-size:12px;">
+        <table style="font-size:12px;-width:610px;">
             <tr>
                 <td>
                     <table>

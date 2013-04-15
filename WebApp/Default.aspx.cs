@@ -223,9 +223,12 @@ namespace WebApp
         {
             zlzw.BLL.ParticipatingCompaniesListBLL participatingCompaniesListBLL = new zlzw.BLL.ParticipatingCompaniesListBLL();
             DataTable dt = participatingCompaniesListBLL.GetList("IsEnable=1 and IsShow=1 order by PublishDate desc").Tables[0];
-
-            Repeater3.DataSource = dt;
-            Repeater3.DataBind();
+            if (dt.Rows.Count > 0)
+            {
+                labParticipatingCompaniesList.Text = dt.Rows[0]["ParticipatingCompaniesContent"].ToString();
+            }
+            //Repeater3.DataSource = dt;
+            //Repeater3.DataBind();
         }
 
         #endregion
@@ -438,17 +441,17 @@ namespace WebApp
 
         #region 最近参会企业行绑定
 
-        protected void Repeater3_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            System.Web.UI.WebControls.ListItemType lit = e.Item.ItemType;
-            if (lit == System.Web.UI.WebControls.ListItemType.Item || lit == System.Web.UI.WebControls.ListItemType.AlternatingItem)
-            {
-                System.Data.DataRowView drv = (System.Data.DataRowView)e.Item.DataItem;
-                Label labParticipatingCompaniesList = (Label)e.Item.FindControl("labParticipatingCompaniesList");
+        //protected void Repeater3_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        //{
+        //    System.Web.UI.WebControls.ListItemType lit = e.Item.ItemType;
+        //    if (lit == System.Web.UI.WebControls.ListItemType.Item || lit == System.Web.UI.WebControls.ListItemType.AlternatingItem)
+        //    {
+        //        System.Data.DataRowView drv = (System.Data.DataRowView)e.Item.DataItem;
+        //        Label labParticipatingCompaniesList = (Label)e.Item.FindControl("labParticipatingCompaniesList");
 
-                labParticipatingCompaniesList.Text = "<p style='line-height: 25px;'><img style='border:0px;' src='image/img7.png' width='11' height='12' /><a style='color:#6e6e6e;text-decoration:none;' target='_blank' href='ParticipatingCompaniesInfo.aspx?id=" + drv["ParticipatingCompaniesGUID"].ToString() + "'>" + drv["ParticipatingCompaniesContent"].ToString() + "</p>";
-            }
-        }
+        //        labParticipatingCompaniesList.Text = "<p style='line-height: 25px;'><img style='border:0px;' src='image/img7.png' width='11' height='12' /><a style='color:#6e6e6e;text-decoration:none;' target='_blank' href='ParticipatingCompaniesInfo.aspx?id=" + drv["ParticipatingCompaniesGUID"].ToString() + "'>" + drv["ParticipatingCompaniesContent"].ToString() + "</p>";
+        //    }
+        //}
 
         #endregion
 

@@ -60,7 +60,7 @@ namespace WebApp
                 System.Data.DataRowView drv = (System.Data.DataRowView)e.Item.DataItem;
                 Label CareerGuidanceTitle = (Label)e.Item.FindControl("CareerGuidanceTitle");
 
-                CareerGuidanceTitle.Text = "<span style='color:#FA7A00;'> ★ </span><a target='_blank' href='CareerGuidanceInfo.aspx?id=" + drv["CareerGuidanceGUID"].ToString() + "' style='color:#6e6e6e;text-decoration:none;'>" + drv["CareerGuidanceTitle"].ToString() + "</a><div style='float:right; padding-right:20px;'>" + Set_DateFormat(drv["PublishDate"].ToString()) + "</div>";
+                CareerGuidanceTitle.Text = "<span style='color:#FA7A00;'> ★ </span><a target='_blank' href='CareerGuidanceInfo.aspx?id=" + drv["CareerGuidanceGUID"].ToString() + "' style='color:#6e6e6e;text-decoration:none;'>" + drv["CareerGuidanceTitle"].ToString() + "</a><div style='float:right; padding-right:20px;-margin-top:-25px;*margin-top:-28px;'>" + Set_DateFormat(drv["PublishDate"].ToString()) + "</div>";
             }
         }
 

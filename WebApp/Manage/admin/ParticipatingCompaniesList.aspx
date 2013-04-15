@@ -30,8 +30,8 @@
                 EnableRowNumber="True" IsDatabasePaging="true" 
                 OnRowDataBound="Grid1_RowDataBound" ForceFitAllTime="true" EnableAjaxLoading="true">
                 <Columns>
-                    <x:BoundField Width="70px" DataField="EnterpriseGuid" HeaderText="所属企业" TextAlign="Center" />
-                    <x:BoundField Width="200px" DataField="ParticipatingCompaniesContent" HeaderText="内容" TextAlign="Center" DataToolTipField="ParticipatingCompaniesContent" />
+<%--                    <x:BoundField Width="70px" DataField="EnterpriseGuid" HeaderText="所属企业" TextAlign="Center" />--%>
+                    <%--<x:BoundField Width="200px" DataField="ParticipatingCompaniesContent" HeaderText="内容" TextAlign="Center" DataToolTipField="ParticipatingCompaniesContent" />--%>
                     <x:CheckBoxField Width="50px" DataField="IsShow" HeaderText="是否显示" TextAlign="Center" />
                     <x:BoundField Width="120px" DataField="PublishDate" HeaderText="发布日期" TextAlign="Center" />
                     <x:TemplateField HeaderText="编辑操作" TextAlign="Center">

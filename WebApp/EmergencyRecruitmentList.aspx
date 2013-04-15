@@ -29,20 +29,20 @@
                             　<a href="default.aspx" style="color:#093C7E; text-decoration:none;">首页</a> > <span style="color:#093C7E;">紧急招聘</span>
                         </td>
                     </tr>
-                    <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound">
-                        <ItemTemplate>
-                            <tr>
-                                <td style="padding-left:20px;">
-                                    <asp:Label ID="labActivityTitle" runat="server"></asp:Label>
-                                </td>
-                            </tr>
-                        </ItemTemplate>
-                    </asp:Repeater>
+                    <%--<asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound">
+                        <ItemTemplate>--%>
+                    <tr>
+                        <td style="padding-left:20px;">
+                            <asp:Label ID="labActivityTitle" runat="server" style="color:#6e6e6e;"></asp:Label>
+                        </td>
+                    </tr>
+                        <%--</ItemTemplate>
+                    </asp:Repeater>--%>
                     <tr>
                         <td style="padding-left:40%;">
-                            <webdiyer:AspNetPager ID="AspNetPager1" runat="server" PageSize="15" 
+                            <%--<webdiyer:AspNetPager ID="AspNetPager1" runat="server" PageSize="15" 
                                 onpagechanged="AspNetPager1_PageChanged" CssClass="paginator" CurrentPageButtonClass="cpb" FirstPageText="首页"  LastPageText="尾页" NextPageText="下一页" PrevPageText="上一页" >
-                            </webdiyer:AspNetPager>
+                            </webdiyer:AspNetPager>--%>
                         </td>
                     </tr>
                 </table> 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddParticipatingCompanies.aspx.cs" Inherits="WebApp.Manage.admin.AddParticipatingCompanies" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" ValidateRequest="false" CodeBehind="AddParticipatingCompanies.aspx.cs" Inherits="WebApp.Manage.admin.AddParticipatingCompanies" %>
 
 <!DOCTYPE html>
 
@@ -33,9 +33,8 @@
                     <x:SimpleForm ID="SimpleForm1" ShowBorder="true" ShowHeader="false" EnableLightBackgroundColor="true"
                         AutoScroll="true" BodyPadding="5px" runat="server" EnableCollapse="True">
                         <Items>
-                            <x:DropDownList ID="drpEnterpriseGuid" runat="server" Label="所属企业"></x:DropDownList>
-                            <x:TextArea ID="txbParticipatingCompaniesContent" runat="server" EmptyText="参会信息" Label="参会信息"></x:TextArea>
-                            <x:CheckBox ID="ckbIsShow" runat="server" Label="是否显示"></x:CheckBox>
+                            <%--<x:DropDownList ID="drpEnterpriseGuid" runat="server" Label="所属企业"></x:DropDownList>--%>
+                            <x:HtmlEditor ID="txbParticipatingCompaniesContent" runat="server" Label="参会信息" Height="350" ></x:HtmlEditor>
                         </Items>
                     </x:SimpleForm>
                 </Items>

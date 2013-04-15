@@ -11,10 +11,10 @@
     <script type="text/javascript" src="../Scripts/WebForms/iframeTools.js"></script>
 </head>
 <body>
-    <table style="font-size:12px;">
+    <table style="font-size:12px;width:850px;">
             <tr>
                 <td>
-                    <table>
+                    <table border="0">
                         <thead>
                             <tr>
                                 <td>
@@ -27,10 +27,10 @@
                                 <td>
                                     <asp:DataList ID="DataList1" runat="server" RepeatColumns="4" RepeatDirection="Horizontal" OnItemDataBound="DataList1_ItemDataBound">
                                         <ItemTemplate>
-                                            <table>
+                                            <table style="width:100%;">
                                                 <tr>
                                                     <td>
-                                                        <asp:Label ID="labManufacturingIndustry" runat="server"></asp:Label>
+                                                        <asp:Label ID="labManufacturingIndustry" runat="server" style="font-size:12px;"></asp:Label>
                                                     </td>
                                                     <td style="width:10px;"></td>
                                                 </tr>

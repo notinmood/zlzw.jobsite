@@ -14,8 +14,8 @@
     <form id="form1" runat="server">
         <div>
             <uc1:PageHead ID="PageHead1" runat="server" />
-            <div>
-                <table style="width:100%;">
+            <div style="-margin-left:200px">
+                <table style="width:1003px;-width:960px;">
                     <tr>
                         <td style="background-image: url('image/img3.png'); background-repeat: repeat-x; height:3px;">
                                 
@@ -30,7 +30,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <div style="border:1px solid; border-color:#e9e1e1;">
+                            <div style="border:1px solid; border-color:#e9e1e1;width:1003px;-width:955px;">
                                 <table style="width:100%;" border="0">
                                 <tr>
                                     <td colspan="2" align="center">

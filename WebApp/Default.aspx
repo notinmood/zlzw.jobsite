@@ -3,8 +3,8 @@
 <%@ Register src="UserControl/DefaultHead.ascx" tagname="DefaultHead" tagprefix="uc1" %>
 
 <%@ Register src="UserControl/DefaultFooter.ascx" tagname="DefaultFooter" tagprefix="uc2" %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -21,16 +21,16 @@
     <script type="text/javascript" src="Scripts/ValidateRule.js"></script>
 </head>
 
-<body>
+<body style="margin:0 auto;padding:0px;">
     <form id="form01" runat="server">
-        <div>
+        <div id="wapper">
             <uc1:DefaultHead ID="DefaultHead1" runat="server" />
             <div class="top1">
                 <div class="top1left">
                     <table width="223" border="0" cellpadding="0" cellspacing="0">
                         <tr>
                             <td colspan="3">
-                                <div style="border: 1px solid #d4d4d4;">
+                                <div style="border: 1px solid #ff8000;">
                                 <table id="loginForm" width="222" border="0" cellpadding="0" cellspacing="0" style="height: 165px" runat="server">
                                     <tr>
                                         <td style="background-image:url('image/img3.png'); background-repeat:repeat-x;height:32px">
@@ -68,7 +68,7 @@
                                     </tr>
                                     <tr id="rows3">
                                         <td align="center">
-                                            * <a href="PersonalRegistration.aspx" style="text-decoration: none; color: #093C7E;">个人注册</a>　　* <a href="EnterpriseRegister.aspx" style="text-decoration: none; color: #093C7E;">企业注册</a>　
+                                            <a href="PersonalRegistration.aspx" style="text-decoration: none; color: #093C7E;">个人注册</a>　<a href="EnterpriseRegister.aspx" style="text-decoration: none; color: #093C7E;">企业注册</a>　<a id="linkBtnPassword" href="#" style="color:#093c7e;text-decoration:none;">忘记密码?</a>
                                         </td>
                                     </tr>
                                 </table>
@@ -91,7 +91,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <div style="border: 1px solid #d4d4d4;">
+                                <div style="border: 1px solid #ff8000;">
                                     <table width="507" height="133" border="0" cellpadding="0" cellspacing="0">
                                         <tr>
                                             <td width="133" rowspan="5">
@@ -138,7 +138,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <div style="border: 1px solid #d4d4d4; padding-left: 13px; color: #093c7e;">
+                                <div style="border: 1px solid #ff8000; padding-left: 13px; color: #093c7e;">
 
                                     <asp:DataList ID="DataList1" runat="server" RepeatColumns="2" RepeatDirection="Horizontal" OnItemDataBound="DataList1_ItemDataBound">
                                         <HeaderTemplate>
@@ -293,7 +293,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <div id="participatingCompaniesList01" style="border: 1px solid #d4d4d4;width:757px;height:320px; overflow:hidden;">
+                                    <div id="participatingCompaniesList01" style="border: 1px solid #ff8000;width:757px;height:300px; overflow:hidden;">
                                         <%--<asp:Repeater ID="Repeater4" runat="server" OnItemDataBound="Repeater4_ItemDataBound">
                                             <HeaderTemplate>
                                                 <table width="757px" height="320" cellpadding="0" cellspacing="0" border="0" style="font-size: 14px;table-layout:fixed;">
@@ -310,7 +310,7 @@
                                                 </table>
                                             </FooterTemplate>
                                         </asp:Repeater>--%>
-                                        <asp:Label ID="labjjzp" Visible="true" runat="server" style="padding-left:30px;"></asp:Label>
+                                        <asp:Label ID="labjjzp" Visible="true" runat="server"></asp:Label>
                                     </div>
                                 </td>
                             </tr>
@@ -335,21 +335,21 @@
                             <tr>
                                 <td>
                                     <div style="border: 1px solid #FF8000; height:320px;">
-                                        <asp:Repeater ID="Repeater3" runat="server" OnItemDataBound="Repeater3_ItemDataBound">
-                                            <HeaderTemplate>
+                                        <%--<asp:Repeater ID="Repeater3" runat="server" OnItemDataBound="Repeater3_ItemDataBound">
+                                            <HeaderTemplate>--%>
                                                 <div id="participatingCompaniesList" style="height:200px;">
-                                                    <ul id="participatingCompanies" style="padding: 2px 15px 5px 15px;font-size: 14px;width: 100%;overflow:hidden;"></ul>
-                                            </HeaderTemplate>
-                                            <ItemTemplate>
-                                                        <li style='padding: 0px 15px 0px 15px;list-style:none;'>
+                                                    <ul id="participatingCompanies" style="padding: 2px 15px 5px 15px;*margin-left:-12px;-margin-left:-12px; font-size: 14px;width: 100%;overflow:hidden;">
+                                            <%--</HeaderTemplate>
+                                            <ItemTemplate>--%>
+                                                        <li style='padding: 0px 40px 0px 15px;list-style:none;color:#6e6e6e;'>
                                                             <asp:Label ID="labParticipatingCompaniesList" runat="server"></asp:Label>
                                                         </li>
-                                            </ItemTemplate>
-                                            <FooterTemplate>
+                                            <%--</ItemTemplate>
+                                            <FooterTemplate>--%>
                                                     </ul>
                                                 </div>
-                                            </FooterTemplate>
-                                        </asp:Repeater>
+                                            <%--</FooterTemplate>
+                                        </asp:Repeater>--%>
                                     </div>
                                 </td>
                             </tr>
@@ -397,15 +397,14 @@
             <uc2:DefaultFooter ID="DefaultFooter1" runat="server" />
         </div>
     </form>
-    <div>
-    </div>
     <script type="text/javascript" src="Scripts/WebForms/jquery.artDialog.js"></script>
     <link type="text/css" href="skins/blue.css" rel="stylesheet" />
     <script type="text/javascript" src="Scripts/WebForms/iframeTools.js"></script>
     <script type="text/javascript" src="Scripts/default.js"></script>
     <script type="text/javascript" language="javascript">
-        new Marquee(["participatingCompaniesList", "participatingCompanies"], 0, 1, 757, 300, 20, 0, 0);
+        new Marquee(["participatingCompaniesList", ""], 0, 1, 757, 300, 20, 0, 0);
         new Marquee(["participatingCompaniesList01", ""], 0, 1, 757, 300, 20, 0, 0);
     </script>
+    <script type="text/javascript" src="Scripts/PostMail.js"></script>
 </body>
 </html>

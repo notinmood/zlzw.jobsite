@@ -13,15 +13,15 @@
     <form id="form1" runat="server">
         <div>
             <uc1:PageHead ID="PageHead1" runat="server" />
-            <div>
-                <table style="width:100%;">
+            <div style="-margin-left:200px;">
+                <table style="width:1003px;">
                     <tr>
                         <td style="background-image: url('image/img3.png'); background-repeat: repeat-x; height:1px;">
                                 
                         </td>
                     </tr>
                 </table>
-                <table style="width:100%; line-height:30px;">
+                <table style="width:100%; line-height:30px;-margin-left:70px">
                     <tr>
                         <td>
                             　<a href="default.aspx" style="color:#093C7E; text-decoration:none;">首页</a> > <a href="CareerGuidanceList.aspx" style="color:#093C7E; text-decoration:none;">就业指导</a> > <asp:Label ID="labNavTitle" runat="server" style="color:#093C7E;"></asp:Label>

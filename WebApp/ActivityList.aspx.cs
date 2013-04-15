@@ -61,7 +61,7 @@ namespace WebApp
                 System.Data.DataRowView drv = (System.Data.DataRowView)e.Item.DataItem;
                 Label labActivityTitle = (Label)e.Item.FindControl("labActivityTitle");
 
-                labActivityTitle.Text = "<span style='color:#FA7A00;'> ★ </span><a href='ActivityInfo.aspx?id=" + drv["ActivityGuid"].ToString() + "' style='color:#6e6e6e;text-decoration:none;'>" + drv["ActivityTitle"].ToString() + "</a><div style='float:right; padding-right:20px;'>" + Set_DateFormat(drv["PublishDate"].ToString()) + "</div>";
+                labActivityTitle.Text = "<span style='color:#FA7A00;'> ★ </span><a href='ActivityInfo.aspx?id=" + drv["ActivityGuid"].ToString() + "' style='color:#6e6e6e;text-decoration:none;'>" + drv["ActivityTitle"].ToString() + "</a><div style='float:right; padding-right:20px;-margin-top:-25px;*margin-top:-28px;'>" + Set_DateFormat(drv["PublishDate"].ToString()) + "</div>";
             }
         }
 

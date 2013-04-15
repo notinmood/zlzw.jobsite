@@ -5,6 +5,8 @@
 <%@ Register Src="UserControl/JobCategories.ascx" TagName="JobCategories" TagPrefix="uc1" %>
 <%@ Register Src="UserControl/IndustrySector.ascx" TagName="IndustrySector" TagPrefix="uc2" %>
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
@@ -20,9 +22,9 @@
     <script type="text/javascript" src="Scripts/WebForms/jquery.watermark.min.js"></script>
 </head>
 
-<body>
+<body style="margin:0 auto;padding:0;">
     <form id="form01" runat="server">
-        <div style="width:1003px;display:inline;margin-left:20%;">
+        <div style="border:1px solid #fff;">
             <uc1:PageHead ID="PageHead1" runat="server" />
             <div class="top2right">
                 <div style="background-image:url('image/img8.png');background-repeat:repeat-x;">

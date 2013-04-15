@@ -18,20 +18,20 @@
     <script type="text/javascript" src="Scripts/PersonalRegistration.js"></script>
 </head>
 
-<body>
+<body style="-margin:0 auto;padding:0px;">
     <form id="form01" runat="server">
         <x:PageManager ID="PageManager1" runat="server" AutoSizePanelID="Panel1" Theme="Blue" />
         <div>
             <uc1:PageHead ID="PageHead1" runat="server" />
-            <div class="top2right">
-                    <table style="width:100%;">
+            <div id="wapper" class="top2right">
+                    <table style="width:1003px;-margin-left:200px;">
                         <tr>
                             <td style="background-image: url('image/img3.png'); background-repeat: repeat-x; height:3px;">
                                 
                             </td>
                         </tr>
                     </table>
-                    <table border="0" cellspacing="0" cellpadding="0" style="width:100%; margin-left:15%;">
+                    <table border="0" cellspacing="0" cellpadding="0" style="width:100%; margin-left:200px;-margin-left:330px;text-align:left;">
                         <tr>
                             <td style="height:25px;"></td>
                         </tr>

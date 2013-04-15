@@ -1,5 +1,4 @@
 ﻿@charset "utf-8";
-
 body {
     margin: 0 auto;
     font-family: "微软雅黑";
@@ -142,38 +141,45 @@ body {
 }
 
 .top3right {
+    -position:absolute;
     float: right;
     width: 757px;
-    height: 270px;
     font-family: "黑体";
     font-size: 13px;
     padding: 0;
+    -margin-left:20px;
+    -margin-top:-5px;
 }
 
 .top3rightmiddle {
+    -float:right;
     display: inline;
     width: 757px;
     height: 320px;
+    margin-top:-90px;
 }
 
 .top3rightbottom {
     clear: both;
     width: 757px;
     height: 160px;
-    margin-top: 15px;
+    margin-top: 14px;
+    -margin-top: 18px;
 }
 
 .top3image {
     border: 1px solid #999999;
-    margin: 0px 0px 7px 0px;
+    margin: 0px 0px 10px 0px;
+    *margin: 0px 0px 8px 0px;
 }
 
 
 .link {
-    margin: 222px 0px 0px 0px;
+    margin: 200px 0px 0px 0px;
+    -margin: 10px 0px 0px 0px;
     width: 1003px;
     height: 134px;
-    border: 1px solid #999999;
+    border: 1px solid #ff8000;
 }
 
 .bottom {
@@ -223,3 +229,8 @@ body {
         border-color: #ffa501;
         text-decoration: none;
     }
+#labjjzp p {
+    margin:15px;
+    font-family:'Microsoft YaHei';
+    color:#6e6e6e;
+}

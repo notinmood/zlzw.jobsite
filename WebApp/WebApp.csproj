@@ -3698,6 +3698,7 @@
     <Content Include="Scripts\MSClass.js" />
     <Content Include="Scripts\PersonalRegistration.js" />
     <Content Include="Scripts\EditPersonalRegistrationInfo.js" />
+    <Content Include="Scripts\PostMail.js" />
     <Content Include="Scripts\ResumeCenter.js" />
     <Content Include="Scripts\ResumeSearchList.js" />
     <Content Include="Scripts\ValidateRule.js" />
@@ -3710,6 +3711,7 @@
     <Content Include="Services\GetCityInfo.asmx" />
     <Content Include="Services\GetGeneralBasicSetting.asmx" />
     <Content Include="Services\ManageADImage.asmx" />
+    <Content Include="Services\PostMail.asmx" />
     <Content Include="Services\ValidateLogin.asmx" />
     <Content Include="Services\ValidatorRegisterUser.asmx" />
     <Content Include="image\Thumbs.db" />
@@ -3850,6 +3852,7 @@
     <Content Include="skins\twitter.css" />
     <Content Include="TemplatePage\JobFeildKinds.aspx" />
     <Content Include="TemplatePage\JobPositionKinds.aspx" />
+    <Content Include="TemplatePage\PostMail.aspx" />
     <Content Include="TemplatePage\ResumeSearchInfo.aspx" />
     <Content Include="TemplatePage\WorkAreas.aspx" />
     <Content Include="UserControl\DefaultFooter.ascx" />
@@ -3859,7 +3862,10 @@
     <Content Include="UserControl\JobCategories.ascx" />
     <Content Include="UserControl\PageFooter.ascx" />
     <Content Include="UserControl\PageHead.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="VerifyCode.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
@@ -4367,6 +4373,10 @@
       <DependentUpon>ManageADImage.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Services\PostMail.asmx.cs">
+      <DependentUpon>PostMail.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Services\ValidateLogin.asmx.cs">
       <DependentUpon>ValidateLogin.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -4388,6 +4398,13 @@
     </Compile>
     <Compile Include="TemplatePage\JobPositionKinds.aspx.designer.cs">
       <DependentUpon>JobPositionKinds.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TemplatePage\PostMail.aspx.cs">
+      <DependentUpon>PostMail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TemplatePage\PostMail.aspx.designer.cs">
+      <DependentUpon>PostMail.aspx</DependentUpon>
     </Compile>
     <Compile Include="TemplatePage\ResumeSearchInfo.aspx.cs">
       <DependentUpon>ResumeSearchInfo.aspx</DependentUpon>
@@ -4451,6 +4468,13 @@
     </Compile>
     <Compile Include="UserControl\PageHead.ascx.designer.cs">
       <DependentUpon>PageHead.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="VerifyCode.aspx.cs">
+      <DependentUpon>VerifyCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerifyCode.aspx.designer.cs">
+      <DependentUpon>VerifyCode.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

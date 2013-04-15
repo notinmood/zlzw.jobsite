@@ -270,9 +270,19 @@ namespace WebApp.Manage.admin
                 jobEnterpriseJobPositionModel.ContactPerson = txbContactPerson.Text;//联系人
                 jobEnterpriseJobPositionModel.ContactTelephone = txbContactTelephone.Text;//联系人电话
                 jobEnterpriseJobPositionModel.ContactMail = txbContactMail.Text;//联系人邮件
-                jobEnterpriseJobPositionModel.JobPositionStartDate = DateTime.Parse(txbJobPositionStartDate.Text);//开始日期
-                jobEnterpriseJobPositionModel.JobPositionEndDate = DateTime.Parse(txbJobPositionEndDate.Text);//结束日期
-                jobEnterpriseJobPositionModel.InterviewTime = txbInterviewTime.Text;//面试时间
+                if (txbJobPositionStartDate.Text != "")
+                {
+                    jobEnterpriseJobPositionModel.JobPositionStartDate = DateTime.Parse(txbJobPositionStartDate.Text);//开始日期
+                }
+                if (txbJobPositionEndDate.Text != "")
+                {
+                    jobEnterpriseJobPositionModel.JobPositionEndDate = DateTime.Parse(txbJobPositionEndDate.Text);//结束日期
+                }
+                if (txbInterviewTime.Text != "")
+                {
+                    jobEnterpriseJobPositionModel.InterviewTime = txbInterviewTime.Text;//面试时间
+                }
+                
                 jobEnterpriseJobPositionModel.InterviewAddress = txbInterviewAddress.Text;//面试地点
                 jobEnterpriseJobPositionModel.SpecialType = int.Parse(drpSpecialType.SelectedValue);//是否显示在首页
                 jobEnterpriseJobPositionModel.UpdateDate = DateTime.Now;//更新日期
@@ -311,8 +321,14 @@ namespace WebApp.Manage.admin
                 jobEnterpriseJobPositionModel.ContactPerson = txbContactPerson.Text;//联系人
                 jobEnterpriseJobPositionModel.ContactTelephone = txbContactTelephone.Text;//联系人电话
                 jobEnterpriseJobPositionModel.ContactMail = txbContactMail.Text;//联系人邮件
-                jobEnterpriseJobPositionModel.JobPositionStartDate = DateTime.Parse(txbJobPositionStartDate.Text);//开始日期
-                jobEnterpriseJobPositionModel.JobPositionEndDate = DateTime.Parse(txbJobPositionEndDate.Text);//结束日期
+                if (txbJobPositionStartDate.Text != "")
+                {
+                    jobEnterpriseJobPositionModel.JobPositionStartDate = DateTime.Parse(txbJobPositionStartDate.Text);//开始日期
+                }
+                if (txbJobPositionEndDate.Text != "")
+                {
+                    jobEnterpriseJobPositionModel.JobPositionEndDate = DateTime.Parse(txbJobPositionEndDate.Text);//结束日期
+                }
                 jobEnterpriseJobPositionModel.InterviewTime = txbInterviewTime.Text;//面试时间
                 jobEnterpriseJobPositionModel.InterviewAddress = txbInterviewAddress.Text;//面试地点
                 jobEnterpriseJobPositionModel.SpecialType = int.Parse(drpSpecialType.SelectedValue);//是否为紧急招聘

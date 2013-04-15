@@ -16,8 +16,8 @@
     <form id="form1" runat="server">
         <div>
             <uc1:PageHead ID="PageHead1" runat="server" />
-            <div>
-                <table style="width: 100%;">
+            <div style="-margin-left:220px;">
+                <table style="width:1003px;">
                     <tr>
                         <td style="background-image: url('image/img3.png'); background-repeat: repeat-x; height: 3px;"></td>
                     </tr>

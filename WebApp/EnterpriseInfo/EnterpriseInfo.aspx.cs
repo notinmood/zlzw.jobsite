@@ -34,7 +34,7 @@ namespace WebApp.EnterpriseInfo
         {
             zlzw.BLL.JobEnterpriseJobPositionBLL jobEnterpriseJobPositionBLL = new zlzw.BLL.JobEnterpriseJobPositionBLL();
             System.Data.DataTable dt = jobEnterpriseJobPositionBLL.GetList("EnterpriseKey='"+ strJobGUID +"' order by CreateDate desc").Tables[0];
-            labBanner.Text = dt.Rows[0]["EnterpriseName"].ToString();
+            labBanner.Text = dt.Rows[0]["EnterpriseName"].ToString() + "<br/>";
             txbTitle.Text = dt.Rows[0]["EnterpriseName"].ToString() + "-" + dt.Rows[0]["JobPositionName"].ToString();
             labEnterpriseContent.Text = Get_EnterpriseDesc(strJobGUID);
             DataList1.DataSource = dt;

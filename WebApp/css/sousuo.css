@@ -8,9 +8,16 @@ body {
     width: 995px;
 }
 
+#wapper {
+    width:1003px;
+    margin:0 auto;
+}
+
 .top {
     margin: 40px 0px 15px 0px;
-    width: 995px;
+    *margin: 40px 0px 15px 0px;
+    -margin: 40px 0px 15px 250px;
+    width: 1003px;
     height: 60px;
 }
 
@@ -24,7 +31,7 @@ body {
     font-family: "微软雅黑";
     font-size: 14px;
     padding: 0px;
-    width: 660px;
+    width: 700px;
     height: 29px;
 }
 
@@ -88,10 +95,9 @@ body {
 .top2right {
     margin-bottom: 20px;
     float: right;
-    width: 995px;
+    width: 1003px;
     font-family: "黑体";
     font-size: 12px;
-    padding: 0;
 }
 
 .top2righttop {

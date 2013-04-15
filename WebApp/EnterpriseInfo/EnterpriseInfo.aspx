@@ -15,7 +15,9 @@
             <tr>
                 <td colspan="4">
                     <p>
-                        <asp:Label ID="labBanner" runat="server" style="color:#052C65;font-size:30px; font-weight:bold;"></asp:Label>
+                        <br />
+                        <asp:Label ID="labBanner" runat="server" style="color:#fff;font-size:30px; font-weight:bold;"></asp:Label>
+                        <br />
                     </p>
                 </td>
             </tr>
@@ -24,8 +26,8 @@
                     
                 </td>
             </tr>
-            <tr align="left">
-                <td colspan="4" style="background-image:url('images/index_04.jpg'); background-color:#FFFFFF;" height="20">
+            <tr>
+                <td colspan="4" style="background-image:url('images/index_04.jpg'); background-color:#FFFFFF;" height="20" align="left">
                     <table align="center" border="0" cellpadding="0" cellspacing="0" width="90%">
                         <tr>
                             <td align="left">
@@ -42,17 +44,18 @@
                     <table style="width:100%;height:80px;">
                         <tr>
                             <td align="right">
-                                <asp:LinkButton ID="linkBtnApply" runat="server" style="font-size:20px;color:#F97101;font-weight:bold;" OnClick="linkBtnApply_Click">+申请职位</asp:LinkButton>　　　
+                                <asp:LinkButton ID="linkBtnApply" runat="server" style="font-size:20px;color:#F97101;font-weight:bold;margin-right:25px;" OnClick="linkBtnApply_Click">+申请职位</asp:LinkButton>
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
             <tr>
-                <td colspan="4" style="background-image:url('images/index_04.jpg'); background-color:#FFFFFF;" height="20">
-                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="90%">
+                <td colspan="4" style="background-image:url('images/index_04.jpg'); background-color:#FFFFFF;" height="20" align="center">
+                    <table border="0" cellpadding="0" cellspacing="0" width="90%">
                         <tr>
-                            <td align="center">
+                            <td style="width:53px;*width:20px;"></td>
+                            <td align="left">
                                 <asp:Label ID="labJobList" runat="server"></asp:Label>
                             </td>
                         </tr>
@@ -79,7 +82,7 @@
                                                         <HeaderTemplate>
                                                         </HeaderTemplate>
                                                         <ItemTemplate>
-                                                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
                                                                 <tbody>
                                                                     <tr>
                                                                         <td height="26" width="33.3%" align="left"  style="padding-left:15px;">
@@ -112,12 +115,12 @@
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                         <tbody>
                                             <tr>
-                                                <td>
+                                                <td align="left">
                                                     <strong>职位联系方式</strong>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>
+                                                <td align="left">
                                                     <table border="0" cellpadding="0" cellspacing="0">
                                                         <tbody>
                                                             <tr>

@@ -96,12 +96,12 @@ namespace WebApp.Manage.admin
 
         protected void Grid1_RowDataBound(object sender, GridRowEventArgs e)
         {
-            DataRowView dr = e.DataItem as DataRowView;
-            if (dr != null)
-            {
-                string strEnterpriseGuid = dr["EnterpriseGuid"].ToString();
-                e.Values[0] = Get_EnterpriseName(strEnterpriseGuid);
-            }
+            //DataRowView dr = e.DataItem as DataRowView;
+            //if (dr != null)
+            //{
+            //    string strEnterpriseGuid = dr["EnterpriseGuid"].ToString();
+            //    e.Values[0] = Get_EnterpriseName(strEnterpriseGuid);
+            //}
         }
 
         #endregion

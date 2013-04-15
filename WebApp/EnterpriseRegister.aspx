@@ -18,12 +18,12 @@
     <script type="text/javascript" src="Scripts/EnterpriseRegister.js"></script>
 </head>
 
-<body>
+<body style="margin:0 auto;padding:0px;">
     <form id="form01" runat="server">
         <x:PageManager ID="PageManager1" runat="server" AutoSizePanelID="Panel1" Theme="Blue" />
         <div>
             <uc1:PageHead ID="PageHead1" runat="server" />
-            <div class="top2right">
+            <div class="top2right" style="-margin-left:200px;">
                     <table style="width:100%;">
                         <tr>
                             <td style="background-image: url('image/img3.png'); background-repeat: repeat-x; height:3px;">

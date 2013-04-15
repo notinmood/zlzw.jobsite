@@ -15,15 +15,15 @@
     <form id="form1" runat="server">
         <div>
             <uc1:PageHead ID="PageHead1" runat="server" />
-            <div>
-                <table style="width:100%;">
+            <div style="-margin-left:180px;">
+                <table style="width:1003px">
                     <tr>
-                        <td style="background-image: url('image/img3.png'); background-repeat: repeat-x; height:1px;">
+                        <td style="background-image: url('image/img3.png'); background-repeat: repeat-x; height:3px;">
                                 
                         </td>
                     </tr>
                 </table>
-                <table style="width:100%; line-height:30px;">
+                <table style="width:100%; line-height:30px;-margin-left:50px;">
                     <tr>
                         <td>
                             　<a href="default.aspx" style="color:#093C7E; text-decoration:none;">首页</a> > <span style="color:#093C7E;">就业指导</span>

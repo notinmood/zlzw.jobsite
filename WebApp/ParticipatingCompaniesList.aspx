@@ -32,7 +32,7 @@
                     <tr>
                         <td style="height:20px;"></td>
                     </tr>
-                    <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound">
+                    <%--<asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound">
                         <ItemTemplate>
                             <tr style="padding:0px 0px 0px 30px;">
                                 <td style="padding-left:20px;">
@@ -41,22 +41,22 @@
                                 <td align="right">
                                     <asp:Label ID="labPubnlishDate" runat="server"></asp:Label>
                                 </td>
-                            </tr>
+                            </tr>--%>
                             <tr>
                                 <td colspan="2" style="padding:0px 0px 0px 30px;">
                                     <asp:Label ID="labContent" runat="server"></asp:Label>
                                 </td>
                             </tr>
-                        </ItemTemplate>
-                        <SeparatorTemplate>
+                        <%--</ItemTemplate>
+                        <SeparatorTemplate>--%>
                             <tr><td style="height:30px;"></td></tr>
-                        </SeparatorTemplate>
-                    </asp:Repeater>
+                        <%--</SeparatorTemplate>
+                    </asp:Repeater>--%>
                     <tr>
                         <td style="padding-left:40%;">
-                            <webdiyer:AspNetPager ID="AspNetPager1" runat="server" PageSize="15" 
+                           <%-- <webdiyer:AspNetPager ID="AspNetPager1" runat="server" PageSize="15" 
                                 onpagechanged="AspNetPager1_PageChanged" CssClass="paginator" CurrentPageButtonClass="cpb" FirstPageText="首页"  LastPageText="尾页" NextPageText="下一页" PrevPageText="上一页" >
-                            </webdiyer:AspNetPager>
+                            </webdiyer:AspNetPager>--%>
                         </td>
                     </tr>
                 </table> 

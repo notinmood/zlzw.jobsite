@@ -16,7 +16,7 @@ namespace WebApp.Manage.admin
             if (!IsPostBack)
             {
                 string strType = Request.QueryString["Type"];
-                Load_EnterpriseList();//加载企业列表
+                //Load_EnterpriseList();//加载企业列表
                 LoadData(strType);
             }
             btnClose.OnClientClick = ActiveWindow.GetConfirmHideReference();
@@ -27,14 +27,14 @@ namespace WebApp.Manage.admin
 
         private void Load_EnterpriseList()
         {
-            zlzw.BLL.GeneralEnterpriseBLL generalEnterpriseBLL = new zlzw.BLL.GeneralEnterpriseBLL();
-            DataTable dt = generalEnterpriseBLL.GetList("CanUsable=1 order by CreateDate desc").Tables[0];
+            //zlzw.BLL.GeneralEnterpriseBLL generalEnterpriseBLL = new zlzw.BLL.GeneralEnterpriseBLL();
+            //DataTable dt = generalEnterpriseBLL.GetList("CanUsable=1 order by CreateDate desc").Tables[0];
 
-            drpEnterpriseGuid.DataTextField = "CompanyName";
-            drpEnterpriseGuid.DataValueField = "EnterpriseGuid";
+            //drpEnterpriseGuid.DataTextField = "CompanyName";
+            //drpEnterpriseGuid.DataValueField = "EnterpriseGuid";
 
-            drpEnterpriseGuid.DataSource = dt;
-            drpEnterpriseGuid.DataBind();
+            //drpEnterpriseGuid.DataSource = dt;
+            //drpEnterpriseGuid.DataBind();
         }
 
         #endregion
@@ -48,19 +48,19 @@ namespace WebApp.Manage.admin
                 string strID = Request.QueryString["value"];//操作ID
                 zlzw.BLL.ParticipatingCompaniesListBLL participatingCompaniesListBLL = new zlzw.BLL.ParticipatingCompaniesListBLL();
                 zlzw.Model.ParticipatingCompaniesListModel participatingCompaniesListModel = participatingCompaniesListBLL.GetModel(int.Parse(Get_ID(participatingCompaniesListBLL, strID)));
-                drpEnterpriseGuid.SelectedValue = participatingCompaniesListModel.ParticipatingCompaniesGUID.ToString();//所属企业
+                //drpEnterpriseGuid.SelectedValue = participatingCompaniesListModel.ParticipatingCompaniesGUID.ToString();//所属企业
                 txbParticipatingCompaniesContent.Text = participatingCompaniesListModel.ParticipatingCompaniesContent;//发布内容
-                if (participatingCompaniesListModel.IsShow == 1)
-                {
-                    ckbIsShow.Checked = true;
-                }
-                else
-                {
-                    ckbIsShow.Checked = false;
-                }
+                //if (participatingCompaniesListModel.IsShow == 1)
+                //{
+                //    ckbIsShow.Checked = true;
+                //}
+                //else
+                //{
+                //    ckbIsShow.Checked = false;
+                //}
                 ViewState["PublishDate"] = participatingCompaniesListModel.PublishDate.ToString();
                 ViewState["ParticipatingCompaniesGUID"] = participatingCompaniesListModel.ParticipatingCompaniesGUID.ToString();
-                ToolbarText2.Text = "编辑一个管理员账号";
+                ToolbarText2.Text = "编辑一条企业参会信息";
             }
             btnClose.OnClientClick = ActiveWindow.GetConfirmHideReference();
         }
@@ -75,16 +75,16 @@ namespace WebApp.Manage.admin
             {
                 //编辑保存
                 zlzw.Model.ParticipatingCompaniesListModel participatingCompaniesListModel = new zlzw.Model.ParticipatingCompaniesListModel();
-                participatingCompaniesListModel.EnterpriseGuid = new Guid(drpEnterpriseGuid.SelectedValue);
+                //participatingCompaniesListModel.EnterpriseGuid = new Guid(drpEnterpriseGuid.SelectedValue);
                 participatingCompaniesListModel.ParticipatingCompaniesContent = txbParticipatingCompaniesContent.Text;
-                if(ckbIsShow.Checked)
-                {
+                //if(ckbIsShow.Checked)
+                //{
                     participatingCompaniesListModel.IsShow = 1;
-                }
-                else
-                {
-                    participatingCompaniesListModel.IsShow = 0;
-                }
+                //}
+                //else
+                //{
+                //    participatingCompaniesListModel.IsShow = 0;
+                //}
                 participatingCompaniesListModel.IsEnable = 1;
                 participatingCompaniesListModel.PublishDate = DateTime.Parse(ViewState["PublishDate"].ToString());
                 participatingCompaniesListModel.ParticipatingCompaniesGUID = new Guid(ViewState["ParticipatingCompaniesGUID"].ToString());
@@ -98,16 +98,16 @@ namespace WebApp.Manage.admin
                 //添加保存
 
                 zlzw.Model.ParticipatingCompaniesListModel participatingCompaniesListModel = new zlzw.Model.ParticipatingCompaniesListModel();
-                participatingCompaniesListModel.EnterpriseGuid = new Guid(drpEnterpriseGuid.SelectedValue);
+                //participatingCompaniesListModel.EnterpriseGuid = new Guid(drpEnterpriseGuid.SelectedValue);
                 participatingCompaniesListModel.ParticipatingCompaniesContent = txbParticipatingCompaniesContent.Text;
-                if (ckbIsShow.Checked)
-                {
+                //if (ckbIsShow.Checked)
+                //{
                     participatingCompaniesListModel.IsShow = 1;
-                }
-                else
-                {
-                    participatingCompaniesListModel.IsShow = 0;
-                }
+                //}
+                //else
+                //{
+                    //participatingCompaniesListModel.IsShow = 0;
+                //}
                 participatingCompaniesListModel.IsEnable = 1;
                 participatingCompaniesListModel.PublishDate = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
                 zlzw.BLL.ParticipatingCompaniesListBLL participatingCompaniesListBLL = new zlzw.BLL.ParticipatingCompaniesListBLL();

@@ -193,11 +193,14 @@ namespace WebApp
             DataTable dt = generalBasicSettingBLL.GetList("DisplayName='制造行业' and CanUsable=1").Tables[0];
             for (int nCount = 0; nCount < dt.Rows.Count; nCount++)
             {
-                if (nCount == 11)
+                if (nCount >= 11)
                 {
-                    labzzyType.Text += "<br/><br/><sapn style='padding-left:86px;'></span>";
+                    Label1.Text += "<a href='SearchList.aspx?type=2&id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>　";
                 }
-                labzzyType.Text += "<a href='SearchList.aspx?type=2&id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>　";
+                else {
+                    labzzyType.Text += "<a href='SearchList.aspx?type=2&id=" + HttpUtility.UrlEncode(dt.Rows[nCount]["SettingValue"].ToString()) + "' target='_blank' style='text-decoration:none;color:#325C93;'>" + dt.Rows[nCount]["SettingValue"].ToString() + "</a>　";
+                }
+                
             }
         }
 
@@ -372,9 +375,9 @@ namespace WebApp
 
         private string Set_ActivityTitle_Length(string strTitle)
         {
-            if (strTitle.Length >= 28)
+            if (strTitle.Length >= 26)
             {
-                return strTitle.Substring(0, 28) + "...";
+                return strTitle.Substring(0, 26) + "...";
             }
             else
             {

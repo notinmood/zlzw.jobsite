@@ -32,6 +32,7 @@ namespace WebApp
                     labReceive.InnerText = Get_ReceiveCount(Request.Cookies["CurrentUserGUID"].Value) + " ";
                     labView02.Text = "<a style='font-size:14px;color:#fff;font-weight:bold;text-decoration:none;' target='_blank' href='AlreadyDownLoadResumeList.aspx?id=" + Request.QueryString["id"] + "&type=1'>查看简历</a>";
                     labView01.Text = " " + "<a style='font-size:14px;color:#fff;font-weight:bold;text-decoration:none;' target='_blank' href='AlreadyDownLoadResumeList.aspx?id=" + Request.QueryString["id"] + "&type=0'>查看简历</a>";
+                    labView03.Text = " " + "<a style='font-size:14px;color:#fff;font-weight:bold;text-decoration:none;' target='_blank' href='ViewPublishJobList.aspx?id=" + Request.QueryString["id"] + "&type=1'>查看职位</a>";
                     labJobPublish.InnerText = " " + Get_EnterpriseJobPublishCount(Request.Cookies["CurrentUserGUID"].Value) + " ";//发布职位数量
                     labDownloadCount.InnerText = " " + Get_DownLoadCount(Request.Cookies["CurrentUserGUID"].Value) + " ";
                     labAlreadyDownload.InnerText = " " + Get_AlreadyDownLoadCount(Request.Cookies["CurrentUserGUID"].Value) + " ";//已下载的简历数

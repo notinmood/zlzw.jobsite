@@ -8,7 +8,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>青岛北站人才市场网-官方网站</title>
+    <meta name="keywords" content="青岛人才市场,青岛代缴保险,青岛劳务派遣,青岛人事代理,青岛人才网,城阳人才网,城阳人才市场,青岛北站人才市场,青岛招聘会" />
+    <meta name="description" content="青岛人才市场(汽车北站)，由中劳网与青岛校企英才公司承办，位于汽车北站二楼大厅内，是覆盖青岛五市七区高中低多层次求职者的大型人力资源集散基地。市场业务范围：青岛人才市场招聘会,青岛人才市场网络招聘,青岛代缴保险,青岛劳务派遣,青岛人事代理,短工供应,就业安置等" />
+    <title>青岛人才市场网(北站)-官方网站</title>
     <link href="css/zong.css" type="text/css" rel="stylesheet" />
     <link href="EasyUI/css/bootstrap/easyui.css" rel="stylesheet" />
     <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.9.0/jquery.min.js"></script>
@@ -216,7 +218,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td height="15"><span style="color: #6e6e6e; padding-left: 71px;">
+                                                <td height="15"><span style="color: #6e6e6e; padding-left: 72px;*padding-left: 76px;-padding-left: 75px;">
                                                     <asp:Label ID="labNonManageTypeOther" runat="server"></asp:Label></span></td>
                                             </tr>
                                             <tr>
@@ -260,10 +262,14 @@
                                                 <td height="15"><span id="span5"><span style="color: #325C93; font-weight: bold;">　制造行业：</span><span style="color: #6e6e6e;"><asp:Label ID="labzzyType" runat="server"></asp:Label></span></span></td>
                                             </tr>
                                             <tr>
+                                                <td height="15"><span style="color: #6e6e6e; padding-left: 86px;*padding-left: 89px;-padding-left: 91px;">
+                                                    <asp:Label ID="Label1" runat="server"></asp:Label></span></td>
+                                            </tr>
+                                            <tr>
                                                 <td height="15"><span id="span6"><span style="color: #325C93; font-weight: bold;">　第三产业：</span><span style="color: #6e6e6e;"><asp:Label ID="landscy" runat="server"></asp:Label></span></span></td>
                                             </tr>
                                             <tr>
-                                                <td height="15"><span style="color: #6e6e6e; padding-left: 86px;">
+                                                <td height="15"><span style="color: #6e6e6e; padding-left: 86px;*padding-left: 90px;-padding-left: 90px;">
                                                     <asp:Label ID="lablandscyOther" runat="server"></asp:Label></span></td>
                                             </tr>
                                             <tr>
@@ -403,7 +409,7 @@
     <script type="text/javascript" src="Scripts/default.js"></script>
     <script type="text/javascript" language="javascript">
         new Marquee(["participatingCompaniesList", ""], 0, 1, 757, 300, 20, 0, 0);
-        new Marquee(["participatingCompaniesList01", ""], 0, 1, 757, 300, 20, 0, 0);
+        //new Marquee(["participatingCompaniesList01", ""], 0, 1, 757, 300, 20, 0, 0);紧急招聘滚动
     </script>
     <script type="text/javascript" src="Scripts/PostMail.js"></script>
 </body>

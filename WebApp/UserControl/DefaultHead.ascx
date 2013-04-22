@@ -4,6 +4,6 @@
         <asp:Label ID="labNavigate" runat="server"></asp:Label>
     </div>
     <div class="logo">
-        <a href="../default.aspx"><img src="image/logo.png" alt="" style="border:0px;"></a>
+        <a href="../default.aspx"><img src="image/logo.png" title="青岛人才市场-汽车北站" alt="青岛人才市场-汽车北站" style="border:0px;"></a>
     </div>
 </div>

@@ -10,7 +10,7 @@
 namespace WebApp {
     
     
-    public partial class _default {
+    public partial class ViewPublishJobInfo {
         
         /// <summary>
         /// form01 控件。
@@ -22,76 +22,85 @@ namespace WebApp {
         protected global::System.Web.UI.HtmlControls.HtmlForm form01;
         
         /// <summary>
-        /// DefaultHead1 控件。
+        /// EnterpriseHead1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::WebApp.UserControl.DefaultHead DefaultHead1;
+        protected global::WebApp.UserControl.EnterpriseHead EnterpriseHead1;
         
         /// <summary>
-        /// loginForm 控件。
+        /// labReceive 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable loginForm;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl labReceive;
         
         /// <summary>
-        /// rows1 控件。
+        /// labView02 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow rows1;
+        protected global::System.Web.UI.WebControls.Label labView02;
         
         /// <summary>
-        /// rows2 控件。
+        /// labAlreadyDownload 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow rows2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl labAlreadyDownload;
         
         /// <summary>
-        /// rows3 控件。
+        /// labView01 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow rows3;
+        protected global::System.Web.UI.WebControls.Label labView01;
         
         /// <summary>
-        /// labSuccessLogin 控件。
+        /// labJobPublish 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labSuccessLogin;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl labJobPublish;
         
         /// <summary>
-        /// Repeater1 控件。
+        /// labView03 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater1;
+        protected global::System.Web.UI.WebControls.Label labView03;
         
         /// <summary>
-        /// DataList1 控件。
+        /// labDownloadCount 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList DataList1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl labDownloadCount;
+        
+        /// <summary>
+        /// txbJobPositionName 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txbJobPositionName;
         
         /// <summary>
         /// txbJobPositionKinds 控件。
@@ -100,213 +109,150 @@ namespace WebApp {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txbJobPositionKinds;
+        protected global::System.Web.UI.WebControls.Label txbJobPositionKinds;
         
         /// <summary>
-        /// drpSex 控件。
+        /// txbJobWorkPlaceNames 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpSex;
+        protected global::System.Web.UI.WebControls.Label txbJobWorkPlaceNames;
         
         /// <summary>
-        /// txbWorkAreas 控件。
+        /// txbComprehensivePayroll 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txbWorkAreas;
+        protected global::System.Web.UI.WebControls.Label txbComprehensivePayroll;
         
         /// <summary>
-        /// imgBtnSearch 控件。
+        /// drpHopeRoomAndBoard 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgBtnSearch;
+        protected global::System.Web.UI.WebControls.Label drpHopeRoomAndBoard;
         
         /// <summary>
-        /// txbJobFeildKinds 控件。
+        /// drpNeedSex 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txbJobFeildKinds;
+        protected global::System.Web.UI.WebControls.Label drpNeedSex;
         
         /// <summary>
-        /// drpShiSu 控件。
+        /// txbNeedAge 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpShiSu;
+        protected global::System.Web.UI.WebControls.Label txbNeedAge;
         
         /// <summary>
-        /// txbSearchKey 控件。
+        /// drpUserEducationalBackground 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txbSearchKey;
+        protected global::System.Web.UI.WebControls.Label drpUserEducationalBackground;
         
         /// <summary>
-        /// labNonManageType 控件。
+        /// txbContactTelephone 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labNonManageType;
+        protected global::System.Web.UI.WebControls.Label txbContactTelephone;
         
         /// <summary>
-        /// labNonManageTypeOther 控件。
+        /// txbContactPerson 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labNonManageTypeOther;
+        protected global::System.Web.UI.WebControls.Label txbContactPerson;
         
         /// <summary>
-        /// labManageType 控件。
+        /// txbContactMail 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labManageType;
+        protected global::System.Web.UI.WebControls.Label txbContactMail;
         
         /// <summary>
-        /// Repeater2 控件。
+        /// txbJobPositionDesc 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater2;
+        protected global::System.Web.UI.WebControls.Label txbJobPositionDesc;
         
         /// <summary>
-        /// labzzyType 控件。
+        /// txbInterviewTime 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labzzyType;
+        protected global::System.Web.UI.WebControls.Label txbInterviewTime;
         
         /// <summary>
-        /// Label1 控件。
+        /// txbInterviewAddress 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label txbInterviewAddress;
         
         /// <summary>
-        /// landscy 控件。
+        /// drpJobWorkType 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label landscy;
+        protected global::System.Web.UI.WebControls.Label drpJobWorkType;
         
         /// <summary>
-        /// lablandscyOther 控件。
+        /// drpSpecialType 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lablandscyOther;
+        protected global::System.Web.UI.WebControls.DropDownList drpSpecialType;
         
         /// <summary>
-        /// labddcyType 控件。
+        /// btnSubmit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labddcyType;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
-        /// labjjzp 控件。
+        /// PageFooter1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labjjzp;
-        
-        /// <summary>
-        /// labParticipatingCompaniesList 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labParticipatingCompaniesList;
-        
-        /// <summary>
-        /// labLink 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labLink;
-        
-        /// <summary>
-        /// labLink01 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labLink01;
-        
-        /// <summary>
-        /// labLink02 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labLink02;
-        
-        /// <summary>
-        /// labLink03 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labLink03;
-        
-        /// <summary>
-        /// labLink04 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labLink04;
-        
-        /// <summary>
-        /// DefaultFooter1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::WebApp.UserControl.DefaultFooter DefaultFooter1;
+        protected global::WebApp.UserControl.PageFooter PageFooter1;
     }
 }

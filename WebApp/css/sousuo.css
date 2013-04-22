@@ -14,9 +14,9 @@ body {
 }
 
 .top {
-    margin: 40px 0px 15px 0px;
-    *margin: 40px 0px 15px 0px;
-    -margin: 40px 0px 15px 250px;
+    margin: 40px 0px 0px 55px;
+    *margin: 40px 0px 0px 55px;
+    -margin: 40px 0px 0px 200px;
     width: 1003px;
     height: 60px;
 }
@@ -98,6 +98,16 @@ body {
     width: 1003px;
     font-family: "黑体";
     font-size: 12px;
+}
+
+.top3right {
+    margin-bottom: 20px;
+    float: right;
+    width: 1003px;
+    font-family: "黑体";
+    font-size: 12px;
+    -margin-left:300px;
+    border:1px solid;
 }
 
 .top2righttop {

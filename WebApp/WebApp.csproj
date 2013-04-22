@@ -3863,6 +3863,8 @@
     <Content Include="UserControl\PageFooter.ascx" />
     <Content Include="UserControl\PageHead.ascx" />
     <Content Include="VerifyCode.aspx" />
+    <Content Include="ViewPublishJobInfo.aspx" />
+    <Content Include="ViewPublishJobList.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -4475,6 +4477,20 @@
     </Compile>
     <Compile Include="VerifyCode.aspx.designer.cs">
       <DependentUpon>VerifyCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPublishJobInfo.aspx.cs">
+      <DependentUpon>ViewPublishJobInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewPublishJobInfo.aspx.designer.cs">
+      <DependentUpon>ViewPublishJobInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPublishJobList.aspx.cs">
+      <DependentUpon>ViewPublishJobList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewPublishJobList.aspx.designer.cs">
+      <DependentUpon>ViewPublishJobList.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
